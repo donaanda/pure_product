@@ -7,13 +7,13 @@ class SignIn extends Component {
         return (
             <section className="sign_in_form">
                 <form className="sign_in_form">
-                    <div>
+                    <div className="email">
                         <label>email</label>
-                        <input type="text" name="email" />
+                        <input name="email" type="text" />
                     </div>
-                    <div>
+                    <div className="password">
                         <label>password</label>
-                        <input type="text" name="email" />
+                        <input name="password" type="text" />
                     </div>
                     <button>Sign In</button>
                 </form>

@@ -6,7 +6,6 @@ import foundation from '../assets/images/landing_page_icons/foundation.png';
 import lipstick from '../assets/images/landing_page_icons/lipstick.png';
 import safety_icon from '../assets/images/landing_page_icons/safety.png';
 import product from '../assets/images/landing_page_icons/product.png';
-import '../assets/css/footer_landing.css';
 
 class LandingPage extends Component {
     render() {
