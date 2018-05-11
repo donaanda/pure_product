@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    box-sizing: border-box;
+    height: 200vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/* footer*/
+
+.site-footer {
+    position: absolute;
+    background-color: black;
+    width: 100vw;
+    height: 70vw;
+    bottom: 0;
+}
+
+.footer-content {
+    padding-left: 2vh;
+    text-align: center;
+    height: 7vh;
+    background-color: black;
+}
+
+.footer-content > span {
+    display: inline-block;
+    color: white;
+    line-height: 100%;
+    padding: 1.5vh;
+}
+
+.footer-content > img {
+    float: left;
+}
+
+.copyright_span {
+    font-size: 2vmin;
+}
+
+/* landing page content */
+
+.landing_button {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.landing_button, .wrap-landing-img {
+    width: 50vw;
+    height: 40vh;
+}
+
+.wrap-landing-img {
+    padding: 15%;
+}
+
+.landing_img{
+    padding: 10%;
+}
+
+.wrap-landing-img > .landing_img, 
+.landing_button > .wrap-landing-img > span {
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.product_finder {
+    display: table;
+    width: 100vw;
+    text-align: center;
+    height: 15vh;
+    background-color:  rgba(138, 239, 108,0.5);
+}
+
+span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.safety{
+    background-color: rgba(76, 203, 37,0.5);
+} 
+
+.products{
+    background-color: rgb(253, 207, 246);
+} 
+
+.safety_rating{
+    background-color: rgb(241, 192, 253);
+} 
+
+.gentle_rating {
+    background-color: aliceblue;
+}
+/*sign in form */
+.sign_in_form {
+    background-color: rgba(76, 203, 37,0.5);
+    margin: auto;
+    width: 80vw;
+    height: 80vh;
+}
+/* for screens larger than a cell phone */
+
+@media only screen and (min-width: 768px) {
+    body {
+        height: 130vh;
+    }
+    /* footer */
+    .site-footer {
+        height: 15vw;
+        padding-top: 1vh;
+    }
+    .copyright_span {
+        font-size: 1vmin;
+    }
+
+    div.copyright_span {
+        display: block;
+        width: 100vw;
+    }
+    /*landing page */
+    
+    .wrap-landing-img {
+        padding: 5%;
+    }
+    
+    .landing_img{
+        padding: 5%;
+    }
+}
