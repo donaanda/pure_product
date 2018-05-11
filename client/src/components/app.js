@@ -1,13 +1,16 @@
 import React from 'react';
 import '../assets/css/app.css';
-import Test from './test';
+import LandingPage from './landing_page';
+import SignIn from './sign_in';
+import { Route } from 'react-router-dom';
 
-const App = () => (
-    <div>
-        <div className="app">
-           <Test/>
-        </div>
-    </div>
-);
+const App = () => {
+    return (
+        <section>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/sign_in" component={SignIn} />
+        </section>
+    )
+};
 
 export default App;
