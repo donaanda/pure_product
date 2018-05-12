@@ -1,0 +1,67 @@
+.search-ingredient-image {
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 10%;
+}
+
+.search-ingredient {
+    text-align: center;
+}
+
+
+.search-ingredient-input {
+    background-color: #b1dfbb;
+    margin-top: 10%;
+}
+
+.search-ingredient-button {
+    margin-top: 10%;
+    height: 10vh;
+    width: 30vw;
+    background-color: #0fb8ad;
+    color: white;
+    font-size: large;
+}
+
+/* Omer ******************************************/
+
+.headerContainer{
+    background-image:url(../images/header_images/Image_1.png);
+    background-size:cover;
+    height:12vh;
+    padding-top:2.5vh;
+}
+.headerIcon{
+    /* margin-top:5%; */
+    width: 100%;
+}
+.iconContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #e4f7ef;
+    height:75%;
+}
+.test{
+    background-image:url(../images/header_images/snip.PNG);
+
+}
+.loginIcon{
+    position: absolute;
+    top:0;
+    right:0;
+    height:18px;
+    width:20px;
+}
+.logoContainer{
+    display:inherit;
+
+}
+.logoText{
+    width: 100%;
+    font-size:1.8em;
+    text-align: center;
+}
+.smallerIcon{
+    height:84%;
+    margin-top:1%;
+}
