@@ -9,6 +9,8 @@ import safety_icon from '../assets/images/landing_page_icons/safety.png';
 import product from '../assets/images/landing_page_icons/product.png';
 import Header from './header.js';
 import '../assets/css/footer_landing_sign_in.css';
+import ExpandedMenuWelcome from './expandedMenuWelcome';
+
 
 
 class LandingPage extends Component {
@@ -55,6 +57,7 @@ class LandingPage extends Component {
                 </Link>
                 <DisplayAllProducts/>
                 <Footer />
+                <ExpandedMenuWelcome/>
             </section>
         )
     }
