@@ -40,3 +40,7 @@ img {
     top: 20%;
     left: 80%;
 }
+
+.product-name {
+    font-size: .001rem;
+}
