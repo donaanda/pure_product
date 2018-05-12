@@ -4,7 +4,6 @@ import new_user from '../assets/images/footer_icons/new_user.png';
 import our_team from '../assets/images/footer_icons/our_team.png';
 import q_a from '../assets/images/footer_icons/q_a.png';
 import temp_logo from '../assets/images/footer_icons/temp_logo.png';
-// import '../assets/css/footer_landing.css';
 
 class Footer extends Component {
     render() {
