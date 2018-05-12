@@ -1,0 +1,42 @@
+.product-container {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.image-container {
+    position: relative;
+    width: 40%;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.product-image {
+    position: relative;
+}
+
+.gentle-icon {
+    position: absolute;
+    top: 5%;
+    left: 60%;
+}
+
+.safety-icon {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+}
+
+.gentle-rating {
+    position: absolute;
+    top: 5%;
+    left: 80%;
+}
+
+.safety-rating {
+    position: absolute;
+    top: 20%;
+    left: 80%;
+}
