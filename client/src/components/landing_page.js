@@ -8,7 +8,7 @@ import lipstick from '../assets/images/landing_page_icons/lipstick.png';
 import safety_icon from '../assets/images/landing_page_icons/safety.png';
 import product from '../assets/images/landing_page_icons/product.png';
 import Header from './header.js';
-import '../assets/css/footer_landing.css';
+import '../assets/css/footer_landing_sign_in.css';
 
 
 class LandingPage extends Component {
