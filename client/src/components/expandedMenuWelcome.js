@@ -38,12 +38,14 @@ function ExpandedMenuWelcome() {
                         </div>
                         <div className=" FeatureSetFont LongTextFeatureSet">Check Product Safety</div>
                     </div>
-                    <div className="Look_Up_Ingrediants">
-                        <div className="divPicture">
-                            <img className="ExpandMenuImage" src={LookIngredients}/>
+                    <Link to="/search_ingredient">
+                        <div className="Look_Up_Ingrediants">
+                            <div className="divPicture">
+                                <img className="ExpandMenuImage" src={LookIngredients}/>
+                            </div>
+                            <span className=" FeatureSetFont">Search Ingrediants</span>
                         </div>
-                        <span className=" FeatureSetFont">Search Ingrediants</span>
-                    </div>
+                    </Link>
                     <div className="DiscoverProducts">
                         <div className="LipstickCenter"> 
                             <img className="LipstickImg" src={DiscoverProducts}/>
