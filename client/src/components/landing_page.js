@@ -43,7 +43,7 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </Link>
-                <Link to="/sign_in">
+                <Link to="/product_finder">
                     <div className="product_finder">
                         <span>Product finder</span>
                     </div>
