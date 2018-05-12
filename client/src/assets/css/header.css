@@ -1,0 +1,37 @@
+.headerContainer{
+    background-image:url(../images/header_images/Image_1.png);
+    background-size:cover;
+    height:12vh;
+    padding-top:2.5vh;
+}
+.headerIcon{
+   /* margin-top:5%; */
+} 
+.iconContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #e4f7ef;
+    height:75%;
+}
+.test{
+    background-image:url(../images/header_images/snip.PNG);
+
+}
+.loginIcon{
+    position: absolute;
+    top:0;
+    right:0;
+    height:18px;
+    width:20px;
+}
+.logoContainer{
+    display:inherit;
+
+}
+.logoText{
+    font-size:2.3em;
+}
+.smallerIcon{
+    height:84%;
+    margin-top:1%;
+}
