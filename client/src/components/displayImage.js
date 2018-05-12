@@ -18,8 +18,8 @@ export default (props) => {
             <img className='safety-icon' src={Group_1}/>
             <img className='gentle-rating' src={Text_1}/>
             <img className='safety-rating' src={Text_2}/>
-            <h3>FENTY BEAUTY BY RIHANNA</h3>
-            <p>Pro Filt'r Soft Matte Longwear Foundation</p>
+            <h3 className='product-name'>FENTY BEAUTY BY RIHANNA</h3>
+            <p className='product-name'>Pro Filt'r Soft Matte Longwear Foundation</p>
         </section>
     )
 }
