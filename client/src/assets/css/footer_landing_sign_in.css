@@ -44,6 +44,29 @@ body {
 .copyright_span {
     font-size: 2vmin;
 }
+/* product finder */
+
+.product_finder {
+    display: table;
+    width: 100vw;
+    /* text-align: center; */
+    height: 15vh;
+    background-color:  rgba(184, 234, 251, 0.5);
+}
+
+.product_finder > div {
+    margin: 5vh;
+}
+
+.product_finder button {
+    display: block;
+    background-color: black;
+    color: white;
+}
+
+.product_finder > label {
+    display: inline-block;
+}
 
 /* landing page content */
 
@@ -73,15 +96,7 @@ body {
     text-align: center;
 }
 
-.product_finder {
-    display: table;
-    width: 100vw;
-    text-align: center;
-    height: 15vh;
-    background-color:  rgba(184, 234, 251, 0.5);
-}
-
-span {
+.wrap-landing-img > span, .product_finder > span {
     display: table-cell;
     vertical-align: middle;
 }

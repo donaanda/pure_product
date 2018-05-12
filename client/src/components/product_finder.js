@@ -5,23 +5,27 @@ class ProductFinder extends Component {
     render() {
         return (
             <form className="product_finder">
-                <label>I would like to find something with these ingredients...</label>
-                <input type="checkbox" name="alpha-hydroxy-acids">alpha-hydroxy acids</input>
-                <input type="checkbox" name="beta-hydroxy-acid">beta-hydroxy acid</input>
-                <input type="checkbox" name="retinol">retinol</input>
-                <input type="checkbox" name="l-ascorbic-acid">L-Ascorbic Acid</input>
-                <input type="checkbox" name="hyaluronic-acid">Hyaluronic Acid</input>
-                <label>I would like to avoid...</label>
-                <input type="checkbox" name="parabens">parabens</input>
-                <input type="checkbox" name="phthalates">phthalates</input>
-                <input type="checkbox" name="triclosan">triclosan</input>
-                <input type="checkbox" name="sodium lauryl sulfate">sodium lauryl sulfate</input>
-                <input type="checkbox" name="aminophenol">aminophenol</input>
-                <input type="checkbox" name="diaminobenzene">diaminobenzene</input>
-                <input type="checkbox" name="phenylenediamine">phenylenediamine</input>
-                <input type="checkbox" name="polyethylene">polyethylene</input>
-                <input type="checkbox" name="PEGs">PEGs</input>
-                <button>Submit</button>
+                <div>
+                    <h2>I would like to find something with these ingredients...</h2>
+                    <div><input type="checkbox" name="alpha-hydroxy-acids" /> <label>alpha-hydroxy acids</label></div>
+                    <div><input type="checkbox" name="beta-hydroxy-acid" /> <label>beta-hydroxy acid</label></div>
+                    <div><input type="checkbox" name="retinol" /> <label>retinol</label></div>
+                    <div><input type="checkbox" name="l-ascorbic-acid" /> <label>L-Ascorbic Acid</label></div>
+                    <div><input type="checkbox" name="hyaluronic-acid" /> <label>Hyaluronic Acid</label></div>
+                    <h2>I would like to avoid...</h2>
+                    <div><input type="checkbox" name="parabens" /> <label>parabens</label></div>
+                    <div><input type="checkbox" name="phthalates" /> <label>phthalates</label></div>
+                    <div><input type="checkbox" name="triclosan" /> <label>triclosan</label></div>
+                    <div><input type="checkbox" name="sodium lauryl sulfate" /> <label>sodium lauryl sulfate</label></div>
+                    <div><input type="checkbox" name="aminophenol" /> <label>aminophenol</label></div>
+                    <div><input type="checkbox" name="diaminobenzene" /> <label>diaminobenzene</label></div>
+                    <div><input type="checkbox" name="phenylenediamine" /> <label>phenylenediamine</label></div>
+                    <div><input type="checkbox" name="polyethylene" /> <label>polyethylene</label></div>
+                    <div><input type="checkbox" name="PEGs" /> <label>PEGs</label></div>
+                    <div><input type="checkbox" name="banned" /> <label>Anything banned by the EU</label></div>
+                    <div><input type="checkbox" name="restricted" /> <label>Anything restricted by the EU</label></div>
+                    <button>Submit</button>
+                </div>
             </form>
         )
     }
