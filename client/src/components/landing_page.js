@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './footer';
+import DisplayAllProducts from './displayAllProducts';
 import gentle_rating from '../assets/images/landing_page_icons/gentle_heart.png';
 import foundation from '../assets/images/landing_page_icons/foundation.png';
 import lipstick from '../assets/images/landing_page_icons/lipstick.png';
@@ -48,6 +49,7 @@ class LandingPage extends Component {
                         <span>Product finder</span>
                     </div>
                 </Link>
+                <DisplayAllProducts/>
                 <Footer />
             </section>
         )
