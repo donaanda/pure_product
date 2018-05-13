@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import IngList from './ingredients';
-import Video from './video';
+import IngList from './ingredientList';
 
 class Tabs extends Component{
     constructor(){

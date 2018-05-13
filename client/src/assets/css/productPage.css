@@ -1,0 +1,19 @@
+.product-page-gentle-safety-rating {
+
+}
+
+.product-page-gentle-safety-rating div {
+    display: inline-block;
+}
+
+.product-page-gentle-rating {
+    width: 50%;
+    background-color: #0fb8ad;
+    text-align: center;
+}
+
+.product-page-safety-rating {
+    width: 50%;
+    background-color: #f8d7da;
+    text-align: center;
+}

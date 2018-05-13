@@ -5,7 +5,8 @@
 
 .image-container {
     position: relative;
-    width: 40%;
+    margin: auto;
+    text-align: center;
 }
 
 img {
@@ -20,27 +21,27 @@ img {
 .gentle-icon {
     position: absolute;
     top: 5%;
-    left: 60%;
+    left: 65%;
 }
 
 .safety-icon {
     position: absolute;
     top: 20%;
-    left: 60%;
+    left: 65%;
 }
 
 .gentle-rating {
     position: absolute;
     top: 5%;
-    left: 80%;
+    left: 85%;
 }
 
 .safety-rating {
     position: absolute;
     top: 20%;
-    left: 80%;
+    left: 85%;
 }
 
 .product-name {
-    font-size: .001rem;
+    font-size: .01rem;
 }
