@@ -1,0 +1,38 @@
+[
+    {"data": [{
+            "Name": "Super Stay Full Coverage Foundation",
+            "Categories": "Foundation",
+            "Brand": "Maybelline",
+            "Image": "src folder'",
+            "Detail": "Be your own professional makeup artist with Maybelline's Super Stay Full Coverage Foundation. Saturated color pigments provide an ultra-transforming effect in this long-lasting foundation. The lightweight, yet high-impact coverage formula glides onto the skin for a flawless finish that lasts all day.",
+            "Price": "11.99",
+            "Ingredients": "Cyclopentasiloxane, Aqua\/Water, Polypropylsilsesquioxane, Isododecane, Dimethicone, C30-45 Alkyldimethylsilyl Polypropylsilsesquioxane, Peg-10 Dimethicone, Glycerin, Silica,Dimethicone\/Polyglycerin-3 Crosspolymer, Sodium Chloride, Nylon 12, Phenoxyethanol, Disteardimonium Hectorite, Disodium Stearoyl Glutamate, Cyclomethicone, Chlorphenesin, Ethylparaben, Disodium Edta, Acrylonitrile\/Methyl Methacrylate\/Vinylidene ChlorideCopolymer, Aluminum Hydroxide, Dipropylene Glycol, Isobutane, Paraffin, Sodium Citrate, Tocopherol, Isopropyl Alcohol,[+\/- May Contain CI 77891 \/ Titanium Dioxide, CI 77491, CI 77492, CI 77499\/Iron Oxides ] G854042."
+        },
+        {
+            "Name": "Satin Matte Foundation",
+            "Categories": "Foundation",
+            "Brand": "alima Pure",
+            "Image": "src image'",
+            "Detail": "Our award-winning Satin Matte Foundation provides buildable coverage in 45 shades.?Created from four hypoallergenic ingredients, our buildable mineral foundation enhances your complexion while evening your skin tone. With 45 shades, there is a match for everyone.?Find Your Matchusing our?curated foundation sample sets.",
+            "Price": "28.00",
+            "Ingredients": "Mica (CI 77019), Titanium Dioxide (CI 77891), Zinc Oxide (CI 77947), Iron Oxides (CI 77491, CI 77492, CI 77499)"
+        },
+        {
+            "Name": "Pure Finish Mineral Powder Foundation Broad Spectrum Sunscreen SPF 20",
+            "Categories": "Foundation",
+            "Brand": "Elizabeth Arden",
+            "Image": "srcimg'",
+            "Detail": "This mineral foundation releases a fresh layer of microlight makeup that is ultra blendable & buildable, allowing you to achieve a look that's skin-brightening, non-drying and comfortable to wear every time.",
+            "Price": "40.00",
+            "Ingredients": "Water,Mica,Silica,Squalene,Vitamin A,Vitamin C,Vitamin E,Magnesium Myristate,Aloe,Titanium Dioxide"
+        },
+        {
+            "Name": "Fresh Air",
+            "Categories": "Foundation",
+            "Brand": "Estee Lauder",
+            "Image": "src img3'",
+            "Detail": "Classic Formula. This soft, semi-matte foundation gives you a flawless look with a fresh-air glow.",
+            "Price": "24.50",
+            "Ingredients": ""
+        }]
+    }]
