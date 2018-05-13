@@ -1,0 +1,42 @@
+.check-product-image-container {
+
+}
+
+.logo-background-color {
+    width: 60%;
+    margin: auto;
+    border-radius: 50%;
+    background-color: #B8D4E3;
+}
+
+.check-product-logo {
+    margin: auto;
+    display: block;
+}
+
+.check-product-description {
+    text-align: center;
+    background-color: #e4f7ef;
+}
+
+
+.check-product-input-container {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.check-product-input-field {
+    padding-bottom: 20%;
+    background-color: #E6E6FA;
+    width: 80%;
+}
+
+.check-product-button {
+    background-color: purple;
+    color: white;
+}
+
+.check-product-button-container {
+    text-align: center;
+    margin-top: 5%;
+}
