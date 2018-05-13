@@ -18,7 +18,7 @@ class LandingPage extends Component {
         return (
             <section className="landing_page">
                 <Header />
-                <Link to="/sign_in">
+                <Link to="/check_products">
                     <div className="landing_button safety">
                         <div className="wrap-landing-img">
                             <img className="landing_img" src={lipstick} />

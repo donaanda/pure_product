@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 import MyAccountPage from './myAccount';
 import ExpandedMenuWelcome from './expandedMenuWelcome';
 import LookUpIngredient from './lookUpIngredient';
+import CheckProducts from './checkProducts';
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/product_finder" component={ProductFinder} />
             <Route path="/myAccount" component={MyAccountPage} />
             <Route path="/search_ingredient" component={LookUpIngredient}/>
+            <Route path="/check_products" component={CheckProducts}/>
         </section>
     )
 };
