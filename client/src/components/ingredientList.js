@@ -1,6 +1,6 @@
 import React from 'react';
-import heart from '../assets/images/heart.png';
-import cross from '../assets/images/cross.png';
+import heart from '../assets/images/landing_page_icons/gentle_heart.png';
+import cross from '../assets/images/landing_page_icons/safety.png';
 
 export default ()=>{
     const chemical = {

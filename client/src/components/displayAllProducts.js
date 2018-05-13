@@ -1,6 +1,7 @@
 import React from 'react';
 import DisplayImage from './displayImage';
 import ImageData from './imageData';
+import {Link} from 'react-router-dom';
 
 const DisplayAllProducts = () => {
 
@@ -12,7 +13,9 @@ const DisplayAllProducts = () => {
 
     return (
         <section className="product-container">
-            {images}
+            <Link to="/product">
+                {images}
+            </Link>
         </section>
     )
 }
