@@ -1,4 +1,4 @@
 <?php
-$output = ['name'=> 'hbc', 'car' => 'camry'];
-echo json_encode($output);
+$output = 'You are talking to the Server Now!';
+print $output;
 ?>
