@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from './tabs';
+import Tabs1 from './tabs';
 import DisplayImage from './displayImage';
 import '../assets/css/productPage.css';
 import GentleIcon from '../assets/images/displayImages/Compound Path_1.png';
@@ -11,7 +11,7 @@ const ProductPage = () => {
 
     const page = {
         position:'fixed',
-        bottom: '0px'
+        bottom: 0
     }
 
     return (
@@ -26,7 +26,7 @@ const ProductPage = () => {
                 </div>
             </div>
             <div style={page}>
-                <Tabs/>
+                <Tabs1/>
             </div>
         </div>
     )

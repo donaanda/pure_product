@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import IngList from './ingredientList';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import '../assets/css/tabs.css';
 
-class Tabs extends Component {
+class Tabs1 extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            tabIndex: 0,
             tab: 'ingredients',
             fieldStyle: {
                 backgroundColor: '#ffcc99',
@@ -98,17 +101,33 @@ class Tabs extends Component {
         const {tab} = this.state;
 
         return (
-            <div>
-                <button name='ingredients' style={this.tabs1} onClick={this.handleClickIngredients.bind(this)}>Ingredients</button>
-                <button name='videos' style={this.tabs2} onClick={this.handleClickVideos.bind(this)}>Videos</button>
-                <button name='reviews' style={this.tabs3} onClick={this.handleClickReviews.bind(this)}>Reviews</button>
-                <div style={this.state.fieldStyle}>
-                    <IngList/>
-                </div>
-            </div>
+            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
+                <TabList className="tab-list">
+                    <Tab style={this.tabs1} onClick={this.handleClickIngredients.bind(this)}>Ingredients</Tab>
+                    <Tab style={this.tabs2} onClick={this.handleClickVideos.bind(this)}>Videos</Tab>
+                    <Tab style={this.tabs3} onClick={this.handleClickReviews.bind(this)}>Reviews</Tab>
+                </TabList>
+                <TabPanel>
+                    <div style={this.state.fieldStyle}>
+                        <IngList/>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div style={this.state.fieldStyle}>
+                        <h2>Any content 2</h2>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="tab-review" style={this.state.fieldStyle}>
+                        <h3>No Reviews Yet</h3>
+                        <h5>Be the first to write a review!</h5>
+                        <button className="tab-review-button">Add Review</button>
+                    </div>
+                </TabPanel>
+            </Tabs>
         )
     }
 }
 
 
-export default Tabs;
+export default Tabs1;
