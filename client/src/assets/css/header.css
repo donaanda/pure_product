@@ -3,17 +3,18 @@
     background-size:cover;
     height:12vh;
     padding-top:2.5vh;
-}
-.headerIcon{
-   /* margin-top:5%; */
 } 
-.iconContainer{
+ .headerIcon{
+   /* margin-top:5%; */
+}  
+ .iconContainer{
     display: flex;
     justify-content: space-between;
     background-color: #e4f7ef;
     height:75%;
-}
-.test{
+    margin: 1% 0; 
+} 
+ .test{
     background-image:url(../images/header_images/snip.PNG);
 
 }

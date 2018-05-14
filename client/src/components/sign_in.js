@@ -1,11 +1,13 @@
 
 import React, { Component } from 'react';
 import Footer from './footer';
+import Header from './header';
 
 class SignIn extends Component {
     render() {
         return (
             <section className="sign_in_form">
+                <Header />
                 <form className="sign_in_form">
                     <div className="email">
                         <label>email</label>

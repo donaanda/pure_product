@@ -6,7 +6,7 @@
 body {
     position: relative;
     box-sizing: border-box;
-    height: 200vh;
+    height: 100%;
     width: 100vw;
     padding: 0;
     margin: 0;
@@ -16,7 +16,7 @@ body {
 /* footer*/
 
 .site-footer {
-    position: absolute;
+    position: relative;
     background-color: black;
     width: 100vw;
     height: 70vw;
@@ -52,6 +52,10 @@ body {
     /* text-align: center; */
     height: 15vh;
     background-color:  rgba(184, 234, 251, 0.5);
+}
+
+form.product_finder {
+    height: 100vh;
 }
 
 .product_finder > div {
@@ -99,6 +103,11 @@ body {
 .wrap-landing-img > span, .product_finder > span {
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
+}
+
+.product_finder > span {
+    font-size: 2em;
 }
 
 .safety{
@@ -126,18 +135,20 @@ section.landing_page {
 }
 
 /*sign in form */
-.sign_in_form {
+form.sign_in_form {
     background-color: rgba(37, 203, 109, 0.5);
-    margin: 15vw auto;
-    width: 80vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 15vh;
 }
 
 .email > label, .password > label, .email > input, .password > input {
     display: block;
-    font-size: 2em;
+    font-size: 1em;
+    font-weight: 600;
     width:60vw;
-    margin: auto;
+    height: 10vw;
+    margin: 2vh auto;
 }
 
 .email, .password {

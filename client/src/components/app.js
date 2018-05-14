@@ -9,6 +9,13 @@ import ExpandedMenuWelcome from './expandedMenuWelcome';
 import LookUpIngredient from './lookUpIngredient';
 import CheckProducts from './checkProducts';
 import ProductPage from './productPage';
+import SafetyRating from './safetyRating';
+import GentleRating from './gentleRating';
+import DisplayAllStandAlone from './displayAll_standAlone.js';
+import CreateAccount from './create_account';
+import OurTeam from './ourTeam';
+import FAQ from './FAQ';
+import AboutTheSite from './aboutTheSite';
 
 const App = () => {
     return (
@@ -17,9 +24,16 @@ const App = () => {
             <Route path="/sign_in" component={SignIn} />
             <Route path="/product_finder" component={ProductFinder} />
             <Route path="/myAccount" component={MyAccountPage} />
-            <Route path="/search_ingredient" component={LookUpIngredient}/>
-            <Route path="/check_products" component={CheckProducts}/>
-            <Route path="/product" component={ProductPage}/>
+            <Route path="/search_ingredient" component={LookUpIngredient} />
+            <Route path="/check_products" component={CheckProducts} />
+            <Route path="/product" component={ProductPage} />
+            <Route path="/safety_rating" component={SafetyRating} />
+            <Route path="/gentle_rating" component={GentleRating} />
+            <Route path="/gentle_products" component={DisplayAllStandAlone} />
+            <Route path="/create_account" component={CreateAccount} />
+            <Route path="/our_team" component={OurTeam} />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/about_the_site" component={AboutTheSite} />
         </section>
     )
 };
