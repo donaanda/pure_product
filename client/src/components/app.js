@@ -16,6 +16,7 @@ import CreateAccount from './create_account';
 import OurTeam from './ourTeam';
 import FAQ from './FAQ';
 import AboutTheSite from './aboutTheSite';
+import ExpandedMenu from './expandedMenuWelcome';
 
 const App = () => {
     return (
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/check_products" component={CheckProducts} />
             <Route path="/product" component={ProductPage} />
             <Route path="/product/ingredient" component={ProductPage} />
+            <Route path="/expanded_menu" component={ExpandedMenu} />
         </section>
     )
 };

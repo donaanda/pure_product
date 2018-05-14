@@ -10,12 +10,6 @@ import Header from './header';
 import Footer from './footer';
 
 const ProductPage = () => {
-
-    const page = {
-        position: 'fixed',
-        bottom: '0px'
-    }
-
     return (
         <div>
             <Header />
@@ -28,9 +22,11 @@ const ProductPage = () => {
                     <span><img src={SafetyIcon} /><img src={SafetyRating} /></span>
                 </div>
             </div>
+
             <div style={page}>
 
                 <Tabs1/>
+
 
             </div>
             <Footer />
