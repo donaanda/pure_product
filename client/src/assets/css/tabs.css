@@ -1,0 +1,16 @@
+.tab-list {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.tab-review {
+    text-align: center;
+}
+
+.tab-review-button {
+    background-color: blue;
+    padding: 5%;
+    color: white;
+    font-size: large;
+}
