@@ -26,7 +26,7 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </Link>
-                <Link to="/sign_in">
+                <Link to="/gentle_products">
                     <div className="landing_button products">
                         <div className="wrap-landing-img">
                             <img className="landing_img" src={product} />
@@ -34,7 +34,7 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </Link>
-                <Link to="/sign_in">
+                <Link to="/safety_rating">
                     <div className="landing_button safety_rating">
                         <div className="wrap-landing-img">
                             <img className="landing_img" src={safety_icon} />
@@ -42,7 +42,7 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </Link>
-                <Link to="/sign_in">
+                <Link to="/gentle_rating">
                     <div className="landing_button gentle_rating">
                         <div className="wrap-landing-img">
                             <img className="landing_img" src={gentle_rating} />
@@ -55,9 +55,8 @@ class LandingPage extends Component {
                         <span>Product finder</span>
                     </div>
                 </Link>
-                <DisplayAllProducts/>
+                <DisplayAllProducts />
                 <Footer />
-                <ExpandedMenuWelcome/>
             </section>
         )
     }

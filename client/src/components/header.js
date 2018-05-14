@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/css/header.css'
+import '../assets/css/header.css';
 import Image_1 from '../assets/images/header_images/Image_1.png';
 import SearchIcon from '../assets/images/header_images/Group_1.png';
 import sideNavButton from '../assets/images/header_images/Group_2.png';
@@ -41,9 +41,10 @@ class Header extends Component {
                     display: 'block',
                     backgroundColor: 'lightgrey',
                     width: '85vw',
+                    height: '10vw',
                     margin: '1.5% auto',
-                    fontSize:'200%',
-                    border:'none'
+                    fontSize: '1em',
+                    border: 'none'
                 }
             })
         }

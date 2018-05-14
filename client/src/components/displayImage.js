@@ -14,11 +14,11 @@ export default (props) => {
     return (
         <section>
             <div className='image-container'>
-                <img className='product-image' src={Image_1}/>
-                <img className='gentle-icon' src={CompoundPath_1}/>
-                <img className='safety-icon' src={Group_1}/>
-                <img className='gentle-rating' src={Text_1}/>
-                <img className='safety-rating' src={SafetyRating}/>
+                <img className='product-image' src={Image_1} />
+                <img className='gentle-icon' src={CompoundPath_1} />
+                <img className='safety-icon' src={Group_1} />
+                <img className='gentle-rating' src={Text_1} />
+                <img className='safety-rating' src={SafetyRating} />
                 <h3 className='product-name'>FENTY BEAUTY BY RIHANNA</h3>
                 <p className='product-name'>Pro Filt'r Soft Matte Longwear Foundation</p>
             </div>
