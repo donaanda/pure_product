@@ -12,7 +12,7 @@ import Footer from './footer';
 const ProductPage = () => {
 
     const page = {
-        position: 'fixed',
+        marginTop: '5%',
         bottom: '0px'
     }
 
