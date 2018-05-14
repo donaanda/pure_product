@@ -34,6 +34,10 @@ const App = () => {
             <Route path="/our_team" component={OurTeam} />
             <Route path="/faq" component={FAQ} />
             <Route path="/about_the_site" component={AboutTheSite} />
+            <Route path="/search_ingredient" component={LookUpIngredient} />
+            <Route path="/check_products" component={CheckProducts} />
+            <Route path="/product" component={ProductPage} />
+            <Route path="/product/ingredient" component={ProductPage} />
         </section>
     )
 };
