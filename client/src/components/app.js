@@ -20,6 +20,7 @@ const App = () => {
             <Route path="/search_ingredient" component={LookUpIngredient}/>
             <Route path="/check_products" component={CheckProducts}/>
             <Route path="/product" component={ProductPage}/>
+            <Route path="/product/ingredient" component={ProductPage}/>
         </section>
     )
 };
