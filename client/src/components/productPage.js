@@ -10,6 +10,12 @@ import Header from './header';
 import Footer from './footer';
 
 const ProductPage = () => {
+
+    const page = {
+        position: 'fixed',
+        bottom: '0px'
+    }
+
     return (
         <div>
             <Header />
