@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from './tabs';
+import Tabs1 from './tabs';
 import DisplayImage from './displayImage';
 import '../assets/css/productPage.css';
 import GentleIcon from '../assets/images/displayImages/Compound Path_1.png';
@@ -10,6 +10,12 @@ import Header from './header';
 import Footer from './footer';
 
 const ProductPage = () => {
+
+    const page = {
+        marginTop: '5%',
+        bottom: '0px'
+    }
+
     return (
         <div>
             <Header />
@@ -22,8 +28,12 @@ const ProductPage = () => {
                     <span><img src={SafetyIcon} /><img src={SafetyRating} /></span>
                 </div>
             </div>
-            <div className="previously_inline">
-                <Tabs />
+
+            <div style={page}>
+
+                <Tabs1/>
+
+
             </div>
             <Footer />
         </div>
