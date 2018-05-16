@@ -37,6 +37,7 @@ const App = () => {
             <Route path="/faq" component={FAQ} />
             <Route path="/about_the_site" component={AboutTheSite} />
             <Route path="/expanded_menu" component={ExpandedMenu} />
+            <Route path="/product/:id" component={ProductPage} />
         </section>
     )
 };

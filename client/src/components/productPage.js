@@ -14,17 +14,16 @@ import axios from 'axios';
 class ProductPage extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
+        console.log('props', props, 'id: ', props.match.params.id);
 
         this.state = {}
 
     }
 
     async componentDidMount() {
-        await axios.post(`/get_product.php`)
+        await axios.get(`/get_product.php`)
             .then(res => {
-                const persons = res.data;
-                this.setState({ persons });
+                console.log(res);
             })
     }
 
