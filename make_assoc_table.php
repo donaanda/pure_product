@@ -52,6 +52,8 @@ $y=1;
 foreach($arrayOfArrayOfIngredients as $value){
     foreach($value as $innerValue){
         echo $y;
+        echo $innerValue;
+        $innerValue=addslashes($innerValue);
         $query = "SELECT `ingredient_id` FROM `ingredient_rating` WHERE ingredient_name = '$innerValue'";
         $result=mysqli_query($db,$query);
         echo json_encode($result);
