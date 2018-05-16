@@ -29,6 +29,8 @@ foreach($output['data']as$value){
         if($currLetter===','){
             array_push($arrayOfIngredients,$wordToAdd);
             $wordToAdd='';
+        }else if($currLetter===' '){
+
         }else if($i===strlen($value['ingredient_list'])-1){
             $wordToAdd=$wordToAdd.$currLetter;
             array_push($arrayOfIngredients,$wordToAdd);
