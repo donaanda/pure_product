@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IngList from './ingredientList';
+import IngredientList from './ingredientList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../assets/css/tabs.css';
 
@@ -12,9 +12,13 @@ class Tabs1 extends Component {
             tab: 'ingredients'
         }
 
-        this.ingredients = this.props.ingredients;
+        this.ingredients = this.props.ingredients || [
+            { "Ingredient": "Mica", "Gentle": "2", "Safety": "2" },
+            { "Ingredient": "Titanium Dioxide", "Gentle": "2", "Safety": "3" },
+            { "Ingredient": "Zinc Oxide", "Gentle": "2", "Safety": "3" },
+            { "Ingredient": "Iron Oxides", "Gentle": "3", "Safety": "4" }
+        ];
 
-       
     }
 
     handleClickIngredients(event) {
@@ -57,10 +61,8 @@ class Tabs1 extends Component {
                     <Tab className="tab-header-review" onClick={this.handleClickReviews.bind(this)}>Reviews</Tab>
                 </TabList>
                 <TabPanel>
-
                     <div className="tab-ingredient">
-                        <IngList info={this.ingredients}/>
-
+                        <IngredientList info={this.ingredients}/>
                     </div>
                 </TabPanel>
                 <TabPanel>

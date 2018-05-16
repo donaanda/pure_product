@@ -10,7 +10,7 @@ import Header from './header';
 import Footer from './footer';
 // props.match.params.id
 const ProductPage = (props) => {
-    console.log(props);
+
     const page = {
         marginTop: '5%',
         bottom: '0px'
