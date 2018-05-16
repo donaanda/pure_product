@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import IngList from './ingredientList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../assets/css/tabs.css';
@@ -12,12 +12,17 @@ class Tabs1 extends Component {
             tab: 'ingredients',
             fieldStyle: {
                 backgroundColor: '#ffcc99',
-                width:'100vw',
+                width: '100vw',
                 height: '50vh',
                 overflow: 'hidden'
             }
         }
-
+        this.ingredients = this.props.ingredients || [
+            { "Ingredient": "Mica", "Gentle": "2", "Safety": "2" },
+            { "Ingredient": "Titanium Dioxide", "Gentle": "2", "Safety": "3" },
+            { "Ingredient": "Zinc Oxide", "Gentle": "2", "Safety": "3" },
+            { "Ingredient": "Iron Oxides", "Gentle": "3", "Safety": "4" }
+        ]
         this.tabs1 = {
             backgroundColor: '#ffcc99',
             font: 'bold 20px Arial',
@@ -25,8 +30,8 @@ class Tabs1 extends Component {
             display: 'inline-block',
             width: '33.3vw',
             cursor: 'pointer',
-            borderColor:'#ffcc99',
-            outline:'none'
+            borderColor: '#ffcc99',
+            outline: 'none'
         }
 
         this.tabs2 = {
@@ -36,8 +41,8 @@ class Tabs1 extends Component {
             display: 'inline-block',
             width: '33.3vw',
             cursor: 'pointer',
-            borderColor:'#99ffcc',
-            outline:'none'
+            borderColor: '#99ffcc',
+            outline: 'none'
         }
 
         this.tabs3 = {
@@ -47,8 +52,8 @@ class Tabs1 extends Component {
             display: 'inline-block',
             width: '33.3vw',
             cursor: 'pointer',
-            borderColor:'#ffb3ff',
-            outline:'none'
+            borderColor: '#ffb3ff',
+            outline: 'none'
         }
     }
 
@@ -59,12 +64,12 @@ class Tabs1 extends Component {
             tab: event.target.name,
             fieldStyle: {
                 backgroundColor: '#ffcc99',
-                width:'100vw',
+                width: '100vw',
                 height: '50vh',
                 overflow: 'hidden'
             }
         });
-    
+
     }
 
     handleClickVideos(event) {
@@ -74,12 +79,12 @@ class Tabs1 extends Component {
             tab: event.target.name,
             fieldStyle: {
                 backgroundColor: '#99ffcc',
-                width:'100vw',
+                width: '100vw',
                 height: '50vh',
                 overflow: 'hidden'
             }
         });
-    
+
     }
 
     handleClickReviews(event) {
@@ -89,7 +94,7 @@ class Tabs1 extends Component {
             tab: event.target.name,
             fieldStyle: {
                 backgroundColor: '#ffb3ff',
-                width:'100vw',
+                width: '100vw',
                 height: '50vh',
                 overflow: 'hidden'
             }
@@ -98,10 +103,10 @@ class Tabs1 extends Component {
 
     render() {
 
-        const {tab} = this.state;
+        const { tab } = this.state;
 
         return (
-            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
+            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                 <TabList className="tab-list">
                     <Tab style={this.tabs1} onClick={this.handleClickIngredients.bind(this)}>Ingredients</Tab>
                     <Tab style={this.tabs2} onClick={this.handleClickVideos.bind(this)}>Videos</Tab>
@@ -109,7 +114,7 @@ class Tabs1 extends Component {
                 </TabList>
                 <TabPanel>
                     <div style={this.state.fieldStyle}>
-                        <IngList/>
+                        <IngList />
                     </div>
                 </TabPanel>
                 <TabPanel>

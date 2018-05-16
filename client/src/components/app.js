@@ -27,7 +27,8 @@ const App = () => {
             <Route path="/myAccount" component={MyAccountPage} />
             <Route path="/search_ingredient" component={LookUpIngredient} />
             <Route path="/check_products" component={CheckProducts} />
-            <Route path="/product" component={ProductPage} />
+            {/* <Route path="/product" component={ProductPage} /> */}
+            <Route path="/product/:id?" component={ProductPage} />
             <Route path="/safety_rating" component={SafetyRating} />
             <Route path="/gentle_rating" component={GentleRating} />
             <Route path="/gentle_products" component={DisplayAllStandAlone} />

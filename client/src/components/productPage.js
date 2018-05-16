@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Tabs1 from './tabs';
 import DisplayImage from './displayImage';
 import '../assets/css/productPage.css';
@@ -8,9 +8,9 @@ import GentleRating from '../assets/images/displayImages/Text_1.png';
 import SafetyRating from '../assets/images/displayImages/Text_2.png';
 import Header from './header';
 import Footer from './footer';
-
-const ProductPage = () => {
-
+// props.match.params.id
+const ProductPage = (props) => {
+    console.log(props);
     const page = {
         marginTop: '5%',
         bottom: '0px'
@@ -31,7 +31,7 @@ const ProductPage = () => {
 
             <div style={page}>
 
-                <Tabs1/>
+                <Tabs1 />
 
 
             </div>
