@@ -1,6 +1,6 @@
 <?php
 require_once('./db_connect.php');
-$search_input = 'foundation';
+$category = 'foundation';
 $query = "SELECT 
 `product_name`,
 `brand`,
@@ -8,12 +8,10 @@ $query = "SELECT
 `img_src`,
 `size`,
 `rating`
-
 FROM `product_name`
-WHERE `categories` LIKE '%$search_input%'
+WHERE `categories` LIKE '%$category%'
 GROUP BY 1,2,3,4,5,6
 ";
-//will list out top 4 products based on categories
 $result=mysqli_query($db,$query);
 
 $output=[
@@ -31,10 +29,8 @@ if(mysqli_num_rows($result)>0){
     };
     
 } else {
-    
     $output['error']='Can\'t find product';
 }
-
 
 print(json_encode($output));
 ?>
