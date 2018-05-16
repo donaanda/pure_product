@@ -3,7 +3,7 @@ import heart from '../assets/images/landing_page_icons/gentle_heart.png';
 import cross from '../assets/images/landing_page_icons/safety.png';
 import '../assets/css/ingredientList.css';
 
-export default () => {
+export default (props) => {
     const chemical = {
         border: '1px solid',
         width: '70%'
@@ -21,7 +21,7 @@ export default () => {
         width: '80%'
     }
 
-    return(
+    return (
         <div>
             <table style={table}>
                 <tbody>

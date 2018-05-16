@@ -31,8 +31,7 @@ const ProductPage = () => {
 
             <div style={page}>
 
-                <Tabs1/>
-
+                <Tabs1 />
 
             </div>
             <Footer />
