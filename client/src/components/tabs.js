@@ -9,7 +9,6 @@ class Tabs1 extends Component {
         super(props);
         this.state = {
             tabIndex: 0,
-            tab: 'ingredients'
         }
 
         this.ingredients = this.props.ingredients || [
