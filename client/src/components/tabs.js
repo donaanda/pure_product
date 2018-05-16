@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import IngList from './ingredientList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../assets/css/tabs.css';
@@ -13,6 +13,8 @@ class Tabs1 extends Component {
         }
 
         this.ingredients = this.props.ingredients;
+
+       
     }
 
     handleClickIngredients(event) {
@@ -20,8 +22,10 @@ class Tabs1 extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
+
+
         });
-    
+
     }
 
     handleClickVideos(event) {
@@ -30,7 +34,7 @@ class Tabs1 extends Component {
         this.setState({
             tab: event.target.name,
         });
-    
+
     }
 
     handleClickReviews(event) {
@@ -43,18 +47,20 @@ class Tabs1 extends Component {
 
     render() {
 
-        const {tab} = this.state;
+        const { tab } = this.state;
 
         return (
-            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
+            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                 <TabList className="tab-list">
                     <Tab className="tab-header-ingredient" onClick={this.handleClickIngredients.bind(this)}>Ingredients</Tab>
                     <Tab className="tab-header-video" onClick={this.handleClickVideos.bind(this)}>Videos</Tab>
                     <Tab className="tab-header-review" onClick={this.handleClickReviews.bind(this)}>Reviews</Tab>
                 </TabList>
                 <TabPanel>
+
                     <div className="tab-ingredient">
                         <IngList info={this.ingredients}/>
+
                     </div>
                 </TabPanel>
                 <TabPanel>

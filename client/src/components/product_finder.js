@@ -10,12 +10,15 @@ class ProductFinder extends Component {
                 <Header />
                 <form className="product_finder">
                     <div>
-                        <h2>I would like to find something with these ingredients...</h2>
+                        <h2>I would like to find something with these attributes...</h2>
                         <div><input type="checkbox" name="alpha-hydroxy-acids" /> <label>alpha-hydroxy acids</label></div>
                         <div><input type="checkbox" name="beta-hydroxy-acid" /> <label>beta-hydroxy acid</label></div>
                         <div><input type="checkbox" name="retinol" /> <label>retinol</label></div>
                         <div><input type="checkbox" name="l-ascorbic-acid" /> <label>L-Ascorbic Acid</label></div>
                         <div><input type="checkbox" name="hyaluronic-acid" /> <label>Hyaluronic Acid</label></div>
+                        <div><input type="checkbox" name="spf" /> <label>SPF</label></div>
+                        <div><input type="checkbox" name="cruelty_free" /> <label>cruelty free</label></div>
+                        <div><input type="checkbox" name="vegan" /> <label>vegan</label></div>
                         <h2>I would like to avoid...</h2>
                         <div><input type="checkbox" name="parabens" /> <label>parabens</label></div>
                         <div><input type="checkbox" name="phthalates" /> <label>phthalates</label></div>
@@ -26,8 +29,12 @@ class ProductFinder extends Component {
                         <div><input type="checkbox" name="phenylenediamine" /> <label>phenylenediamine</label></div>
                         <div><input type="checkbox" name="polyethylene" /> <label>polyethylene</label></div>
                         <div><input type="checkbox" name="PEGs" /> <label>PEGs</label></div>
+                        <div><input type="checkbox" name="coconut" /> <label>coconut and coconut dervived</label></div>
+                        <div><input type="checkbox" name="retinol" /> <label>retinol</label></div>
+                        <div><input type="checkbox" name="spf" /> <label>SPF</label></div>
                         <div><input type="checkbox" name="banned" /> <label>Anything banned by the EU</label></div>
                         <div><input type="checkbox" name="restricted" /> <label>Anything restricted by the EU</label></div>
+
                         <button>Submit</button>
                     </div>
                 </form>
