@@ -11,6 +11,7 @@ import Footer from './footer';
 import axios from 'axios';
 // props.match.params.id
 
+
 class ProductPage extends Component {
     constructor(props) {
         super(props);
