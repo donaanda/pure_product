@@ -17,12 +17,6 @@ class Tabs1 extends Component {
                 overflow: 'hidden'
             }
         }
-        this.ingredients = this.props.ingredients || [
-            { "Ingredient": "Mica", "Gentle": "2", "Safety": "2" },
-            { "Ingredient": "Titanium Dioxide", "Gentle": "2", "Safety": "3" },
-            { "Ingredient": "Zinc Oxide", "Gentle": "2", "Safety": "3" },
-            { "Ingredient": "Iron Oxides", "Gentle": "3", "Safety": "4" }
-        ]
         this.tabs1 = {
             backgroundColor: '#ffcc99',
             font: 'bold 20px Arial',
