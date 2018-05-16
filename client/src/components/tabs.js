@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import IngList from './ingredientList';
+import React, { Component } from 'react';
+import IngredientList from './ingredientList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../assets/css/tabs.css';
 
@@ -9,47 +9,15 @@ class Tabs1 extends Component {
         super(props);
         this.state = {
             tabIndex: 0,
-            tab: 'ingredients',
-            fieldStyle: {
-                backgroundColor: '#ffcc99',
-                width:'100vw',
-                height: '50vh',
-                overflow: 'hidden'
-            }
         }
 
-        this.tabs1 = {
-            backgroundColor: '#ffcc99',
-            font: 'bold 20px Arial',
-            color: '#0099ff',
-            display: 'inline-block',
-            width: '33.3vw',
-            cursor: 'pointer',
-            borderColor:'#ffcc99',
-            outline:'none'
-        }
+        this.ingredients = this.props.ingredients || [
+            { "Ingredient": "Mica", "Gentle": "2", "Safety": "2" },
+            { "Ingredient": "Titanium Dioxide", "Gentle": "2", "Safety": "3" },
+            { "Ingredient": "Zinc Oxide", "Gentle": "2", "Safety": "3" },
+            { "Ingredient": "Iron Oxides", "Gentle": "3", "Safety": "4" }
+        ];
 
-        this.tabs2 = {
-            backgroundColor: '#99ffcc',
-            font: 'bold 20px Arial',
-            color: '#0099ff',
-            display: 'inline-block',
-            width: '33.3vw',
-            cursor: 'pointer',
-            borderColor:'#99ffcc',
-            outline:'none'
-        }
-
-        this.tabs3 = {
-            backgroundColor: '#ffb3ff',
-            font: 'bold 20px Arial',
-            color: '#0099ff',
-            display: 'inline-block',
-            width: '33.3vw',
-            cursor: 'pointer',
-            borderColor:'#ffb3ff',
-            outline:'none'
-        }
     }
 
     handleClickIngredients(event) {
@@ -57,14 +25,10 @@ class Tabs1 extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
-            fieldStyle: {
-                backgroundColor: '#ffcc99',
-                width:'100vw',
-                height: '50vh',
-                overflow: 'hidden'
-            }
+
+
         });
-    
+
     }
 
     handleClickVideos(event) {
@@ -72,14 +36,8 @@ class Tabs1 extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
-            fieldStyle: {
-                backgroundColor: '#99ffcc',
-                width:'100vw',
-                height: '50vh',
-                overflow: 'hidden'
-            }
         });
-    
+
     }
 
     handleClickReviews(event) {
@@ -87,38 +45,32 @@ class Tabs1 extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
-            fieldStyle: {
-                backgroundColor: '#ffb3ff',
-                width:'100vw',
-                height: '50vh',
-                overflow: 'hidden'
-            }
         });
     }
 
     render() {
 
-        const {tab} = this.state;
+        const { tab } = this.state;
 
         return (
-            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({tabIndex})}>
+            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                 <TabList className="tab-list">
-                    <Tab style={this.tabs1} onClick={this.handleClickIngredients.bind(this)}>Ingredients</Tab>
-                    <Tab style={this.tabs2} onClick={this.handleClickVideos.bind(this)}>Videos</Tab>
-                    <Tab style={this.tabs3} onClick={this.handleClickReviews.bind(this)}>Reviews</Tab>
+                    <Tab className="tab-header-ingredient" onClick={this.handleClickIngredients.bind(this)}>Ingredients</Tab>
+                    <Tab className="tab-header-video" onClick={this.handleClickVideos.bind(this)}>Videos</Tab>
+                    <Tab className="tab-header-review" onClick={this.handleClickReviews.bind(this)}>Reviews</Tab>
                 </TabList>
                 <TabPanel>
-                    <div style={this.state.fieldStyle}>
-                        <IngList/>
+                    <div className="tab-ingredient">
+                        <IngredientList info={this.ingredients}/>
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div style={this.state.fieldStyle}>
+                    <div className="tab-video">
                         <h2>Any content 2</h2>
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="tab-review" style={this.state.fieldStyle}>
+                    <div className="tab-review">
                         <h3>No Reviews Yet</h3>
                         <h5>Be the first to write a review!</h5>
                         <button className="tab-review-button">Add Review</button>

@@ -4,8 +4,45 @@
     text-align: center;
 }
 
+.tab-header-ingredient {
+    background-color: #ffcc99;
+    font: bold 20px Arial;
+    color: #0099ff;
+    display: inline-block;
+    width: 33.3vw;
+    cursor: pointer;
+    borderColor: #ffcc99;
+    outline: none;
+}
+
+.tab-header-video {
+    background-color: #99ffcc;
+    font: bold 20px Arial;
+    color: #0099ff;
+    display: inline-block;
+    width: 33.3vw;
+    cursor: pointer;
+    borderColor: #99ffcc;
+    outline: none;
+}
+
+.tab-header-review {
+    background-color: #ffb3ff;
+    font: bold 20px Arial;
+    color: #0099ff;
+    display: inline-block;
+    width: 33.3vw;
+    cursor: pointer;
+    borderColor:#ffb3ff;
+    outline: none;
+}
+
 .tab-review {
     text-align: center;
+    background-color: #ffb3ff;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
 }
 
 .tab-review-button {
@@ -13,4 +50,18 @@
     padding: 5%;
     color: white;
     font-size: large;
+}
+
+.tab-video {
+    background-color: #99ffcc;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.tab-ingredient {
+    background-color: #ffcc99;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
 }
