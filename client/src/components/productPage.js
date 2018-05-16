@@ -33,7 +33,6 @@ const ProductPage = (props) => {
 
                 <Tabs1 />
 
-
             </div>
             <Footer />
         </div>
