@@ -1,6 +1,6 @@
 <?php
 require_once('./db_connect.php');
-echo 'starting mission';
+echo 'starting mission ';
 $query = "SELECT * FROM `product_ingredient_assoc_maker`";
 $result=mysqli_query($db,$query);
 $output=[];
@@ -51,13 +51,9 @@ $x=1;
 $y=1;
 foreach($arrayOfArrayOfIngredients as $value){
     foreach($value as $innerValue){
-        echo $y;
-        echo $innerValue;
         $innerValue=addslashes($innerValue);
         $query = "SELECT `ingredient_id` FROM `ingredient_rating` WHERE ingredient_name = '$innerValue'";
         $result=mysqli_query($db,$query);
-        echo json_encode($result);
-        echo ':';
         if(mysqli_num_rows($result)){
             $ingredientId=mysqli_fetch_assoc($result);
         }else{
