@@ -21,14 +21,22 @@ class ProductPage extends Component {
 
     }
 
-    async componentDidMount() {
-        await axios.get(`/get_product.php`)
+    componentDidMount() {
+        axios.post(`http://localhost:8888/find_product_by_id.php`,
+            {
+                id: this.props.match.params.id
+            }
+        )
             .then(res => {
                 console.log(res);
+                this.setState({
+                    data: res
+                })
             })
     }
 
     render() {
+        console.log(this.state)
         return (
             <section>
                 <Header />

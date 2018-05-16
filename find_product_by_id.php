@@ -1,4 +1,5 @@
 <?php
+ header("Access-Control-Allow-Origin: *");
 require_once('./db_connect.php');
 $product_id = 1; 
 $output=[];
