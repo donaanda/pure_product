@@ -46,7 +46,6 @@ class ProductPage extends Component {
 
                     <Tabs1 />
 
-
                 </div>
                 <Footer />
             </section>
