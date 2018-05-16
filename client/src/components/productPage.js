@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Tabs1 from './tabs';
 import DisplayImage from './displayImage';
 import '../assets/css/productPage.css';
@@ -8,36 +8,49 @@ import GentleRating from '../assets/images/displayImages/Text_1.png';
 import SafetyRating from '../assets/images/displayImages/Text_2.png';
 import Header from './header';
 import Footer from './footer';
+import axios from 'axios';
+// props.match.params.id
 
-const ProductPage = () => {
+class ProductPage extends Component {
+    constructor(props) {
+        super(props);
+        console.log(props);
 
-    const page = {
-        marginTop: '5%',
-        bottom: '0px'
+        this.state = {}
+
     }
 
-    return (
-        <div>
-            <Header />
-            <DisplayImage />
-            <div className="product-page-gentle-safety-rating">
-                <div className="product-page-gentle-rating">GENTLE RATING
+    async componentDidMount() {
+        await axios.post(`/get_product.php`)
+            .then(res => {
+                const persons = res.data;
+                this.setState({ persons });
+            })
+    }
+
+    render() {
+        return (
+            <section>
+                <Header />
+                <DisplayImage />
+                <div className="product-page-gentle-safety-rating">
+                    <div className="product-page-gentle-rating">GENTLE RATING
                     <span><img src={GentleIcon} /><img src={GentleRating} /></span>
-                </div>
-                <div className="product-page-safety-rating">SAFETY RATING
+                    </div>
+                    <div className="product-page-safety-rating">SAFETY RATING
                     <span><img src={SafetyIcon} /><img src={SafetyRating} /></span>
+                    </div>
                 </div>
-            </div>
 
-            <div style={page}>
+                <div>
 
-                <Tabs1/>
+                    <Tabs1 />
 
-
-            </div>
-            <Footer />
-        </div>
-    )
+                </div>
+                <Footer />
+            </section>
+        )
+    }
 };
 
 export default ProductPage;

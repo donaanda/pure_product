@@ -40,34 +40,32 @@ foreach($output['data']as$value){
     }
     $arrayOfArrayOfIngredients[]=$arrayOfIngredients;
 }
-// print_r($arrayOfArrayOfIngredients);
+//echo 'ingredients: ';
+//print_r($arrayOfArrayOfIngredients);
 
 //$query = "SELECT `ingredient_id` FROM `product_ingredient_association_table` WHERE ingredient_name = ";//this will probably be in the loop, figure it out
 
 $query = "DELETE FROM `product_ingredient_association_table`";
 mysqli_query($db,$query);
 $x=1;
+$y=1;
 foreach($arrayOfArrayOfIngredients as $value){
     foreach($value as $innerValue){
+        echo $y;
         $query = "SELECT `ingredient_id` FROM `ingredient_rating` WHERE ingredient_name = '$innerValue'";
         $result=mysqli_query($db,$query);
+        echo json_encode($result);
+        echo ':';
         if(mysqli_num_rows($result)){
             $ingredientId=mysqli_fetch_assoc($result);
-            // echo json_encode($ingredientId['ingredient_id']);
+        }else{
+            $ingredientId=0;
         }
         $query = "INSERT INTO `product_ingredient_association_table` (product_id,ingredient_id) value ($x,".$ingredientId['ingredient_id'].")";
-        echo $query;
         mysqli_query($db,$query);
+        $y++;
     }
     $x++;
 }
 echo 'mission complete';
-// if(mysqli_num_rows($result)){
-//     $row=mysqli_fetch_assoc($result);
-//     $output['success']=true;
-//     $output['products']=$row; 
-// } else {
-//     $output['error']='someshit didnt work';
-// }
-// print('json encoded: '+json_encode($output));
 ?>
