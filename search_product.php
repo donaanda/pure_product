@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
 require_once('./db_connect.php');
 $search_input = 'Foundation';
 $query = "SELECT * FROM `product_name` WHERE `product_name` LIKE '%$search_input%' OR `brand` LIKE '%$search_input%' OR `categories` LIKE '%$search_input%'";
@@ -13,5 +14,5 @@ if(mysqli_num_rows($result)){
 } else {
     $output['error']='Can\'t find product';
 }
-echo 'json encoded: '.json_encode($output);
+print(json_encode($output));
 ?>
