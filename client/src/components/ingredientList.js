@@ -5,10 +5,9 @@ import '../assets/css/ingredientList.css';
 import Ingredient from './ingredient';
 
 export default (props) => {
-
     const ingredients = props.info.map((ingredient, index) => {
         return (
-            <Ingredient key={index} ingredientInfo={ingredient}/>
+            <Ingredient key={index} ingredientInfo={ingredient} />
         )
     });
 
@@ -18,8 +17,8 @@ export default (props) => {
                 <tbody>
                     <tr>
                         <td>Ingredients</td>
-                        <td><img className="icon-width" src={heart} alt="heart"/></td>
-                        <td><img className="icon-width" src={cross} alt="heart"/></td>
+                        <td><img className="icon-width" src={heart} alt="heart" /></td>
+                        <td><img className="icon-width" src={cross} alt="heart" /></td>
                     </tr>
                     {ingredients}
                 </tbody>

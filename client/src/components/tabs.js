@@ -7,7 +7,6 @@ class Tabs1 extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = {
             tabIndex: 0,
         }
