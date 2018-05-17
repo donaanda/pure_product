@@ -57,7 +57,8 @@ mysqli_query($db,$query);
 $ingredientIdNum=1716;
 $x=1;
 $y=1;
-deleteMissingIngs($db);
+$query = "DELETE FROM `ingredient_rating` WHERE `ingredient_id` >= 1716";
+mysqli_query($db,$query);
 foreach($arrayOfArrayOfIngredients as $value){
     foreach($value as $innerValue){//innerValue will be each ingredient within its product in string form
         $innerValue=addslashes($innerValue);
@@ -67,7 +68,6 @@ foreach($arrayOfArrayOfIngredients as $value){
             $ingredientId=mysqli_fetch_assoc($result);
         }else{
             $query = "INSERT INTO `ingredient_rating` (ingredient_id, ingredient_name, Description) value ($ingredientIdNum,'$innerValue','added ingredient')";
-            echo $query;
             mysqli_query($db,$query);
             $ingredientIdNum++;
             $ingredientId['ingredient_id']=$ingredientIdNum;
@@ -79,15 +79,4 @@ foreach($arrayOfArrayOfIngredients as $value){
     $x++;
 }
 echo 'mission complete';
-
-function deleteMissingIngs($db){
-    $query = "DELETE FROM `ingredient_rating` WHERE `ingredient_id` >= 1716";
-    mysqli_query($db,$query);
-}
-// function insertMissingIngRow($ingredientName, $db){
-//     $query = "INSERT INTO `ingredient_rating` (ingredient_name, Description) value ($ingredientName,'added ingredient')";
-//     mysqli_query($db,$query);
-//     global $ingredientIdNum;
-//     $ingredientIdNum++;
-// }
 ?>
