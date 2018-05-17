@@ -1,6 +1,6 @@
 <?php
+header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
 require_once('./db_connect.php');
-
 $search_input = 'Water';
 $query = "SELECT 
 `ingredient_name` AS ingredient, 

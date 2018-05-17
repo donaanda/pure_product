@@ -1,6 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
 require_once('./db_connect.php');
+print_r($_POST);
 $product_id = 1; 
 $output=[];
 if(empty($product_id)){
@@ -18,5 +19,5 @@ if(empty($product_id)){
     }
 }
 
-echo 'json encoded: '.json_encode($output);
+print(json_encode($output));
 ?>
