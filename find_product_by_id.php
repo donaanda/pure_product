@@ -6,7 +6,7 @@ $product_id = 1;
 $output=[
     'success'=>false,
     'product'=>[],
-    'ingredient'=>[]
+    'ingredients'=>[]
 ];
 if(empty($product_id)){
     $output['error'] = 'Need product id!';
