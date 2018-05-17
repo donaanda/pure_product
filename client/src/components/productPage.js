@@ -16,17 +16,15 @@ import axios from 'axios';
 class ProductPage extends Component {
     constructor(props) {
         super(props);
-        console.log('props', props, 'id: ', props.match.params.id);
 
         this.state = {}
 
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         var id = this.props.match.params.id;
-        axios.post(`http://localhost:8888/find_product_by_id.php`, id)
+        await axios.post(`http://localhost:8888/find_product_by_id.php`, id)
             .then(res => {
-                console.log(res);
                 this.setState({
                     data: res
                 })
@@ -56,7 +54,6 @@ class ProductPage extends Component {
                 <Footer />
             </section>
         )
-    }
+    };
 };
-
 export default ProductPage;
