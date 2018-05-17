@@ -62,11 +62,13 @@ mysqli_query($db,$query);
 foreach($arrayOfArrayOfIngredients as $value){
     foreach($value as $innerValue){//innerValue will be each ingredient within its product in string form
         $innerValue=addslashes($innerValue);
+        set_time_limit ( 30 );
         $query = "SELECT `ingredient_id` FROM `ingredient_rating` WHERE ingredient_name = '$innerValue'";
         $result=mysqli_query($db,$query);
         if(mysqli_num_rows($result)){
             $ingredientId=mysqli_fetch_assoc($result);
         }else{
+            echo $ingredientIdNum;
             $query = "INSERT INTO `ingredient_rating` (ingredient_id, ingredient_name, Description) value ($ingredientIdNum,'$innerValue','added ingredient')";
             mysqli_query($db,$query);
             $ingredientIdNum++;
