@@ -33,7 +33,6 @@ class ProductPage extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <section>
                 <Header />
@@ -56,6 +55,6 @@ class ProductPage extends Component {
             </section>
         )
     }
-};
+}
 
 export default ProductPage;
