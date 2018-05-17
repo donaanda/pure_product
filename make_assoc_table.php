@@ -68,7 +68,6 @@ foreach($arrayOfArrayOfIngredients as $value){
         if(mysqli_num_rows($result)){
             $ingredientId=mysqli_fetch_assoc($result);
         }else{
-            echo $ingredientIdNum;
             $query = "INSERT INTO `ingredient_rating` (ingredient_id, ingredient_name, Description) value ($ingredientIdNum,'$innerValue','added ingredient')";
             mysqli_query($db,$query);
             $ingredientIdNum++;
