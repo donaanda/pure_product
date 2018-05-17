@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
 require_once('./db_connect.php');
 $product_id = 1;
 $query = "SELECT 
