@@ -15,8 +15,7 @@ import axios from 'axios';
 class ProductPage extends Component {
     constructor(props) {
         super(props);
-        console.log('props', props, 'id: ', props.match.params.id);
-
+        //console.log('props', props, 'id: ', props.match.params.id);
         this.state = {}
 
     }
@@ -25,7 +24,7 @@ class ProductPage extends Component {
         var id = this.props.match.params.id;
         axios.post(`http://localhost:8888/find_product_by_id.php`, id)
             .then(res => {
-                console.log(res);
+                console.log(res.data["products"]);
                 this.setState({
                     data: res
                 })
