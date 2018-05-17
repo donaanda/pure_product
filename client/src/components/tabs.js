@@ -7,6 +7,7 @@ class Tabs1 extends Component {
 
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
             tabIndex: 0,
         }
@@ -61,7 +62,7 @@ class Tabs1 extends Component {
                 </TabList>
                 <TabPanel>
                     <div className="tab-ingredient">
-                        <IngredientList info={this.ingredients}/>
+                        <IngredientList info={this.ingredients} />
                     </div>
                 </TabPanel>
                 <TabPanel>
