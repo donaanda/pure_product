@@ -27,7 +27,6 @@ const App = () => {
             <Route path="/myAccount" component={MyAccountPage} />
             <Route path="/search_ingredient" component={LookUpIngredient} />
             <Route path="/check_products" component={CheckProducts} />
-            {/* <Route path="/product" component={ProductPage} /> */}
             <Route path="/product/:id?" component={ProductPage} />
             <Route path="/safety_rating" component={SafetyRating} />
             <Route path="/gentle_rating" component={GentleRating} />
@@ -37,7 +36,6 @@ const App = () => {
             <Route path="/faq" component={FAQ} />
             <Route path="/about_the_site" component={AboutTheSite} />
             <Route path="/expanded_menu" component={ExpandedMenu} />
-            <Route path="/product/:id" component={ProductPage} />
         </section>
     )
 };

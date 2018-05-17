@@ -22,11 +22,8 @@ class ProductPage extends Component {
     }
 
     componentDidMount() {
-        axios.post(`http://localhost:8888/find_product_by_id.php`,
-            {
-                id: this.props.match.params.id
-            }
-        )
+        var id = this.props.match.params.id;
+        axios.post(`http://localhost:8888/find_product_by_id.php`, id)
             .then(res => {
                 console.log(res);
                 this.setState({
