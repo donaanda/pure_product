@@ -48,7 +48,7 @@ class ProductPage extends Component {
 
                 <div>
 
-                    <Tabs1 />
+                    <Tabs1 ingredients={this.state.ingredients} />
 
                 </div>
                 <Footer />
