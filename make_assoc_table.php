@@ -27,11 +27,16 @@ foreach($output['data']as$value){
         // }
         $currLetter=substr($value['ingredient_list'],$i,1);
         if($currLetter===','){
+            if(substr($wordToAdd,0,1)===' '){
+                $wordToAdd=substr($wordToAdd,1,strlen($wordToAdd)-1);
+            }
+            if(substr($wordToAdd,strlen($wordToAdd)-1,1)===' '){
+                $wordToAdd=substr($wordToAdd,0,strlen($wordToAdd)-2);
+            }
             array_push($arrayOfIngredients,$wordToAdd);
             $wordToAdd='';
-        }else if($currLetter===' '){
-
         }else if($i===strlen($value['ingredient_list'])-1){
+
             $wordToAdd=$wordToAdd.$currLetter;
             array_push($arrayOfIngredients,$wordToAdd);
             $wordToAdd='';
@@ -49,17 +54,25 @@ foreach($output['data']as$value){
 
 $query = "DELETE FROM `product_ingredient_association_table`";
 mysqli_query($db,$query);
+$ingredientIdNum=1716;
 $x=1;
 $y=1;
+$query = "DELETE FROM `ingredient_rating` WHERE `ingredient_id` >= 1716";
+mysqli_query($db,$query);
 foreach($arrayOfArrayOfIngredients as $value){
-    foreach($value as $innerValue){
+    foreach($value as $innerValue){//innerValue will be each ingredient within its product in string form
         $innerValue=addslashes($innerValue);
+        set_time_limit ( 30 );
         $query = "SELECT `ingredient_id` FROM `ingredient_rating` WHERE ingredient_name = '$innerValue'";
         $result=mysqli_query($db,$query);
         if(mysqli_num_rows($result)){
             $ingredientId=mysqli_fetch_assoc($result);
         }else{
-            $ingredientId=0;
+            echo $ingredientIdNum;
+            $query = "INSERT INTO `ingredient_rating` (ingredient_id, ingredient_name, Description) value ($ingredientIdNum,'$innerValue','added ingredient')";
+            mysqli_query($db,$query);
+            $ingredientIdNum++;
+            $ingredientId['ingredient_id']=$ingredientIdNum;
         }
         $query = "INSERT INTO `product_ingredient_association_table` (product_id,ingredient_id) value ($x,".$ingredientId['ingredient_id'].")";
         mysqli_query($db,$query);
