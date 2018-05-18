@@ -28,7 +28,7 @@ if(empty($product_id)){
     FROM
     `product_name`
     JOIN `product_foundation_table` ON product_name.product_id = product_foundation_table.product_id
-    WHERE `product_id` = $product_id";
+    WHERE `product_foundation_table`.`product_id` = $product_id";
     $result=mysqli_query($db,$query);
     if(mysqli_num_rows($result)){
         $row=mysqli_fetch_assoc($result);

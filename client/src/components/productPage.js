@@ -21,18 +21,23 @@ class ProductPage extends Component {
             ingredients: undefined,
             product: {
                 Combo: "N/A",
+                Coverage: "N/A",
+                Cruelty_Free: "N/A",
                 Dry: "N/A",
                 Normal: "N/A",
                 Oily: "N/A",
+                product_ID: "N/A",
                 Sensitive: "N/A",
+                Vegan: "N/A",
                 brand: "N/A",
                 categories: "N/A",
+                gentle_avg_rating: "N/A",
                 detail: "N/A",
                 img_src: "N/A",
                 price: "N/A",
-                product_id: "N/A",
                 product_name: "N/A",
                 rating: "N/A",
+                safety_avg_ating: "N/A",
                 size: "N/A"
             },
         }
@@ -59,13 +64,13 @@ class ProductPage extends Component {
                 <section>
                     <Header />
                     <DisplayImage brand={product.brand} product_name={product.product_name}
-                        safety_rating={product.rating} gentle_rating={product.rating} />
+                        safety_rating={product.safety_avg_ating} gentle_rating={product.gentle_avg_rating} />
                     <div className="product-page-gentle-safety-rating">
                         <div className="product-page-gentle-rating">GENTLE RATING
-                    <span><img src={GentleIcon} />{product.rating}</span>
+                    <span><img src={GentleIcon} />{product.gentle_avg_rating}</span>
                         </div>
                         <div className="product-page-safety-rating">SAFETY RATING
-                    <span><img src={SafetyIcon} />{product.rating}</span>
+                    <span><img src={SafetyIcon} />{product.safety_avg_ating}</span>
                         </div>
                     </div>
 
