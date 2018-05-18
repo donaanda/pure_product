@@ -3,15 +3,9 @@ header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
 require_once('./db_connect.php');
 $category = 'foundation';
 $query = "SELECT 
-`product_name`,
-`brand`,
-`detail`,
-`img_src`,
-`size`,
-`rating`
+*
 FROM `product_name`
 WHERE `categories` LIKE '%$category%'
-GROUP BY 1,2,3,4,5,6
 ";
 $result=mysqli_query($db,$query);
 

@@ -11,7 +11,24 @@ $output=[
 if(empty($product_id)){
     $output['error'] = 'Need product id!';
 } else{
-    $query = "SELECT * FROM `product_name` WHERE `product_id` = $product_id";
+    $query = "SELECT
+    product_name.*,
+    `size`,
+    `rating`,
+    `price`,
+    `Normal`,
+    `Dry`,
+    `Combo`,
+    `Sensitive`,
+    `Oily`,
+    `Coverage`,
+    `What_it_is` AS Details,
+    `Cruelty_Free`,
+    `Vegan`
+    FROM
+    `product_name`
+    JOIN `product_foundation_table` ON product_name.product_id = product_foundation_table.product_id
+    WHERE `product_foundation_table`.`product_id` = $product_id";
     $result=mysqli_query($db,$query);
     if(mysqli_num_rows($result)){
         $row=mysqli_fetch_assoc($result);
