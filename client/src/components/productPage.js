@@ -55,7 +55,7 @@ class ProductPage extends Component {
 
     render() {
         const { ingredients, product } = this.state.data;
-        console.log(this.state.data);
+
         if (this.state.data.success === false) {
             return null;
         } else {
@@ -63,8 +63,9 @@ class ProductPage extends Component {
             return (
                 <section>
                     <Header />
-                    <DisplayImage brand={product.brand} product_name={product.product_name}
-                        safety_rating={product.safety_avg_ating} gentle_rating={product.gentle_avg_rating} />
+
+                    <DisplayImage product={product} />
+
                     <div className="product-page-gentle-safety-rating">
                         <div className="product-page-gentle-rating">GENTLE RATING
                     <span><img src={GentleIcon} />{product.gentle_avg_rating}</span>

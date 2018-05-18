@@ -9,7 +9,9 @@ import SafetyRating from '../assets/images/displayImages/Text_2.png';
 
 export default (props) => {
 
-    /*const {src} = props.about;*/
+    console.log(props.product);
+
+    const {Product_Name, Brand, Price, Image, Detail, Categories, Product_ID} = props.product;
 
     return (
         <section>
@@ -19,8 +21,11 @@ export default (props) => {
                 <img className='safety-icon' src={Group_1} />
                 <img className='gentle-rating' src={Text_1} />
                 <img className='safety-rating' src={SafetyRating} />
-                <h3 className='product-name'>FENTY BEAUTY BY RIHANNA</h3>
-                <p className='product-name'>Pro Filt'r Soft Matte Longwear Foundation</p>
+                <h1 className='product-name'>Product Name: {Product_Name}</h1>
+                <h3 className='product-name'>Brand: {Brand}</h3>
+                <h3 className='product-name'>Price: {Price}</h3>
+                <h3 className='product-name'>Detail: {Detail}</h3>
+                <h3 className='product-name'>Categories: {Categories}</h3>
             </div>
         </section>
     )
