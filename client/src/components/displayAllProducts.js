@@ -3,7 +3,7 @@ import DisplayImage from './displayImage';
 import ImageData from './imageData';
 import { Link } from 'react-router-dom';
 
-const DisplayAllProducts = () => {
+const DisplayAllProducts = (props) => {
 
     const images = ImageData.map((img, index) => {
         return (

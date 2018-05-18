@@ -54,17 +54,19 @@ class ProductPage extends Component {
     }
 
     render() {
+        console.log(props);
         const { ingredients, product } = this.state.data;
 
         if (this.state.data.success === false) {
             return null;
         } else {
-
+            debugger;
+            const displayImageComponent = product !== undefined ? <DisplayImage product={product} /> : <div>no product specified}</div>;
             return (
                 <section>
                     <Header />
 
-                    <DisplayImage product={product} />
+                    {displayImageComponent}
 
                     <div className="product-page-gentle-safety-rating">
                         <div className="product-page-gentle-rating">GENTLE RATING

@@ -8,10 +8,12 @@ import SafetyRating from '../assets/images/displayImages/Text_2.png';
 
 
 export default (props) => {
-
+    if (props.product === undefined) {
+        return (<div>no product specified</div>)
+    }
     console.log(props.product);
 
-    const {Product_Name, Brand, Price, Image, Detail, Categories, Product_ID} = props.product;
+    const { Product_Name, Brand, Price, Image, Detail, Categories, Product_ID } = props.product;
 
     return (
         <section>
@@ -27,6 +29,6 @@ export default (props) => {
                 <h3 className='product-name'>Detail: {Detail}</h3>
                 <h3 className='product-name'>Categories: {Categories}</h3>
             </div>
-        </section>
+        </section >
     )
 }
