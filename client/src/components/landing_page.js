@@ -11,9 +11,8 @@ import Header from './header.js';
 import '../assets/css/footer_landing_sign_in.css';
 import ExpandedMenuWelcome from './expandedMenuWelcome';
 
-
-
 class LandingPage extends Component {
+
     render() {
         return (
             <section className="landing_page">
@@ -55,7 +54,7 @@ class LandingPage extends Component {
                         <span>Product finder</span>
                     </div>
                 </Link>
-                <DisplayAllProducts />
+                {/* <DisplayAllProducts /> */}
                 <Footer />
             </section>
         )
