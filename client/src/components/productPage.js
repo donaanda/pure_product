@@ -5,8 +5,6 @@ import DisplayImage from './displayImage';
 import '../assets/css/productPage.css';
 import GentleIcon from '../assets/images/displayImages/Compound Path_1.png';
 import SafetyIcon from '../assets/images/displayImages/Group_1.png';
-import GentleRating from '../assets/images/displayImages/Text_1.png';
-import SafetyRating from '../assets/images/displayImages/Text_2.png';
 import Header from './header';
 import Footer from './footer';
 import axios from 'axios';
@@ -52,19 +50,22 @@ class ProductPage extends Component {
 
     render() {
         const { ingredients, product } = this.state.data;
+        console.log(this.state.data);
         if (this.state.data.success === false) {
             return null;
         } else {
+
             return (
                 <section>
                     <Header />
-                    <DisplayImage brand={product.brand} />
+                    <DisplayImage brand={product.brand} product_name={product.product_name}
+                        safety_rating={product.rating} gentle_rating={product.rating} />
                     <div className="product-page-gentle-safety-rating">
                         <div className="product-page-gentle-rating">GENTLE RATING
-                    <span><img src={GentleIcon} /><img src={GentleRating} /></span>
+                    <span><img src={GentleIcon} />{product.rating}</span>
                         </div>
                         <div className="product-page-safety-rating">SAFETY RATING
-                    <span><img src={SafetyIcon} /><img src={SafetyRating} /></span>
+                    <span><img src={SafetyIcon} />{product.rating}</span>
                         </div>
                     </div>
 
