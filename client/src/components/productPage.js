@@ -55,7 +55,6 @@ class ProductPage extends Component {
         if (this.state.data.success === false) {
             return null;
         } else {
-            console.log('product', product.brand);
             return (
                 <section>
                     <Header />

@@ -49,6 +49,7 @@ class Tabs1 extends Component {
     }
 
     render() {
+        //console.log(props);
 
         const { tab } = this.state;
 
