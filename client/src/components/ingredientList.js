@@ -5,6 +5,7 @@ import '../assets/css/ingredientList.css';
 import Ingredient from './ingredient';
 
 export default (props) => {
+    console.log(props);
     const ingredients = props.info.map((ingredient, index) => {
         return (
             <Ingredient key={index} ingredientInfo={ingredient} />

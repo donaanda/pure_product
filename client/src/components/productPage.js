@@ -10,6 +10,7 @@ import SafetyRating from '../assets/images/displayImages/Text_2.png';
 import Header from './header';
 import Footer from './footer';
 import axios from 'axios';
+import ingredient from './ingredient';
 // props.match.params.id
 
 
@@ -21,7 +22,6 @@ class ProductPage extends Component {
             data: { success: false },
             ingredients: undefined,
             product: {
-                'Acne-Prone': "N/A",
                 Combo: "N/A",
                 Dry: "N/A",
                 Normal: "N/A",
@@ -38,7 +38,6 @@ class ProductPage extends Component {
                 size: "N/A"
             },
         }
-
     }
 
     async componentDidMount() {
@@ -52,13 +51,15 @@ class ProductPage extends Component {
     }
 
     render() {
+        const { ingredients, product } = this.state.data;
         if (this.state.data.success === false) {
             return null;
         } else {
+            console.log('product', product.brand);
             return (
                 <section>
                     <Header />
-                    <DisplayImage />
+                    <DisplayImage brand={product.brand} />
                     <div className="product-page-gentle-safety-rating">
                         <div className="product-page-gentle-rating">GENTLE RATING
                     <span><img src={GentleIcon} /><img src={GentleRating} /></span>
@@ -70,7 +71,7 @@ class ProductPage extends Component {
 
                     <div>
 
-                        <Tabs1 ingredients={this.state.data.ingredients} />
+                        <Tabs1 ingredients={ingredients} />
 
                     </div>
                     <Footer />
