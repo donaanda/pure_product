@@ -4,17 +4,20 @@ import ImageData from './imageData';
 import { Link } from 'react-router-dom';
 
 const DisplayAllProducts = (props) => {
-
-    const images = ImageData.map((img, index) => {
+    console.log('product',props.data.data);
+    if (props.data.data === null){
+        return <div>Nothing</div>
+    }
+        const products = props.data.data.map((item, index) => {
         return (
-            <DisplayImage key={index} about={img} />
+            <DisplayImage key={index} product={item} />
         )
     });
 
     return (
         <section className="product-container">
             <Link to="/product">
-                {images}
+                {products}
             </Link>
         </section>
     )
