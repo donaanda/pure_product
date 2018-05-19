@@ -10,10 +10,33 @@ import product from '../assets/images/landing_page_icons/product.png';
 import Header from './header.js';
 import '../assets/css/footer_landing_sign_in.css';
 import ExpandedMenuWelcome from './expandedMenuWelcome';
+import axios from 'axios';
 
 class LandingPage extends Component {
+    constructor(){
+        super();
+        this.state = {
+            data: {
+                data: null
+            }
+        }
+    }
+
+   
+    async componentDidMount() {
+        var id = this.props.match.params.id;
+        await axios.post(`http://localhost:8888/get_product_by_categories.php`)
+            .then(res => {
+                //console.log(res);
+                this.setState({
+                    data: res.data
+                }, ()=>console.log(this.state))
+            })
+    }
+    
 
     render() {
+        const {data} = this.state
         return (
             <section className="landing_page">
                 <Header />
@@ -54,7 +77,7 @@ class LandingPage extends Component {
                         <span>Product finder</span>
                     </div>
                 </Link>
-                {/* <DisplayAllProducts /> */}
+                <DisplayAllProducts data={data}/>
                 <Footer />
             </section>
         )

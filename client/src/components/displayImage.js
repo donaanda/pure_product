@@ -13,7 +13,7 @@ export default (props) => {
     }
     console.log(props.product);
 
-    const { Product_Name, Brand, Price, Image, Detail, Categories, Product_ID } = props.product;
+    const { product_name, brand, price, img_src, categories, Product_ID, gentle_avg_rating, safety_avg_ating} = props.product;
 
     return (
         <section>
@@ -23,11 +23,11 @@ export default (props) => {
                 <img className='safety-icon' src={Group_1} />
                 <img className='gentle-rating' src={Text_1} />
                 <img className='safety-rating' src={SafetyRating} />
-                <h1 className='product-name'>Product Name: {Product_Name}</h1>
-                <h3 className='product-name'>Brand: {Brand}</h3>
-                <h3 className='product-name'>Price: {Price}</h3>
-                <h3 className='product-name'>Detail: {Detail}</h3>
-                <h3 className='product-name'>Categories: {Categories}</h3>
+                <h1 className='product-name'>Product Name: {product_name}</h1>
+                <h3 className='product-name'>Brand: {brand}</h3>
+                <h3 className='product-name'>Price: {price}</h3>
+                {/* <h3 className='product-name'>Detail: {Detail}</h3> */}
+                <h3 className='product-name'>Categories: {categories}</h3>
             </div>
         </section >
     )
