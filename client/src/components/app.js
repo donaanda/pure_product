@@ -11,7 +11,7 @@ import CheckProducts from './checkProducts';
 import ProductPage from './productPage';
 import SafetyRating from './safetyRating';
 import GentleRating from './gentleRating';
-import DisplayAllStandAlone from './displayAll_standAlone.js';
+import GentleProducts from './gentle_products';
 import CreateAccount from './create_account';
 import OurTeam from './ourTeam';
 import FAQ from './FAQ';
@@ -31,7 +31,7 @@ const App = () => {
             <Route path="/product/:id?" component={ProductPage} />
             <Route path="/safety_rating" component={SafetyRating} />
             <Route path="/gentle_rating" component={GentleRating} />
-            <Route path="/gentle_products" component={DisplayAllStandAlone} />
+            <Route path="/gentle_products" component={GentleProducts} />
             <Route path="/create_account" component={CreateAccount} />
             <Route path="/our_team" component={OurTeam} />
             <Route path="/faq" component={FAQ} />
