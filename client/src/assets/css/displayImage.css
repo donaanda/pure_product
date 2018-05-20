@@ -1,6 +1,7 @@
 
 .product-display-container {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
     position: relative;
     width: 45vw;
     margin: 4vw 2vw;
@@ -20,6 +21,11 @@ img {
 
 .product-image {
     position: relative;
+}
+
+.gentle-icon, .safety-icon {
+    height: 3.5vh;
+    width: 3.5vh;
 }
 
 .gentle-icon {
@@ -56,6 +62,12 @@ img {
     display: none;
 }
 
+.brand-text, .price-text, .product-name-text {
+    display: inline-block;
+    font-size: 3.2vmin;
+    padding: 2vmin 2vmin;
+} 
+
 .brand-text, .price-text {
     color: darkgrey;
     font-weight: 100;
@@ -63,9 +75,5 @@ img {
 
 .product-name-text {
     color: rgb(15, 20, 28);
-    font-size: 4.5vmin;
+    font-size: 3.5vmin;
 }
-
-.brand-text, .price-text, .product-name-text {
-    display: inline-block;
-} 
