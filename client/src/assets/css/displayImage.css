@@ -1,9 +1,13 @@
-.product-container {
-    flex-wrap: wrap;
-    display: flex;
-}
 
+.product-display-container {
+    display: inline-block;
+    position: relative;
+    width: 45vw;
+    margin: 4vw 2vw;
+    vertical-align: 0;
+}
 .image-container {
+    display: inline-block;
     position: relative;
     margin: auto;
     text-align: center;
@@ -43,5 +47,25 @@ img {
 }
 
 .product-name {
-    font-size: .01rem;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
 }
+
+.hidden {
+    display: none;
+}
+
+.brand-text, .price-text {
+    color: darkgrey;
+    font-weight: 100;
+}
+
+.product-name-text {
+    color: rgb(15, 20, 28);
+    font-size: 4.5vmin;
+}
+
+.brand-text, .price-text, .product-name-text {
+    display: inline-block;
+} 

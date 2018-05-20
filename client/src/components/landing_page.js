@@ -13,7 +13,7 @@ import ExpandedMenuWelcome from './expandedMenuWelcome';
 import axios from 'axios';
 
 class LandingPage extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             data: {
@@ -22,7 +22,7 @@ class LandingPage extends Component {
         }
     }
 
-   
+
     async componentDidMount() {
         var id = this.props.match.params.id;
         await axios.post(`http://localhost:8888/get_product_by_categories.php`)
@@ -30,13 +30,14 @@ class LandingPage extends Component {
                 //console.log(res);
                 this.setState({
                     data: res.data
-                }, ()=>console.log(this.state))
+                }, () => console.log(this.state))
             })
     }
-    
+
 
     render() {
-        const {data} = this.state
+        console.log('from landing page: ', this.state);
+        const { data } = this.state
         return (
             <section className="landing_page">
                 <Header />
@@ -77,7 +78,7 @@ class LandingPage extends Component {
                         <span>Product finder</span>
                     </div>
                 </Link>
-                <DisplayAllProducts data={data}/>
+                <DisplayAllProducts data={data} />
                 <Footer />
             </section>
         )
