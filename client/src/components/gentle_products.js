@@ -27,11 +27,6 @@ class GentleProducts extends Component{
                 }, () => console.log(this.state))
             })
     }
-    // const images = ImageData.map((img, index) => {
-    //     return (
-    //         <DisplayImage key={index} about={img} />
-    //     )
-    // });
     render(){
         const { data } = this.state;
         return (
