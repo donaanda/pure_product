@@ -130,7 +130,7 @@ form.product_finder {
 
 section.landing_page {
     display: block;
-    background-image: url("../images/landing_page_icons/foundation.png");
+    /* background-image: url("../images/landing_page_icons/foundation.png"); */
     background-size: cover;
 }
 
