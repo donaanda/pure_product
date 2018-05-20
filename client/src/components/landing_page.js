@@ -37,7 +37,7 @@ class LandingPage extends Component {
 
     render() {
         console.log('from landing page: ', this.state);
-        const { data } = this.state
+        const { data } = this.state;
         return (
             <section className="landing_page">
                 <Header />
