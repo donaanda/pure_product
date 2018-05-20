@@ -2,11 +2,16 @@
 header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
 require_once('./db_connect.php');
 $category = 'foundation';
-$query = "SELECT 
-*
-FROM `product_name`
-WHERE `categories` LIKE '%$category%' LIMIT 10
-";
+$query = "SELECT
+product_name.*,
+`rating`,
+`price`,
+`Cruelty_Free`,
+`Vegan`
+FROM
+`product_name`
+JOIN `product_foundation_table` ON product_name.product_id = product_foundation_table.product_id
+WHERE `categories` LIKE '%$category%' LIMIT 4";
 $result=mysqli_query($db,$query);
 
 $output=[
