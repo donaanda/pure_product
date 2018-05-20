@@ -5,7 +5,7 @@ $category = 'foundation';
 $query = "SELECT 
 *
 FROM `product_name`
-WHERE `categories` LIKE '%$category%' LIMIT 4
+WHERE `categories` LIKE '%$category%' LIMIT 10
 ";
 $result=mysqli_query($db,$query);
 
