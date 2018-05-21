@@ -6,9 +6,9 @@ import Footer from './footer';
 class ProductFinder extends Component {
     render() {
         return (
-            <section className="product_finder">
+            <section>
                 <Header />
-                <form className="product_finder">
+                <form className="product_finder_content">
                     <div>
                         <h2>I would like to find something with these attributes...</h2>
                         <div><input type="checkbox" name="alpha-hydroxy-acids" /> <label>alpha-hydroxy acids</label></div>
