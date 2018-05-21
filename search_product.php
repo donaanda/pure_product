@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
+require_once('./header.php');
 require_once('./db_connect.php');
 $search_input = 'Foundation';
 $query = "SELECT
