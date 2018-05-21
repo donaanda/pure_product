@@ -1,8 +1,11 @@
 <?php
-header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+$postdata = file_get_contents("php://input"); //to get axios call data
+$request = json_decode($postdata); // decode json
 require_once('./db_connect.php');
 // print_r($_POST);
-$product_id = 1; 
+$product_id = $request->id; 
 $output=[
     'success'=>false,
     'product'=>[],
