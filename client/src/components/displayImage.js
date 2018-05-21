@@ -12,10 +12,10 @@ export default (props) => {
     } else {
         console.log(props.product);
 
-        const { product_name, brand, price, img_src, categories, Product_ID, gentle_avg_rating, safety_avg_rating, rating } = props.product;
+        const { product_name, brand, price, img_src, categories, product_id, gentle_avg_rating, safety_avg_rating, rating } = props.product;
         console.log('from displayImage, gentle/safety rating: ', gentle_avg_rating, safety_avg_rating);
         return (
-            <Link to={"product/" + Product_ID}>
+            <Link to={"product/" + product_id}>
                 <div className="product-display-container">
                     <div className='image-container'>
                         <img className='product-image' src={Image_1} />
