@@ -13,11 +13,15 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+h1 {
+    text-align: center;
+}
+
 /* footer*/
 
 .site-footer {
     position: relative;
-    background-color: black;
+    background-color: #555555;
     width: 100vw;
     height: 40vw;
     bottom: 0;
@@ -30,18 +34,18 @@ body {
     text-align: center;
     height: 7vh;
     width: 50vw;
-    background-color: black;
+    background-color: #555555;
     cursor: pointer;
 }
 
-.footer-content > span {
+.footer-content>span {
     display: inline-block;
     color: white;
     line-height: 100%;
     padding: 1.5vh;
 }
 
-.footer-content > img {
+.footer-content>img {
     float: left;
 }
 
@@ -54,19 +58,36 @@ body {
 
 /* product finder */
 
-.product_finder {
+.product_finder_landing_button {
     display: table;
+    font-family: 'Cedarville Cursive', cursive;
+    background-color: rgba(184, 234, 251, 0.5);
+    width: 90vw;
+    height: 10vh;
+    margin: auto;
+    text-align: center;
+    font-size: 11vmin;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    line-height: 10vh;
+}
+
+.product_finder_landing_button>span {
+    display: table-cell;
+    vertical-align: center;
+}
+
+.product_finder_content {
     width: 100vw;
     /* text-align: center; */
     height: 15vh;
-    background-color:  rgba(184, 234, 251, 0.5);
+    background-color: rgba(184, 234, 251, 0.5);
 }
 
 form.product_finder {
     height: 100vh;
 }
 
-.product_finder > div {
+.product_finder>div {
     margin: 5vh;
 }
 
@@ -76,61 +97,78 @@ form.product_finder {
     color: white;
 }
 
-.product_finder > label {
+.product_finder>label {
     display: inline-block;
 }
 
 /* landing page content */
 
+.landing-page-button-container {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    /* background-image: url("../images/landing_page_icons/foundation_transparent.png"); */
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .landing_button {
     display: inline-block;
     position: relative;
     vertical-align: top;
+    margin: 2.5vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.landing_button, .wrap-landing-img {
-    width: 50vw;
-    height: 40vh;
+.landing_button,
+.wrap-landing-img {
+    width: 45vw;
+    height: 30vh;
 }
 
 .wrap-landing-img {
     padding: 15%;
 }
 
-.landing_img{
+.landing_img {
     padding: 10%;
 }
 
-.wrap-landing-img > .landing_img, 
-.landing_button > .wrap-landing-img > span {
+.wrap-landing-img>.landing_img,
+.landing_button>.wrap-landing-img>span {
     margin: auto;
     display: block;
     text-align: center;
 }
 
-.wrap-landing-img > span, .product_finder > span {
+.wrap-landing-img>span,
+.product_finder>span {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
 }
 
-.product_finder > span {
+.product_finder>span {
     font-size: 2em;
 }
 
-.safety{
+.safety,
+.products,
+.safety_rating,
+.gentle_rating {
+    color: #555555;
+}
+
+.safety {
     background-color: rgba(184, 234, 251, 0.5);
-} 
+}
 
-.products{
-    background-color: rgba(253, 207, 246,0.5);
-    color: white;
-} 
+.products {
+    background-color: rgba(253, 207, 246, 0.5);
+}
 
-.safety_rating{
-    background-color: rgba(253, 207, 246,0.5);
-    color: white;
-} 
+.safety_rating {
+    background-color: rgba(253, 207, 246, 0.5);
+}
 
 .gentle_rating {
     background-color: rgba(37, 203, 109, 0.5);
@@ -138,11 +176,11 @@ form.product_finder {
 
 section.landing_page {
     display: block;
-    /* background-image: url("../images/landing_page_icons/foundation.png"); */
     background-size: cover;
 }
 
 /*sign in form */
+
 form.sign_in_form {
     background-color: rgba(37, 203, 109, 0.5);
     width: 100vw;
@@ -150,26 +188,31 @@ form.sign_in_form {
     padding-top: 15vh;
 }
 
-.email > label, .password > label, .email > input, .password > input {
+.email>label,
+.password>label,
+.email>input,
+.password>input {
     display: block;
     font-size: 1em;
     font-weight: 600;
-    width:60vw;
+    width: 60vw;
     height: 10vw;
     margin: 2vh auto;
 }
 
-.email, .password {
+.email,
+.password {
     margin: auto;
 }
 
-.sign_in_form > button {
+.sign_in_form>button {
     display: block;
     margin: 2vh auto;
     height: 10vh;
     width: 10vh;
-    background-color: rgba(184, 234, 251,0.7);
+    background-color: rgba(184, 234, 251, 0.7);
 }
+
 /* for screens larger than a cell phone */
 
 @media only screen and (min-width: 768px) {
@@ -184,18 +227,15 @@ form.sign_in_form {
     .copyright_span {
         font-size: 1vmin;
     }
-
     div.copyright_span {
         display: block;
         width: 100vw;
     }
     /*landing page */
-    
     .wrap-landing-img {
         padding: 5%;
     }
-    
-    .landing_img{
+    .landing_img {
         padding: 5%;
     }
 }

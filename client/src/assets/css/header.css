@@ -1,8 +1,9 @@
 .header-container {
-    position: relative;
+    /* position: fixed; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: 10vh;
     background-color: white;
+    z-index: 1;
 }
 
 .header-icon {

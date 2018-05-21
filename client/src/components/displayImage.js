@@ -11,7 +11,7 @@ export default (props) => {
     } else {
         console.log(props.product);
 
-        const { product_name, brand, price, img_src, categories, Product_ID, gentle_avg_rating, safety_avg_rating } = props.product;
+        const { product_name, brand, price, img_src, categories, Product_ID, gentle_avg_rating, safety_avg_rating, rating } = props.product;
         console.log('from displayImage, gentle/safety rating: ', gentle_avg_rating, safety_avg_rating);
         return (
             <div className="product-display-container">
@@ -21,6 +21,7 @@ export default (props) => {
                     <img className='safety-icon' src={Group_1} />
                     <span className='gentle-rating'>{gentle_avg_rating}</span>
                     <span className='safety-rating'>{safety_avg_rating}</span>
+                    <span>average user rating: {rating}</span>
                     <h3 className='product-name'>
                         <span className="hidden">
                             Brand:
