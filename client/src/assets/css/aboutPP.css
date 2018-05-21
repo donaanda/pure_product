@@ -48,3 +48,8 @@
     filter:progid:DXImageTransform.Microsoft.Glow(Color=white,Strength=5);
     border-radius: 100%;
 }
+
+.our_team, .about-the-site-container {
+    min-height: 80vh;
+    margin: 2vh;
+}
