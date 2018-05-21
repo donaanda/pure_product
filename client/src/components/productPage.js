@@ -45,7 +45,7 @@ class ProductPage extends Component {
 
     async componentDidMount() {
         var id = this.props.match.params.id;
-        await axios.post(`http://localhost:8888/find_product_by_id.php`, id)
+        await axios.post(`http://localhost:8888/find_product_by_id.php`, {id})
             .then(res => {
                 this.setState({
                     data: res.data

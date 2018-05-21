@@ -1,13 +1,15 @@
 <?php
-header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
+require_once('./header.php');
+$postdata = file_get_contents("php://input"); //to get axios call data
+$request = json_decode($postdata); // decode json
 require_once('./db_connect.php');
-// print_r($_POST);
-$product_id = 1; 
+$product_id = $request->id; 
 $output=[
     'success'=>false,
     'product'=>[],
     'ingredients'=>[]
 ];
+
 if(empty($product_id)){
     $output['error'] = 'Need product id!';
 } else{
@@ -39,20 +41,21 @@ if(empty($product_id)){
     }
 
     $query_for_ingredient = "SELECT 
-    `ingredient_name` AS ingredient, 
-    `safety_rating` AS safety, 
-    `gentle_rating` AS gentle,
-    `ingredient_detail` AS details  
-    FROM `ingredient_rating`
-    JOIN
-        (SELECT ingredient_id
-        FROM product_name
-        JOIN product_ingredient_assoc 
-        ON product_name.product_id =product_ingredient_assoc.product_id
-        WHERE product_name.product_id = '$product_id'
-        GROUP BY 1
-    ) product ON product.ingredient_id=ingredient_rating.ingredient_id
-    GROUP BY 1,2,3,4";
+        `ingredient_name` AS ingredient, 
+        `safety_rating` AS safety, 
+        `gentle_rating` AS gentle,
+        `ingredient_detail` AS details  
+        FROM `ingredient_rating`
+        JOIN
+            (SELECT ingredient_id
+            FROM product_name
+            JOIN product_ingredient_assoc 
+            ON product_name.product_id =product_ingredient_assoc.product_id
+            WHERE product_name.product_id = '$product_id'
+            GROUP BY 1) 
+        product 
+        ON product.ingredient_id=ingredient_rating.ingredient_id
+        GROUP BY 1,2,3,4";
     $result=mysqli_query($db,$query_for_ingredient);
     if(mysqli_num_rows($result)>0){
         $output['success']=true;
