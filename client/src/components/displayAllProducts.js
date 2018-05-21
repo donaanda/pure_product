@@ -17,9 +17,7 @@ const DisplayAllProducts = (props) => {
 
         return (
             <div className="display-all-products-content">
-                <Link to="/product">
-                    {products}
-                </Link>
+                {products}
             </div>
         )
     }
