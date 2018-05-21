@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Header from "./header";
+import Footer from "./footer";
+import DisplayAllProducts from "./displayAllProducts";
 
 class SearchProductResult extends Component {
 
@@ -7,41 +10,30 @@ class SearchProductResult extends Component {
         super(props);
 
         this.state = {
-            response : {
-                data: {
-                    data: [{
-                        Product_ID: null,
-                        product_name: null,
-                        brand: null,
-                        categories: null,
-                        gentle_avg_rating: null,
-                        safety_avg_ating: null
-                    }]
-                }
+            data: {
+                data: null
             }
+
         }
     }
 
     async componentDidMount() {
         await axios.post(`http://localhost:8888/search_product.php`).then(response => {
             this.setState({
-                response: response
+                data: response.data
             })
         });
     }
 
 
     render() {
-        const {Product_ID, product_name, brand, categories, gentle_avg_rating, safety_avg_ating} = this.state.response.data.data[0];
-        console.log(this.state.response.data.data[0]);
+        const {data} = this.state;
+        //console.log(this.state.response.data.data[0]);
         return (
-            <section>
-                <div>{Product_ID}</div>
-                <div>{product_name}</div>
-                <div>{brand}</div>
-                <div>{categories}</div>
-                <div>{gentle_avg_rating}</div>
-                <div>{safety_avg_ating}</div>
+            <section className="product-container">
+                <Header/>
+                    <DisplayAllProducts data={data}/>
+                <Footer/>
             </section>
         )
     }
