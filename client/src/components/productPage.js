@@ -68,10 +68,14 @@ class ProductPage extends Component {
 
                     <div className="product-page-gentle-safety-rating">
                         <div className="product-page-gentle-rating">GENTLE RATING
-                    <span><img src={GentleIcon} />{product.gentle_avg_rating}</span>
+                    <span><img src={GentleIcon} />
+                                {product.gentle_avg_rating}
+                            </span>
                         </div>
                         <div className="product-page-safety-rating">SAFETY RATING
-                    <span><img src={SafetyIcon} />{product.safety_avg_rating}</span>
+                    <span><img src={SafetyIcon} />
+                                {product.safety_avg_rating}
+                            </span>
                         </div>
                     </div>
 

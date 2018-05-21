@@ -2,65 +2,46 @@
     padding: 0;
     margin: 0;
     text-align: center;
+    margin-top: 5vh;
+    border: 2px 2px 0 2px solid black;
 }
 
-.tab-header-ingredient {
-    background-color: #ffcc99;
-    font: bold 20px Arial;
-    color: #0099ff;
-    display: inline-block;
-    width: 33.3vw;
-    cursor: pointer;
-    borderColor: #ffcc99;
-    outline: none;
-}
-
-.tab-header-video {
-    background-color: #99ffcc;
-    font: bold 20px Arial;
-    color: #0099ff;
-    display: inline-block;
-    width: 33.3vw;
-    cursor: pointer;
-    borderColor: #99ffcc;
-    outline: none;
-}
-
+.tab-header-ingredient,
+.tab-header-video,
 .tab-header-review {
-    background-color: #ffb3ff;
-    font: bold 20px Arial;
-    color: #0099ff;
+    font-size: 5vmin;
     display: inline-block;
     width: 33.3vw;
     cursor: pointer;
-    borderColor:#ffb3ff;
-    outline: none;
+    border-top: 2px solid #555555;
+    border-right: 2px solid #555555;
+    border-left: 2px solid #555555;
 }
 
 .tab-review {
     text-align: center;
-    background-color: #ffb3ff;
+    /* background-color: #ffb3ff; */
     width: 100vw;
     height: 50vh;
     overflow: hidden;
 }
 
 .tab-review-button {
-    background-color: blue;
+    /* background-color: blue; */
     padding: 5%;
     color: white;
     font-size: large;
 }
 
 .tab-video {
-    background-color: #99ffcc;
+    /* background-color: #99ffcc; */
     width: 100vw;
     height: 50vh;
     overflow: hidden;
 }
 
 .tab-ingredient {
-    background-color: #ffcc99;
+    /* background-color: #ffcc99; */
     width: 100vw;
     height: 50vh;
     overflow: hidden;
