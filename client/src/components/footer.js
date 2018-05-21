@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import github from '..//assets/images/footer_icons/git_hub.png';
 import new_user from '../assets/images/footer_icons/new_user.png';
 import our_team from '../assets/images/footer_icons/our_team.png';
 import q_a from '../assets/images/footer_icons/q_a.png';
@@ -11,14 +10,6 @@ class Footer extends Component {
         return (
             <section className="site-footer">
                 <footer className="site-footer">
-                    <a href="https://github.com/aliawilkinson/c318_pureproduct">
-                        <div className="footer-content">
-                            <img src={github} />
-                            <span>
-                                Github
-                            </span>
-                        </div>
-                    </a>
                     <Link to="/create_account">
                         <div className="footer-content">
                             <img src={new_user} /><span>Create Account</span>
