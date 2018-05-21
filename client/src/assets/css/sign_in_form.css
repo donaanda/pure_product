@@ -1,0 +1,31 @@
+form.sign_in_form {
+    background-color: rgba(37, 203, 109, 0.5);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 15vh;
+}
+
+.email>label,
+.password>label,
+.email>input,
+.password>input {
+    display: block;
+    font-size: 1em;
+    font-weight: 600;
+    width: 60vw;
+    height: 10vw;
+    margin: 2vh auto;
+}
+
+.email,
+.password {
+    margin: auto;
+}
+
+.sign_in_form>button {
+    display: block;
+    margin: 2vh auto;
+    height: 10vh;
+    width: 10vh;
+    background-color: rgba(184, 234, 251, 0.7);
+}

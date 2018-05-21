@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Header from './header';
 import Footer from './footer';
+import '../assets/css/product_finder.css';
 
 class ProductFinder extends Component {
     render() {
