@@ -7,3 +7,44 @@
     display: block;
     margin: auto;
 }
+
+.temp-logo {
+    width: 10vh;
+    height: 10vh;
+}
+
+.github-info-about-site {
+    text-align: center;
+    margin: 2vh;
+}
+
+.button {
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin: 2vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-git {
+    background-color: #555555;
+    color: white;
+}
+
+.button-git:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.git-logo {
+    -moz-box-shadow: 0 0 30px #fff;
+    -webkit-box-shadow: 0 0 30px #fff;
+    box-shadow: 0px 0px 30px #fff;
+    filter:progid:DXImageTransform.Microsoft.Glow(Color=white,Strength=5);
+    border-radius: 100%;
+}
