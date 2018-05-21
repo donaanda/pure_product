@@ -10,6 +10,7 @@ const AboutTheSite = () => {
     return (
         <section>
             <Header />
+            <div className="about-the-site-container">
             <a href="https://github.com/aliawilkinson/c318_pureproduct">
                 <div className="button button-git github-info-about-site">
                     <img className="git-logo" src={github} />
@@ -28,6 +29,7 @@ const AboutTheSite = () => {
                     Cheers,</p>
                 <p>The Pure Product team.
             </p>
+            </div>
             </div>
             <Footer />
         </section>

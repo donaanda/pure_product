@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import '../assets/css/header.css';
-import Image_1 from '../assets/images/header_images/Image_1.png';
 import SearchIcon from '../assets/images/header_images/search.png';
-import HamMenu from '../assets/images/header_images/ham_menu.png';
-import LogoIcon from '../assets/images/header_images/logo.png';
-import LoginIcon from '../assets/images/header_images/sign_in.png';
+import SiteTitle from '../assets/images/header_images/site-title.png';
+import LoginIcon from '../assets/images/header_images/user-login.png';
+import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
 
 const imgs = {
     hamburgerMenu: '',
     logo: '',
-    searchIcon: '',
-    backgroundImage: Image_1
+    searchIcon: ''
 }
 
 class Header extends Component {
@@ -52,29 +50,29 @@ class Header extends Component {
     }
     render() {
         return (
-            <section>
-                <Link to="/create_account">
-                    <img className='headerIcon loginIcon' onClick={this.toggleSearchBar.bind(this)} src={LoginIcon} />
+            <div className="header-container">
+
+                <div className="header-icon login-icon">
+                    <Link to="/create_account">
+                        <img className='headerIcon loginIcon' onClick={this.toggleSearchBar.bind(this)} src={LoginIcon} />
+                    </Link>
+                </div>
+
+                <Link to="/expanded_menu">
+                    <HamburgerMenu />
                 </Link>
-                <div className='headerContainer'>
-                    <div className='iconContainer'>
-                        <Link to="/expanded_menu">
-                            <img className='headerIcon smallerIcon'
-                                src={HamMenu} />
-                        </Link>
-                        <Link to="/">
-                            <div className='headerIcon logoContainer smallerIcon'>
-                                <img onClick={this.toggleSearchBar.bind(this)}
-                                    src={LogoIcon} />
-                                <div className='logoText siteTitle'>PureProduct</div>
-                            </div>
-                        </Link>
-                        <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)}
-                            src={SearchIcon} />
-                    </div>
+
+                <div className="header-icon site-title">
+                    <Link to="/">
+                        <img src={SiteTitle} />
+                    </Link>
+                </div>
+
+                <div className="header-icon search-bar">
+                    <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
                 <input style={this.state.searchBarStyle} />
-            </section>
+            </div >
         )
     }
 }

@@ -1,39 +1,29 @@
-.headerContainer{
-    background-image:url(../images/header_images/Image_1.png);
-    background-size:cover;
-    height:12vh;
-    padding-top:2.5vh;
-} 
- .headerIcon{
-   /* margin-top:5%; */
-}  
- .iconContainer{
-    display: flex;
-    justify-content: space-between;
-    background-color: #e4f7ef;
-    height:75%;
-    margin: 1% 0; 
-} 
- .test{
-    background-image:url(../images/header_images/snip.PNG);
+.header-container {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 10vh;
+    background-color: white;
+}
 
-}
-.loginIcon{
-    position: absolute;
-    top:0;
-    right:0;
-    height:18px;
-    width:20px;
-}
-.logoContainer{
-    display:inherit;
-
-}
-.logoText {
-    font-size:2.3em;
+.header-icon {
     display: inline-block;
+    height: 10vh;
+    border: 2px;
+    vertical-align: top;
 }
-.smallerIcon{
-    height:84%;
-    margin-top:1%;
+
+.login-icon,
+.search-bar {
+    width: 25vw;
+    text-align: center;
+    margin-top: 1vh;
+}
+
+.search-bar {
+    margin-top: 0.5vh;
+}
+
+.site-title {
+    width: 50vw;
+    text-align: center;
 }

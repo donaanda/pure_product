@@ -30,11 +30,9 @@ class Footer extends Component {
                             <img src={temp_logo} /><span>About The Site</span>
                         </div>
                     </Link>
-                    <Link to="./our_team">
                         <div className="footer-content copyright_span">
                             <span className="copyright_span">Copyright © 2018  Pure Product . All rights reserved.</span>
                         </div>
-                    </Link>
                 </footer>
             </section>
         )

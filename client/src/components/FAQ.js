@@ -3,9 +3,9 @@ import Header from './header';
 import Footer from './footer';
 import { Link } from 'react-router-dom';
 
-const OurTeam = () => {
+const FAQ = () => {
     return (
-        <section className="our_team">
+        <section className="FAQ">
             <Header />
             <div className="site-about-container">
             <h1>FAQ</h1>
@@ -28,4 +28,4 @@ const OurTeam = () => {
     )
 }
 
-export default OurTeam;
+export default FAQ;

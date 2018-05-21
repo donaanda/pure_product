@@ -19,15 +19,19 @@ body {
     position: relative;
     background-color: black;
     width: 100vw;
-    height: 70vw;
+    height: 40vw;
     bottom: 0;
 }
 
 .footer-content {
-    padding-left: 2vh;
+    display: inline-block;
+    padding-left: 1vh;
+    padding-top: 1vh;
     text-align: center;
     height: 7vh;
+    width: 50vw;
     background-color: black;
+    cursor: pointer;
 }
 
 .footer-content > span {
@@ -42,8 +46,12 @@ body {
 }
 
 .copyright_span {
-    font-size: 2vmin;
+    font-size: 2.5vmin;
+    display: block;
+    width: 100vw;
+    padding: 0;
 }
+
 /* product finder */
 
 .product_finder {
