@@ -9,14 +9,12 @@ export default (props) => {
     if (props.product === undefined || props.product === null) {
         return (<div>no product specified</div>)
     } else {
-        console.log(props.product);
-
         const { product_name, brand, price, img_src, categories, Product_ID, gentle_avg_rating, safety_avg_rating, rating } = props.product;
-        console.log('from displayImage, gentle/safety rating: ', gentle_avg_rating, safety_avg_rating);
+        console.log('from displayImage, img_src: ', img_src);
         return (
             <div className="product-display-container">
                 <div className='image-container'>
-                    <img className='product-image' src={Image_1} />
+                    <img className='product-image' alt="Smiley face" src={img_src} />
                     <img className='gentle-icon' src={CompoundPath_1} />
                     <img className='safety-icon' src={Group_1} />
                     <span className='gentle-rating'>{gentle_avg_rating}</span>
@@ -46,11 +44,7 @@ export default (props) => {
                             MSRP: ${price}
                         </span>
                     </h3>
-                    {/* <h3 className='product-name'>Detail: {Detail}</h3> */}
                     <h3 className='product-name hidden'>
-                        {/* <span className="hidden">
-                            Categories:
-                    </span> */}
                         {categories}
                     </h3>
                 </div>
