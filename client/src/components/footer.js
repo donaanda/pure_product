@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../assets/css/footer.css';
 import new_user from '../assets/images/footer_icons/new_user.png';
 import our_team from '../assets/images/footer_icons/our_team.png';
 import q_a from '../assets/images/footer_icons/q_a.png';
@@ -30,9 +31,9 @@ class Footer extends Component {
                             <img src={temp_logo} /><span>About The Site</span>
                         </div>
                     </Link>
-                        <div className="footer-content copyright_span">
-                            <span className="copyright_span">Copyright © 2018  Pure Product . All rights reserved.</span>
-                        </div>
+                    <div className="footer-content copyright_span">
+                        <span className="copyright_span">Copyright © 2018  Pure Product . All rights reserved.</span>
+                    </div>
                 </footer>
             </section>
         )

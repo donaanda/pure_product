@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/footer_landing_sign_in.css';
+import '../assets/css/app.css';
 import LandingPage from './landing_page';
 import SignIn from './sign_in';
 import ProductFinder from './product_finder';
@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/faq" component={FAQ} />
             <Route path="/about_the_site" component={AboutTheSite} />
             <Route path="/expanded_menu" component={ExpandedMenu} />
-            <Route path="/search_product_result" component={SearchProductResult}/>
+            <Route path="/search_product_result" component={SearchProductResult} />
         </section>
     )
 };
