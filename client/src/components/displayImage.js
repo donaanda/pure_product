@@ -18,7 +18,7 @@ export default (props) => {
             <Link to={"product/" + product_id}>
                 <div className="product-display-container">
                     <div className='image-container'>
-                        <img className='product-image' src={Image_1} />
+                        <img className='product-image' src={img_src} />
                         <img className='gentle-icon' src={CompoundPath_1} />
                         <img className='safety-icon' src={Group_1} />
                         <span className='gentle-rating'>{gentle_avg_rating}</span>

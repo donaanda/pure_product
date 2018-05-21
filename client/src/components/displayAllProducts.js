@@ -11,7 +11,7 @@ const DisplayAllProducts = (props) => {
     } else {
         const products = props.data.data.map((item, index) => {
             return (
-                <DisplayImage key={index} product={item} />
+                <DisplayImage key={index} product={item} img_src={item.img_src} />
             )
         });
 
