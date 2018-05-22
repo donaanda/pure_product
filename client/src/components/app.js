@@ -20,6 +20,7 @@ import FAQ from './FAQ';
 import AboutTheSite from './aboutTheSite';
 import ExpandedMenu from './expandedMenuWelcome';
 import SearchProductResult from './searchProductResult';
+import Ingredient_details from './ingredient_details';
 
 const App = () => {
     return (<section>
@@ -102,7 +103,9 @@ const App = () => {
             component={
                 SearchProductResult
             }
-        /> </section>
+        /> 
+        <Ingredient_details/>
+        </section>
     )
 };
 

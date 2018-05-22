@@ -1,0 +1,32 @@
+.ingredientDetails .rowIngredient{
+    width:100%;
+    height:20vh;
+    margin-top:3vh;
+}
+.ingredientDetails .ingredientName{
+    background-color: #b9e1be;
+    display:inline-block;
+    height: 7vh;
+    width: 30%;
+    text-align: center;
+
+}
+
+.ingredientDetails .gentleIcon{
+    display: flex;
+
+}
+.ingredientDetails .safetyIcon{
+    display: flex;
+
+}
+.ingredientDetails .gentleImg{
+    display: flex;
+
+}
+.ingredientDetails .safetyImg{
+    display: flex;
+}
+.ingredientDetails .gentleNumber{
+    display: flex;
+}
