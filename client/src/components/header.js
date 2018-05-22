@@ -20,6 +20,9 @@ class Header extends Component {
             hamburgerToggle: false,
             searchBarStyle: {
                 display: 'none',
+            },
+            buttonStyle: {
+                display: 'none'
             }
         }
     }
@@ -31,6 +34,9 @@ class Header extends Component {
                 searchBarStyle: {
                     display: 'none',
 
+                },
+                buttonStyle: {
+                    display: 'none'
                 }
             })
         } else {
@@ -45,6 +51,15 @@ class Header extends Component {
                     fontSize: '1em',
                     border: 'none',
                     position: 'relative',
+                    zIndex: 1
+                },
+                buttonStyle: {
+                    display: 'block',
+                    backgroundColor: 'blue',
+                    width: '20vw',
+                    height: '10vw',
+                    margin: '1.5% auto',
+                    fontcolor: 'black',
                     zIndex: 1
                 }
             })
@@ -74,6 +89,9 @@ class Header extends Component {
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
                 <input style={this.state.searchBarStyle} />
+                <Link to="/search_product_result">
+                    <button onClick={this.toggleSearchBar.bind(this)} style={this.state.buttonStyle}>Search</button>
+                </Link>
             </div >
         )
     }
