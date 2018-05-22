@@ -6,22 +6,22 @@ import LoginIcon from '../assets/images/header_images/user-login.png';
 import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
 
-const imgs = {
-    hamburgerMenu: '',
-    logo: '',
-    searchIcon: ''
-}
-
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
             searchToggle: false,
-            hamburgerToggle: false,
             searchBarStyle: {
                 display: 'none',
+            },
+            headerContainer: {
+                display: 'block',
+                boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                height: '10vh',
+                backgroundColor: 'white',
+                zIndex: '1'
             }
-        }
+        };
     }
     toggleSearchBar() {
         //if the search bar is open
@@ -30,7 +30,13 @@ class Header extends Component {
                 searchToggle: false,
                 searchBarStyle: {
                     display: 'none',
-
+                },
+                headerContainer: {
+                    display: 'block',
+                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                    height: '10vh',
+                    backgroundColor: 'white',
+                    zIndex: '1'
                 }
             })
         } else {
@@ -38,7 +44,7 @@ class Header extends Component {
                 searchToggle: true,
                 searchBarStyle: {
                     display: 'block',
-                    backgroundColor: 'lightgrey',
+                    color: '#555555',
                     width: '85vw',
                     height: '10vw',
                     margin: '1.5% auto',
@@ -46,14 +52,20 @@ class Header extends Component {
                     border: 'none',
                     position: 'relative',
                     zIndex: 1
+                },
+                headerContainer: {
+                    display: 'block',
+                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                    height: '20vh',
+                    backgroundColor: 'white',
+                    zIndex: '1'
                 }
             })
         }
     }
     render() {
         return (
-            <div className="header-container">
-
+            <div style={this.state.headerContainer}>
                 <div className="header-icon login-icon">
                     <Link to="/create_account">
                         <img className='headerIcon loginIcon' onClick={this.toggleSearchBar.bind(this)} src={LoginIcon} />
@@ -73,7 +85,7 @@ class Header extends Component {
                 <div className="header-icon search-bar">
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
-                <input style={this.state.searchBarStyle} />
+                <input placeholder="Search for products or ingredients..." style={this.state.searchBarStyle} />
             </div >
         )
     }
