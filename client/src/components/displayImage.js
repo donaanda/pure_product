@@ -34,7 +34,7 @@ export default class DisplayImage extends Component {
         } else {
             const { product_name, brand, price, img_src, categories, product_id, gentle_avg_rating, safety_avg_rating, rating } = this.props.product;
             return (
-                <Link to={"product/" + product_id}>
+                <Link to={"/product/" + product_id}>
                     <div className="product-display-container">
                         <div className='image-container'>
                             <img className='product-image' alt="cosmetic picture" src={img_src ? foundation_alt_img : img_src} />
