@@ -14,12 +14,16 @@ class Header extends Component {
             searchBarStyle: {
                 display: 'none',
             },
+            buttonStyle: {
+                display: 'none'
+            },
             headerContainer: {
                 display: 'block',
                 boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
                 height: '10vh',
                 backgroundColor: 'white',
                 zIndex: '1'
+
             }
         };
     }
@@ -30,6 +34,12 @@ class Header extends Component {
                 searchToggle: false,
                 searchBarStyle: {
                     display: 'none',
+
+
+                },
+                buttonStyle: {
+                    display: 'none'
+
                 },
                 headerContainer: {
                     display: 'block',
@@ -37,20 +47,31 @@ class Header extends Component {
                     height: '10vh',
                     backgroundColor: 'white',
                     zIndex: '1'
+
                 }
             })
         } else {
             this.setState({
                 searchToggle: true,
                 searchBarStyle: {
-                    display: 'block',
+                    display: 'inline-block',
                     color: '#555555',
-                    width: '85vw',
+                    width: '65vw',
                     height: '10vw',
-                    margin: '1.5% auto',
+                    margin: '1.5% 0 1.5% 5%',
                     fontSize: '1em',
                     border: 'none',
-                    position: 'relative',
+                    positon: 'relative',
+                    zIndex: 1
+                },
+
+                buttonStyle: {
+                    display: 'inline-block',
+                    backgroundColor: 'grey',
+                    width: '20vw',
+                    height: '10vw',
+                    margin: '1.5% 0 1.5% 5%',
+                    fontcolor: 'black',
                     zIndex: 1
                 },
                 headerContainer: {
@@ -59,6 +80,7 @@ class Header extends Component {
                     height: '20vh',
                     backgroundColor: 'white',
                     zIndex: '1'
+
                 }
             })
         }
@@ -85,7 +107,12 @@ class Header extends Component {
                 <div className="header-icon search-bar">
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
+
                 <input placeholder="Search for products or ingredients..." style={this.state.searchBarStyle} />
+                <Link to="/search_product_result">
+                    <button onClick={this.toggleSearchBar.bind(this)} style={this.state.buttonStyle}>Search</button>
+                </Link>
+
             </div >
         )
     }
