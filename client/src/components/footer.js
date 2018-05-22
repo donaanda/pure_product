@@ -11,22 +11,22 @@ class Footer extends Component {
         return (
             <section className="site-footer">
                 <footer className="site-footer">
-                    <Link to="/create_account">
+                    <Link to="/create_account" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
                             <img src={new_user} /><span>Create Account</span>
                         </div>
                     </Link>
-                    <Link to="./our_team">
+                    <Link to="./our_team" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
                             <img src={our_team} /><span>Our Team</span>
                         </div>
                     </Link>
-                    <Link to="./FAQ">
+                    <Link to="./FAQ" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
                             <img src={q_a} /><span>FAQ</span>
                         </div>
                     </Link>
-                    <Link to="/about_the_site">
+                    <Link to="/about_the_site" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
                             <img src={temp_logo} /><span>About The Site</span>
                         </div>
