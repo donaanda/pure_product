@@ -10,6 +10,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            input:"",
             searchToggle: false,
             searchBarStyle: {
                 display: 'none',
@@ -27,6 +28,15 @@ class Header extends Component {
             }
         };
     }
+
+    handleInput(event){
+        event.preventDefault();
+        this.setState({
+            input: event.target.value
+        }, ()=>console.log('input:', this.state)
+        );
+    }
+
     toggleSearchBar() {
         //if the search bar is open
         if (this.state.searchToggle) {
@@ -108,7 +118,7 @@ class Header extends Component {
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
 
-                <input placeholder="Search for products or ingredients..." style={this.state.searchBarStyle} />
+                <input onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." style={this.state.searchBarStyle} />
                 <Link to="/search_product_result">
                     <button onClick={this.toggleSearchBar.bind(this)} style={this.state.buttonStyle}>Search</button>
                 </Link>
