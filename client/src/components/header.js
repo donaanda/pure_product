@@ -43,7 +43,9 @@ class Header extends Component {
                     height: '10vw',
                     margin: '1.5% auto',
                     fontSize: '1em',
-                    border: 'none'
+                    border: 'none',
+                    position: 'relative',
+                    zIndex: 1
                 }
             })
         }
