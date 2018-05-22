@@ -9,18 +9,18 @@ const OurTeam = () => {
         <section>
             <Header />
             <div className="our_team">
-            <h1>Our Team</h1>
-            <p>Hanh Pham</p>
+                <h1>Our Team</h1>
+                <p>Hanh Pham</p>
                 <p>Harrison Chen</p>
                 <p>Omer Futerman</p>
                 <p>Dona Anda</p>
-                <p>Alia Wilkinson</p> 
-                
-               <p> came together to create this application.  
+                <p>Alia Wilkinson</p>
+
+                <p> came together to create this application.
             </p>
             </div>
             <Footer />
-            </section>
+        </section>
     )
 }
 
