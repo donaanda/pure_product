@@ -9,8 +9,6 @@ import Header from './header';
 import Footer from './footer';
 import axios from 'axios';
 import ingredient from './ingredient';
-// props.match.params.id
-
 
 class ProductPage extends Component {
     constructor(props) {
@@ -37,7 +35,7 @@ class ProductPage extends Component {
                 price: "N/A",
                 product_name: "N/A",
                 rating: "N/A",
-                safety_avg_ating: "N/A",
+                safety_avg_rating: "N/A",
                 size: "N/A"
             },
         }
@@ -45,7 +43,7 @@ class ProductPage extends Component {
 
     async componentDidMount() {
         var id = this.props.match.params.id;
-        await axios.post(`http://localhost:8888/find_product_by_id.php`, {id})
+        await axios.post(`http://localhost:8888/find_product_by_id.php`, { id })
             .then(res => {
                 this.setState({
                     data: res.data
