@@ -80,7 +80,8 @@ class Header extends Component {
 
                 buttonStyle: {
                     display: 'inline-block',
-                    backgroundColor: 'grey',
+                    backgroundColor: 'aliceblue',
+                    borderRadius: '10%',
                     width: '20vw',
                     height: '10vw',
                     margin: '1.5% 0 1.5% 5%',

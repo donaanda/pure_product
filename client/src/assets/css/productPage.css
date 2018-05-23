@@ -14,6 +14,12 @@
 
 .product-page-gentle-safety-rating div {
     display: inline-block;
+    height: 7vh;
+    vertical-align: top;
+}
+
+a {
+    color: #555555;
 }
 
 .product-page-gentle-rating {
