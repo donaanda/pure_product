@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const GentleRating = () => {
     return (
         <section>
-        <Header />
+        <Header history={this.props.history} />
         <div className="site-about-container">
         <img className="gentle_icon_gentle_page" src={gentle_rating} />
             <h1>About The Gentle Rating</h1>

@@ -60,7 +60,7 @@ class ProductPage extends Component {
             const displayImageComponent = product !== undefined ? <DisplayImage product={product} /> : <div>no product specified}</div>;
             return (
                 <section>
-                    <Header />
+                    <Header history={this.props.history} />
 
                     {displayImageComponent}
 

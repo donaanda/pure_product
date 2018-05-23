@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const FAQ = () => {
     return (
         <section className="FAQ">
-            <Header />
+            <Header history={this.props.history} />
             <div className="site-about-container">
                 <h1 className="faq_title"><img className="faq_icon" src={faq_icon} />   FAQ</h1>
                 <h4>Does Pure Product Sell Products?</h4>

@@ -36,6 +36,9 @@ class Header extends Component {
         }, ()=>console.log('input:', this.state)
         );
     }
+    handleSubmit(){
+        this.props.history.push('/searchProductResult/' + this.state.input)
+    }
 
     toggleSearchBar() {
         //if the search bar is open
@@ -119,9 +122,9 @@ class Header extends Component {
                 </div>
 
                 <input onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." style={this.state.searchBarStyle} />
-                <Link to="/search_product_result">
-                    <button onClick={this.toggleSearchBar.bind(this)} style={this.state.buttonStyle}>Search</button>
-                </Link>
+                
+                <button onClick={this.handleSubmit.bind(this)} style={this.state.buttonStyle}>Search</button>
+                
 
             </div >
         )
