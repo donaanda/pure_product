@@ -41,21 +41,20 @@ if(empty($product_id)){
     }
 
     $query_for_ingredient = "SELECT 
-        `ingredient_name` AS ingredient, 
-        `safety_rating` AS safety, 
-        `gentle_rating` AS gentle,
-        `ingredient_detail` AS details  
-        FROM `ingredient_rating`
-        JOIN
-            (SELECT ingredient_id
-            FROM product_name
-            JOIN product_ingredient_assoc 
-            ON product_name.product_id =product_ingredient_assoc.product_id
-            WHERE product_name.product_id = '$product_id'
-            GROUP BY 1) 
-        product 
-        ON product.ingredient_id=ingredient_rating.ingredient_id
-        GROUP BY 1,2,3,4";
+    ingredient,
+    gentle_rating,
+    safety_rating,
+    COALESCE(description,`About Info`) as details
+    from
+    
+           (select `ingredient_name` AS ingredient,  case when `Rating` ='Average' then 3 when `Rating` = 'Best' then 1 when `Rating` = 'Good' then 2 ELSE 4 end as `gentle_rating`, `description` FROM `ingredient_rating` JOIN (SELECT ingredient_id FROM product_name JOIN product_ingredient_association_table ON product_name.product_id =product_ingredient_association_table.product_id
+           WHERE product_name.product_id = $product_id
+           GROUP BY 1) product ON product.ingredient_id=ingredient_rating.ingredient_id ) k
+           
+    left join 
+    ewg_data on k.ingredient=`ewg_data`.`Name To Search`
+    group by 1,2,3,4  
+    ORDER BY `k`.`ingredient` ASC";
     $result=mysqli_query($db,$query_for_ingredient);
     if(mysqli_num_rows($result)>0){
         $output['success']=true;
