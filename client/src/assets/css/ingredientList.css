@@ -9,3 +9,11 @@
     height: 5vh;
     line-height: 5vh;
 }
+
+.chemical-gentle-rating {
+    background-color: aliceblue;
+}
+
+.chemical-safety-rating {
+    background-color: blanchedalmond;
+}
