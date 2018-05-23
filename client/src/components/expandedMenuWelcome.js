@@ -11,11 +11,11 @@ import DiscoverProducts from '../assets/images/account_page_icons/discover_produ
 
 
 
-function ExpandedMenuWelcome() {
+function ExpandedMenuWelcome(props) {
     
     return(
         <section>
-            <div className="ExpandedMenuSize">
+            <div style={props.style}>
             <Link to="/myAccount" >
                 <div className="MyAccount">
                     <div className="divPicture">
