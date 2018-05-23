@@ -8,8 +8,8 @@ import DisplayAllProducts from './displayAllProducts';
 import axios from 'axios';
 
 class GentleProducts extends Component{
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             data: {
                 data: null

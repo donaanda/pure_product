@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import '../assets/css/checkProduct.css';
 
 class CheckProducts extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             input:''
         }
