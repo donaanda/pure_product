@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/expandedMenuStyle.css';
+import '../assets/css/header.css';
 import MyAccountPicture from '../assets/images/menu_icons/sign_in.png';
 import CreateAccountPicture from '../assets/images/menu_icons/sign_up.png';
 import CheckProductSafety from '../assets/images/menu_icons/check.png';
@@ -15,8 +16,8 @@ import '../assets/css/expandedMenuStyle.css';
 function ExpandedMenuWelcome(props) {
 
     return (
-        <section>
-            <div className="menu-container" style={props.style}>
+        <section className={props.className}>
+            <div className="menu-container">
                 <Link to="/myAccount" >
                     <div className="MyAccount">
                         <div className="divPicture">
