@@ -44,30 +44,40 @@ foreach($output['data']as$currIngredient){
     $allIngredientsSynonymArr[]=$arrayOfSynonyms;
 }
 
-$query = 'DELETE FROM `ingredient_synonym`';
+$query = 'DELETE FROM `synonyms`';
 mysqli_query($db,$query);
 
-$query = 'ALTER TABLE `ingredient_synonym` AUTO_INCREMENT = 1';
+$query = 'ALTER TABLE `synonyms` AUTO_INCREMENT = 1';
 mysqli_query($db,$query);
 
+//populates synonyms table
 foreach($allIngredientsSynonymArr as $synonymArray){
     foreach($synonymArray as $synonym){
-        $query = "INSERT INTO `ingredient_synonym` (synonym) value ('$synonym')";
+        $synholder=addslashes($synonym);
+        $query = "INSERT INTO `synonyms` (synonym) value ('$synholder')";
         mysqli_query($db,$query);
     }
 }
-//fix this shit
+
+$query = "DELETE FROM `ewg_assoc_table`";
+mysqli_query($db,$query);
+
+//populates assoc table
 foreach($allIngredientsSynonymArr as $synonymArray){
     foreach($synonymArray as $synonym){
-        $query = "SELECT `ingredient_id` FROM `ewg_maker` WHERE `synonyms_list` LIKE '%$synonym%'";
+        $synholder=addslashes($synonym);
+        $ingredientIDs=[];
+        $query = "SELECT `ingredient_id` FROM `ewg_maker` WHERE `synonyms_list` LIKE '%$synholder%'";
         $result = mysqli_query($db,$query);
         if(mysqli_num_rows($result)){
-            $ingredientID = mysqli_fetch_assoc($result)['ingredient_id'];
+            while($ingredientID = mysqli_fetch_assoc($result)['ingredient_id']){
+                $ingredientIDs[]=$ingredientID;
+            }
         } else {
             $ingredientID = 0;
         }
 
-        $query = "SELECT `synonym_id` FROM `ingredient_synonym` WHERE `synonym` LIKE '%$synonym%'";
+        $query = "SELECT `synonym_id` FROM `synonyms` WHERE `synonym` LIKE '%$synholder%'";
         $result = mysqli_query($db,$query);
         if(mysqli_num_rows($result)){
             $synonymID = mysqli_fetch_assoc($result)['synonym_id'];
@@ -75,32 +85,13 @@ foreach($allIngredientsSynonymArr as $synonymArray){
             $synonymID = 0;
         }
 
-        echo $ingredientID;
-        echo $synonymID;
-        $query = "INSERT INTO `ewg_assoc_table` (ingredient_id,synonym_id) value ($ingredientID,'$synonymID')";
-        mysqli_query($db,$query);
+        foreach($ingredientIDs as $ingID){
+            $query = "INSERT INTO `ewg_assoc_table` (ingredient_id,synonym_id) value ($ingID,$synonymID)";
+            mysqli_query($db,$query);
+        }
     }
 }
 
-$query = "SELECT * FROM `ingredient_synonym`";
-$result = mysqli_query($db,$query);
-if(mysqli_num_rows($result)){
-    while($synonymInfo = mysqli_fetch_assoc($result)){
-        $synonym = $synonymInfo['synonym'];
-        $query = "SELECT `ingredient_id` FROM `ewg_maker` WHERE `synonyms_list` LIKE '%$synonym%'";
-        $result = mysqli_query($db,$query);
-        $ingredientID = mysqli_fetch_assoc($result)['ingredient_id'];
-        $synonymID = $synonymInfo['synonym_id'];
-
-        echo $ingredientID;
-        echo $synonymID;
-        $query = "INSERT INTO `ewg_assoc_table` (ingredient_id,synonym_id) value ($ingredientID,'$synonymID')";
-        mysqli_query($db,$query);
-    }
-} 
-
-
-//migration files
 echo '<br>';
 echo 'mission complete';
 ?>
