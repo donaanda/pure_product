@@ -46,7 +46,7 @@ class Header extends Component {
         );
     }
     handleSubmit(){
-        this.props.history.push('/searchProductResult/' + this.state.input)
+        this.props.history.push('/search_product_result/' + this.state.input)
     }
 
     toggleSearchBar() {
