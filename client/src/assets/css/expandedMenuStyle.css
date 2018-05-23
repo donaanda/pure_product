@@ -1,45 +1,46 @@
-
-.MyAccount{
+.MyAccount {
     background-color: #B8D4E3;
 }
-.CreateAccount{
+
+.CreateAccount {
     background-color: #EEFFDB;
-
 }
 
-.FeatureSetLink{
+.FeatureSetLink {
     background-color: #85C7DE;
-
 }
 
-.ExpandMenuImage{
+.ExpandMenuImage {
     margin: auto;
     height: 100%;
 }
-.LipstickCenter{
+
+.LipstickCenter {
     display: inline-block;
     margin: 2vw 2vh;
     height: 12vh;
 }
-.divPicture{
+
+.divPicture {
     display: inline-block;
     margin: 2vw 2vh;
     height: 12vh;
 }
-.LipstickImg{
-    height:100%;
+
+.LipstickImg {
+    height: 100%;
     padding-left: 18px;
 }
-.AccountFont{
-    color:#85C7DE;
+
+.AccountFont {
+    color: #85C7DE;
     font-weight: bold;
     font-size: 1em;
-
 }
-.LipstickFont{
+
+.LipstickFont {
     padding-left: 17px;
     font-size: 1em;
-
 }
 
 .LongTextFeatureSet {
@@ -49,22 +50,23 @@
     position: absolute
 }
 
-.FeatureSetFont{
-    color:whitesmoke;
+.FeatureSetFont {
+    color: whitesmoke;
     font-weight: bold;
     font-size: 1em;
-
-
 }
-.myAccountDivSize{
-    height:20vh;
-    width:80vw;
+
+.myAccountDivSize {
+    height: 20vh;
+    width: 80vw;
     margin: 0 auto;
-    background-color:#94b6a7;
-    margin-top:3vh;
+    background-color: #94b6a7;
+    margin-top: 3vh;
     text-align: center;
     color: whitesmoke
-    /*
-    margin-right:5vw;
-    margin-left:5vw; */
+}
+
+.menu-container {
+    height: 100vh;
+    background-color: #B8D4E3;
 }
