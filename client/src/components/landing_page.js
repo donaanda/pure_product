@@ -23,8 +23,10 @@ class LandingPage extends Component {
     }
 
     async componentDidMount() {
+
         var id = this.props.match.params.id;
-        await axios.post(`http://localhost:8888/get_product_by_categories.php`)
+        await axios.post(`http://localhost:8888/get_product_by_categories.php`)// can add another parameter to send to backend for queries, object
+      
             .then(res => {
                 this.setState({
                     data: res.data
@@ -36,23 +38,23 @@ class LandingPage extends Component {
         const { data } = this.state;
         return (
             <section className="landing_page">
-                <Header />
+                <Header history={this.props.history} />
 
                 <div className="landing-page-button-container">
                     <div className="landing-two-container">
-                        <Link to="/check_products">
-                            <div className="landing_button safety">
-                                <div className="wrap-landing-img">
-                                    <img className="landing_img" src={lipstick} />
-                                    <span>Check ingredients</span>
-                                </div>
-                            </div>
-                        </Link>
                         <Link to="/gentle_products">
                             <div className="landing_button products">
                                 <div className="wrap-landing-img">
                                     <img className="landing_img" src={product} />
                                     <span>Browse products </span>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to="/check_products">
+                            <div className="landing_button safety">
+                                <div className="wrap-landing-img">
+                                    <img className="landing_img" src={lipstick} />
+                                    <span>Analyze Product Ingredients</span>
                                 </div>
                             </div>
                         </Link>
@@ -78,7 +80,7 @@ class LandingPage extends Component {
                 </div>
                 <Link to="/product_finder">
                     <div className="product_finder_landing_button waves-effect waves-light">
-                        <span>Product finder</span>
+                        <span>Personal Product finder</span>
                     </div>
                 </Link>
                 <DisplayAllProducts data={data} />

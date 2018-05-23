@@ -11,6 +11,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            input:"",
             searchToggle: false,
             searchBarStyle: {
                 display: 'none',
@@ -36,6 +37,18 @@ class Header extends Component {
             }
         };
     }
+
+    handleInput(event){
+        event.preventDefault();
+        this.setState({
+            input: event.target.value
+        }, ()=>console.log('input:', this.state)
+        );
+    }
+    handleSubmit(){
+        this.props.history.push('/searchProductResult/' + this.state.input)
+    }
+
     toggleSearchBar() {
         //if the search bar is open
         if (this.state.searchToggle) {
@@ -76,7 +89,8 @@ class Header extends Component {
 
                 buttonStyle: {
                     display: 'inline-block',
-                    backgroundColor: 'grey',
+                    backgroundColor: 'aliceblue',
+                    borderRadius: '10%',
                     width: '20vw',
                     height: '10vw',
                     margin: '1.5% 0 1.5% 5%',
@@ -144,11 +158,11 @@ class Header extends Component {
                 <div className="header-icon search-bar">
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
-
-                <input placeholder="Search for products or ingredients..." style={this.state.searchBarStyle} />
-                <Link to="/search_product_result">
-                    <button onClick={this.toggleSearchBar.bind(this)} style={this.state.buttonStyle}>Search</button>
-                </Link>
+             
+                <input onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." style={this.state.searchBarStyle} />
+                
+                <button onClick={this.handleSubmit.bind(this)} style={this.state.buttonStyle}>Search</button>
+                
             </div >
         )
     }

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const OurTeam = () => {
     return (
         <section>
-            <Header />
+            <Header history={this.props.history} />
             <div className="our_team">
                 <h1>Our Team</h1>
                 <p>Hanh Pham</p>

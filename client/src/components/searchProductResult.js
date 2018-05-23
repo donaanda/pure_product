@@ -31,7 +31,7 @@ class SearchProductResult extends Component {
         //console.log(this.state.response.data.data[0]);
         return (
             <section className="product-container">
-                <Header/>
+                <Header history={this.props.history} />
                     <DisplayAllProducts data={data}/>
                 <Footer/>
             </section>
