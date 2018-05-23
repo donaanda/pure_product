@@ -16,19 +16,18 @@ class SearchProductResult extends Component {
 
         }
     }
-
     async componentDidMount() {
-        await axios.post(`http://localhost:8888/search_product.php`).then(response => {
+        var query = this.props.match.params.search;
+        await axios.post(`http://localhost:8888/search_product.php`, {query}).then(response => {
             this.setState({
                 data: response.data
-            })
+            }, ()=>console.log(this.state));
         });
     }
 
 
     render() {
         const {data} = this.state;
-        //console.log(this.state.response.data.data[0]);
         return (
             <section className="product-container">
                 <Header history={this.props.history} />
