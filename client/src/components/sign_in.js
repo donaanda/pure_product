@@ -7,7 +7,7 @@ class SignIn extends Component {
     render() {
         return (
             <section className="sign_in_form">
-                <Header />
+                <Header history={this.props.history} />
                 <form className="sign_in_form">
                     <div className="email">
                         <label>email</label>

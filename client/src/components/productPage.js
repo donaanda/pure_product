@@ -9,6 +9,7 @@ import Header from './header';
 import Footer from './footer';
 import axios from 'axios';
 import ingredient from './ingredient';
+import { Link } from 'react-router-dom';
 
 class ProductPage extends Component {
     constructor(props) {
@@ -47,34 +48,38 @@ class ProductPage extends Component {
             .then(res => {
                 this.setState({
                     data: res.data
+
                 })
             })
     }
 
     render() {
+        console.log('data', this.state.data);
         const { ingredients, product } = this.state.data;
-
         if (this.state.data.success === false) {
             return null;
         } else {
             const displayImageComponent = product !== undefined ? <DisplayImage product={product} /> : <div>no product specified}</div>;
             return (
                 <section>
-                    <Header />
+                    <Header history={this.props.history} />
 
                     {displayImageComponent}
-
                     <div className="product-page-gentle-safety-rating">
-                        <div className="product-page-gentle-rating">GENTLE RATING
+                        <Link to="/gentle_rating">
+                            <div className="product-page-gentle-rating">GENTLE RATING
                     <span><img src={GentleIcon} />
-                                {product.gentle_avg_rating}
-                            </span>
-                        </div>
-                        <div className="product-page-safety-rating">SAFETY RATING
+                                    {product.gentle_avg_rating}
+                                </span>
+                            </div>
+                        </Link>
+                        <Link to="/safety_rating">
+                            <div className="product-page-safety-rating">SAFETY RATING
                     <span><img src={SafetyIcon} />
-                                {product.safety_avg_rating}
-                            </span>
-                        </div>
+                                    {product.safety_avg_rating}
+                                </span>
+                            </div>
+                        </Link>
                     </div>
 
                     <div>

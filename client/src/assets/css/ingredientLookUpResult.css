@@ -1,0 +1,35 @@
+.ingredient-name {
+    font-size: 1.2rem;
+    color: #B8D4E3;
+    margin: 5% 2% 0 2%;
+}
+
+.ingredient-name-span {
+    background-color: #e4f7ef;
+    color: cadetblue;
+    padding: 2% 40% 2% 2%;
+    margin-top: 2%;
+}
+
+.ingredient-result-gentle-img {
+    max-height: 3vh;
+    margin-left: 2%;
+}
+
+.ingredient-result-gentle-rating {
+    margin-left: 2%;
+}
+
+.ingredient-result-safety-img {
+    max-height: 3vh;
+    margin-left: 4%;
+}
+
+.ingredient-result-safety-rating {
+    margin-left: 2%;
+}
+
+.ingredient-description {
+    background-color: whitesmoke;
+    margin: 5% 2% 0 2%;
+}

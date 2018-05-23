@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const DisplayAllProducts = (props) => {
     if (props.data.data === null) {
-        return <div>Nothing</div>
+        return <div>Loading...</div>
     } else {
         const products = props.data.data.map((item, index) => {
             return (

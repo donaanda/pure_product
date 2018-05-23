@@ -31,7 +31,7 @@ class GentleProducts extends Component{
         const { data } = this.state;
         return (
             <section className="product-container">
-                <Header />
+                <Header history={this.props.history} />
                     <DisplayAllProducts data={data}/>
                 <Footer />
             </section>
