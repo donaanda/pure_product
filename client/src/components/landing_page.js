@@ -23,7 +23,6 @@ class LandingPage extends Component {
     }
 
     async componentDidMount() {
-        var id = this.props.match.params.id;
         await axios.post(`http://localhost:8888/get_product_by_categories.php`)
             .then(res => {
                 this.setState({
@@ -36,7 +35,7 @@ class LandingPage extends Component {
         const { data } = this.state;
         return (
             <section className="landing_page">
-                <Header />
+                <Header history={this.props.history} />
 
                 <div className="landing-page-button-container">
                     <div className="landing-two-container">
