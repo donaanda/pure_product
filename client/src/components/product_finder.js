@@ -5,6 +5,9 @@ import Footer from './footer';
 import '../assets/css/product_finder.css';
 
 class ProductFinder extends Component {
+    constructor(props){
+        super(props);
+    }
     render() {
         return (
             <section>
