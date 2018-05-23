@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const SafetyRating = () => {
     return (
         <section>
-        <Header />
+        <Header history={this.props.history} />
         <div className="site-about-container">
         <img className="gentle_icon_gentle_page" src={safety_icon} />
             <h1>About The Safety Rating</h1>

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const AboutTheSite = () => {
     return (
         <section>
-            <Header />
+            <Header history={this.props.history} />
             <div className="about-the-site-container">
                 <a href="https://github.com/aliawilkinson/c318_pureproduct">
                     <div className="button button-git github-info-about-site">

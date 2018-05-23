@@ -7,7 +7,7 @@ import '../assets/css/createAccount.css';
 const CreateAccount = () => {
     return (
         <section className="CreateAccount">
-            <Header />
+            <Header history={this.props.history} />
             <form className="create_account">
                 <div>
                     <h2 className="sign-up-header">Sign Up Below</h2>

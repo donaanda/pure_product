@@ -21,7 +21,7 @@ class CheckProducts extends Component{
     render(){
         return (
             <section>
-                <Header/>
+                <Header history={this.props.history} />
                 <div className="check-product-image-container">
                     <div className="logo-background-color">
                         <img className="check-product-logo" src={Lipstick}/>

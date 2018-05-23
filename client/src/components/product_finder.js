@@ -8,7 +8,7 @@ class ProductFinder extends Component {
     render() {
         return (
             <section>
-                <Header />
+                <Header history={this.props.history} />
                 <form className="product_finder_content">
                     <div>
                         <h2>I would like to find something with these attributes...</h2>
