@@ -47,14 +47,13 @@ class ProductPage extends Component {
         await axios.post(`http://localhost:8888/find_product_by_id.php`, { id })
             .then(res => {
                 this.setState({
-                    data: res.data
+                    data: res.data,
                 })
             })
     }
 
     render() {
         const { ingredients, product } = this.state.data;
-
         if (this.state.data.success === false) {
             return null;
         } else {
