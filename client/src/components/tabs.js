@@ -12,7 +12,7 @@ class Tabs1 extends Component {
         }
 
         this.ingredients = this.props.ingredients || [
-            { "Ingredient": "No ingredients to display." },
+            { "Ingredients": "No ingredients to display." },
         ];
 
     }

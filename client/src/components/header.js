@@ -5,6 +5,7 @@ import SiteTitle from '../assets/images/header_images/site-title.png';
 import LoginIcon from '../assets/images/header_images/user-login.png';
 import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
+import ExpandedMenu from './expandedMenuWelcome';
 
 class Header extends Component {
     constructor(props) {
@@ -25,6 +26,14 @@ class Header extends Component {
                 backgroundColor: 'white',
                 zIndex: '1'
 
+            },
+            hamburgerClick: false,
+            ExpandedMenuSize: {
+                width: '0',
+                overflowX: 'hidden',
+                transition: '0.0001s',
+                zIndex: '1',
+                position: 'fixed'
             }
         };
     }
@@ -37,7 +46,7 @@ class Header extends Component {
         );
     }
     handleSubmit(){
-        this.props.history.push('/searchProductResult/' + this.state.input)
+        this.props.history.push('/search_product_result/' + this.state.input)
     }
 
     toggleSearchBar() {
@@ -99,18 +108,46 @@ class Header extends Component {
             })
         }
     }
+
+    showExpandedMenu() {
+        if (this.state.hamburgerClick) {
+            this.setState({
+                hamburgerClick: false,
+                ExpandedMenuSize: {
+                    width: '0',
+                    overflowX: 'hidden',
+                    transition: '0.0001s',
+                    zIndex: '1',
+                    position: 'fixed'
+                }
+            });
+        } else {
+            this.setState({
+                hamburgerClick: true,
+                ExpandedMenuSize: {
+                    width: '75vw',
+                    overflowX: 'hidden',
+                    transition: '0.0001s',
+                    zIndex: '1',
+                    position: 'fixed'
+                }
+            });
+        }
+    }
+
     render() {
         return (
             <div style={this.state.headerContainer}>
+                <div className="side-nav">
+                    <ExpandedMenu style={this.state.ExpandedMenuSize}/>
+                    <HamburgerMenu onClick={this.showExpandedMenu.bind(this)} />
+                </div>
+
                 <div className="header-icon login-icon">
                     <Link to="/create_account">
                         <img className='headerIcon loginIcon' onClick={this.toggleSearchBar.bind(this)} src={LoginIcon} />
                     </Link>
                 </div>
-
-                <Link to="/expanded_menu">
-                    <HamburgerMenu />
-                </Link>
 
                 <div className="header-icon site-title">
                     <Link to="/">
@@ -121,12 +158,11 @@ class Header extends Component {
                 <div className="header-icon search-bar">
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
-
+             
                 <input onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." style={this.state.searchBarStyle} />
                 
                 <button onClick={this.handleSubmit.bind(this)} style={this.state.buttonStyle}>Search</button>
                 
-
             </div >
         )
     }

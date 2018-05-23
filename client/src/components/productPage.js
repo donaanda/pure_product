@@ -48,6 +48,7 @@ class ProductPage extends Component {
             .then(res => {
                 this.setState({
                     data: res.data
+
                 })
             })
     }
@@ -55,7 +56,6 @@ class ProductPage extends Component {
     render() {
         console.log('data', this.state.data);
         const { ingredients, product } = this.state.data;
-
         if (this.state.data.success === false) {
             return null;
         } else {
@@ -69,14 +69,14 @@ class ProductPage extends Component {
                         <Link to="/gentle_rating">
                             <div className="product-page-gentle-rating">GENTLE RATING
                     <span><img src={GentleIcon} />
-                                    {product.gentle_avg_rating}
+                                    {/* {product.gentle_avg_rating} */}
                                 </span>
                             </div>
                         </Link>
                         <Link to="/safety_rating">
                             <div className="product-page-safety-rating">SAFETY RATING
                     <span><img src={SafetyIcon} />
-                                    {product.safety_avg_rating}
+                                    {/* {product.safety_avg_rating} */}
                                 </span>
                             </div>
                         </Link>
