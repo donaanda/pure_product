@@ -1,7 +1,9 @@
 <?php
 require_once('./header.php');
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
 require_once('./db_connect.php');
-$search_input = 'Foundation';
+$search_input = $request->query;
 $query = "SELECT 
     product_name.*, 
     `rating`, 
