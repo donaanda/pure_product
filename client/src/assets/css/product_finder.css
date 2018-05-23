@@ -1,3 +1,5 @@
+/*product finder button on landing page*/
+
 .product_finder_landing_button {
     display: table;
     font-family: 'Cedarville Cursive', cursive;
@@ -16,27 +18,4 @@
     vertical-align: center;
 }
 
-.product_finder_content {
-    width: 100vw;
-    /* text-align: center; */
-    height: 15vh;
-    background-color: rgba(184, 234, 251, 0.5);
-}
-
-form.product_finder {
-    height: 100vh;
-}
-
-.product_finder>div {
-    margin: 5vh;
-}
-
-.product_finder button {
-    display: block;
-    background-color: black;
-    color: white;
-}
-
-.product_finder>label {
-    display: inline-block;
-}
+/* product finder page */
