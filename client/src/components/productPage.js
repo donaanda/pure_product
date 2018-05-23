@@ -48,14 +48,13 @@ class ProductPage extends Component {
             .then(res => {
                 console.log(res);
                 this.setState({
-                    data: res.data
-                }, console.log("data", this.state))
+                    data: res.data,
+                })
             })
     }
 
     render() {
         const { ingredients, product } = this.state.data;
-
         if (this.state.data.success === false) {
             return null;
         } else {
