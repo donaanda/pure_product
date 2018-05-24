@@ -1,6 +1,7 @@
 <?php
 require_once('./db_connect.php');
 echo 'starting mission ';
+echo '<br>';
 $query = "SELECT * FROM `product_ingredient_assoc_maker`";
 $result=mysqli_query($db,$query);
 $output=[];
@@ -22,9 +23,6 @@ foreach($output['data']as$value){
     $i=0;
     $wordToAdd='';
     while($i<strlen($value['ingredient_list'])){
-        // if($i===0){
-        //     array_push($arrayOfIngredients,$value['product_id']);
-        // }
         $currLetter=substr($value['ingredient_list'],$i,1);
         if($currLetter===','){
             if(substr($wordToAdd,0,1)===' '){
@@ -47,8 +45,6 @@ foreach($output['data']as$value){
     }
     $arrayOfArrayOfIngredients[]=$arrayOfIngredients;
 }
-//echo 'ingredients: ';
-//print_r($arrayOfArrayOfIngredients);
 
 //$query = "SELECT `ingredient_id` FROM `product_ingredient_association_table` WHERE ingredient_name = ";//this will probably be in the loop, figure it out
 

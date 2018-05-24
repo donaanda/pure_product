@@ -5,33 +5,16 @@ import '../assets/css/ingredientLookUpResult.css';
 import Group_1 from '../assets/images/displayImages/Group_1.png';
 import CompoundPath_1 from '../assets/images/displayImages/Compound Path_1.png';
 
-class IngredientLookUpResult extends Component {
 
-    constructor(props) {
+class IngredientLookUpResult extends Component{
+    constructor(props){
         super(props);
-
-        this.state = {
-            data: {
-                data: null
-            }
-        }
     }
-
-    async componentDidMount() {
-        await axios.post(`http://localhost:8888/get_ingredient_by_name.php`).then(response => {
-            this.setState({
-                data: response.data
-            });
-        });
-    }
-
-    render() {
-        console.log(this.state);
-        const {data} = this.state;
-
+    render(){
         return (
             <section>
-                <Header/>
+                <Header history={this.props.history} />
+
                 <div className="ingredient-info-container">
                     <div className="ingredient-name"><span className="ingredient-name-span">Ingredient</span>
                         <img className="ingredient-result-gentle-img" src={CompoundPath_1}/>
@@ -49,3 +32,4 @@ class IngredientLookUpResult extends Component {
 }
 
 export default IngredientLookUpResult;
+

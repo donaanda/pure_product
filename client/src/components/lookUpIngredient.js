@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import '../assets/css/search_ingredient.css';
 
 class LookUpIngredient extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             input:''
         }
