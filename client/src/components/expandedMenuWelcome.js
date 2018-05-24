@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/css/expandedMenuStyle.css';
 import '../assets/css/header.css';
 import MyAccountPicture from '../assets/images/menu_icons/sign_in.png';
 import CreateAccountPicture from '../assets/images/menu_icons/sign_up.png';
@@ -19,44 +18,47 @@ function ExpandedMenuWelcome(props) {
         <section className={props.className}>
             <div className="menu-container">
                 <Link to="/myAccount" >
-                    <div className="MyAccount">
-                        <div className="divPicture">
-                            <img className="ExpandMenuImage" src={MyAccountPicture} />
-                        </div>
-                        <span className="AccountFont"> My Account
-                    </span>
+                    <div className="menu-item-cont">
+
+                        <img className="ExpandMenuImage" src={MyAccountPicture} />
+                        <span>My Account</span>
                     </div>
                 </Link>
-                <div className="CreateAccount">
-                    <div className="divPicture">
+
+                <Link to="/create_account" >
+                    <div className="menu-item-cont">
+
                         <img className="ExpandMenuImage" src={CreateAccountPicture} />
+                        <span>Create Account</span>
                     </div>
-                    <span className="AccountFont">Create Account</span>
-                </div>
-                <div className="FeatureSetLink">
-                    <div className="Check_Product_Safety">
-                        <div className="divPicture">
-                            <img className="ExpandMenuImage" src={CheckProductSafety} />
-                        </div>
-                        <div className=" FeatureSetFont LongTextFeatureSet">Check Product Safety</div>
+                </Link>
+
+                <Link to="/check_products" >
+                    <div className="menu-item-cont">
+
+                        <img className="ExpandMenuImage" src={CheckProductSafety} />
+                        <span>Check Product Safety</span>
                     </div>
-                    <Link to="/search_ingredient">
-                        <div className="Look_Up_Ingrediants">
-                            <div className="divPicture">
-                                <img className="ExpandMenuImage" src={LookIngredients} />
-                            </div>
-                            <span className=" FeatureSetFont">Search Ingrediants</span>
-                        </div>
-                    </Link>
-                    <div className="DiscoverProducts">
-                        <div className="LipstickCenter">
-                            <img className="LipstickImg" src={DiscoverProducts} />
-                        </div>
-                        <span className=" FeatureSetFont LipstickFont">Discover Products</span>
+                </Link>
+
+                <Link to="/search_ingredient">
+                    <div className="menu-item-cont">
+
+                        <img className="ExpandMenuImage" src={LookIngredients} />
+                        <span>Search Ingredients</span>
                     </div>
-                </div>
+                </Link>
+
+                <Link to="/search_ingredient">
+                    <div className="menu-item-cont">
+
+                        <img className="LipstickImg" src={DiscoverProducts} />
+                        <span>Discover Products</span>
+                    </div>
+                </Link>
             </div>
         </section>
     )
-}
+};
+
 export default ExpandedMenuWelcome;

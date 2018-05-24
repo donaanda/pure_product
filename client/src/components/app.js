@@ -5,7 +5,6 @@ import SignIn from './sign_in';
 import ProductFinder from './product_finder';
 import { Route } from 'react-router-dom';
 import MyAccountPage from './myAccount';
-import ExpandedMenuWelcome from './expandedMenuWelcome';
 import LookUpIngredient from './lookUpIngredient';
 import CheckProducts from './checkProducts';
 import ProductPage from './productPage';

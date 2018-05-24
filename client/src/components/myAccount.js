@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import '../assets/css/expandedMenuStyle.css';
+import React, { Component } from 'react';
 import Header from './header';
 
 class CreateAccount extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
-    render(){
-        return(
+    render() {
+        return (
             <section>
                 <Header history={this.props.history} />
                 <div className="myAccountDivSize">
