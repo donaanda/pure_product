@@ -5,31 +5,38 @@
 }
 
 .ingredient-name-span {
+    width: 65%;
     background-color: #e4f7ef;
     color: cadetblue;
     padding: 2% 40% 2% 2%;
     margin-top: 2%;
+    display: inline-block;
 }
 
 .ingredient-result-gentle-img {
     max-height: 3vh;
-    margin-left: 2%;
+    margin-left: 5%;
+    display: inline-block;
 }
 
 .ingredient-result-gentle-rating {
     margin-left: 2%;
+    display: inline-block;
 }
 
 .ingredient-result-safety-img {
     max-height: 3vh;
     margin-left: 4%;
+    display: inline-block;
 }
 
 .ingredient-result-safety-rating {
     margin-left: 2%;
+    display: inline-block;
 }
 
 .ingredient-description {
     background-color: whitesmoke;
     margin: 5% 2% 0 2%;
+    display: inline-block;
 }
