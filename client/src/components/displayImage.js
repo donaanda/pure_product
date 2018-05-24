@@ -33,11 +33,12 @@ export default class DisplayImage extends Component {
             return (<div>no product specified</div>)
         } else {
             const { product_name, brand, price, img_src, categories, product_id, gentle_avg_rating, safety_avg_rating, rating } = this.props.product;
+            const image = "../assets/images/product_images/"+categories+"/"+product_id+"/"+img_src;
             return (
                 <Link to={"/product/" + product_id}>
                     <div className="product-display-container">
                         <div className='image-container'>
-                            <img className='product-image' src={img_src} />
+                            <img className='product-image' src={ image } />
                             <img className='gentle-icon' src={CompoundPath_1} />
                             <img className='safety-icon' src={Group_1} />
                             <span className='gentle-rating'>{gentle_avg_rating}</span>
