@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import IngredientList from './ingredientList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../assets/css/tabs.css';
+import axios from 'axios';
 
 class Tabs1 extends Component {
 
@@ -45,9 +46,52 @@ class Tabs1 extends Component {
         });
     }
 
-    render() {
-        //console.log(props);
+    // componentDidMount() {
+    //     var youtubeAjaxObject = {
+    // 'dataType': 'json',
+    // 'url': 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',
+    // 'timeout': 3000,
+    //         'success': function (result) {
+    //             if (result.success === true) {
+    //                 removeLoader();
+    //                 var currentSolarBodiesArr = Object.keys(result.data);
+    //                 solarBodies.videos = currentSolarBodiesArr;
+    //                 renderVideosOnModal(currentSolarBodiesArr, planetInfo);
+    //             } else {
+    //                 errorDisplay();
 
+    //             }
+    //         },
+    //         'error': function (error) {
+    //             errorDisplay()
+    //         }
+    //     };
+
+    //     $.ajax(youtubeAjaxObject);
+    // }
+
+    async componentDidMount() {
+        await axios.post(`http://s-apis.learningfuze.com/hackathon/youtube/search.php`, {
+            'q': 'cosmetics',
+            'maxResults': 3,
+            'type': 'video',
+            'detailLevel': 'verbose'
+        }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => {
+                this.setState({
+                    data: res.data
+                }, console.log)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    render() {
         const { tab } = this.state;
 
         return (

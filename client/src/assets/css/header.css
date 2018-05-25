@@ -124,11 +124,3 @@
 .menu-container a:hover {
     color: #f1f1f1;
 }
-
-/* 
-<div className="menu-item-cont">
-                        <div className="icon-cont">
-                            <img className="LipstickImg" src={DiscoverProducts} />
-                        </div>
-                        <p>Discover Products</p>
-                    </div> */
