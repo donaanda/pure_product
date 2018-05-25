@@ -40,6 +40,7 @@ class ProductAnalyzerResult extends Component{
         return (
             <section>
                 <Header history={this.props.history} />
+                <IngredientList input={this.state.data.ingredients}/>
                     <form className="check-product-form-field">
                         <div className="check-product-input-container">
                             <textarea autoFocus onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."></textarea>
