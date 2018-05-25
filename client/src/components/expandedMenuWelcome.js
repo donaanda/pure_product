@@ -19,40 +19,30 @@ function ExpandedMenuWelcome(props) {
             <div className="menu-container">
                 <Link to="/myAccount" >
                     <div className="menu-item-cont">
-
-                        <img className="ExpandMenuImage" src={MyAccountPicture} />
                         <span>My Account</span>
                     </div>
                 </Link>
 
                 <Link to="/create_account" >
                     <div className="menu-item-cont">
-
-                        <img className="ExpandMenuImage" src={CreateAccountPicture} />
                         <span>Create Account</span>
                     </div>
                 </Link>
 
                 <Link to="/check_products" >
                     <div className="menu-item-cont">
-
-                        <img className="ExpandMenuImage" src={CheckProductSafety} />
                         <span>Check Product Safety</span>
                     </div>
                 </Link>
 
-                <Link to="/search_ingredient">
+                <Link to="/single_ingredient_search">
                     <div className="menu-item-cont">
-
-                        <img className="ExpandMenuImage" src={LookIngredients} />
-                        <span>Search Ingredients</span>
+                        <span>Search Ingredient</span>
                     </div>
                 </Link>
 
-                <Link to="/search_ingredient">
+                <Link to="/check_products">
                     <div className="menu-item-cont">
-
-                        <img className="LipstickImg" src={DiscoverProducts} />
                         <span>Discover Products</span>
                     </div>
                 </Link>

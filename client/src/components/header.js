@@ -11,6 +11,7 @@ import axios from 'axios';
 class Header extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             autoComplete:[],
             input: "",
@@ -132,7 +133,8 @@ class Header extends Component {
         console.log(this.state.autoComplete);
     }
 
-    handleSubmit() {
+    handleSubmit(event) {
+        event.preventDefault();
         this.props.history.push('/search_product_result/' + this.state.input)
     }
 
@@ -154,6 +156,7 @@ class Header extends Component {
             });
         }
     }
+    
 
     showExpandedMenu() {
         if (this.state.hamburgerClick) {
@@ -170,6 +173,7 @@ class Header extends Component {
     }
 
     render() {
+        const {searchToggle} = this.state;
         return (
             <div className={this.state.headerContainer}>
                 <div className="side-nav">
@@ -192,11 +196,10 @@ class Header extends Component {
                 <div className="header-icon search-bar">
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
-
-                <input onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." className={this.state.searchBarStyle} />
-
-                <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
-
+                <form>
+                    <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." className={this.state.searchBarStyle} />
+                    <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
+                </form>
             </div >
         )
     }

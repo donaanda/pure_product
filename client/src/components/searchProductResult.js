@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import Header from "./header";
 import Footer from "./footer";
@@ -18,32 +18,32 @@ class SearchProductResult extends Component {
     }
     async componentDidMount() {
         var query = this.props.match.params.search;
-        await axios.post(`http://localhost:8888/search_product.php`, {query}).then(response => {
+        await axios.post(`http://localhost:8888/search_product.php`, { query }).then(response => {
             this.setState({
                 data: response.data
-            }, ()=>console.log(this.state));
+            }, () => console.log(this.state));
         });
     }
 
-    async componentWillReceiveProps(nextProps){
-        if(this.props.match.params.search !== nextProps.match.params.search){
+    async componentWillReceiveProps(nextProps) {
+        if (this.props.match.params.search !== nextProps.match.params.search) {
             let query = nextProps.match.params.search;
-        await axios.post(`http://localhost:8888/search_product.php`, {query}).then(response => {
-            this.setState({
-                data: response.data
-            }, ()=>console.log(this.state));
-        });
+            await axios.post(`http://localhost:8888/search_product.php`, { query }).then(response => {
+                this.setState({
+                    data: response.data
+                }, () => console.log(this.state));
+            });
         }
     }
 
 
     render() {
-        const {data} = this.state;
+        const { data } = this.state;
         return (
             <section className="product-container">
                 <Header history={this.props.history} />
-                    <DisplayAllProducts data={data}/>
-                <Footer/>
+                <DisplayAllProducts data={data} />
+                <Footer />
             </section>
         )
     }

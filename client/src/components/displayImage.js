@@ -6,10 +6,10 @@ import CompoundPath_1 from '../assets/images/displayImages/Compound Path_1.png';
 import foundation_alt_img from '../assets/images/landing_page_icons/foundation_alt_image.jpg';
 import { Link } from 'react-router-dom';
 
-
 export default class DisplayImage extends Component {
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
             product:
                 {
@@ -27,17 +27,17 @@ export default class DisplayImage extends Component {
                 },
         }
     }
-
     render() {
         if (!this.props || this.state.product === false) {
             return (<div>no product specified</div>)
         } else {
             const { product_name, brand, price, img_src, categories, product_id, gentle_avg_rating, safety_avg_rating, rating } = this.props.product;
+            const image = "/product_images/" + categories + "/" + product_id + "/" + img_src;
             return (
                 <Link to={"/product/" + product_id}>
-                    <div className="product-display-container">
-                        <div className='image-container'>
-                            <img className='product-image' src={img_src} />
+                    <div className={this.props.className.displayCont}>
+                        <div className={this.props.className.imgProductPage}>
+                            <img className={this.props.className.imgProductPage} src={image} />
                             <img className='gentle-icon' src={CompoundPath_1} />
                             <img className='safety-icon' src={Group_1} />
                             <span className='gentle-rating'>{gentle_avg_rating}</span>
@@ -77,3 +77,4 @@ export default class DisplayImage extends Component {
         };
     };
 };
+
