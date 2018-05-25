@@ -29,7 +29,7 @@ class Header extends Component {
         }, () => console.log('input:', this.state)
         );
     }
-    handleSubmit() {
+    handleSubmit(event) {
         event.preventDefault();
         this.props.history.push('/search_product_result/' + this.state.input)
     }

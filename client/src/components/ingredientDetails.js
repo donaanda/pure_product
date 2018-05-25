@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './header';
 import axios from 'axios';
-import '../assets/css/ingredientLookUpResult.css';
+import '../assets/css/ingredientDetails.css';
 import Group_1 from '../assets/images/displayImages/Group_1.png';
 import CompoundPath_1 from '../assets/images/displayImages/Compound Path_1.png';
 
