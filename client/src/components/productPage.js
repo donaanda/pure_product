@@ -11,6 +11,12 @@ import axios from 'axios';
 import ingredient from './ingredient';
 import { Link } from 'react-router-dom';
 
+const styleClasses = {
+    displayCont: 'product-display-container-product-page',
+    imgProductPage: 'image-container-product-page',
+    productImg: 'product-image-product-page'
+}
+
 class ProductPage extends Component {
     constructor(props) {
         super(props);
@@ -59,7 +65,7 @@ class ProductPage extends Component {
         if (this.state.data.success === false) {
             return null;
         } else {
-            const displayImageComponent = product !== undefined ? <DisplayImage product={product} /> : <div>no product specified}</div>;
+            const displayImageComponent = product !== undefined ? <DisplayImage product={product} className={styleClasses} /> : <div>no product specified}</div>;
             return (
                 <section>
                     <Header history={this.props.history} />
