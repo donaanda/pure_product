@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import Header from './header';
+import Footer from "./footer";
 import axios from 'axios';
-import '../assets/css/ingredientLookUpResult.css';
+import '../assets/css/ingredientDetails.css';
 import Group_1 from '../assets/images/displayImages/Group_1.png';
 import CompoundPath_1 from '../assets/images/displayImages/Compound Path_1.png';
 
 
-class IngredientLookUpResult extends Component{
+class IngredientDetails extends Component{
     constructor(props){
         super(props);
         this.state = {
+            input:'',
             data: {
                 data: null
             }
@@ -17,16 +19,41 @@ class IngredientLookUpResult extends Component{
     }
 
     async componentDidMount() {
-        await axios.post(`http://localhost:8888/get_ingredient_by_name.php`).then(response => {
+        var query = this.props.match.params.search;
+        await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
             this.setState({
                 data: response.data
             });
         });
     }
 
+    async componentWillReceiveProps(nextProps) {
+        if (this.props.match.params.search !== nextProps.match.params.search) {
+            let query = nextProps.match.params.search;
+            await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
+                this.setState({
+                    data: response.data
+                }, () => console.log(this.state));
+            });
+        }
+    }
+
+    handleSubmit(event){
+        event.preventDefault();
+        this.props.history.push('/ingredient_details/' + this.state.input)
+    }
+
+    handleInput(event){
+        event.preventDefault();
+        this.setState({
+            input: event.target.value
+        }, ()=>console.log('input:', this.state)
+        );
+    }
+
     render(){
 
-        if (this.state.data === null) {
+        if (this.state.data.data === null) {
             return <div>Loading...</div>
         } else if (!this.state.data.success) {
             return <div>No Result Found</div>
@@ -48,11 +75,16 @@ class IngredientLookUpResult extends Component{
                         </div>
                     </div>
                     <p className="ingredient-description">{details}</p>
+                    <form className="search-ingredient">
+                        <input autoFocus value={this.state.input} onChange={this.handleInput.bind(this)} className="search-ingredient-input" type="text" placeholder="type ingredients to look up here" size="30"/>
+                        <button onClick={this.handleSubmit.bind(this)}className="search-ingredient-button">Search</button>
+                    </form>
+                    <Footer/>
                 </section>
             )
         }
     }
 }
 
-export default IngredientLookUpResult;
+export default IngredientDetails;
 

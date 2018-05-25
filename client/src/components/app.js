@@ -5,7 +5,7 @@ import SignIn from './sign_in';
 import ProductFinder from './product_finder';
 import { Route } from 'react-router-dom';
 import MyAccountPage from './myAccount';
-import LookUpIngredient from './lookUpIngredient';
+import SingleIngredientSearch from './singleIngredientSearch';
 import CheckProducts from './checkProducts';
 import ProductPage from './productPage';
 import SafetyRating from './safetyRating';
@@ -17,7 +17,7 @@ import FAQ from './FAQ';
 import AboutTheSite from './aboutTheSite';
 import ExpandedMenu from './expandedMenuWelcome';
 import SearchProductResult from './searchProductResult';
-import IngredientLookUpResult from './ingredientLookUpResult';
+import IngredientDetails from './ingredientDetails';
 
 const App = () => {
     return (
@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/sign_in" component={SignIn} />
             <Route path="/product_finder" component={ProductFinder} />
             <Route path="/myAccount" component={MyAccountPage} />
-            <Route path="/search_ingredient" component={LookUpIngredient} />
+            <Route path="/single_ingredient_search" component={SingleIngredientSearch} />
             <Route path="/check_products" component={CheckProducts} />
             <Route path="/product/:id?" component={ProductPage} />
             <Route path="/safety_rating" component={SafetyRating} />
@@ -38,7 +38,7 @@ const App = () => {
             <Route path="/about_the_site" component={AboutTheSite} />
             <Route path="/expanded_menu" component={ExpandedMenu} />
             <Route path="/search_product_result/:search?" component={SearchProductResult} />
-            <Route path="/ingredient_look_up_result" component={IngredientLookUpResult} />
+            <Route path="/ingredient_details/:search?" component={IngredientDetails} />
         </section>
     )
 };

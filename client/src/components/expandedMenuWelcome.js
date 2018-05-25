@@ -35,13 +35,13 @@ function ExpandedMenuWelcome(props) {
                     </div>
                 </Link>
 
-                <Link to="/search_ingredient">
+                <Link to="/single_ingredient_search">
                     <div className="menu-item-cont">
-                        <span>Search Ingredients</span>
+                        <span>Search Ingredient</span>
                     </div>
                 </Link>
 
-                <Link to="/search_ingredient">
+                <Link to="/check_products">
                     <div className="menu-item-cont">
                         <span>Discover Products</span>
                     </div>
