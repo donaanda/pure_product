@@ -1,16 +1,3 @@
-.product-page-gentle-safety-rating {}
-
-.product-display-container {
-    display: block;
-    margin: 2vh auto;
-    width: 65vw;
-}
-
-.image-container {
-    width: 30vh;
-    height: 30vh;
-}
-
 .product-page-gentle-safety-rating div {
     display: inline-block;
     height: 7vh;

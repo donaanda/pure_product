@@ -33,13 +33,11 @@ export default class DisplayImage extends Component {
         } else {
             const { product_name, brand, price, img_src, categories, product_id, gentle_avg_rating, safety_avg_rating, rating } = this.props.product;
             const image = "/product_images/" + categories + "/" + product_id + "/" + img_src;
-            console.log('image', image);
-            console.log('image src ideal:', '/product_images/foundation/1/s1925486-main-Lhero.jpg')
             return (
                 <Link to={"/product/" + product_id}>
-                    <div className="product-display-container">
-                        <div className='image-container'>
-                            <img className='product-image' src={image} />
+                    <div className={this.props.className.displayCont}>
+                        <div className={this.props.className.imgProductPage}>
+                            <img className={this.props.className.imgProductPage} src={image} />
                             <img className='gentle-icon' src={CompoundPath_1} />
                             <img className='safety-icon' src={Group_1} />
                             <span className='gentle-rating'>{gentle_avg_rating}</span>
