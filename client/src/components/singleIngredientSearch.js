@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SearchIngredient from '../assets/images/search_ingredient/flask.png';
 import Header from './header';
+import Footer from "./footer";
 import { Link } from 'react-router-dom';
 import '../assets/css/singleIngredientSearch.css';
 
@@ -40,9 +41,10 @@ class LookUpIngredient extends Component {
                 </div>
                 <img className="search-ingredient-image" src={SearchIngredient}/>
                 <form className="search-ingredient">
-                        <input value={input} onChange={this.handleInput.bind(this)} className="search-ingredient-input" type="text" placeholder="type ingredients to look up here" size="30"/>
-                        <button onClick={this.handleSubmit.bind(this)}className="search-ingredient-button">Search</button>
+                    <input autoFocus value={input} onChange={this.handleInput.bind(this)} className="search-ingredient-input" type="text" placeholder="type ingredients to look up here" size="30"/>
+                    <button onClick={this.handleSubmit.bind(this)} className="search-ingredient-button">Search</button>
                 </form>
+                <Footer/>
             </section>
         )
     }   
