@@ -23,7 +23,7 @@ class IngredientDetails extends Component{
         await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
             this.setState({
                 data: response.data
-            });
+            }, () => console.log(this.state));
         });
     }
 
@@ -58,7 +58,7 @@ class IngredientDetails extends Component{
         } else if (!this.state.data.success) {
             return <div>No Result Found</div>
         } else {
-            const {ingredient, safety, gentle, details} = this.state.data.ingredient;
+            const {ingredient, safety, gentle, details} = this.state.data.ingredients;
 
             return (
                 <section>
