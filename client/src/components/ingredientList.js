@@ -8,7 +8,8 @@ class IngredientList extends Component{
     constructor(props){
         super(props);
         this.state = {
-            ingredients: null
+            ingredients: null,
+            success: null
         }
     }
 
@@ -22,6 +23,9 @@ class IngredientList extends Component{
                 })
             });
         }
+        this.setState({
+            success: this.props.success
+        })
     }
 
     componentWillReceiveProps(nextProps){
@@ -34,11 +38,20 @@ class IngredientList extends Component{
                 })
             });
         }
+        this.setState({
+            success: nextProps.success
+        })
     }
     
     
     render(){
-        console.log('ingredients', this.state.ingredients);
+        if(this.state.success === false){
+            return <div>No Result Found</div>
+        }
+        if(this.state.ingredients === null){
+            return <div>Loading...</div>
+        }
+
         return (
             <div>
                 <table className="ingredient-table">

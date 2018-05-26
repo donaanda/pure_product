@@ -21,8 +21,7 @@ class ProductAnalyzer extends Component{
         event.preventDefault();
         this.setState({
             input: event.target.value
-        }, ()=>console.log('input:', this.state)
-        );
+        });
     }
     render(){
         return (

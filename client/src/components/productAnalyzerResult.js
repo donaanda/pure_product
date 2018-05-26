@@ -20,7 +20,7 @@ class ProductAnalyzerResult extends Component{
         await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
             this.setState({
                 data: response.data
-            })
+            },() => console.log("axios",this.state))
         });
     }
 
@@ -30,7 +30,7 @@ class ProductAnalyzerResult extends Component{
             await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
                 this.setState({
                     data: response.data
-                }, () => console.log(this.state));
+                }, () => console.log("axios",this.state));
             });
         }
     }
@@ -44,14 +44,13 @@ class ProductAnalyzerResult extends Component{
         event.preventDefault();
         this.setState({
             input: event.target.value
-        }, ()=>console.log('input:', this.state)
-        );
+        });
     }
     render(){
         return (
             <section>
                 <Header history={this.props.history} />
-                <IngredientList info={this.state.data.ingredients}/>
+                <IngredientList info={this.state.data.ingredients} success={this.state.data.success}/>
                     <form className="check-product-form-field">
                         <div className="check-product-input-container">
                             <textarea autoFocus onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."></textarea>

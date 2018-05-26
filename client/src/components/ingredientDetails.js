@@ -58,7 +58,6 @@ class IngredientDetails extends Component{
         } else if (!this.state.data.success) {
             return <div>No Result Found</div>
         } else {
-            //console.log(this.state.data.ingredient);
             const {ingredient, safety, gentle, details} = this.state.data.ingredient;
 
             return (
