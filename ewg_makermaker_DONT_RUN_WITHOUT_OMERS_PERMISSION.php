@@ -1,6 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *", "Access-Control-Allow-Headers: *");
-require_once('./db_connect.php');
+require_once('./migration_connect.php');
 echo 'starting mission ';
 $query = "SELECT `ingredient_id`, `Synonym Info` FROM `ewg_data`";
 $result=mysqli_query($db,$query);
@@ -13,6 +13,7 @@ if(mysqli_num_rows($result)){
     $query = 'DELETE FROM `ewg_maker`';
     mysqli_query($db,$query);
     foreach($output['data']as$product){
+        set_time_limit ( 30 );
         $product['Synonym Info']=addslashes($product['Synonym Info']);
         $query = "INSERT INTO `ewg_maker`(ingredient_id,synonyms_list) value (".$product['ingredient_id'].",'".$product['Synonym Info']."')";
         mysqli_query($db,$query);

@@ -88,6 +88,7 @@ ORDER BY
             $output['ingredients'][]=$row;
         };
     } else { 
+        error_log(date('Y-m-d H:i:s')." error in query: $query ".mysqli_error($db));
         $output['error']='Can\'t find ingredient';
     }
 }

@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import Tabs1 from './tabs';
+import MenuTabs from './tabs';
 import DisplayImage from './displayImage';
 import '../assets/css/productPage.css';
 import GentleIcon from '../assets/images/displayImages/Compound Path_1.png';
@@ -94,7 +94,7 @@ class ProductPage extends Component {
 
                     <div>
 
-                        <Tabs1 ingredients={ingredients} />
+                        <MenuTabs ingredients={ingredients} product={product}/>
 
                     </div>
                     <Footer />

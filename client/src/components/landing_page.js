@@ -50,7 +50,7 @@ class LandingPage extends Component {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/check_products">
+                        <Link to="/product_analyzer">
                             <div className="landing_button safety">
                                 <div className="wrap-landing-img">
                                     <img className="landing_img" src={lipstick} />

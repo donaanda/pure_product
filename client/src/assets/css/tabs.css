@@ -8,10 +8,11 @@
 
 .tab-header-ingredient,
 .tab-header-video,
-.tab-header-review {
+.tab-header-review,
+.tab-header-detail {
     font-size: 5vmin;
     display: inline-block;
-    width: 33.3vw;
+    width: 25vw;
     cursor: pointer;
     border-top: 2px solid #555555;
     border-right: 2px solid #555555;
@@ -43,4 +44,34 @@
 .tab-ingredient {
     /* background-color: #ffcc99; */
     width: 100vw;
+}
+
+.tab-detail {
+    width: 100vw;
+}
+
+.product-detail-yes {
+    background-color: rgb(235, 241, 247);
+}
+
+.product-detail-No {
+    background-color: rgb(254, 226, 251);
+}
+
+.product-detail-table td {
+    text-align: center;
+}
+
+.product-detail-row td p {
+    margin: auto;
+    border-radius: 100%;
+    width: 5vh;
+    height: 5vh;
+    line-height: 5vh;
+}
+
+.product-detail-description {
+    background-color: #e4f7ef;
+    margin: 5%;
+    font-size: large;
 }

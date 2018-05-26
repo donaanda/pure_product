@@ -1,5 +1,6 @@
 <?php
-require_once('./migration_connect.php');
+//require_once('./migration_connect.php');
+$db=mysqli_connect('localhost', 'root', 'root','pure_product',8889);
 echo 'starting mission ';
 echo '<br>';
 $query = "SELECT * FROM `product_ingredient_assoc_maker`";
@@ -64,7 +65,6 @@ foreach($arrayOfArrayOfIngredients as $value){
         if(mysqli_num_rows($result)){
             $ingredientId=mysqli_fetch_assoc($result);
         }else{
-            console.log('yo');
             $query = "INSERT INTO `ingredient_rating` (ingredient_id, ingredient_name, Description) value ($ingredientIdNum,'$innerValue','added ingredient')";
             mysqli_query($db,$query);
             $ingredientIdNum++;
