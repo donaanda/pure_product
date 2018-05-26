@@ -6,7 +6,11 @@ import { Link } from 'react-router-dom';
 const styleClasses = {
     displayCont: 'product-display-container',
     imgProductPage: 'image-container',
-    productImg: 'product-image'
+    productImg: 'product-image',
+    heartIcon: 'gentle-icon',
+    crossIcon: 'safety-icon',
+    gentleRating: 'gentle-rating',
+    safetyRating: 'safety-rating'
 }
 
 

@@ -14,7 +14,11 @@ import { Link } from 'react-router-dom';
 const styleClasses = {
     displayCont: 'product-display-container-product-page',
     imgProductPage: 'image-container-product-page',
-    productImg: 'product-image-product-page'
+    productImg: 'product-image-product-page',
+    heartIcon: 'gentle-icon-product-page',
+    crossIcon: 'safety-icon-product-page',
+    gentleRating: 'gentle-rating-product-page',
+    safetyRating: 'safety-rating-product-page'
 }
 
 class ProductPage extends Component {

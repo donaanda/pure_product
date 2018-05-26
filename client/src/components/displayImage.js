@@ -32,16 +32,17 @@ export default class DisplayImage extends Component {
             return (<div>no product specified</div>)
         } else {
             const { product_name, brand, price, img_src, categories, product_id, gentle_avg_rating, safety_avg_rating, rating } = this.props.product;
+            const { displayCont, imgProductPage, heartIcon, crossIcon, gentleRating, safetyRating } = this.props.className;
             const image = "/product_images/" + categories + "/" + product_id + "/" + img_src;
             return (
                 <Link to={"/product/" + product_id}>
-                    <div className={this.props.className.displayCont}>
-                        <div className={this.props.className.imgProductPage}>
-                            <img className={this.props.className.imgProductPage} src={image} />
-                            <img className='gentle-icon' src={CompoundPath_1} />
-                            <img className='safety-icon' src={Group_1} />
-                            <span className='gentle-rating'>{gentle_avg_rating}</span>
-                            <span className='safety-rating'>{safety_avg_rating}</span>
+                    <div className={displayCont}>
+                        <div className={imgProductPage}>
+                            <img className={imgProductPage} src={image} />
+                            <img className={heartIcon} src={CompoundPath_1} />
+                            <img className={crossIcon} src={Group_1} />
+                            <span className={gentleRating}>{gentle_avg_rating}</span>
+                            <span className={safetyRating}>{safety_avg_rating}</span>
                             <span>average user rating: {rating}</span>
                             <h3 className='product-name'>
                                 <span className="hidden">
