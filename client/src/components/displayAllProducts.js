@@ -3,6 +3,7 @@ import DisplayImage from './displayImage';
 import ImageData from './imageData';
 import { Link } from 'react-router-dom';
 import Loader from './loader';
+import '../assets/css/displayImage.css';
 
 const styleClasses = {
     displayCont: 'product-display-container',
@@ -17,10 +18,23 @@ const styleClasses = {
 
 
 const DisplayAllProducts = (props) => {
+    console.log(props);
+
     if (props.data.data === null) {
-        return <Loader/>
+        return <Loader />
     } else if (!props.data.success) {
-        return <div>No Result Found</div>
+        return (
+            <section>
+                <h1>Oops! No results found...</h1>
+                <Link to="/">
+                    <div className="return-home-cont">
+                        <button className="btn return-home-btn">
+                            Return Home
+                        </button>
+                    </div>
+                </Link>
+            </section>
+        )
     } else {
         let products = props.data.data.map((item, index) => {
             return (

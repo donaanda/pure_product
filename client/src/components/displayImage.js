@@ -37,12 +37,17 @@ export default class DisplayImage extends Component {
             return (
                 <Link to={"/product/" + product_id}>
                     <div className={displayCont}>
-                        <div className={imgProductPage}>
-                            <img className={imgProductPage} src={image} />
-                            <img className={heartIcon} src={CompoundPath_1} />
-                            <img className={crossIcon} src={Group_1} />
-                            <span className={gentleRating}>{gentle_avg_rating}</span>
-                            <span className={safetyRating}>{safety_avg_rating}</span>
+                        <div className={imgProductPage} style={{ backgroundImage: `url(${image})` }}>
+                            <div className="display-cont">
+                                <div className="icon-cont">
+                                    <img className={heartIcon} src={CompoundPath_1} />
+                                    <span className={gentleRating}>{gentle_avg_rating}</span>
+                                </div>
+                                <div className="icon-cont">
+                                    <img className={crossIcon} src={Group_1} />
+                                    <span className={safetyRating}>{safety_avg_rating}</span>
+                                </div>
+                            </div>
                             <span>average user rating: {rating}</span>
                             <h3 className='product-name'>
                                 <span className="hidden">
