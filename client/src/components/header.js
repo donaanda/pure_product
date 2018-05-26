@@ -197,7 +197,7 @@ class Header extends Component {
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
                 <form>
-                    <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." className={this.state.searchBarStyle} />
+                    <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show"className={this.state.searchBarStyle} />
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
                 </form>
             </div >

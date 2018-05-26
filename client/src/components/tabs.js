@@ -77,9 +77,9 @@ class MenuTabs extends Component {
         await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
             'key': API_KEY,
             'q': 'cosmetics',
+            'part': 'snippet',
             'maxResults': 3,
-            'type': 'video',
-            'detailLevel': 'verbose'
+            'fields': 'items(id,kind,snippet)',
         }, {
                 headers: {
                     'Content-Type': 'application/json'
