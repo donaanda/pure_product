@@ -10,6 +10,7 @@ import Footer from './footer';
 import axios from 'axios';
 import ingredient from './ingredient';
 import { Link } from 'react-router-dom';
+import Loader from './loader';
 
 const styleClasses = {
     displayCont: 'product-display-container-product-page',
@@ -67,7 +68,7 @@ class ProductPage extends Component {
         console.log('data', this.state.data);
         const { ingredients, product } = this.state.data;
         if (this.state.data.success === false) {
-            return null;
+            return <Loader />;
         } else {
             const displayImageComponent = product !== undefined ? <DisplayImage product={product} className={styleClasses} /> : <div>no product specified}</div>;
             return (
@@ -94,7 +95,7 @@ class ProductPage extends Component {
 
                     <div>
 
-                        <MenuTabs ingredients={ingredients} product={product}/>
+                        <MenuTabs ingredients={ingredients} product={product} />
 
                     </div>
                     <Footer />

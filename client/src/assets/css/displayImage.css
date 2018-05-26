@@ -4,6 +4,7 @@
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(139, 136, 136, 0.2), 0 6px 20px 0 rgba(139, 136, 136, 0.2);
     font-size: 7vmin;
+    background-size: contain;
 }
 
 .image-container {
@@ -54,74 +55,49 @@
     position: relative;
 }
 
+/* display container for image, icons and ratings */
+
+.display-cont {
+    height: 100%;
+    width: 100%;
+    text-align: right;
+}
+
+.icon-cont {
+    margin: 0 2%;
+}
+
+/*icons and ratings, display all products, landing page*/
+
 .gentle-icon,
-.safety-icon {
-    height: 2.5vh;
-    width: 2.5vh;
-}
-
-.gentle-icon {
-    position: absolute;
-    top: 5%;
-    left: 65%;
-}
-
-.gentle-icon-product-page {
-    display: inline-block;
-    position: absolute;
-    top: 3.8%;
-    right: 25%;
-}
-
-.safety-icon {
-    position: absolute;
-    top: 20%;
-    left: 65%;
-}
-
+.safety-icon,
+.gentle-icon-product-page,
 .safety-icon-product-page {
-    display: inline-block;
-    position: absolute;
-    top: 5.5%;
-    right: 25%;
+    width: 20%;
+    height: 20%;
+    margin: 0 2%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(250, 250, 250, 0.2), 0 6px 20px 0 rgba(250, 250, 250, 0.19);
 }
 
 .gentle-rating,
+.safety-rating,
 .gentle-rating-product-page,
-.safety-rating,
 .safety-rating-product-page {
-    position: absolute;
+    font-size: 9vmin;
+    line-height: 100%;
+    vertical-align: top;
 }
 
-.gentle-rating,
-.gentle-rating-product-page {
-    color: green;
-}
+/*icons and ratings, product display page*/
 
-.gentle-rating {
-    top: 5%;
-    left: 85%;
-}
+.gentle-icon-product-page,
+.safety-icon-product-page {}
 
-.gentle-rating-product-page {
-    top: 4%;
-    right: 19%;
-}
+.gentle-rating-product-page,
+.safety-rating-product-page {}
 
-.safety-rating,
-.safety-rating-product-page {
-    color: darkred;
-}
-
-.safety-rating {
-    top: 20%;
-    left: 85%;
-}
-
-.safety-rating-product-page {
-    top: 5.8%;
-    right: 19%;
-}
+/*end of icons*/
 
 .product-name {
     font-size: 1rem;
@@ -150,4 +126,14 @@
 .product-name-text {
     color: rgb(15, 20, 28);
     font-size: 3.5vmin;
+}
+
+.return-home-cont {
+    height: 40vh;
+    width: 100vw;
+}
+
+.return-home-btn {
+    display: block;
+    margin: auto;
 }
