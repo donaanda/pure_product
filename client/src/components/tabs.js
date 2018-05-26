@@ -25,8 +25,6 @@ class MenuTabs extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
-
-
         });
 
     }
@@ -72,8 +70,12 @@ class MenuTabs extends Component {
     //     $.ajax(youtubeAjaxObject);
     // }
 
+    // onYouTubeIframeAPIReady
+
     async componentDidMount() {
-        await axios.post(`http://s-apis.learningfuze.com/hackathon/youtube/search.php`, {
+        const API_KEY = 'AIzaSyCSizsUkb5GqPfSuxAG43QxyscxxJs7m5E';
+        await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
+            'key': API_KEY,
             'q': 'cosmetics',
             'maxResults': 3,
             'type': 'video',
@@ -122,16 +124,16 @@ class MenuTabs extends Component {
                 <TabList className="tab-list">
                     <Tab className="tab-header-ingredient" onClick={this.handleClickIngredients.bind(this)}>
                         Ingredients
-                </Tab>
+                    </Tab>
                     <Tab className="tab-header-detail" onClick={this.handleClickDetails.bind(this)}>
                         Details
-                </Tab>
+                    </Tab>
                     <Tab className="tab-header-video" onClick={this.handleClickVideos.bind(this)}>
                         Videos
-                </Tab>
+                    </Tab>
                     <Tab className="tab-header-review" onClick={this.handleClickReviews.bind(this)}>
                         Reviews
-                </Tab>
+                    </Tab>
                 </TabList>
                 <TabPanel>
                     <div className="tab-ingredient">
@@ -190,4 +192,4 @@ class MenuTabs extends Component {
 }
 
 
-    export default MenuTabs;
+export default MenuTabs;
