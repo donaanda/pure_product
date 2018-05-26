@@ -2,6 +2,7 @@ import React from 'react';
 import DisplayImage from './displayImage';
 import ImageData from './imageData';
 import { Link } from 'react-router-dom';
+import Loader from './loader';
 
 const styleClasses = {
     displayCont: 'product-display-container',
@@ -17,7 +18,7 @@ const styleClasses = {
 
 const DisplayAllProducts = (props) => {
     if (props.data.data === null) {
-        return <div>Loading...</div>
+        return <Loader/>
     } else if (!props.data.success) {
         return <div>No Result Found</div>
     } else {
