@@ -8,33 +8,37 @@ class IngredientList extends Component{
     constructor(props){
         super(props);
         this.state = {
-            ingredients: this.props.info.map((ingredient, index) => {
-                return (
-                    <Ingredient key={index} ingredientInfo={ingredient} />
-                )
-            })
+            ingredients: null
         }
     }
-    // componentDidMount(){
-    //         const ingredients = this.state.ingredients.map((ingredient, index) => {
-    //             return (
-    //                 <Ingredient key={index} ingredientInfo={ingredient} />
-    //             )
-    //         });
-    // }
-    
 
-    // mapIngredients(){
-    //     const ingredients = this.props.info.map((ingredient, index) => {
-    //         return (
-    //             <Ingredient key={index} ingredientInfo={ingredient} />
-    //         )
-    //     });
-    // }
-        
+    componentDidMount(){
+        if(this.props.info){
+            this.setState({
+                ingredients: this.props.info.map((ingredient, index) => {
+                    return (
+                        <Ingredient key={index} ingredientInfo={ingredient} />
+                    )
+                })
+            });
+        }
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.info){
+            this.setState({
+                ingredients: nextProps.info.map((ingredient, index) => {
+                    return (
+                        <Ingredient key={index} ingredientInfo={ingredient} />
+                    )
+                })
+            });
+        }
+    }
+    
     
     render(){
-        console.log(this.props);
+        console.log('ingredients', this.state.ingredients);
         return (
             <div>
                 <table className="ingredient-table">
