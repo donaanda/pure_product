@@ -5,6 +5,7 @@ import axios from 'axios';
 import '../assets/css/ingredientDetails.css';
 import Group_1 from '../assets/images/displayImages/Group_1.png';
 import CompoundPath_1 from '../assets/images/displayImages/Compound Path_1.png';
+import Loader from './loader';
 
 
 class IngredientDetails extends Component{
@@ -40,7 +41,7 @@ class IngredientDetails extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        this.props.history.push('/ingredient_details/' + this.state.input)
+        this.props.history.push('/ingredient_details_page/' + this.state.input)
     }
 
     handleInput(event){
@@ -54,26 +55,32 @@ class IngredientDetails extends Component{
     render(){
 
         if (this.state.data.data === null) {
-            return <div>Loading...</div>
+            return <Loader/>
         } else if (!this.state.data.success) {
             return <div>No Result Found</div>
         } else {
-            const {ingredient, safety, gentle, details} = this.state.data.ingredients;
+            const ingredientBlock = this.state.data.ingredients.map((item,index)=>{
+                const {ingredient, safety, gentle, details} = item;
+                return (
+                    <div key={index}>
+                        <div className="ingredient-info-container">
+                            <div className="ingredient-name">
+                                <div className="ingredient-name-span">{ingredient}</div>
+                                <img className="ingredient-result-gentle-img" src={CompoundPath_1}/>
+                                <span className="ingredient-result-gentle-rating">{gentle}</span>
+                                <img className="ingredient-result-safety-img" src={Group_1}/>
+                                <span className="ingredient-result-safety-rating">{safety}</span>
+                            </div>
+                        </div>
+                        <p className="ingredient-description">{details}</p>
+                    </div>
+                )
+            });
 
             return (
                 <section>
                     <Header history={this.props.history} />
-
-                    <div className="ingredient-info-container">
-                        <div className="ingredient-name">
-                            <div className="ingredient-name-span">{ingredient}</div>
-                            <img className="ingredient-result-gentle-img" src={CompoundPath_1}/>
-                            <span className="ingredient-result-gentle-rating">{gentle}</span>
-                            <img className="ingredient-result-safety-img" src={Group_1}/>
-                            <span className="ingredient-result-safety-rating">{safety}</span>
-                        </div>
-                    </div>
-                    <p className="ingredient-description">{details}</p>
+                    {ingredientBlock}
                     <form className="search-ingredient">
                         <input autoFocus value={this.state.input} onChange={this.handleInput.bind(this)} className="search-ingredient-input" type="text" placeholder="type ingredients to look up here" size="30"/>
                         <button onClick={this.handleSubmit.bind(this)}className="search-ingredient-button">Search</button>

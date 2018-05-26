@@ -3,6 +3,7 @@ import heart from '../assets/images/landing_page_icons/gentle_heart.png';
 import cross from '../assets/images/landing_page_icons/safety.png';
 import '../assets/css/ingredientList.css';
 import Ingredient from './ingredient';
+import Loader from './loader';
 
 class IngredientList extends Component{
     constructor(props){
@@ -49,7 +50,7 @@ class IngredientList extends Component{
             return <div>No Result Found</div>
         }
         if(this.state.ingredients === null){
-            return <div>Loading...</div>
+            return <Loader/>
         }
 
         return (

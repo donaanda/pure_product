@@ -15,7 +15,7 @@ class SingleIngredientSearch extends Component {
 
     handleSubmit(event){
         event.preventDefault();
-        this.props.history.push('/ingredient_details/' + this.state.input)
+        this.props.history.push('/ingredient_details_page/' + this.state.input)
     }
 
     handleInput(event){
