@@ -14,7 +14,8 @@ $query = "SELECT
     JOIN `product_foundation_table` 
     ON product_name.product_id = product_foundation_table.product_id 
     WHERE `categories` LIKE '%$search_input%' 
-    OR `product_name` LIKE '%$search_input%'";
+    OR `product_name` LIKE '%$search_input%'
+    OR `brand` LIKE '%$search_input%'";
 $result=mysqli_query($db,$query);
 $output=[];
 $output['success']=false;
