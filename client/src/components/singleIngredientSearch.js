@@ -5,7 +5,7 @@ import Footer from "./footer";
 import { Link } from 'react-router-dom';
 import '../assets/css/singleIngredientSearch.css';
 
-class LookUpIngredient extends Component {
+class SingleIngredientSearch extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -49,4 +49,4 @@ class LookUpIngredient extends Component {
         )
     }   
 }
-export default LookUpIngredient;
+export default SingleIngredientSearch;

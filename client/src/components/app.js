@@ -6,7 +6,8 @@ import ProductFinder from './product_finder';
 import { Route } from 'react-router-dom';
 import MyAccountPage from './myAccount';
 import SingleIngredientSearch from './singleIngredientSearch';
-import CheckProducts from './checkProducts';
+import ProductAnalyzer from './productAnalyzer';
+import ProductAnalyzerResult from './productAnalyzerResult';
 import ProductPage from './productPage';
 import SafetyRating from './safetyRating';
 import GentleRating from './gentleRating';
@@ -27,7 +28,8 @@ const App = () => {
             <Route path="/product_finder" component={ProductFinder} />
             <Route path="/myAccount" component={MyAccountPage} />
             <Route path="/single_ingredient_search" component={SingleIngredientSearch} />
-            <Route path="/check_products" component={CheckProducts} />
+            <Route path="/product_analyzer" component={ProductAnalyzer} />
+            <Route path="/product_analyzer_result/:search?" component={ProductAnalyzerResult} />
             <Route path="/product/:id?" component={ProductPage} />
             <Route path="/safety_rating" component={SafetyRating} />
             <Route path="/gentle_rating" component={GentleRating} />

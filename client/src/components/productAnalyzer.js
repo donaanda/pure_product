@@ -2,21 +2,26 @@ import React, {Component} from 'react';
 import Header from './header';
 import Lipstick from '../assets/images/landing_page_icons/lipstick.png';
 import { Link } from 'react-router-dom';
-import '../assets/css/checkProduct.css';
+import '../assets/css/productAnalyzer.css';
 
-class CheckProducts extends Component{
+class ProductAnalyzer extends Component{
     constructor(props){
         super(props);
         this.state = {
             input:''
         }
     }
+
+    handleSubmit(event){
+        event.preventDefault();
+        this.props.history.push('/product_analyzer_result/' + this.state.input)
+    }
+
     handleInput(event){
         event.preventDefault();
         this.setState({
             input: event.target.value
-        }, ()=>console.log('input:', this.state)
-        );
+        });
     }
     render(){
         return (
@@ -31,17 +36,15 @@ class CheckProducts extends Component{
                     </div>
                     <form className="check-product-form-field">
                         <div className="check-product-input-container">
-                            <input onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."/>
+                            <textarea autoFocus onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."></textarea>
+                        </div>
+                        <div className="check-product-button-container">
+                            <button className="check-product-button" onClick={this.handleSubmit.bind(this)}>Analyze</button>
                         </div>
                     </form>
-                    <div className="check-product-button-container">
-                        <Link to="TBD">
-                            <button className="check-product-button">Analyze</button>
-                        </Link>
-                    </div>
                 </div>
             </section>
         )
     }
 }
-export default CheckProducts
+export default ProductAnalyzer

@@ -29,7 +29,7 @@ $output['success']=false;
 if(mysqli_num_rows($result)){
     $row=mysqli_fetch_assoc($result);
     $output['success']=true;
-    $output['ingredient']=$row; 
+    $output['ingredients'][]=$row; 
     
 } else {
     error_log(date('Y-m-d H:i:s')." error in query: $query ".mysqli_error($db));
