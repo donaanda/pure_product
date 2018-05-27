@@ -3,6 +3,7 @@ import Header from './header';
 import { Link } from 'react-router-dom';
 import '../assets/css/productAnalyzer.css';
 import IngredientList from './ingredientList';
+import Loader from './loader';
 import axios from 'axios';
 
 class ProductAnalyzerResult extends Component{
@@ -37,6 +38,12 @@ class ProductAnalyzerResult extends Component{
 
     handleSubmit(event){
         event.preventDefault();
+        this.setState({
+            input:'',
+            data: {
+                data: null
+            }
+        });
         this.props.history.push('/product_analyzer_result/' + this.state.input)
     }
 
@@ -47,6 +54,9 @@ class ProductAnalyzerResult extends Component{
         });
     }
     render(){
+        if(this.state.data.data === null){
+            return <Loader/>
+        }
         return (
             <section>
                 <Header history={this.props.history} />
