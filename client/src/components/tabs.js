@@ -3,6 +3,13 @@ import IngredientList from './ingredientList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../assets/css/tabs.css';
 import axios from 'axios';
+import dry_icon from '../assets/images/skintype_icons/dry.png';
+import sensitive_icon from '../assets/images/skintype_icons/sensitive.png';
+import oily_icon from '../assets/images/skintype_icons/oily.png';
+import combo_icon from '../assets/images/skintype_icons/combo.png';
+import normal_icon from '../assets/images/skintype_icons/normal.png';
+import vegan_icon from '../assets/images/ethical_icons/vegan.png';
+import cruelty_free_icon from '../assets/images/ethical_icons/cruelty_free.png';
 
 class MenuTabs extends Component {
 
@@ -21,7 +28,6 @@ class MenuTabs extends Component {
     }
 
     handleClickIngredients(event) {
-        console.log(event.target.name);
         event.preventDefault();
         this.setState({
             tab: event.target.name,
@@ -30,7 +36,6 @@ class MenuTabs extends Component {
     }
 
     handleClickVideos(event) {
-        console.log(event.target.name);
         event.preventDefault();
         this.setState({
             tab: event.target.name,
@@ -39,86 +44,75 @@ class MenuTabs extends Component {
     }
 
     handleClickReviews(event) {
-        console.log(event.target.name);
         event.preventDefault();
         this.setState({
             tab: event.target.name,
         });
     }
 
-    // componentDidMount() {
-    //     var youtubeAjaxObject = {
-    // 'dataType': 'json',
-    // 'url': 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',
-    // 'timeout': 3000,
-    //         'success': function (result) {
-    //             if (result.success === true) {
-    //                 removeLoader();
-    //                 var currentSolarBodiesArr = Object.keys(result.data);
-    //                 solarBodies.videos = currentSolarBodiesArr;
-    //                 renderVideosOnModal(currentSolarBodiesArr, planetInfo);
-    //             } else {
-    //                 errorDisplay();
+    validateLabelDisplay(productAttributes) {
+        var yesCount = null;
+        var noCount = null;
+        const length = Object.keys(productAttributes).length;
+        for (var key in productAttributes) {
+            if (productAttributes[key] === "1") {
+                yesCount++;
+            } else {
+                noCount++;
+            }
+        }
+        if (noCount === length) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-    //             }
-    //         },
-    //         'error': function (error) {
-    //             errorDisplay()
-    //         }
-    //     };
-
-    //     $.ajax(youtubeAjaxObject);
+    // async componentDidMount() {
+    //     const { product_name, brand, categories } = this.product;
+    //     var query = product_name.replace(/\s/g, '+') + '+' + brand.replace(/\s/g, '+') + '+' + categories.replace(/\s/g, '+') + '+' + 'review';
+    //     const API_KEY = 'AIzaSyCSizsUkb5GqPfSuxAG43QxyscxxJs7m5E';
+    //     var review = 'review';
+    //     var youtubeAddress = 'https://www.googleapis.com/youtube/v3/search';
+    //     var dataConfig = {
+    //         part: 'snippet',
+    //         q: product_name, brand, categories, review,
+    //         fields: 'items(id, kind, snippet)',
+    //         maxResults: 6,
+    //         key: API_KEY
+    //     }
+    //     await axios.get(youtubeAddress, dataConfig)
+    //         .then(res => {
+    //             this.setState({
+    //                 data: res.data
+    //             }, console.log(this.state))
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         })
     // }
 
-    // onYouTubeIframeAPIReady
-
-    async componentDidMount() {
-        const API_KEY = 'AIzaSyCSizsUkb5GqPfSuxAG43QxyscxxJs7m5E';
-        await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
-            'key': API_KEY,
-            'q': 'cosmetics',
-            'part': 'snippet',
-            'maxResults': 3,
-            'fields': 'items(id,kind,snippet)',
-        }, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(res => {
-                this.setState({
-                    data: res.data
-                }, console.log)
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }
     handleClickDetails(event) {
-        console.log(event.target.name);
         event.preventDefault();
         this.setState({
             tab: event.target.name,
         });
-    }
-
-    colorizeYes(binaryNumber) {
-        if (binaryNumber === "1") {
-            return "blue";
-        }
-    }
-
-    colorizeNo(binaryNumber) {
-        if (binaryNumber === "0") {
-            return "purple";
-        }
     }
 
     render() {
-        //console.log(this.product);
-        const { Details, Dry, Normal, Oily, Sensitive, Vegan } = this.product;
+        const { Details, Dry, Normal, Oily, Sensitive, Vegan, categories, Cruelty_Free } = this.product;
         const { tab } = this.state;
+        var skinTypeValues = {
+            Dry,
+            Normal,
+            Oily,
+            Sensitive
+        }
 
+        var ethicalValues = {
+            Vegan,
+            Cruelty_Free
+        }
         return (
             <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                 <TabList className="tab-list">
@@ -142,38 +136,34 @@ class MenuTabs extends Component {
                 </TabPanel>
                 <TabPanel>
                     <div className="tab-detail">
-                        <p className="product-detail-description">{Details}</p>
-                        <table className="product-detail-table">
-                            <tbody>
-                                <tr className="product-detail-row">
-                                    <td>Dry</td>
-                                    <td className="product-detail-yes"><p className={`${this.colorizeYes(Dry)}`}>Yes</p></td>
-                                    <td className="product-detail-No"><p className={`${this.colorizeNo(Dry)}`}>No</p></td>
-                                </tr>
-                                <tr className="product-detail-row">
-                                    <td>Normal</td>
-                                    <td className="product-detail-yes"><p className={`${this.colorizeYes(Normal)}`}>Yes</p></td>
-                                    <td className="product-detail-No"><p className={`${this.colorizeNo(Normal)}`}>No</p></td>
-                                </tr>
-                                <tr className="product-detail-row">
-                                    <td>Oily</td>
-                                    <td className="product-detail-yes"><p className={`${this.colorizeYes(Oily)}`}>Yes</p></td>
-                                    <td className="product-detail-No"><p className={`${this.colorizeNo(Oily)}`}>No</p></td>
-                                </tr>
-                                <tr className="product-detail-row">
-                                    <td>Sensitive</td>
-                                    <td className="product-detail-yes"><p className={`${this.colorizeYes(Sensitive)}`}>Yes</p></td>
-                                    <td className="product-detail-No"><p className={`${this.colorizeNo(Sensitive)}`}>No</p></td>
-                                </tr>
-                                <tr className="product-detail-row">
-                                    <td>Vegan</td>
-                                    <td className="product-detail-yes"><p className={`${this.colorizeYes(Vegan)}`}>Yes</p></td>
-                                    <td className="product-detail-No"><p className={`${this.colorizeNo(Vegan)}`}>No</p></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <h5 className="center">What it is:</h5>
+                        <p className="product-detail-description">
+                            {Details}
+                        </p>
+                        {/* Display label and content for skintype */}
+                        <div className="icon-container-const">
+                            {this.validateLabelDisplay(skinTypeValues) ?
+                                <div className="icon-container">
+                                    <h5 className="center">Skin types it works for:</h5>
+                                </div> : ''}
+                            {Dry === '1' ? <img className="skintype-icon" src={dry_icon} /> : ''}
+                            {Normal === '1' ? <img className="skintype-icon" src={normal_icon} /> : ''}
+                            {Oily === '1' ? <img className="skintype-icon" src={oily_icon} /> : ''}
+                            {Sensitive === '1' ? <img className="skintype-icon" src={sensitive_icon} /> : ''}
+                        </div>
+                        {/* Display label and content for animal ethics*/}
+                        <div className="icon-container-const">
+                            {this.validateLabelDisplay(ethicalValues) ?
+                                <div className="icon-container">
+                                    <h5 className="center">Cruelty Free and Vegan:</h5>
+                                </div> : ''}
+                            <div className="icon-container-const">
+                                {Vegan === '1' ? <img className="ethical-icon" src={vegan_icon} /> : ''}
+                                {Cruelty_Free === '1' ? <img className="ethical-icon" src={cruelty_free_icon} /> : ''}
+                            </div>
+                        </div>
                     </div>
-                </TabPanel>
+                </TabPanel >
                 <TabPanel>
                     <div className="tab-video">
                         <h2 className="videos-default-text">No videos to display.</h2>
@@ -186,7 +176,7 @@ class MenuTabs extends Component {
                         <button className="tab-review-button">Add Review</button>
                     </div>
                 </TabPanel>
-            </Tabs>
+            </Tabs >
         )
     }
 }

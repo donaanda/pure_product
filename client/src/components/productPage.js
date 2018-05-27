@@ -65,7 +65,6 @@ class ProductPage extends Component {
     }
 
     render() {
-        console.log('data', this.state.data);
         const { ingredients, product } = this.state.data;
         if (this.state.data.success === false) {
             return <Loader />;

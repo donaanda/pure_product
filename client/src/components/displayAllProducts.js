@@ -18,7 +18,6 @@ const styleClasses = {
 
 
 const DisplayAllProducts = (props) => {
-    console.log(props);
 
     if (props.data.data === null) {
         return <Loader />
