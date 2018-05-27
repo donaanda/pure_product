@@ -5,23 +5,19 @@ $request = json_decode($postdata);
 require_once('./db_connect.php');
 $search_input = $request->query; 
 $query = "SELECT 
-    a.ingredient_name as ingredient, 
-    a.safety_rating as safety, 
-    CASE WHEN `Rating` = 'Average' 
-    THEN 3 WHEN `Rating` = 'Best' 
-    THEN 1 WHEN `Rating` = 'Good' 
-    THEN 2 WHEN `Rating` = 'Poor' 
-    THEN 4 END AS `gentle`, 
-    COALESCE(details,description) as details 
-    FROM (SELECT 
-        safety_rating, 
-        ingredient_id, 
-        `name to search` as ingredient_name, 
-        `About Info` as details 
-        FROM ewg_data) a 
-    JOIN ingredient_rating 
-    ON ingredient_rating.ingredient_name = a.ingredient_name 
-    WHERE a.ingredient_name LIKE '%$search_input%'";
+a.ingredient_name as ingredient, 
+a.safety_rating as safety_rating, 
+`Rating` AS gentle_rating, 
+COALESCE(details,description) as details 
+FROM (SELECT 
+    safety_rating, 
+    ingredient_id, 
+    `name to search` as ingredient_name, 
+    `About Info` as details 
+    FROM ewg_data) a 
+JOIN ingredient_rating 
+ON ingredient_rating.ingredient_name = a.ingredient_name 
+WHERE ingredient_rating.ingredient_name LIKE '%$search_input%'";
 
 $result=mysqli_query($db,$query);
 $output=[];
