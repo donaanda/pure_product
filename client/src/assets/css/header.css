@@ -104,15 +104,10 @@
     overflow-x: hidden;
     overflow: hidden;
     transition: 0.5s;
-    transform: translate()
 }
 
 .expanded-menu-hide {
     transform: translate(-100%);
-}
-
-.expanded-menu-show {
-    /* transform: translate(100%); */
 }
 
 .menu-container {

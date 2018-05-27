@@ -48,6 +48,7 @@
 
 .tab-detail {
     width: 100vw;
+    min-height: 50vh;
 }
 
 .product-detail-yes {
@@ -71,7 +72,32 @@
 }
 
 .product-detail-description {
-    background-color: #e4f7ef;
-    margin: 5%;
+    margin: 5% 5%;
+    padding: 5%;
     font-size: large;
+    border-top: 2px solid #a5a5a7;
+}
+
+.skintype-icon {
+    display: inline-block;
+    height: 12vh;
+    width: 9vh;
+    margin: 1vh;
+}
+
+.ethical-icon {
+    height: 12vh;
+    width: 13vh;
+    margin: 1vh;
+}
+
+.icon-container {
+    margin: auto;
+    border-top: 2px solid #a5a5a7;
+    width: 90vw;
+}
+
+.icon-container-const {
+    width: 90vw;
+    margin: auto;
 }
