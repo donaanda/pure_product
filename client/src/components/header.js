@@ -13,14 +13,14 @@ class Header extends Component {
         super(props);
 
         this.state = {
-            autoComplete:[],
+            autoComplete: [],
             input: "",
             searchToggle: false,
             searchBarStyle: 'display-none',
             buttonStyle: 'display-none',
             headerContainer: 'header-container',
             hamburgerClick: false,
-            ExpandedMenuSize: 'expanded-menu-size'
+            ExpandedMenuSize: 'expanded-menu-hide'
         };
     }
 
@@ -31,26 +31,26 @@ class Header extends Component {
             })
         })
         this.setState({
-            productDataAlpha:this.state.productData.productName.concat(this.state.productData.categories,this.state.productData.brand)
+            productDataAlpha: this.state.productData.productName.concat(this.state.productData.categories, this.state.productData.brand)
         });
-        var arrHolder=this.state.productDataAlpha;
-        var x=0;
-        while(x<arrHolder.length){
-            var y=x;
-            while(y>0&&arrHolder[y-1]>arrHolder[y]){
-                let b=arrHolder[y-1];
-                arrHolder[y-1]=arrHolder[y];
-                arrHolder[y]=b;
+        var arrHolder = this.state.productDataAlpha;
+        var x = 0;
+        while (x < arrHolder.length) {
+            var y = x;
+            while (y > 0 && arrHolder[y - 1] > arrHolder[y]) {
+                let b = arrHolder[y - 1];
+                arrHolder[y - 1] = arrHolder[y];
+                arrHolder[y] = b;
                 y--;
             }
             x++;
         }
-        var q=0;
-        while(q<arrHolder.length){
-            var w=q+1;
-            while(w<arrHolder.length){
-                if(arrHolder[q]===arrHolder[w]){
-                    arrHolder.splice(w,1);
+        var q = 0;
+        while (q < arrHolder.length) {
+            var w = q + 1;
+            while (w < arrHolder.length) {
+                if (arrHolder[q] === arrHolder[w]) {
+                    arrHolder.splice(w, 1);
                     w--;
                 }
                 w++;
@@ -58,7 +58,7 @@ class Header extends Component {
             q++;
         }
         this.setState({
-            productDataAlpha:arrHolder
+            productDataAlpha: arrHolder
         });
     }
 
@@ -69,65 +69,65 @@ class Header extends Component {
             autoComplete: []
         }, () => console.log('input:', this.state)
         );
-        var curInput=this.state.input;
-        var newArr=[];
-        var tempHolder=[];
-        var counter=0;
-        for(var item in this.state.productData['categories']){
-            if(this.state.productData['categories'][item].toUpperCase().includes(curInput.toUpperCase())){
-                if(counter<1){
+        var curInput = this.state.input;
+        var newArr = [];
+        var tempHolder = [];
+        var counter = 0;
+        for (var item in this.state.productData['categories']) {
+            if (this.state.productData['categories'][item].toUpperCase().includes(curInput.toUpperCase())) {
+                if (counter < 1) {
                     newArr.push(this.state.productData['categories'][item]);
                 }
             }
             counter++;
         }
-        counter=0;
-        for(var item in this.state.productData['brand']){
-            if(this.state.productData['brand'][item].toUpperCase().includes(curInput.toUpperCase())){
-                if(counter<1){
+        counter = 0;
+        for (var item in this.state.productData['brand']) {
+            if (this.state.productData['brand'][item].toUpperCase().includes(curInput.toUpperCase())) {
+                if (counter < 1) {
                     newArr.push(this.state.productData['brand'][item]);
                 }
             }
             counter++;
         }
         console.log(newArr);
-        for(var item in this.state.productDataAlpha){
-            if(this.state.productDataAlpha[item].toUpperCase().includes(curInput.toUpperCase())){
+        for (var item in this.state.productDataAlpha) {
+            if (this.state.productDataAlpha[item].toUpperCase().includes(curInput.toUpperCase())) {
                 newArr.push(this.state.productDataAlpha[item]);
-                for(var l=1;l<=10;l++){
-                    tempHolder.push(this.state.productDataAlpha[item+l]);
+                for (var l = 1; l <= 10; l++) {
+                    tempHolder.push(this.state.productDataAlpha[item + l]);
                 }
-                if(tempHolder.length<=10){
-                    for(var l=1;l<=10;l++){
-                        tempHolder.push(this.state.productDataAlpha[item+l]);
+                if (tempHolder.length <= 10) {
+                    for (var l = 1; l <= 10; l++) {
+                        tempHolder.push(this.state.productDataAlpha[item + l]);
                     }
                 }
             }
         }
-        var p=0;
-        while(newArr.length<=10){
-            if(tempHolder[p]){
+        var p = 0;
+        while (newArr.length <= 10) {
+            if (tempHolder[p]) {
                 newArr.push(tempHolder[p]);
                 p++;
-            }else{
+            } else {
                 newArr.push('end of array');
             }
         }
-        while(newArr.length>10){
+        while (newArr.length > 10) {
             newArr.pop();
         }
-        for(var item in this.state.productDataAlpha){
-            if(this.state.productDataAlpha[item].toUpperCase()===curInput.toUpperCase()){
-                for(var k = 0;k<newArr.length;k++){
-                    if(this.state.productDataAlpha[item].toUpperCase()===newArr[k]){
-                    }else{
-                        newArr[0]=this.state.productDataAlpha[item];
+        for (var item in this.state.productDataAlpha) {
+            if (this.state.productDataAlpha[item].toUpperCase() === curInput.toUpperCase()) {
+                for (var k = 0; k < newArr.length; k++) {
+                    if (this.state.productDataAlpha[item].toUpperCase() === newArr[k]) {
+                    } else {
+                        newArr[0] = this.state.productDataAlpha[item];
                     }
                 }
             }
         }
         this.setState({
-            autoComplete:newArr
+            autoComplete: newArr
         });
         console.log('ALIA THIS IS THE ARRAY RIGHT HERE::: \n');
         console.log(this.state.autoComplete);
@@ -156,7 +156,7 @@ class Header extends Component {
             });
         }
     }
-    
+
 
     showExpandedMenu() {
         if (this.state.hamburgerClick) {
@@ -173,7 +173,7 @@ class Header extends Component {
     }
 
     render() {
-        const {searchToggle} = this.state;
+        const { searchToggle } = this.state;
         return (
             <div className={this.state.headerContainer}>
                 <div className="side-nav">
@@ -197,7 +197,7 @@ class Header extends Component {
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
                 <form>
-                    <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show"className={this.state.searchBarStyle} />
+                    <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
                 </form>
             </div >
