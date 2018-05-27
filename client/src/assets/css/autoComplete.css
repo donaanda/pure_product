@@ -1,0 +1,11 @@
+.auto-complete {
+    position: relative;
+    background-color: aliceblue;
+    z-index: 2;
+    width: 80vw;
+    margin-left: 3vw;
+}
+
+.auto-complete div {
+    border-bottom: 1px solid gray;
+}

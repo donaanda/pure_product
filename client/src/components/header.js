@@ -68,8 +68,7 @@ class Header extends Component {
         this.setState({
             input: event.target.value,
             autoComplete: []
-        }, //() => console.log('input:', this.state)
-        );
+        });
         var curInput = this.state.input;
         var newArr = [];
         var tempHolder = [];
@@ -91,7 +90,6 @@ class Header extends Component {
             }
             counter++;
         }
-        //console.log(newArr);
         for (var item in this.state.productDataAlpha) {
             if (this.state.productDataAlpha[item].toUpperCase().includes(curInput.toUpperCase())) {
                 newArr.push(this.state.productDataAlpha[item]);
@@ -107,11 +105,11 @@ class Header extends Component {
         }
         var p = 0;
         while (newArr.length <= 10) {
-            if (tempHolder[p]) {
+            if (tempHolder[p] && newArr.length < 9) {
                 newArr.push(tempHolder[p]);
                 p++;
             } else {
-                newArr.push('no products to display');
+                newArr.push('no suggestions');
                 break;
             }
         }
@@ -131,7 +129,6 @@ class Header extends Component {
         this.setState({
             autoComplete: newArr
         });
-        console.log('autocomplete from header', this.state.autoComplete);
         return (
             <div>AutoComplete in omer function</div>
         )
@@ -176,18 +173,6 @@ class Header extends Component {
         }
     }
 
-    componentWillMount() {
-        if (this.state.autoComplete.length) {
-            this.setState({
-                autoComplete: this.state.autoComplete.map((item, index) => {
-                    return (
-                        <p></p>
-                    )//, console.log('item', item);
-                })
-            });
-        }
-    }
-
     render() {
         const { searchToggle, autoComplete } = this.state;
         return (
@@ -212,7 +197,7 @@ class Header extends Component {
                 <div className="header-icon search-bar">
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
-                <form>
+                <form autoComplete="off">
                     <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
                     <AutoComplete stateChange={autoComplete} />
