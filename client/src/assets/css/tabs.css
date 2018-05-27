@@ -12,11 +12,16 @@
 .tab-header-detail {
     font-size: 5vmin;
     display: inline-block;
-    width: 25vw;
+    width: 20vw;
     cursor: pointer;
-    border-top: 2px solid #555555;
-    border-right: 2px solid #555555;
-    border-left: 2px solid #555555;
+    border-top: 1px solid #555555;
+    border-right: 0.5px solid #555555;
+    border-left: 1px solid #555555;
+    margin: 3px;
+}
+
+.tab-header-ingredient {
+    width: 30vw;
 }
 
 .tab-review {
@@ -100,4 +105,11 @@
 .icon-container-const {
     width: 90vw;
     margin: auto;
+}
+
+.active-tab-ingredients,
+.active-tab-reviews,
+.active-tab-videos,
+.active-tab-details {
+    font-weight: 900;
 }

@@ -32,6 +32,7 @@ class MenuTabs extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
+            className: 'active-tab-ingredients'
         });
     }
 
@@ -47,6 +48,7 @@ class MenuTabs extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
+            className: 'active-tab-videos'
         });
 
     }
@@ -55,6 +57,7 @@ class MenuTabs extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
+            className: 'active-tab-reviews'
         });
     }
 
@@ -74,6 +77,14 @@ class MenuTabs extends Component {
         } else {
             return true;
         }
+    }
+
+    handleClickDetails(event) {
+        event.preventDefault();
+        this.setState({
+            tab: event.target.name,
+            className: 'active-tab-details'
+        });
     }
 
     // async componentDidMount() {
@@ -101,8 +112,9 @@ class MenuTabs extends Component {
     // }
 
     render() {
+        const { className } = this.state
         const { Details, Dry, Normal, Oily, Sensitive, Vegan, categories, Cruelty_Free } = this.product;
-        const { tab } = this.state;
+
         var skinTypeValues = {
             Dry,
             Normal,
