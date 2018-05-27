@@ -60,16 +60,16 @@ class IngredientDetails extends Component{
             return <div>No Result Found</div>
         } else {
             const ingredientBlock = this.state.data.ingredients.map((item,index)=>{
-                const {ingredient, safety, gentle, details} = item;
+                const {ingredient, safety_rating, gentle_rating, details} = item;
                 return (
                     <div key={index}>
                         <div className="ingredient-info-container">
                             <div className="ingredient-name">
                                 <div className="ingredient-name-span">{ingredient}</div>
                                 <img className="ingredient-result-gentle-img" src={CompoundPath_1}/>
-                                <span className="ingredient-result-gentle-rating">{gentle}</span>
+                                <span className="ingredient-result-gentle-rating">{gentle_rating}</span>
                                 <img className="ingredient-result-safety-img" src={Group_1}/>
-                                <span className="ingredient-result-safety-rating">{safety}</span>
+                                <span className="ingredient-result-safety-rating">{safety_rating}</span>
                             </div>
                         </div>
                         <p className="ingredient-description">{details}</p>
