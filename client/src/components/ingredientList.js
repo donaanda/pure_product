@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import heart from '../assets/images/landing_page_icons/gentle_heart.png';
 import cross from '../assets/images/landing_page_icons/safety.png';
 import '../assets/css/ingredientList.css';
 import Ingredient from './ingredient';
 import Loader from './loader';
 
-class IngredientList extends Component{
-    constructor(props){
+class IngredientList extends Component {
+    constructor(props) {
         super(props);
         this.state = {
             ingredients: null,
@@ -14,8 +14,8 @@ class IngredientList extends Component{
         }
     }
 
-    componentDidMount(){
-        if(this.props.info){
+    componentDidMount() {
+        if (this.props.info) {
             this.setState({
                 ingredients: this.props.info.map((ingredient, index) => {
                     return (
@@ -29,8 +29,8 @@ class IngredientList extends Component{
         })
     }
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps.info){
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.info) {
             this.setState({
                 ingredients: nextProps.info.map((ingredient, index) => {
                     return (
@@ -43,14 +43,14 @@ class IngredientList extends Component{
             success: nextProps.success
         })
     }
-    
-    
-    render(){
-        if(this.state.success === false){
+
+
+    render() {
+        if (this.state.success === false) {
             return <div>No Result Found</div>
         }
-        if(this.state.ingredients === null){
-            return <Loader/>
+        if (this.state.ingredients === null) {
+            return <Loader />
         }
 
         return (
