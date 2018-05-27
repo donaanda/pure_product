@@ -23,10 +23,10 @@ $result=mysqli_query($db,$query);
 $output=[];
 $output['success']=false;
 if(mysqli_num_rows($result)){
-    $row=mysqli_fetch_assoc($result);
     $output['success']=true;
-    $output['ingredients'][]=$row; 
-    
+    while($row=mysqli_fetch_assoc($result)){
+        $output['ingredients'][]=$row; 
+    }
 } else {
     error_log(date('Y-m-d H:i:s')." error in query: $query ".mysqli_error($db));
     $output['error']='Can\'t find product';
