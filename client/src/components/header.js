@@ -7,6 +7,7 @@ import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
 import ExpandedMenu from './expandedMenuWelcome';
 import axios from 'axios';
+import AutoComplete from './autoComplete';
 
 class Header extends Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class Header extends Component {
         this.setState({
             input: event.target.value,
             autoComplete: []
-        }, () => console.log('input:', this.state)
+        }, //() => console.log('input:', this.state)
         );
         var curInput = this.state.input;
         var newArr = [];
@@ -90,7 +91,7 @@ class Header extends Component {
             }
             counter++;
         }
-        console.log(newArr);
+        //console.log(newArr);
         for (var item in this.state.productDataAlpha) {
             if (this.state.productDataAlpha[item].toUpperCase().includes(curInput.toUpperCase())) {
                 newArr.push(this.state.productDataAlpha[item]);
@@ -110,7 +111,8 @@ class Header extends Component {
                 newArr.push(tempHolder[p]);
                 p++;
             } else {
-                newArr.push('end of array');
+                newArr.push('no products to display');
+                break;
             }
         }
         while (newArr.length > 10) {
@@ -129,8 +131,10 @@ class Header extends Component {
         this.setState({
             autoComplete: newArr
         });
-        console.log('ALIA THIS IS THE ARRAY RIGHT HERE::: \n');
-        console.log(this.state.autoComplete);
+        console.log('autocomplete from header', this.state.autoComplete);
+        return (
+            <div>AutoComplete in omer function</div>
+        )
     }
 
     handleSubmit(event) {
@@ -172,8 +176,20 @@ class Header extends Component {
         }
     }
 
+    componentWillMount() {
+        if (this.state.autoComplete.length) {
+            this.setState({
+                autoComplete: this.state.autoComplete.map((item, index) => {
+                    return (
+                        <p></p>
+                    )//, console.log('item', item);
+                })
+            });
+        }
+    }
+
     render() {
-        const { searchToggle } = this.state;
+        const { searchToggle, autoComplete } = this.state;
         return (
             <div className={this.state.headerContainer}>
                 <div className="side-nav">
@@ -199,6 +215,7 @@ class Header extends Component {
                 <form>
                     <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
+                    <AutoComplete stateChange={autoComplete} />
                 </form>
             </div >
         )

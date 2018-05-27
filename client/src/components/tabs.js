@@ -107,7 +107,6 @@ class MenuTabs extends Component {
         const { className } = this.state
         const { Details, Dry, Normal, Oily, Sensitive, Vegan, categories, Cruelty_Free } = this.product;
 
-        console.log(className);
         var skinTypeValues = {
             Dry,
             Normal,
