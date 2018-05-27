@@ -41,7 +41,13 @@ class IngredientDetails extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        this.props.history.push('/ingredient_details_page/' + this.state.input)
+        this.setState({
+            input:'',
+            data: {
+                data: null
+            }
+        })
+        this.props.history.push('/ingredient_details_page/' + this.state.input);
     }
 
     handleInput(event){
