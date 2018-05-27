@@ -6,7 +6,6 @@ import axios from 'axios';
 class AutoComplete extends Component {
     constructor(props) {
         super(props);
-        console.log('from autocomplete', props);
 
         this.state = {
 
@@ -15,7 +14,6 @@ class AutoComplete extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // console.log('next props:', nextProps)
         if (nextProps) {
             return this.list = nextProps;
         } else {
@@ -23,15 +21,28 @@ class AutoComplete extends Component {
         }
     }
 
+    makeCuteDisplayDivs(suggestions) {
+        if (suggestions.length > 0) {
+            let productSuggestions = suggestions.map((item, index) => {
+                return (
+                    <div key={index}>{item}</div>
+                )
+            });
+
+            return (
+                <div>{productSuggestions}</div>
+            )
+        }
+    }
+
     render() {
         if (this.list) {
-            console.log(this.list.stateChange)
             return (
-                <div className="autoComplete">{this.list.stateChange}</div >
+                <div className="auto-complete">{this.makeCuteDisplayDivs(this.list.stateChange)}</div >
             )
         }
         return (
-            <div></div >
+            <div></div>
         )
     }
 }
