@@ -28,12 +28,20 @@ class MenuTabs extends Component {
     }
 
     handleClickIngredients(event) {
+        console.log(event.target);
         event.preventDefault();
         this.setState({
             tab: event.target.name,
         });
-
     }
+
+    handleClickDetails(event) {
+        event.preventDefault();
+        this.setState({
+            tab: event.target.name,
+        });
+    }
+
 
     handleClickVideos(event) {
         event.preventDefault();
@@ -91,13 +99,6 @@ class MenuTabs extends Component {
     //             console.log(error);
     //         })
     // }
-
-    handleClickDetails(event) {
-        event.preventDefault();
-        this.setState({
-            tab: event.target.name,
-        });
-    }
 
     render() {
         const { Details, Dry, Normal, Oily, Sensitive, Vegan, categories, Cruelty_Free } = this.product;
