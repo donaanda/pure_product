@@ -95,12 +95,14 @@
 .expanded-menu-show {
     color: white;
     height: 100%;
-    width: 75vw;
+    /* width: 75vw; */
+    width: 90%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(143, 159, 168);
+    /*background-color: rgb(143, 159, 168);*/
+    background-color: #e4f7ef;
     overflow-x: hidden;
     overflow: hidden;
     transition: 0.5s;
@@ -115,10 +117,11 @@
 }
 
 .menu-container a {
-    padding: 8px 8px 8px 32px;
+    /*padding: 8px 8px 8px 16px;*/
+    padding-left: 16px;
     text-decoration: none;
     font-size: 25px;
-    color: white;
+    color: black;
     display: block;
     transition: 0.3s;
 }
