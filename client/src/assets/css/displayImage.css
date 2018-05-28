@@ -137,3 +137,14 @@
     display: block;
     margin: auto;
 }
+
+.page-numbers {
+    list-style-type: none;
+}
+
+.page-numbers-list {
+    display: inline-block;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
