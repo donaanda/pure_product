@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import '../assets/css/autoComplete.css';
+import Header from './header';
 
 class AutoComplete extends Component {
     constructor(props) {
         super(props);
-        var list = null;
+        this.list = null;
     }
 
     componentWillReceiveProps(nextProps) {
@@ -16,19 +17,14 @@ class AutoComplete extends Component {
     }
 
     makeSuggestionDisplayDivs(suggestions) {
+        let productSuggestions = '';
         if (suggestions.length > 0) {
-            let productSuggestions = suggestions.map((item, index) => {
-                return (
-                    <ul>
-                        <li key={index}>{item}</li>
-                    </ul>
-                )
-            });
-
+            productSuggestions = suggestions.map((item, index) => <li key={index} onClick={this.props.fillOutAutoComplete}>{item}</li>);
             return (
-                <div>{productSuggestions}</div>
+                <div><ul>{productSuggestions}</ul></div>
             )
         }
+        return;
     }
 
     autocomplete(inp, arr) {

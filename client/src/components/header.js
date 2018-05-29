@@ -26,6 +26,8 @@ class Header extends Component {
             ExpandedMenuSize: 'expanded-menu-hide',
             advancedSearchClicked: false
         };
+
+        this.fillOutAutoComplete = this.fillOutAutoComplete.bind(this);
     }
 
     async componentDidMount() {
@@ -142,7 +144,7 @@ class Header extends Component {
         this.props.history.push('/search_product_result/' + this.state.input)
     }
 
-    toggleSearchBar() {
+    toggleSearchBar(event) {
         //if the search bar is open
         if (this.state.searchToggle) {
             this.setState({
@@ -150,7 +152,9 @@ class Header extends Component {
                 searchBarStyle: 'display-none',
                 buttonStyle: 'display-none',
                 advancedSearchButtonStyle: 'display-none',
-                headerContainer: 'header-container-search'
+                headerContainer: 'header-container-search',
+                autoComplete: [],
+                input: ""
             })
         } else {
             this.setState({
@@ -158,7 +162,9 @@ class Header extends Component {
                 searchBarStyle: 'search-bar-style-show',
                 buttonStyle: 'button-style-show',
                 advancedSearchButtonStyle: 'advanced-search-button-show',
-                headerContainer: 'header-container-show'
+                headerContainer: 'header-container-show',
+                autoComplete: [],
+                input: ""
             });
         }
     }
@@ -176,6 +182,13 @@ class Header extends Component {
                 ExpandedMenuSize: 'expanded-menu-show'
             });
         }
+    }
+
+    fillOutAutoComplete(event) {
+        this.setState({
+            input: event.target.innerText,
+            autoComplete: []
+        });
     }
 
     render() {
@@ -204,10 +217,10 @@ class Header extends Component {
                 </div>
                 <form autoComplete="off">
                     <div className="autocomplete">
-                        <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
+                        <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     </div>
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
-                    <AutoComplete suggestions={autoComplete} />
+                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} />
                 </form>
                 <AdvancedSearch className={this.state.advancedSearchButtonStyle} />
             </div>
