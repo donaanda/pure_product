@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/css/app.css';
 import LandingPage from './landing_page';
 import SignIn from './sign_in';
-import ProductFinder from './product_finder';
+import ProductWizard from './productWizard';
 import { Route } from 'react-router-dom';
 import MyAccountPage from './myAccount';
 import SingleIngredientSearch from './singleIngredientSearch';
@@ -25,7 +25,7 @@ const App = () => {
         <section>
             <Route exact path="/" component={LandingPage} />
             <Route path="/sign_in" component={SignIn} />
-            <Route path="/product_finder" component={ProductFinder} />
+            <Route path="/product_wizard" component={ProductWizard} />
             <Route path="/myAccount" component={MyAccountPage} />
             <Route path="/single_ingredient_search" component={SingleIngredientSearch} />
             <Route path="/product_analyzer" component={ProductAnalyzer} />

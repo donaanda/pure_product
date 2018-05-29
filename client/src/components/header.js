@@ -35,28 +35,28 @@ class Header extends Component {
             productDataAlpha: this.state.productData.productName.concat(this.state.productData.categories, this.state.productData.brand)
         });
         var arrHolder = this.state.productDataAlpha;
-        var x = 0;
-        while (x < arrHolder.length) {
-            var y = x;
-            while (y > 0 && arrHolder[y - 1] > arrHolder[y]) {
-                let b = arrHolder[y - 1];
-                arrHolder[y - 1] = arrHolder[y];
-                arrHolder[y] = b;
-                y--;
+        var prodIt = 0;
+        while (prodIt < arrHolder.length) {
+            var insideIt = prodIt;
+            while (insideIt > 0 && arrHolder[insideIt - 1] > arrHolder[insideIt]) {
+                let suggestion = arrHolder[insideIt - 1];
+                arrHolder[insideIt - 1] = arrHolder[insideIt];
+                arrHolder[insideIt] = suggestion;
+                insideIt--;
             }
-            x++;
+            prodIt++;
         }
-        var q = 0;
-        while (q < arrHolder.length) {
-            var w = q + 1;
-            while (w < arrHolder.length) {
-                if (arrHolder[q] === arrHolder[w]) {
-                    arrHolder.splice(w, 1);
-                    w--;
+        var suggestionIt = 0;
+        while (suggestionIt < arrHolder.length) {
+            var position = suggestionIt + 1;
+            while (position < arrHolder.length) {
+                if (arrHolder[suggestionIt] === arrHolder[position]) {
+                    arrHolder.splice(position, 1);
+                    position--;
                 }
-                w++;
+                position++;
             }
-            q++;
+            suggestionIt++;
         }
         this.setState({
             productDataAlpha: arrHolder
@@ -198,11 +198,13 @@ class Header extends Component {
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
                 <form autoComplete="off">
-                    <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
+                    <div className="autocomplete">
+                        <input autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
+                    </div>
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
-                    <AutoComplete stateChange={autoComplete} />
+                    <AutoComplete suggestions={autoComplete} />
                 </form>
-            </div >
+            </div>
         )
     }
 }

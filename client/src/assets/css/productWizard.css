@@ -1,0 +1,85 @@
+/*product finder button on landing page*/
+
+.product_finder_landing_button {
+    display: table;
+    font-family: 'Cedarville Cursive', cursive;
+    background-color: rgba(184, 234, 251, 0.5);
+    width: 90vw;
+    height: 10vh;
+    margin: auto;
+    text-align: center;
+    font-size: 11vmin;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    line-height: 10vh;
+    z-index: 0;
+}
+
+.product_finder_landing_button>span {
+    display: table-cell;
+    vertical-align: center;
+}
+
+/* product finder page */
+
+.product-wizard-cont{
+    text-align: center;
+    height: 80vh;
+}
+
+.product-wizard-cont #wizard-input {
+    position: relative;
+    opacity: initial;
+    pointer-events: initial;
+}
+
+.wiz-button {
+    margin: 3vh;
+}
+
+.wizard-div button {
+    display: block;
+    margin: auto;
+}
+
+#num-input{
+    width: 60%;
+}
+
+.wizard-div {
+    height: 60vh;
+    width: 80vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    padding: 1vh;
+}
+
+.wiz-intro-cont h3{
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+#wiz-label{
+    font-size: 5vmin;
+}
+
+.wiz-input-cont {
+    text-align: left;
+    margin: auto;
+    width: 35vw;
+}
+
+.wiz-ingredient-cont{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    vertical-align: top;
+    padding: 1vh;
+}
+
+#wiz-label-ingredients {
+    font-size: 4vmin;
+}
+
+.wiz-safe-gen-cont{
+    display: inline-block;
+    width: 45%;
+}
