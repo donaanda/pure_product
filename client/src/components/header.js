@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import ExpandedMenu from './expandedMenuWelcome';
 import axios from 'axios';
 import AutoComplete from './autoComplete';
+import AdvancedSearch from './advancedSearch';
 
 class Header extends Component {
     constructor(props) {
@@ -19,9 +20,11 @@ class Header extends Component {
             searchToggle: false,
             searchBarStyle: 'display-none',
             buttonStyle: 'display-none',
+            advancedSearchButtonStyle: 'display-none',
             headerContainer: 'header-container',
             hamburgerClick: false,
-            ExpandedMenuSize: 'expanded-menu-hide'
+            ExpandedMenuSize: 'expanded-menu-hide',
+            advancedSearchClicked: false
         };
     }
 
@@ -146,6 +149,7 @@ class Header extends Component {
                 searchToggle: false,
                 searchBarStyle: 'display-none',
                 buttonStyle: 'display-none',
+                advancedSearchButtonStyle: 'display-none',
                 headerContainer: 'header-container-search'
             })
         } else {
@@ -153,6 +157,7 @@ class Header extends Component {
                 searchToggle: true,
                 searchBarStyle: 'search-bar-style-show',
                 buttonStyle: 'button-style-show',
+                advancedSearchButtonStyle: 'advanced-search-button-show',
                 headerContainer: 'header-container-show'
             });
         }
@@ -204,6 +209,7 @@ class Header extends Component {
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
                     <AutoComplete suggestions={autoComplete} />
                 </form>
+                <AdvancedSearch className={this.state.advancedSearchButtonStyle} />
             </div>
         )
     }

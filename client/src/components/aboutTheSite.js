@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './header';
 import Footer from './footer';
 import '../assets/css/aboutPP.css';
@@ -6,11 +6,11 @@ import github from '..//assets/images/footer_icons/git_hub.png';
 import temp_logo from '../assets/images/footer_icons/temp_logo.png';
 import { Link } from 'react-router-dom';
 
-class AboutTheSite extends Component{
-    constructor(props){
+class AboutTheSite extends Component {
+    constructor(props) {
         super(props);
     }
-    render(){
+    render() {
         return (
             <section>
                 <Header history={this.props.history} />
