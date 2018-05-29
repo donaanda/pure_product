@@ -24,14 +24,24 @@
     padding: 15%;
 }
 
-.landing_img {
-    padding: 10%;
+.landing_img,
+.landing_img_lipstick {
+    padding: 2vh;
+    height: 15vh;
+    width: 15vh;
+}
+
+.landing_img_lipstick {
+    display: block;
+    width: 10vh;
+    margin: auto;
 }
 
 .wrap-landing-img>.landing_img,
 .landing_button>.wrap-landing-img>span {
     margin: auto;
     display: block;
+    font-size: 5vmin;
     text-align: center;
 }
 

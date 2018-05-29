@@ -47,34 +47,27 @@ export default class DisplayImage extends Component {
                                     <span className={safetyRating}>{safety_avg_rating}</span>
                                 </div>
                             </div>
-                            <span>average user rating: {rating}</span>
-                            <h3 className='product-name'>
-                                <span className="hidden">
-                                    Brand:
-                        </span>
+                            <h4 className='product-name'>
+                                average user rating: {rating}
+                            </h4>
+                            <h4 className='product-name'>
                                 <span className="brand-text">
                                     {brand}
                                 </span>
-                            </h3>
-                            <h1 className='product-name'>
-                                <span className="hidden">
-                                    Product Name:
-                        </span>
+                            </h4>
+                            <h3 className='product-name'>
                                 <span className="product-name-text">
                                     {product_name}
                                 </span>
-                            </h1>
-                            <h3 className='product-name'>
-                                <span className="hidden">
-                                    Price:
-                        </span>
+                            </h3>
+                            <h4 className='product-name'>
                                 <span className="price-text">
                                     MSRP: ${price}
                                 </span>
-                            </h3>
-                            <h3 className='product-name hidden'>
+                            </h4>
+                            <h4 className='product-name hidden'>
                                 {categories}
-                            </h3>
+                            </h4>
                         </div>
                     </div >
                 </Link>

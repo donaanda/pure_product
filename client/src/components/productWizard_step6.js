@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 
 class Step6 extends React.Component {
-render() {
-    if (this.props.currentStep !== 6) {
-      return null;
-    } 
-    return(
+    render() {
+        if (this.props.currentStep !== 6) {
+            return null;
+        }
+        return (
             <div className="wizard-div price-selector">
                 <h4>Between these prices...</h4>
                 <form>
-                <input id="num-input" type="number" name="quantity" min="1" max="10"/>
-                <h6>And</h6>
-                <input id="num-input" type="number" name="quantity" min="1" max="10"/>
-                <button className="btn">Submit</button>
+                    <label>$   </label><input id="num-input" type="number" placeholder="low dollar amount" name="quantity" min="1" />
+                    <h6>And</h6>
+                    <label>$   </label><input id="num-input" type="number" placeholder="high dollar amount" name="quantity" min="1" />
                 </form>
             </div>
         );
