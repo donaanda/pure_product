@@ -57,7 +57,7 @@ foreach($arrayOfIngredients as $ingredientName){
     if(mysqli_num_rows($result)){
         $ingredient['success'] = true;
         while($row = mysqli_fetch_assoc($result)){
-            $ingredient[] = $row; 
+            $ingredient['ingredient'] = $row; 
         }
     } else {
         error_log(date('Y-m-d H:i:s')." error in query: $query ".mysqli_error($db));
