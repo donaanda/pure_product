@@ -78,7 +78,7 @@ class LandingPage extends Component {
                         </Link>
                     </div>
                 </div>
-                <Link to="/product_finder">
+                <Link to="/product_wizard">
                     <div className="product_finder_landing_button waves-effect waves-light">
                         <span>Personal Product finder</span>
                     </div>

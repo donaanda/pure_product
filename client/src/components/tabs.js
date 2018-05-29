@@ -30,7 +30,6 @@ class MenuTabs extends Component {
     }
 
     handleClickIngredients(event) {
-        console.log(event.target);
         event.preventDefault();
         this.setState({
             tab: event.target.name,
@@ -182,26 +181,7 @@ class MenuTabs extends Component {
                     </div>
                 </TabPanel >
                 <TabPanel>
-                    {/* <YoutubeVideoReviews /> */}
-                    {/* <div className="tab-video"> */}
-                    {/* <h2 className="videos-default-text">No videos to display.</h2> */}
-                    {/* {this.state.data ?
-                        this.state.data.items.map(video => {
-                            console.log('from map in render', video.id.videoId);
-                            <iframe className="videoPlayer" id="videoPlayer" src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                                frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen="allowFullscreen">
-                            </iframe>
-                        })
-                        :
-                        console.log('items do not exist')} */}
                     <YoutubeVideoReviews videoArray={this.state.data} />
-
-
-
-
-
-
-                    {/* </div> */}
                 </TabPanel>
                 <TabPanel>
                     <div className="tab-review">
