@@ -113,3 +113,24 @@
 .active-tab-details {
     font-weight: 900;
 }
+
+/* youtube videos css */
+
+.youtube-reviews {
+    text-align: center;
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+.youtube-title {
+    width: 80vw;
+    margin: auto;
+    font-family: 'Nunito Sans', sans-serif;
+    position: relative;
+    bottom: 0;
+}
+
+.video-container {
+    margin: 5vh;
+    height: 20vh;
+    width: 80vw;
+}
