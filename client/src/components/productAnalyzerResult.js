@@ -18,7 +18,7 @@ class ProductAnalyzerResult extends Component{
     }
     async componentDidMount() {
         var query = this.props.match.params.search;
-        await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
+        await axios.post(`http://localhost:8888/get_ingredient_by_name_multiple.php`, {query}).then(response => {
             this.setState({
                 data: response.data
             },() => console.log("axios",this.state))
@@ -28,7 +28,7 @@ class ProductAnalyzerResult extends Component{
     async componentWillReceiveProps(nextProps){
         if (this.props.match.params.search !== nextProps.match.params.search) {
             let query = nextProps.match.params.search;
-            await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
+            await axios.post(`http://localhost:8888/get_ingredient_by_name_multiple.php`, {query}).then(response => {
                 this.setState({
                     data: response.data
                 }, () => console.log("axios",this.state));
