@@ -46,7 +46,7 @@ const Ingredient = (props) => {
     
     return (
         <tr className="ingredient-row">
-            <td className={`ingredient-column`}><span>{props.ingredientInfo.ingredient}</span></td>
+            <td className={`ingredient-column`}><span>{props.ingredientInfo.ingredient ? props.ingredientInfo.ingredient : props.ingredientInfo.search}</span></td>
             <td className="chemical-gentle-rating"><p className={`${colorizeGentleNum(props.ingredientInfo.gentle_rating)}`}>{props.ingredientInfo.gentle_rating ? props.ingredientInfo.gentle_rating : "N/A"}</p></td>
             <td className="chemical-safety-rating"><p className={`${colorizeSafetyNum(props.ingredientInfo.safety_rating)}`}>{props.ingredientInfo.safety_rating ? props.ingredientInfo.safety_rating : "N/A"}</p></td>
         </tr>
