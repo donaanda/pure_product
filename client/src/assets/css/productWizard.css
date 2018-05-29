@@ -5,13 +5,14 @@
     font-family: 'Cedarville Cursive', cursive;
     background-color: rgba(184, 234, 251, 0.5);
     width: 90vw;
-    height: 10vh;
+    height: 13vh;
     margin: auto;
     text-align: center;
     font-size: 11vmin;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     line-height: 10vh;
     z-index: 0;
+    padding: 2vh;
 }
 
 .product_finder_landing_button>span {

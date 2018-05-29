@@ -1,12 +1,13 @@
 .headerContainer {
     position: fixed;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 10vh;
+    height: 12vh;
     background-color: white;
     z-index: 1;
 }
 
-.header-icon {
+.header-icon,
+.header-icon img {
     display: inline-block;
     height: 10vh;
     border: 2px;
@@ -15,17 +16,18 @@
 
 .login-icon,
 .search-bar {
-    width: 25vw;
+    width: 30vw;
     text-align: center;
-    margin-top: 1vh;
 }
 
 .search-bar {
     margin-top: 0.5vh;
 }
 
-.site-title {
-    width: 50vw;
+.site-title,
+.site-title img {
+    width: 40vw;
+    height: 10vh;
     text-align: center;
 }
 
