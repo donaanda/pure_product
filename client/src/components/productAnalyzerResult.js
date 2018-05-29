@@ -44,7 +44,8 @@ class ProductAnalyzerResult extends Component{
                 data: null
             }
         });
-        this.props.history.push('/product_analyzer_result/' + this.state.input)
+        let searchQuery = this.state.input.replace(/\//g, '%2F');
+        this.props.history.push('/product_analyzer_result/' + searchQuery)
     }
 
     handleInput(event){
@@ -55,12 +56,18 @@ class ProductAnalyzerResult extends Component{
     }
     render(){
         if(this.state.data.data === null){
-            return <Loader/>
+            return (
+                <section>
+                    <Header/>
+                    <Loader/>
+                </section>
+            
+            )
         }
         return (
             <section>
                 <Header history={this.props.history} />
-                <IngredientList info={this.state.data.ingredients} success={this.state.data.success}/>
+                <IngredientList info={this.state.data} success={this.state.data.success}/>
                     <form className="check-product-form-field">
                         <div className="check-product-input-container">
                             <textarea autoFocus onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."></textarea>
