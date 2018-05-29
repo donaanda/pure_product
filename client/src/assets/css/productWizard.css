@@ -21,9 +21,10 @@
 
 /* product finder page */
 
-.product-wizard-cont{
+.product-wizard-cont {
     text-align: center;
-    height: 80vh;
+    height: 100vh;
+    background-image: url(../images/displayImages/banana_leaf.jpg);
 }
 
 .product-wizard-cont #wizard-input {
@@ -33,7 +34,9 @@
 }
 
 .wiz-button {
+    box-sizing: initial;
     margin: 3vh;
+    border: solid 15px white;
 }
 
 .wizard-div button {
@@ -41,8 +44,8 @@
     margin: auto;
 }
 
-#num-input{
-    width: 60%;
+#num-input {
+    width: 70%;
 }
 
 .wizard-div {
@@ -51,13 +54,14 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: auto;
     padding: 1vh;
+    background-color: white;
 }
 
-.wiz-intro-cont h3{
+.wiz-intro-cont h3 {
     font-family: 'Cedarville Cursive', cursive;
 }
 
-#wiz-label{
+#wiz-label {
     font-size: 5vmin;
 }
 
@@ -67,7 +71,7 @@
     width: 35vw;
 }
 
-.wiz-ingredient-cont{
+.wiz-ingredient-cont {
     display: inline-block;
     width: 50%;
     text-align: left;
@@ -79,7 +83,13 @@
     font-size: 4vmin;
 }
 
-.wiz-safe-gen-cont{
+.wiz-safe-gen-cont {
     display: inline-block;
     width: 45%;
+    height: 100%;
+    margin: 2vh 0;
+}
+
+.wiz-right {
+    border-right: 2px solid rgba(5, 99, 122, 0.8);
 }

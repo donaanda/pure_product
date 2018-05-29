@@ -1,0 +1,43 @@
+.advanced-search-cont {
+    position: relative;
+    z-index: 3;
+    background-color: white;
+    text-align: center;
+    padding: 3vh;
+    width: 85vw;
+    margin: 2vh auto;
+}
+
+.adv-search-fade-cont {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 20vh;
+    z-index: 2;
+    height: 366vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#advanced-search-input {
+    display: inline-block;
+    position: relative;
+    opacity: initial;
+    pointer-events: initial;
+    padding: 1vh;
+    width: 40vw;
+}
+
+#advanced-search-input-check {
+    position: relative;
+    opacity: initial;
+    pointer-events: initial;
+}
+
+#adv-label {
+    font-size: 6vmin;
+}
+
+.adv-titles {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 5vmax;
+}
