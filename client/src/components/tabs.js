@@ -10,6 +10,7 @@ import combo_icon from '../assets/images/skintype_icons/combo.png';
 import normal_icon from '../assets/images/skintype_icons/normal.png';
 import vegan_icon from '../assets/images/ethical_icons/vegan.png';
 import cruelty_free_icon from '../assets/images/ethical_icons/cruelty_free.png';
+import YoutubeVideoReviews from './youtubeReviews';
 
 class MenuTabs extends Component {
 
@@ -17,6 +18,7 @@ class MenuTabs extends Component {
         super(props);
         this.state = {
             tabIndex: 0,
+            data: null
         }
 
         this.ingredients = this.props.ingredients || [
@@ -87,29 +89,31 @@ class MenuTabs extends Component {
         });
     }
 
-    // async componentDidMount() {
-    //     const { product_name, brand, categories } = this.product;
-    //     var query = product_name.replace(/\s/g, '+') + '+' + brand.replace(/\s/g, '+') + '+' + categories.replace(/\s/g, '+') + '+' + 'review';
-    //     const API_KEY = 'AIzaSyCSizsUkb5GqPfSuxAG43QxyscxxJs7m5E';
-    //     var review = 'review';
-    //     var youtubeAddress = 'https://www.googleapis.com/youtube/v3/search';
-    //     var dataConfig = {
-    //         part: 'snippet',
-    //         q: product_name, brand, categories, review,
-    //         fields: 'items(id, kind, snippet)',
-    //         maxResults: 6,
-    //         key: API_KEY
-    //     }
-    //     await axios.get(youtubeAddress, dataConfig)
-    //         .then(res => {
-    //             this.setState({
-    //                 data: res.data
-    //             }, console.log(this.state))
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         })
-    // }
+    async componentDidMount() {
+        //youtube search results per product
+        const { product_name, brand, categories } = this.product;
+        const API_KEY = 'AIzaSyCSizsUkb5GqPfSuxAG43QxyscxxJs7m5E';
+        var review = 'review';
+        var youtubeAddress = 'https://www.googleapis.com/youtube/v3/search';
+        var dataConfig = {
+            params: {
+                part: 'snippet',
+                q: `${product_name},${brand}, ${categories}, ${review}`,
+                fields: 'items(id, kind, snippet)',
+                maxResults: 6,
+                key: API_KEY
+            }
+        }
+        await axios.get(youtubeAddress, dataConfig)
+            .then(res => {
+                this.setState({
+                    data: res.data
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     render() {
         const { className } = this.state
@@ -178,9 +182,26 @@ class MenuTabs extends Component {
                     </div>
                 </TabPanel >
                 <TabPanel>
-                    <div className="tab-video">
-                        <h2 className="videos-default-text">No videos to display.</h2>
-                    </div>
+                    {/* <YoutubeVideoReviews /> */}
+                    {/* <div className="tab-video"> */}
+                    {/* <h2 className="videos-default-text">No videos to display.</h2> */}
+                    {/* {this.state.data ?
+                        this.state.data.items.map(video => {
+                            console.log('from map in render', video.id.videoId);
+                            <iframe className="videoPlayer" id="videoPlayer" src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                                frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen="allowFullscreen">
+                            </iframe>
+                        })
+                        :
+                        console.log('items do not exist')} */}
+                    <YoutubeVideoReviews videoArray={this.state.data} />
+
+
+
+
+
+
+                    {/* </div> */}
                 </TabPanel>
                 <TabPanel>
                     <div className="tab-review">
