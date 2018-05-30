@@ -17,23 +17,27 @@
 .landing_button,
 .wrap-landing-img {
     width: 45vw;
-    height: 30vh;
+    height: 60vw;
 }
 
 .lipstick {
     height: 40vw;
+    width: 40vw;
 }
 
 .gentle {
-    height: 20vh;
+    height: 40vw;
+    width: 40vw;
 }
 
 .safety_icon {
-    height: 20vh;
+    height: 40vw;
+    width: 40vw;
 }
 
 .product {
-    height: 20vh;
+    height: 40vw;
+    width: 43vw;
 }
 
 .wrap-landing-img>.landing_img,

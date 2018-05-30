@@ -1,7 +1,8 @@
-.headerContainer {
-    position: fixed;
+.header-container {
+    position: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 12vh;
+    height: 25vw;
+    width: 100vw;
     background-color: white;
     z-index: 1;
 }
@@ -27,7 +28,7 @@
 .site-title,
 .site-title img {
     width: 40vw;
-    height: 10vh;
+    height: 20vw;
     text-align: center;
 }
 
@@ -41,14 +42,6 @@
 
 .display-none {
     display: none;
-}
-
-.header-container {
-    display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 10vh;
-    background-color: white;
-    z-index: 1;
 }
 
 .search-bar-style-show {
