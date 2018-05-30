@@ -83,7 +83,6 @@ class ProductFinder extends React.Component {
 
   render() {
     const { currentStep } = this.state
-    console.log(this.state.selection);
     return (
       <div className="product-wizard-cont">
         <Header history={this.props.history} />

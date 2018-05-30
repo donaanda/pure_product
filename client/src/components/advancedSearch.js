@@ -7,7 +7,8 @@ class AdvancedSearch extends Component {
         super(props);
 
         this.state = {
-            advancedSearchExpand: false
+            advancedSearchExpand: false,
+            selection: {}
         }
         this.handleAdvancedSearchClick = this.handleAdvancedSearchClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,12 +40,40 @@ class AdvancedSearch extends Component {
     handleChange(event) {
         event.preventDefault();
         var name = event.target.name;
+        var value = event.target.value;
+        const newSelection = {};
+        for (let key in this.state.selection) {
+            newSelection[key] = this.state.selection[key];
+        }
+        if (event.target.checked) {
+            newSelection[name] = value;
+        } else {
+            delete newSelection[name];
+        }
         this.setState({
-            [name]: event.target.value,
+            selection: newSelection
         });
+
+        /* 
+        var name = event.target.name;
+        var value = event.target.value;
+        const newSelection = {};
+        for (let key in this.state.selection) {
+          newSelection[key] = this.state.selection[key];
+        }
+        if (event.target.checked) {
+          newSelection[name] = value;
+        } else {
+          delete newSelection[name];
+        }
+        this.setState({
+          selection: newSelection
+        })
+        */
     }
 
     render() {
+        console.log(this.state.selection);
         if (this.state.advancedSearchExpand === true) {
             return (
                 <section>
