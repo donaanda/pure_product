@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Step4 extends React.Component {
-  render() {
+  render(props) {
     if (this.props.currentStep !== 4) {
       return null;
     }
@@ -9,7 +9,7 @@ class Step4 extends React.Component {
       <div className="wizard-div products-want">
         <h4>I want something that DOES have...</h4>
         <form>
-          <div><input id="wizard-input" value="yes" type="checkbox" name="alpha-hydroxy-acid" /> <label id="wiz-label">alpha-hydroxy acid</label></div>
+          <div><input id="wizard-input" value="yes" onChange={this.props.selectionCallBack} type="checkbox" name="alpha-hydroxy-acid" /> <label id="wiz-label">alpha-hydroxy acid</label></div>
           <div><input id="wizard-input" value="yes" onChange={this.props.selectionCallBack} type="checkbox" name="beta-hydroxy-acid" /> <label id="wiz-label">beta-hydroxy acid</label></div>
           <div><input id="wizard-input" value="yes" onChange={this.props.selectionCallBack} type="checkbox" name="retinol" /> <label id="wiz-label">retinol</label></div>
           <div><input id="wizard-input" value="yes" onChange={this.props.selectionCallBack} type="checkbox" name="l-ascorbic-acid" /> <label id="wiz-label">L-Ascorbic Acid</label></div>
