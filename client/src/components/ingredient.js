@@ -43,7 +43,7 @@ const Ingredient = (props) => {
                 return
         }
     };
-    
+
     return (
         <tr className="ingredient-row">
             <td className={`ingredient-column`}><span>{props.ingredientInfo.ingredient ? props.ingredientInfo.ingredient : props.ingredientInfo.search}</span></td>
@@ -51,7 +51,7 @@ const Ingredient = (props) => {
             <td className="chemical-safety-rating"><p className={`${colorizeSafetyNum(props.ingredientInfo.safety_rating)}`}>{props.ingredientInfo.safety_rating ? props.ingredientInfo.safety_rating : "N/A"}</p></td>
         </tr>
     )
-    
+
 }
 
 export default Ingredient;

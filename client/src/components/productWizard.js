@@ -54,14 +54,17 @@ class ProductFinder extends React.Component {
   }
 
   handleChildSubmit(event) {
-    console.log('got data from child', event.target.name, event.target.value);
     var name = event.target.name;
     var value = event.target.value;
     const newSelection = {};
     for (let key in this.state.selection) {
       newSelection[key] = this.state.selection[key];
     }
-    newSelection[name] = value;
+    if (event.target.checked) {
+      newSelection[name] = value;
+    } else {
+      delete newSelection[name];
+    }
     this.setState({
       selection: newSelection
     })
@@ -80,6 +83,7 @@ class ProductFinder extends React.Component {
 
   render() {
     const { currentStep } = this.state
+    console.log(this.state.selection);
     return (
       <div className="product-wizard-cont">
         <Header history={this.props.history} />

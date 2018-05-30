@@ -19,7 +19,7 @@ const styleClasses = {
     heartIcon: 'gentle-icon-product-page',
     crossIcon: 'safety-icon-product-page',
     gentleRating: 'gentle-rating-product-page',
-    safetyRating: 'safety-rating-product-page'
+    safetyRating: 'safety-rating-product-page',
 }
 
 class ProductPage extends Component {

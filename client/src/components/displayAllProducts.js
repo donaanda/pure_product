@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import DisplayImage from './displayImage';
 import ImageData from './imageData';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ const styleClasses = {
     heartIcon: 'gentle-icon',
     crossIcon: 'safety-icon',
     gentleRating: 'gentle-rating',
-    safetyRating: 'safety-rating'
+    safetyRating: 'safety-rating',
 }
 
 
@@ -52,7 +52,7 @@ class DisplayAllProducts extends Component {
                 </section>
             )
         } else {
-            const {currentPage, productsPerPage} = this.state;
+            const { currentPage, productsPerPage } = this.state;
 
             const indexOfFirstProductOfNextPage = currentPage * productsPerPage;
             const indexOfFirstProductOfCurrentPage = indexOfFirstProductOfNextPage - productsPerPage;
