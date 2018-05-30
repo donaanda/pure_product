@@ -140,10 +140,14 @@
 
 .page-numbers {
     list-style-type: none;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: x-large;
 }
 
 .page-numbers-list {
     display: inline-block;
-    margin-left: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
     margin-bottom: 5%;
 }
