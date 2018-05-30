@@ -15,7 +15,8 @@ class SingleIngredientSearch extends Component {
 
     handleSubmit(event){
         event.preventDefault();
-        this.props.history.push('/ingredient_details_page/' + this.state.input)
+        let uriEncodedInput = encodeURIComponent(this.state.input);
+        this.props.history.push('/ingredient_details_page/' + uriEncodedInput);
     }
 
     handleInput(event){

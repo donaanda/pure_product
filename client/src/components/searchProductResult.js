@@ -17,7 +17,7 @@ class SearchProductResult extends Component {
         }
     }
     async componentDidMount() {
-        var query = this.props.match.params.search;
+        let query = decodeURIComponent(this.props.match.params.search);
         await axios.post(`http://localhost:8888/search_product.php`, { query }).then(response => {
             this.setState({
                 data: response.data
@@ -27,7 +27,7 @@ class SearchProductResult extends Component {
 
     async componentWillReceiveProps(nextProps) {
         if (this.props.match.params.search !== nextProps.match.params.search) {
-            let query = nextProps.match.params.search;
+            let query = decodeURIComponent(nextProps.match.params.search);
             await axios.post(`http://localhost:8888/search_product.php`, { query }).then(response => {
                 this.setState({
                     data: response.data
