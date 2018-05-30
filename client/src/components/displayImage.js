@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../assets/css/displayImage.css';
 import Image_1 from '../assets/images/displayImages/Image_1.png';
 import Group_1 from '../assets/images/displayImages/Group_1.png';
-import CompoundPath_1 from '../assets/images/displayImages/Compound Path_1.png';
+import gentle_img from '../assets/images/landing_page_icons/gentle_feather.png';
 import foundation_alt_img from '../assets/images/landing_page_icons/foundation_alt_image.jpg';
 import { Link } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ export default class DisplayImage extends Component {
                         <div className={imgProductPage} style={{ backgroundImage: `url(${image})` }}>
                             <div className="display-cont">
                                 <div className="icon-cont">
-                                    <img className={heartIcon} src={CompoundPath_1} />
+                                    <img className={heartIcon} src={gentle_img} />
                                     <span className={gentleRating}>{gentle_avg_rating}</span>
                                 </div>
                                 <div className="icon-cont">
