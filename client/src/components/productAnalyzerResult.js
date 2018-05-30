@@ -17,7 +17,7 @@ class ProductAnalyzerResult extends Component{
         }
     }
     async componentDidMount() {
-        var query = this.props.match.params.search;
+        let query = decodeURIComponent(this.props.match.params.search);
         await axios.post(`http://localhost:8888/get_ingredient_by_name_multiple.php`, {query}).then(response => {
             this.setState({
                 data: response.data
@@ -27,7 +27,7 @@ class ProductAnalyzerResult extends Component{
 
     async componentWillReceiveProps(nextProps){
         if (this.props.match.params.search !== nextProps.match.params.search) {
-            let query = nextProps.match.params.search;
+            let query = decodeURIComponent(nextProps.match.params.search);
             await axios.post(`http://localhost:8888/get_ingredient_by_name_multiple.php`, {query}).then(response => {
                 this.setState({
                     data: response.data
@@ -44,8 +44,8 @@ class ProductAnalyzerResult extends Component{
                 data: null
             }
         });
-        let searchQuery = this.state.input.replace(/\//g, '%2F');
-        this.props.history.push('/product_analyzer_result/' + searchQuery)
+        let uriEncodedInput = encodeURIComponent(this.state.input);
+        this.props.history.push('/product_analyzer_result/' + uriEncodedInput)
     }
 
     handleInput(event){

@@ -20,7 +20,7 @@ class IngredientDetails extends Component{
     }
 
     async componentDidMount() {
-        var query = this.props.match.params.search;
+        let query = decodeURIComponent(this.props.match.params.search);
         await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
             this.setState({
                 data: response.data
@@ -30,7 +30,7 @@ class IngredientDetails extends Component{
 
     async componentWillReceiveProps(nextProps) {
         if (this.props.match.params.search !== nextProps.match.params.search) {
-            let query = nextProps.match.params.search;
+            let query = decodeURIComponent(nextProps.match.params.search);
             await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
                 this.setState({
                     data: response.data
@@ -47,7 +47,8 @@ class IngredientDetails extends Component{
                 data: null
             }
         })
-        this.props.history.push('/ingredient_details_page/' + this.state.input);
+        let uriEncodedInput = encodeURIComponent(this.state.input);
+        this.props.history.push('/ingredient_details_page/' + uriEncodedInput);
     }
 
     handleInput(event){

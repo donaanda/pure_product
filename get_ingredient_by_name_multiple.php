@@ -6,7 +6,6 @@ require_once('./db_connect.php');
 
 // loop thru the string and find all ingredients
 $stringOfIngreidents = $request->query;
-$stringOfIngreidents = str_replace('%2F', '/', $stringOfIngreidents);
 // $stringOfIngreidents = 'Water, Dimethicone, Talc, Peg-10 Dimethicone, Trimethylsiloxysilicate, Polypropylene, Isododecane, Cetyl Peg/Ppg-10/1 Dimethicone, Nylon-12, Hdi/Trimethylol Hexyllactone Crosspolymer, Phenoxyethanol, Sodium Chloride, Hydrogen Dimethicone, Glycerin, Magnesium Sulfate, Sodium Dehydroacetate, Disteardimonium Hectorite, Aluminum Hydroxide, Methicone, Benzoic Acid, Dehydroacetic Acid, Propylene Carbonate, Ethylhexylglycerin, Parfum/Fragrance, Silica, Biosaccharide Gum-4, Ananas Sativus (Pineapple) Fruit Extract, Carica Papaya (Papaya) Fruit Extract, Paullinia Cupana Seed Extract, Potassium Sorbate, Sorbic Acid';
 $arrayOfIngredients=[];
 $indexOfLetter=0;
