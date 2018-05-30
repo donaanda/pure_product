@@ -12,13 +12,15 @@ import vegan_icon from '../assets/images/ethical_icons/vegan.png';
 import cruelty_free_icon from '../assets/images/ethical_icons/cruelty_free.png';
 import YoutubeVideoReviews from './youtubeReviews';
 
+
 class MenuTabs extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             tabIndex: 0,
-            data: null
+            data: null,
+            backgroundColor: 'white'
         }
 
         this.ingredients = this.props.ingredients || [
@@ -31,9 +33,11 @@ class MenuTabs extends Component {
 
     handleClickIngredients(event) {
         event.preventDefault();
+        console.log(event.target.tabIndex);
         this.setState({
             tab: event.target.name,
-            className: 'active-tab-ingredients'
+            className: 'active-tab-ingredients',
+            backgroundColor: '#9df39f'
         });
     }
 
@@ -41,6 +45,8 @@ class MenuTabs extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
+            className: 'active-tab-details',
+            backgroundColor: '#9df39f'
         });
     }
 
@@ -49,7 +55,8 @@ class MenuTabs extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
-            className: 'active-tab-videos'
+            className: 'active-tab-videos',
+            backgroundColor: '#9df39f'
         });
 
     }
@@ -58,9 +65,11 @@ class MenuTabs extends Component {
         event.preventDefault();
         this.setState({
             tab: event.target.name,
-            className: 'active-tab-reviews'
+            className: 'active-tab-reviews',
+            backgroundColor: '#9df39f'
         });
     }
+
 
     validateLabelDisplay(productAttributes) {
         var yesCount = null;
@@ -80,13 +89,6 @@ class MenuTabs extends Component {
         }
     }
 
-    handleClickDetails(event) {
-        event.preventDefault();
-        this.setState({
-            tab: event.target.name,
-            className: 'active-tab-details'
-        });
-    }
 
     async componentDidMount() {
         //youtube search results per product
@@ -115,7 +117,7 @@ class MenuTabs extends Component {
     }
 
     render() {
-        const { className } = this.state
+        const { className } = this.state;
         const { Details, Dry, Normal, Oily, Sensitive, Vegan, categories, Cruelty_Free } = this.product;
 
         var skinTypeValues = {
@@ -132,16 +134,16 @@ class MenuTabs extends Component {
         return (
             <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                 <TabList className="tab-list">
-                    <Tab className="tab-header-ingredient" onClick={this.handleClickIngredients.bind(this)}>
+                    <Tab className="tab-header-ingredient" style={{backgroundColor: this.state.tabIndex === 0 ? this.state.backgroundColor : 'white'}} onClick={this.handleClickIngredients.bind(this)}>
                         Ingredients
                     </Tab>
-                    <Tab className="tab-header-detail" onClick={this.handleClickDetails.bind(this)}>
+                    <Tab className="tab-header-detail" style={{backgroundColor: this.state.tabIndex === 1 ? this.state.backgroundColor : 'white'}} onClick={this.handleClickDetails.bind(this)}>
                         Details
                     </Tab>
-                    <Tab className="tab-header-video" onClick={this.handleClickVideos.bind(this)}>
+                    <Tab className="tab-header-video" style={{backgroundColor: this.state.tabIndex === 2 ? this.state.backgroundColor : 'white'}} onClick={this.handleClickVideos.bind(this)}>
                         Videos
                     </Tab>
-                    <Tab className="tab-header-review" onClick={this.handleClickReviews.bind(this)}>
+                    <Tab className="tab-header-review" style={{backgroundColor: this.state.tabIndex === 3 ? this.state.backgroundColor : 'white'}} onClick={this.handleClickReviews.bind(this)}>
                         Reviews
                     </Tab>
                 </TabList>
