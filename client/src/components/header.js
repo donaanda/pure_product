@@ -141,7 +141,8 @@ class Header extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.history.push('/search_product_result/' + this.state.input)
+        let uriEncodedInput = encodeURIComponent(this.state.input);
+        this.props.history.push('/search_product_result/' + uriEncodedInput)
     }
 
     toggleSearchBar(event) {

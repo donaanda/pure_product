@@ -14,8 +14,8 @@ class ProductAnalyzer extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        let searchQuery = this.state.input.replace(/\//g, '%2F');
-        this.props.history.push('/product_analyzer_result/' + searchQuery)
+        let uriEncodedInput = encodeURIComponent(this.state.input);
+        this.props.history.push('/product_analyzer_result/' + uriEncodedInput)
     }
 
     handleInput(event){
