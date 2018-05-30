@@ -13,7 +13,6 @@ class SearchProductResult extends Component {
             data: {
                 data: null
             }
-
         }
     }
     async componentDidMount() {

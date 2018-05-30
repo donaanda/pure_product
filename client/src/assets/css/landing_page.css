@@ -20,9 +20,9 @@
     height: 30vh;
 }
 
-.wrap-landing-img {
+/* .wrap-landing-img {
     padding: 15%;
-}
+} */
 
 .landing_img,
 .landing_img_lipstick {
@@ -86,6 +86,18 @@ section.landing_page {
 
 .landing-two-container {
     margin-left: 0.5vh;
+}
+
+.landing-bar-graph-safety {
+    height: 3.0vh;
+    width: 100%;
+    margin: 1vh 0;
+}
+
+.landing-bar-graph-gentle {
+    height: 5vh;
+    width: 100%;
+    margin: 1vh 0;
 }
 
 @media only screen and (min-width: 768px) {

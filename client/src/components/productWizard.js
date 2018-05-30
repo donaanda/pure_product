@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import axios from 'axios';
 import Header from './header';
 import Footer from './footer';
 import '../assets/css/productWizard.css';
@@ -15,11 +16,15 @@ class ProductFinder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStep: 0
+      currentStep: 0,
+      selection: {
+      }
     };
 
     this.nextStep = this.nextStep.bind(this);
     this.prevStep = this.prevStep.bind(this);
+    this.handleChildSubmit = this.handleChildSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   nextStep() {
@@ -48,6 +53,31 @@ class ProductFinder extends React.Component {
     });
   }
 
+  handleChildSubmit(event) {
+    console.log('got data from child', event.target.name, event.target.value);
+    var name = event.target.name;
+    var value = event.target.value;
+    const newSelection = {};
+    for (let key in this.state.selection) {
+      newSelection[key] = this.state.selection[key];
+    }
+    newSelection[name] = value;
+    this.setState({
+      selection: newSelection
+    })
+  }
+
+  async handleFormSubmit(event) {
+    event.preventDefault();
+    var query = this.state.selection;
+    await axios.post(`http://localhost:8888/advanced_search.php`, { query }).then(response => {
+      this.setState({
+        data: response.data
+      }, () => console.log("axios", this.state))
+    });
+  }
+
+
   render() {
     const { currentStep } = this.state
     return (
@@ -55,18 +85,19 @@ class ProductFinder extends React.Component {
         <Header history={this.props.history} />
         <div>
           <Step0 currentStep={currentStep} />
-          <Step1 currentStep={currentStep} />
-          <Step2 currentStep={currentStep} />
-          <Step3 currentStep={currentStep} />
-          <Step4 currentStep={currentStep} />
-          <Step5 currentStep={currentStep} />
-          <Step6 currentStep={currentStep} />
+          <Step1 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
+          <Step2 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
+          <Step3 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
+          <Step4 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
+          <Step5 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
+          <Step6 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <button onClick={this.prevStep}
-            className={currentStep === 0 || currentStep === 6 ? "display-none" : "btn wiz-button pink lighten-2"}>Prev</button>
-
+            className={currentStep === 0 || currentStep === 6 ? "display-none" : "btn wiz-button pink lighten-2"}>
+            Prev
+            </button>
           <button onClick={this.nextStep}
             className={currentStep === 6 ? "display-none" : "btn wiz-button"}>Next</button>
-          <button className={currentStep === 6 ? "btn wiz-button" : "display-none"}>Submit</button>
+          <button onClick={this.handleFormSubmit} className={currentStep === 6 ? "btn wiz-button" : "display-none"}>Submit</button>
         </div>
         <Footer />
       </div>
