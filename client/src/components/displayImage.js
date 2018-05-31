@@ -26,6 +26,52 @@ export default class DisplayImage extends Component {
                 },
         }
     }
+    colorizeSafetyNum(rating) {
+        switch (rating) {
+            case "1":
+                return "green-text lighten-3 shadow";
+            case "2":
+                return "light-green-text shadow";
+            case "3":
+                return "green-text shadow";
+            case "4":
+                return "yellow-text lighten-3 shadow";
+            case "5":
+                return "yellow-text shadow";
+            case "6":
+                return "orange-text shadow";
+            case "7":
+                return "deep-orange-text shadow";
+            case "8":
+                return "red-text shadow";
+            case "9":
+                return "red-text darken-1 shadow";
+            case "10":
+                return "red-text darken-2 shadow";
+            case "1-2":
+                return "green-text shadow";
+            case "1-3":
+                return "green-text shadow";
+            default:
+                return
+        }
+    };
+
+    colorizeGentleNum(rating) {
+        switch (rating) {
+            case "Best":
+                return "green-text lighten-3";
+            case "Good":
+                return "light-green-text";
+            case "Average":
+                return "orange-text";
+            case "Poor":
+                return "red-text";
+            default:
+                return
+        }
+    }
+
     render() {
         if (!this.props || this.state.product === false) {
             return (<div>no product specified</div>)
@@ -39,12 +85,14 @@ export default class DisplayImage extends Component {
                 gentle_avg_rating,
                 safety_avg_rating,
                 rating, } = this.props.product;
+
             const { displayCont,
                 imgProductPage,
                 heartIcon, crossIcon,
                 gentleRating,
                 safetyRating,
                 productImg } = this.props.className;
+
             const image = "/product_images/" + categories + "/" + product_id + "/" + img_src;
             return (
                 <Link to={"/product/" + product_id}>
@@ -52,11 +100,11 @@ export default class DisplayImage extends Component {
                         <div className={imgProductPage}>
                             <img className={productImg} src={image} />
                             <div className="display-cont">
-                                <div className="icon-cont">
+                                <div className={`icon-cont ${this.colorizeGentleNum(gentle_avg_rating)}`}>
                                     <img className={heartIcon} src={gentle_img} />
                                     <span className={gentleRating}>{gentle_avg_rating}</span>
                                 </div>
-                                <div className="icon-cont">
+                                <div className={`icon-cont ${this.colorizeSafetyNum(safety_avg_rating)}`}>
                                     <img className={crossIcon} src={safety_img} />
                                     <span className={safetyRating}>{safety_avg_rating}</span>
                                 </div>
