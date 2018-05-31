@@ -10,12 +10,12 @@
     border-bottom: 1px solid gray;
 }
 .suggest-item {
-    border: 2px solid black;
+    margin: 2%;
 }
 
 .current-input {
     font-weight: bold;
-    background-color: lightseagreen;
+    background-color: #f8d7da;
 }
 /*from w3*/
 

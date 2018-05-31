@@ -16,6 +16,7 @@ class Header extends Component {
 
         this.state = {
             autoComplete: [],
+            autoCompleteFocus: -1,
             input: "",
             searchToggle: false,
             searchBarStyle: 'display-none',
@@ -121,6 +122,22 @@ class Header extends Component {
         this.props.history.push('/search_product_result/' + uriEncodedInput)
     }
 
+    handleKeyDown(event){
+        console.log(event.keyCode);
+        switch(event.keyCode){
+            case 40:
+                console.log('down');
+                break
+            case 38:
+                console.log('up');
+                break
+            case 13:
+                event.preventDefault();
+                console.log('enter');
+                break
+        }
+    }
+
     toggleSearchBar(event) {
         //if the search bar is open
         if (this.state.searchToggle) {
@@ -195,10 +212,10 @@ class Header extends Component {
                 </div>
                 <form autoComplete="off">
                     <div className="autocomplete">
-                        <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
+                        <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} onKeyDown={this.handleKeyDown.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     </div>
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
-                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} currentInput={input} />
+                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} currentInput={input}/>
                 </form>
                 <AdvancedSearch className={this.state.advancedSearchButtonStyle} />
             </div>
