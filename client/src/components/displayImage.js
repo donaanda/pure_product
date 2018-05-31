@@ -72,6 +72,15 @@ export default class DisplayImage extends Component {
         }
     }
 
+    truncateAverage(gentleRating) {
+        switch (gentleRating) {
+            case "Average":
+                return "Avg";
+            default:
+                return gentleRating;
+        }
+    }
+
     render() {
         if (!this.props || this.state.product === false) {
             return (<div>no product specified</div>)
@@ -91,7 +100,8 @@ export default class DisplayImage extends Component {
                 heartIcon, crossIcon,
                 gentleRating,
                 safetyRating,
-                productImg } = this.props.className;
+                productImg,
+                displayNone } = this.props.className;
 
             const image = "/product_images/" + categories + "/" + product_id + "/" + img_src;
             return (
@@ -100,11 +110,11 @@ export default class DisplayImage extends Component {
                         <div className={imgProductPage}>
                             <img className={productImg} src={image} />
                             <div className="display-cont">
-                                <div className={`icon-cont ${this.colorizeGentleNum(gentle_avg_rating)}`}>
+                                <div className={`icon-cont-gentle ${displayNone} ${this.colorizeGentleNum(gentle_avg_rating)}`}>
                                     <img className={heartIcon} src={gentle_img} />
-                                    <span className={gentleRating}>{gentle_avg_rating}</span>
+                                    <span className={gentleRating}>{this.truncateAverage(gentle_avg_rating)}</span>
                                 </div>
-                                <div className={`icon-cont ${this.colorizeSafetyNum(safety_avg_rating)}`}>
+                                <div className={`icon-cont-safety ${displayNone} ${this.colorizeSafetyNum(safety_avg_rating)}`}>
                                     <img className={crossIcon} src={safety_img} />
                                     <span className={safetyRating}>{safety_avg_rating}</span>
                                 </div>

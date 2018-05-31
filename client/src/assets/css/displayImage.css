@@ -63,12 +63,14 @@
     text-align: right;
 }
 
-.icon-cont {
+.icon-cont-safety,
+.icon-cont-gentle {
     margin: 1vh 0;
     display: inline-block;
     width: 50%;
     text-align: center;
     line-height: 100%;
+    border-radius: 100%;
 }
 
 .info-container {

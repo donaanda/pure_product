@@ -20,6 +20,7 @@ const styleClasses = {
     crossIcon: 'safety-icon-product-page',
     gentleRating: 'gentle-rating-product-page',
     safetyRating: 'safety-rating-product-page',
+    displayNone: 'display-none'
 }
 
 class ProductPage extends Component {
@@ -87,7 +88,7 @@ class ProductPage extends Component {
                             </div>
                         </Link>
                         <Link to="/safety_rating">
-                        <div className="product-page-safety-rating">
+                            <div className="product-page-safety-rating">
                                 <div className="product-page-safety-icon-div">
                                     <img className="product-page-safety-icon" src={SafetyIcon} />
                                 </div>
