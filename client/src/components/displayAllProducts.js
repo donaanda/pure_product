@@ -71,7 +71,7 @@ class DisplayAllProducts extends Component {
 
             const renderPageNumbers = pageNumbers.map((number) => {
                 return (
-                    <li key={number} id={number} onClick={this.handlePageNumberClick} className="page-numbers-list">{number}</li>
+                    <li key={number} id={number} onClick={this.handlePageNumberClick} className="page-numbers-list" style={{fontSize: this.state.currentPage === number ? 'x-large': 'small'}}>{number}</li>
                 )
             });
 
