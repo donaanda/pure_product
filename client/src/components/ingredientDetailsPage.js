@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './header';
 import Footer from "./footer";
 import axios from 'axios';
@@ -8,11 +8,11 @@ import CompoundPath_1 from '../assets/images/displayImages/Compound Path_1.png';
 import Loader from './loader';
 
 
-class IngredientDetails extends Component{
-    constructor(props){
+class IngredientDetails extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-            input:'',
+            input: '',
             data: {
                 data: null
             }
@@ -21,7 +21,7 @@ class IngredientDetails extends Component{
 
     async componentDidMount() {
         let query = decodeURIComponent(this.props.match.params.search);
-        await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
+        await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, { query }).then(response => {
             this.setState({
                 data: response.data
             }, () => console.log(this.state));
@@ -31,7 +31,7 @@ class IngredientDetails extends Component{
     async componentWillReceiveProps(nextProps) {
         if (this.props.match.params.search !== nextProps.match.params.search) {
             let query = decodeURIComponent(nextProps.match.params.search);
-            await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, {query}).then(response => {
+            await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, { query }).then(response => {
                 this.setState({
                     data: response.data
                 }, () => console.log(this.state));
@@ -39,10 +39,10 @@ class IngredientDetails extends Component{
         }
     }
 
-    handleSubmit(event){
+    handleSubmit(event) {
         event.preventDefault();
         this.setState({
-            input:'',
+            input: '',
             data: {
                 data: null
             }
@@ -51,31 +51,31 @@ class IngredientDetails extends Component{
         this.props.history.push('/ingredient_details_page/' + uriEncodedInput);
     }
 
-    handleInput(event){
+    handleInput(event) {
         event.preventDefault();
         this.setState({
             input: event.target.value
-        }, ()=>console.log('input:', this.state)
+        }, () => console.log('input:', this.state)
         );
     }
 
-    render(){
+    render() {
 
         if (this.state.data.data === null) {
-            return <Loader/>
+            return <Loader />
         } else if (!this.state.data.success) {
             return <div>No Result Found</div>
         } else {
-            const ingredientBlock = this.state.data.ingredients.map((item,index)=>{
-                const {ingredient, safety_rating, gentle_rating, details} = item;
+            const ingredientBlock = this.state.data.ingredients.map((item, index) => {
+                const { ingredient, safety_rating, gentle_rating, details } = item;
                 return (
                     <div key={index}>
                         <div className="ingredient-info-container">
                             <div className="ingredient-name">
                                 <div className="ingredient-name-span">{ingredient}</div>
-                                <img className="ingredient-result-gentle-img" src={CompoundPath_1}/>
+                                <img className="ingredient-result-gentle-img" src={CompoundPath_1} />
                                 <span className="ingredient-result-gentle-rating">{gentle_rating}</span>
-                                <img className="ingredient-result-safety-img" src={Group_1}/>
+                                <img className="ingredient-result-safety-img" src={Group_1} />
                                 <span className="ingredient-result-safety-rating">{safety_rating}</span>
                             </div>
                         </div>
@@ -89,10 +89,10 @@ class IngredientDetails extends Component{
                     <Header history={this.props.history} />
                     {ingredientBlock}
                     <form className="search-ingredient">
-                        <input autoFocus value={this.state.input} onChange={this.handleInput.bind(this)} className="search-ingredient-input" type="text" placeholder="type ingredients to look up here" size="30"/>
-                        <button onClick={this.handleSubmit.bind(this)}className="search-ingredient-button">Search</button>
+                        <input autoFocus value={this.state.input} onChange={this.handleInput.bind(this)} className="search-ingredient-input" type="text" placeholder="type ingredients to look up here" size="30" />
+                        <button onClick={this.handleSubmit.bind(this)} className="search-ingredient-button">Search</button>
                     </form>
-                    <Footer/>
+                    <Footer />
                 </section>
             )
         }

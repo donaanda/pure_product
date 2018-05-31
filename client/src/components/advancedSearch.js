@@ -7,7 +7,8 @@ class AdvancedSearch extends Component {
         super(props);
 
         this.state = {
-            advancedSearchExpand: false
+            advancedSearchExpand: false,
+            selection: {}
         }
         this.handleAdvancedSearchClick = this.handleAdvancedSearchClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,19 +29,29 @@ class AdvancedSearch extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        var query = this.state;
+        var query = this.state.selection;
         await axios.post(`http://localhost:8888/advanced_search.php`, { query }).then(response => {
             this.setState({
                 data: response.data
-            }, () => console.log("axios", this.state))
+            }, () => console.log("axios", this.state.selection))
         });
     }
 
     handleChange(event) {
         event.preventDefault();
         var name = event.target.name;
+        var value = event.target.value;
+        const newSelection = {};
+        for (let key in this.state.selection) {
+            newSelection[key] = this.state.selection[key];
+        }
+        if (event.target.checked) {
+            newSelection[name] = value;
+        } else {
+            delete newSelection[name];
+        }
         this.setState({
-            [name]: event.target.value,
+            selection: newSelection
         });
     }
 

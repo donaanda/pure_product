@@ -52,7 +52,6 @@ class IngredientList extends Component {
         if (this.state.ingredients === null) {
             return <Loader />
         }
-
         return (
             <div>
                 <table className="ingredient-table">

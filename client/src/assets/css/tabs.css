@@ -112,6 +112,7 @@
 .active-tab-videos,
 .active-tab-details {
     font-weight: 900;
+    background-color: #9df39f;
 }
 
 /* youtube videos css */
