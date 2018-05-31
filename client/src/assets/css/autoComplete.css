@@ -9,7 +9,9 @@
 .auto-complete div {
     border-bottom: 1px solid gray;
 }
-
+.suggest-item {
+    border: 2px solid black;
+}
 /*from w3*/
 
 .autocomplete {

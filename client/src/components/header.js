@@ -37,26 +37,26 @@ class Header extends Component {
             })
         })
         this.setState({
-            productDataAlpha: this.state.productData.productName.concat(this.state.productData.categories, this.state.productData.brand)
+            productDataArray: this.state.productData.productName.concat(this.state.productData.categories, this.state.productData.brand)
         });
-        var arrHolder = this.state.productDataAlpha;
+        var arrayHolder = this.state.productDataArray;
         var prodIt = 0;
-        while (prodIt < arrHolder.length) {
+        while (prodIt < arrayHolder.length) {
             var insideIt = prodIt;
-            while (insideIt > 0 && arrHolder[insideIt - 1] > arrHolder[insideIt]) {
-                let suggestion = arrHolder[insideIt - 1];
-                arrHolder[insideIt - 1] = arrHolder[insideIt];
-                arrHolder[insideIt] = suggestion;
+            while (insideIt > 0 && arrayHolder[insideIt - 1] > arrayHolder[insideIt]) {
+                let suggestion = arrayHolder[insideIt - 1];
+                arrayHolder[insideIt - 1] = arrayHolder[insideIt];
+                arrayHolder[insideIt] = suggestion;
                 insideIt--;
             }
             prodIt++;
         }
         var suggestionIt = 0;
-        while (suggestionIt < arrHolder.length) {
+        while (suggestionIt < arrayHolder.length) {
             var position = suggestionIt + 1;
-            while (position < arrHolder.length) {
-                if (arrHolder[suggestionIt] === arrHolder[position]) {
-                    arrHolder.splice(position, 1);
+            while (position < arrayHolder.length) {
+                if (arrayHolder[suggestionIt] === arrayHolder[position]) {
+                    arrayHolder.splice(position, 1);
                     position--;
                 }
                 position++;
@@ -64,8 +64,47 @@ class Header extends Component {
             suggestionIt++;
         }
         this.setState({
-            productDataAlpha: arrHolder
+            productDataArray: arrayHolder
         });
+    }
+
+    checkForAutocomplete(){
+        var curInput = this.state.input;
+        var newArray = [];
+        var tempHolder = [];
+        var counter = 0;
+        if(this.state.input === ''){
+            return
+        }
+        for (var item in this.state.productData['categories']) {
+            if (this.state.productData['categories'][item].substr(0, curInput.length).toUpperCase() == curInput.toUpperCase()) {
+                if (counter < 1) {
+                    newArray.push(this.state.productData['categories'][item]);
+                }
+            }
+            counter++;
+        }
+        counter = 0;
+        for (var item in this.state.productData['brand']) {
+            if (this.state.productData['brand'][item].substr(0, curInput.length).toUpperCase() == curInput.toUpperCase()) {
+                if (counter < 1) {
+                    newArray.push(this.state.productData['brand'][item]);
+                }
+            }
+            counter++;
+        }
+        for (var item in this.state.productData['productName']) {
+            if (this.state.productData['productName'][item].substr(0, curInput.length).toUpperCase() == curInput.toUpperCase()) {
+                newArray.push(this.state.productData['productName'][item])
+                while (newArray.length > 10) {
+                    newArray.pop();
+                }
+            }
+        }
+        
+        this.setState({
+            autoComplete: newArray
+        })
     }
 
     handleInput(event) {
@@ -73,70 +112,7 @@ class Header extends Component {
         this.setState({
             input: event.target.value,
             autoComplete: []
-        });
-        var curInput = this.state.input;
-        var newArr = [];
-        var tempHolder = [];
-        var counter = 0;
-        for (var item in this.state.productData['categories']) {
-            if (this.state.productData['categories'][item].toUpperCase().includes(curInput.toUpperCase())) {
-                if (counter < 1) {
-                    newArr.push(this.state.productData['categories'][item]);
-                }
-            }
-            counter++;
-        }
-        counter = 0;
-        for (var item in this.state.productData['brand']) {
-            if (this.state.productData['brand'][item].toUpperCase().includes(curInput.toUpperCase())) {
-                if (counter < 1) {
-                    newArr.push(this.state.productData['brand'][item]);
-                }
-            }
-            counter++;
-        }
-        for (var item in this.state.productDataAlpha) {
-            if (this.state.productDataAlpha[item].toUpperCase().includes(curInput.toUpperCase())) {
-                newArr.push(this.state.productDataAlpha[item]);
-                for (var l = 1; l <= 10; l++) {
-                    tempHolder.push(this.state.productDataAlpha[item + l]);
-                }
-                if (tempHolder.length <= 10) {
-                    for (var l = 1; l <= 10; l++) {
-                        tempHolder.push(this.state.productDataAlpha[item + l]);
-                    }
-                }
-            }
-        }
-        var p = 0;
-        while (newArr.length <= 10) {
-            if (tempHolder[p] && newArr.length < 9) {
-                newArr.push(tempHolder[p]);
-                p++;
-            } else {
-                newArr.push('no suggestions');
-                break;
-            }
-        }
-        while (newArr.length > 10) {
-            newArr.pop();
-        }
-        for (var item in this.state.productDataAlpha) {
-            if (this.state.productDataAlpha[item].toUpperCase() === curInput.toUpperCase()) {
-                for (var k = 0; k < newArr.length; k++) {
-                    if (this.state.productDataAlpha[item].toUpperCase() === newArr[k]) {
-                    } else {
-                        newArr[0] = this.state.productDataAlpha[item];
-                    }
-                }
-            }
-        }
-        this.setState({
-            autoComplete: newArr
-        });
-        return (
-            <div>AutoComplete in omer function</div>
-        )
+        }, this.checkForAutocomplete)
     }
 
     handleSubmit(event) {
@@ -186,6 +162,7 @@ class Header extends Component {
     }
 
     fillOutAutoComplete(event) {
+        console.log(event);
         this.setState({
             input: event.target.innerText,
             autoComplete: []
