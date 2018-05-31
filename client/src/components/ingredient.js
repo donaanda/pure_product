@@ -24,6 +24,10 @@ const Ingredient = (props) => {
                 return "red darken-1";
             case "10":
                 return "red darken-2";
+            case "1-2":
+                return "green";
+            case "1-3":
+                return "green";
             default:
                 return
         }
