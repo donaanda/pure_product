@@ -1,39 +1,39 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './header';
-import Lipstick from '../assets/images/landing_page_icons/lipstick.png';
+import Lipstick from '../assets/images/landing_page_icons/icons/cross2.png';
 import { Link } from 'react-router-dom';
 import '../assets/css/productAnalyzer.css';
 
-class ProductAnalyzer extends Component{
-    constructor(props){
+class ProductAnalyzer extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-            input:''
+            input: ''
         }
     }
 
-    handleSubmit(event){
+    handleSubmit(event) {
         event.preventDefault();
         let uriEncodedInput = encodeURIComponent(this.state.input);
         this.props.history.push('/product_analyzer_result/' + uriEncodedInput)
     }
 
-    handleInput(event){
+    handleInput(event) {
         event.preventDefault();
         this.setState({
             input: event.target.value
         });
     }
-    render(){
+    render() {
         return (
             <section>
                 <Header history={this.props.history} />
                 <div className="check-product-image-container">
                     <div className="logo-background-color">
-                        <img className="check-product-logo" src={Lipstick}/>
+                        <img className="check-product-logo" src={Lipstick} />
                     </div>
                     <div className="check-product-description">
-                        See if a product is made with ingredients that are dermatologically approved and safe to use.
+                        Copy and paste comma seperated ingredient lists here for a safety/gentle breakdown of a product.
                     </div>
                     <form className="check-product-form-field">
                         <div className="check-product-input-container">
