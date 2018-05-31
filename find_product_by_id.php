@@ -80,7 +80,7 @@ GROUP BY
     3,
     4
 ORDER BY
-    `k`.`ingredient` ASC";
+    -2 desc, -3 desc";
     $result=mysqli_query($db,$query_for_ingredient);
     if(mysqli_num_rows($result)>0){
         $output['success']=true;

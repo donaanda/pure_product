@@ -1,4 +1,4 @@
-.product-page-gentle-safety-rating div {
+.product-page-gentle-safety-rating {
     display: inline-block;
     height: 7vh;
     vertical-align: top;
@@ -9,19 +9,37 @@ a {
 }
 
 .product-page-gentle-rating {
+    display: inline-block;
     width: 50%;
-    background-color: #0fb8ad;
+    background-color: #edfcf6;
     text-align: center;
+    position: relative;
+    height: 7vh;
+    vertical-align: top;
 }
 
 .product-page-safety-rating {
+    display: inline-block;
     width: 50%;
-    background-color: #f8d7da;
+    background-color: #fef6f6;
     text-align: center;
+    position: relative;
+    height: 7vh;
 }
 
 .display-all-products-content {
     margin: 6vh 0;
+}
+.product-page-gentle-result{
+    padding:5%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.product-page-safety-result{
+    padding:5%;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .tab-ingredient {
@@ -31,4 +49,45 @@ a {
 
 .videos-default-text {
     text-align: center;
+}
+.product-page-gentle-icon-div{
+    height: 7vh;
+    width: 20vw;
+    object-fit: contain;
+    display: inline-block;
+}
+.product-page-gentle-text-div{
+    height: 7vh;
+    width:30vw;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product-page-safety-icon-div{
+    height: 7vh;
+    width: 20vw;
+    object-fit: contain;
+    display: inline-block;
+}
+.product-page-safety-text-div{
+    height: 7vh;
+    width:30vw;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product-page-gentle-icon{
+    height: 100%;
+}
+.product-page-safety-icon{
+    height: 100%;
+}
+
+.product-page-gentle-text{
+    font-size: 0.9em;
+    padding: 5%;
+}
+.product-page-safety-text{
+    font-size: 0.9em;
+    padding: 5%;
 }

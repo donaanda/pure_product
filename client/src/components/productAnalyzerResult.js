@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './header';
 import { Link } from 'react-router-dom';
 import '../assets/css/productAnalyzer.css';
@@ -6,11 +6,11 @@ import IngredientList from './ingredientList';
 import Loader from './loader';
 import axios from 'axios';
 
-class ProductAnalyzerResult extends Component{
-    constructor(props){
+class ProductAnalyzerResult extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-            input:'',
+            input: '',
             data: {
                 data: null
             }
@@ -18,28 +18,28 @@ class ProductAnalyzerResult extends Component{
     }
     async componentDidMount() {
         let query = decodeURIComponent(this.props.match.params.search);
-        await axios.post(`http://localhost:8888/get_ingredient_by_name_multiple.php`, {query}).then(response => {
+        await axios.post(`http://localhost:8888/get_ingredient_by_name_multiple.php`, { query }).then(response => {
             this.setState({
                 data: response.data
-            },() => console.log("axios",this.state))
+            }, () => console.log("axios", this.state))
         });
     }
 
-    async componentWillReceiveProps(nextProps){
+    async componentWillReceiveProps(nextProps) {
         if (this.props.match.params.search !== nextProps.match.params.search) {
             let query = decodeURIComponent(nextProps.match.params.search);
-            await axios.post(`http://localhost:8888/get_ingredient_by_name_multiple.php`, {query}).then(response => {
+            await axios.post(`http://localhost:8888/get_ingredient_by_name_multiple.php`, { query }).then(response => {
                 this.setState({
                     data: response.data
-                }, () => console.log("axios",this.state));
+                }, () => console.log("axios", this.state));
             });
         }
     }
 
-    handleSubmit(event){
+    handleSubmit(event) {
         event.preventDefault();
         this.setState({
-            input:'',
+            input: '',
             data: {
                 data: null
             }
@@ -48,34 +48,34 @@ class ProductAnalyzerResult extends Component{
         this.props.history.push('/product_analyzer_result/' + uriEncodedInput)
     }
 
-    handleInput(event){
+    handleInput(event) {
         event.preventDefault();
         this.setState({
             input: event.target.value
         });
     }
-    render(){
-        if(this.state.data.data === null){
+    render() {
+        if (this.state.data.data === null) {
             return (
                 <section>
-                    <Header/>
-                    <Loader/>
+                    <Header />
+                    <Loader className="loader" />
                 </section>
-            
+
             )
         }
         return (
             <section>
                 <Header history={this.props.history} />
-                <IngredientList info={this.state.data} success={this.state.data.success}/>
-                    <form className="check-product-form-field">
-                        <div className="check-product-input-container">
-                            <textarea autoFocus onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."></textarea>
-                        </div>
-                        <div className="check-product-button-container">
-                            <button className="check-product-button" onClick={this.handleSubmit.bind(this)}>Analyze</button>
-                        </div>
-                    </form>
+                <IngredientList info={this.state.data} success={this.state.data.success} />
+                <form className="check-product-form-field">
+                    <div className="check-product-input-container">
+                        <textarea autoFocus onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."></textarea>
+                    </div>
+                    <div className="check-product-button-container">
+                        <button className="btn purple" onClick={this.handleSubmit.bind(this)}>Analyze</button>
+                    </div>
+                </form>
             </section>
         )
     }

@@ -18,6 +18,7 @@ class ProductFinder extends React.Component {
     this.state = {
       currentStep: 0,
       selection: {
+        retinol: null
       }
     };
 
@@ -54,14 +55,17 @@ class ProductFinder extends React.Component {
   }
 
   handleChildSubmit(event) {
-    console.log('got data from child', event.target.name, event.target.value);
     var name = event.target.name;
     var value = event.target.value;
     const newSelection = {};
     for (let key in this.state.selection) {
       newSelection[key] = this.state.selection[key];
     }
-    newSelection[name] = value;
+    if (event.target.checked) {
+      newSelection[name] = value;
+    } else {
+      delete newSelection[name];
+    }
     this.setState({
       selection: newSelection
     })
@@ -73,7 +77,7 @@ class ProductFinder extends React.Component {
     await axios.post(`http://localhost:8888/filterAndFinder.php`, { query }).then(response => {
       this.setState({
         data: response.data
-      }, () => console.log("axios", this.state))
+      }, () => console.log("axios", this.state.selection))
     });
     console.log(this.state.data);
   }
@@ -84,12 +88,12 @@ class ProductFinder extends React.Component {
     return (
       <div className="product-wizard-cont">
         <Header history={this.props.history} />
-        <div>
+        <div className="product-wizard-inner">
           <Step0 currentStep={currentStep} />
           <Step1 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step2 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
-          <Step3 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
-          <Step4 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
+          <Step3 selectionCallBack={this.handleChildSubmit} retinolVal={this.state.selection.retinol} currentStep={currentStep} />
+          <Step4 selectionCallBack={this.handleChildSubmit} retinolVal={this.state.selection.retinol} currentStep={currentStep} />
           <Step5 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step6 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <button onClick={this.prevStep}

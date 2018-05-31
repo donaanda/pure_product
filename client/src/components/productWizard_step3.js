@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 
 class Step3 extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.retinolVal === 'exclude') {
+            return (
+                <div>You chose exclude on the last page.</div>
+            )
+        }
+    }
     render() {
         if (this.props.currentStep !== 3) {
             return null;

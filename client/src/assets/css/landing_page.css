@@ -17,24 +17,27 @@
 .landing_button,
 .wrap-landing-img {
     width: 45vw;
-    height: 30vh;
+    height: 60vw;
 }
 
-/* .wrap-landing-img {
-    padding: 15%;
-} */
-
-.landing_img,
-.landing_img_lipstick {
-    padding: 2vh;
-    height: 15vh;
-    width: 15vh;
+.lipstick {
+    height: 40vw;
+    width: 40vw;
 }
 
-.landing_img_lipstick {
-    display: block;
-    width: 10vh;
-    margin: auto;
+.gentle {
+    height: 40vw;
+    width: 40vw;
+}
+
+.safety_icon {
+    height: 40vw;
+    width: 40vw;
+}
+
+.product {
+    height: 40vw;
+    width: 43vw;
 }
 
 .wrap-landing-img>.landing_img,

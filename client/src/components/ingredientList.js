@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import heart from '../assets/images/landing_page_icons/gentle_heart.png';
-import cross from '../assets/images/landing_page_icons/safety.png';
+import heart from '../assets/images/landing_page_icons/icons/gentle.png';
+import gentle from '../assets/images/landing_page_icons/icons/cross.png';
 import '../assets/css/ingredientList.css';
 import Ingredient from './ingredient';
 import Loader from './loader';
@@ -52,15 +52,14 @@ class IngredientList extends Component {
         if (this.state.ingredients === null) {
             return <Loader />
         }
-
         return (
             <div>
                 <table className="ingredient-table">
                     <tbody>
                         <tr>
-                            <td>Ingredients</td>
+                            <td className="ingredients-title">Ingredients</td>
                             <td><img className="icon-width" src={heart} alt="heart" /></td>
-                            <td><img className="icon-width" src={cross} alt="heart" /></td>
+                            <td><img className="icon-width" src={gentle} alt="heart" /></td>
                         </tr>
                         {this.state.ingredients}
                     </tbody>

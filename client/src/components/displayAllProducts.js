@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import DisplayImage from './displayImage';
 import ImageData from './imageData';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,8 @@ const styleClasses = {
     heartIcon: 'gentle-icon',
     crossIcon: 'safety-icon',
     gentleRating: 'gentle-rating',
-    safetyRating: 'safety-rating'
+    safetyRating: 'safety-rating',
+    displayNone: ''
 }
 
 
@@ -37,7 +38,7 @@ class DisplayAllProducts extends Component {
 
     render() {
         if (this.props.data.data === null) {
-            return <Loader />
+            return <Loader className="loader" />
         } else if (!this.props.data.success) {
             return (
                 <section>
@@ -52,7 +53,7 @@ class DisplayAllProducts extends Component {
                 </section>
             )
         } else {
-            const {currentPage, productsPerPage} = this.state;
+            const { currentPage, productsPerPage } = this.state;
 
             const indexOfFirstProductOfNextPage = currentPage * productsPerPage;
             const indexOfFirstProductOfCurrentPage = indexOfFirstProductOfNextPage - productsPerPage;
@@ -71,7 +72,7 @@ class DisplayAllProducts extends Component {
 
             const renderPageNumbers = pageNumbers.map((number) => {
                 return (
-                    <li key={number} id={number} onClick={this.handlePageNumberClick} className="page-numbers-list">{number}</li>
+                    <li key={number} id={number} onClick={this.handlePageNumberClick} className="page-numbers-list" style={{ fontSize: this.state.currentPage === number ? 'x-large' : 'small' }}>{number}</li>
                 )
             });
 

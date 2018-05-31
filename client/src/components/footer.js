@@ -11,11 +11,11 @@ class Footer extends Component {
         return (
             <section className="site-footer">
                 <footer className="site-footer">
-                    <Link to="/create_account" onClick={window.scrollTo(0, 0)}>
+                    {/* <Link to="/create_account" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
                             <img src={new_user} /><span>Create Account</span>
                         </div>
-                    </Link>
+                    </Link> */}
                     <Link to="./our_team" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
                             <img src={our_team} /><span>Our Team</span>

@@ -9,7 +9,14 @@
 .auto-complete div {
     border-bottom: 1px solid gray;
 }
+.suggest-item {
+    margin: 2%;
+}
 
+.current-input {
+    font-weight: bold;
+    background-color: #f8d7da;
+}
 /*from w3*/
 
 .autocomplete {

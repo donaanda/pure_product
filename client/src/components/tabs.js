@@ -12,14 +12,15 @@ import vegan_icon from '../assets/images/ethical_icons/vegan.png';
 import cruelty_free_icon from '../assets/images/ethical_icons/cruelty_free.png';
 import YoutubeVideoReviews from './youtubeReviews';
 
+
 class MenuTabs extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             tabIndex: 0,
-            data: null
-        }
+            data: null,
+        };
 
         this.ingredients = this.props.ingredients || [
             { "Ingredients": "No ingredients to display." },
@@ -27,39 +28,15 @@ class MenuTabs extends Component {
 
         this.product = this.props.product;
 
-    }
+        this.defaultTabColor = {
+            backgroundColor: 'white'
+        };
 
-    handleClickIngredients(event) {
-        event.preventDefault();
-        this.setState({
-            tab: event.target.name,
-            className: 'active-tab-ingredients'
-        });
-    }
+        this.activatedTabColor = {
+            backgroundColor: '#44c1ef',
+            color: 'white'
+        };
 
-    handleClickDetails(event) {
-        event.preventDefault();
-        this.setState({
-            tab: event.target.name,
-        });
-    }
-
-
-    handleClickVideos(event) {
-        event.preventDefault();
-        this.setState({
-            tab: event.target.name,
-            className: 'active-tab-videos'
-        });
-
-    }
-
-    handleClickReviews(event) {
-        event.preventDefault();
-        this.setState({
-            tab: event.target.name,
-            className: 'active-tab-reviews'
-        });
     }
 
     validateLabelDisplay(productAttributes) {
@@ -80,13 +57,6 @@ class MenuTabs extends Component {
         }
     }
 
-    handleClickDetails(event) {
-        event.preventDefault();
-        this.setState({
-            tab: event.target.name,
-            className: 'active-tab-details'
-        });
-    }
 
     async componentDidMount() {
         //youtube search results per product
@@ -115,7 +85,7 @@ class MenuTabs extends Component {
     }
 
     render() {
-        const { className } = this.state
+        const { className } = this.state;
         const { Details, Dry, Normal, Oily, Sensitive, Vegan, categories, Cruelty_Free } = this.product;
 
         var skinTypeValues = {
@@ -132,16 +102,16 @@ class MenuTabs extends Component {
         return (
             <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                 <TabList className="tab-list">
-                    <Tab className="tab-header-ingredient" onClick={this.handleClickIngredients.bind(this)}>
+                    <Tab className="tab-header-ingredient" style={this.state.tabIndex === 0 ? this.activatedTabColor : this.defaultTabColor} >
                         Ingredients
                     </Tab>
-                    <Tab className="tab-header-detail" onClick={this.handleClickDetails.bind(this)}>
+                    <Tab className="tab-header-detail" style={this.state.tabIndex === 1 ? this.activatedTabColor : this.defaultTabColor} >
                         Details
                     </Tab>
-                    <Tab className="tab-header-video" onClick={this.handleClickVideos.bind(this)}>
+                    <Tab className="tab-header-video" style={this.state.tabIndex === 2 ? this.activatedTabColor : this.defaultTabColor} >
                         Videos
                     </Tab>
-                    <Tab className="tab-header-review" onClick={this.handleClickReviews.bind(this)}>
+                    <Tab className="tab-header-review" style={this.state.tabIndex === 3 ? this.activatedTabColor : this.defaultTabColor} >
                         Reviews
                     </Tab>
                 </TabList>
@@ -186,7 +156,7 @@ class MenuTabs extends Component {
                 <TabPanel>
                     <div className="tab-review">
                         <h2>No Reviews Yet</h2>
-                        <h5>Be the first to write a review!</h5>
+                        <h5>Feature Set Coming Soon!</h5>
                         <button className="tab-review-button">Add Review</button>
                     </div>
                 </TabPanel>
