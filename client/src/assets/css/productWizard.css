@@ -94,3 +94,9 @@
 .wiz-right {
     border-right: 2px solid rgba(5, 99, 122, 0.8);
 }
+
+#retinol-error{
+    text-decoration: line-through;
+    font-size: 5vmin;
+}
+

@@ -18,6 +18,7 @@ class ProductFinder extends React.Component {
     this.state = {
       currentStep: 0,
       selection: {
+        retinol: null
       }
     };
 
@@ -90,8 +91,8 @@ class ProductFinder extends React.Component {
           <Step0 currentStep={currentStep} />
           <Step1 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step2 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
-          <Step3 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
-          <Step4 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
+          <Step3 selectionCallBack={this.handleChildSubmit} retinolVal={this.state.selection.retinol} currentStep={currentStep} />
+          <Step4 selectionCallBack={this.handleChildSubmit} retinolVal={this.state.selection.retinol} currentStep={currentStep} />
           <Step5 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step6 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <button onClick={this.prevStep}
