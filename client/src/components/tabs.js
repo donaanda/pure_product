@@ -20,14 +20,22 @@ class MenuTabs extends Component {
         this.state = {
             tabIndex: 0,
             data: null,
-            backgroundColor: 'white'
-        }
+        };
 
         this.ingredients = this.props.ingredients || [
             { "Ingredients": "No ingredients to display." },
         ];
 
         this.product = this.props.product;
+
+        this.defaultTabColor = {
+            backgroundColor: 'white'
+        };
+
+        this.activatedTabColor = {
+            backgroundColor: 'black',
+            color: 'white'
+        };
 
     }
 
@@ -37,7 +45,6 @@ class MenuTabs extends Component {
         this.setState({
             tab: event.target.name,
             className: 'active-tab-ingredients',
-            backgroundColor: '#9df39f'
         });
     }
 
@@ -46,7 +53,6 @@ class MenuTabs extends Component {
         this.setState({
             tab: event.target.name,
             className: 'active-tab-details',
-            backgroundColor: '#9df39f'
         });
     }
 
@@ -56,7 +62,6 @@ class MenuTabs extends Component {
         this.setState({
             tab: event.target.name,
             className: 'active-tab-videos',
-            backgroundColor: '#9df39f'
         });
 
     }
@@ -66,7 +71,6 @@ class MenuTabs extends Component {
         this.setState({
             tab: event.target.name,
             className: 'active-tab-reviews',
-            backgroundColor: '#9df39f'
         });
     }
 
@@ -134,16 +138,16 @@ class MenuTabs extends Component {
         return (
             <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                 <TabList className="tab-list">
-                    <Tab className="tab-header-ingredient" style={{backgroundColor: this.state.tabIndex === 0 ? this.state.backgroundColor : 'white'}} onClick={this.handleClickIngredients.bind(this)}>
+                    <Tab className="tab-header-ingredient" style={this.state.tabIndex === 0 ? this.activatedTabColor : this.defaultTabColor} onClick={this.handleClickIngredients.bind(this)}>
                         Ingredients
                     </Tab>
-                    <Tab className="tab-header-detail" style={{backgroundColor: this.state.tabIndex === 1 ? this.state.backgroundColor : 'white'}} onClick={this.handleClickDetails.bind(this)}>
+                    <Tab className="tab-header-detail" style={this.state.tabIndex === 1 ? this.activatedTabColor : this.defaultTabColor} onClick={this.handleClickDetails.bind(this)}>
                         Details
                     </Tab>
-                    <Tab className="tab-header-video" style={{backgroundColor: this.state.tabIndex === 2 ? this.state.backgroundColor : 'white'}} onClick={this.handleClickVideos.bind(this)}>
+                    <Tab className="tab-header-video" style={this.state.tabIndex === 2 ? this.activatedTabColor : this.defaultTabColor} onClick={this.handleClickVideos.bind(this)}>
                         Videos
                     </Tab>
-                    <Tab className="tab-header-review" style={{backgroundColor: this.state.tabIndex === 3 ? this.state.backgroundColor : 'white'}} onClick={this.handleClickReviews.bind(this)}>
+                    <Tab className="tab-header-review" style={this.state.tabIndex === 3 ? this.activatedTabColor : this.defaultTabColor} onClick={this.handleClickReviews.bind(this)}>
                         Reviews
                     </Tab>
                 </TabList>
