@@ -10,14 +10,15 @@
 .tab-header-video,
 .tab-header-review,
 .tab-header-detail {
-    font-size: 5vmin;
+    font-size: 1.3em;
     display: inline-block;
-    width: 20vw;
+    width: 23vw;
     cursor: pointer;
-    border-top: 1px solid #555555;
-    border-right: 0.5px solid #555555;
-    border-left: 1px solid #555555;
-    margin: 3px;
+    border-top-left-radius: 5px;
+    border-top: 2px solid #555555;
+    border-left: 2px solid #555555;
+    
+    padding: 1%;
 }
 
 .tab-header-ingredient {
@@ -26,28 +27,24 @@
 
 .tab-review {
     text-align: center;
-    /* background-color: #ffb3ff; */
     width: 100vw;
     height: 50vh;
     overflow: hidden;
 }
 
 .tab-review-button {
-    /* background-color: blue; */
     padding: 5%;
     color: white;
     font-size: large;
 }
 
 .tab-video {
-    /* background-color: #99ffcc; */
     width: 100vw;
     height: 50vh;
     overflow: hidden;
 }
 
 .tab-ingredient {
-    /* background-color: #ffcc99; */
     width: 100vw;
 }
 
