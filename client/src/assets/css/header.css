@@ -104,7 +104,7 @@
 .expanded-menu-show {
     height: 100vh;
     width: 80vw;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 }
 
 .expanded-menu-hide {
@@ -113,7 +113,7 @@
 
 .menu-container a {
     /*padding: 8px 8px 8px 16px;*/
-    padding-left: 16px;
+    /* padding-left: 16px; */
     text-decoration: none;
     font-size: 25px;
     color: black;
@@ -123,6 +123,12 @@
 
 .menu-container a:hover {
     color: green;
+}
+
+.menu-item-cont {
+    margin: 3vh auto 0 auto;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .menu-item-cont img {

@@ -30,20 +30,20 @@ function ExpandedMenuWelcome(props) {
                     </div>
                 </Link> */}
 
-                <Link to="/check_products" >
+                <Link to="/product_analyzer" >
                     <div className="menu-item-cont">
                         <img className="menu-item-check-products" src={CheckProductSafety} align="middle" /><p className="exp-menu-titles">Analyze Product Ingredients</p>
                     </div>
                 </Link>
 
-                <Link to="/single_ingredient_search">
+                <Link to="/gentle_products">
                     <div className="menu-item-cont">
                         <img className="menu-item-single-ingredient-search" src={LookIngredients} width="10%" align="middle" /><p className="exp-menu-titles">Browse Products</p>
                     </div>
                 </Link>
-                <Link to="/single_ingredient_search">
+                <Link to="/product_wizard">
                     <div className="menu-item-cont">
-                        <p className="product-finder-exp-menu-title">Personal Product Finder</p>
+                        <img src={leaf} /><p className="product-finder-exp-menu-title exp-menu-titles">Personal Product Finder</p>
                     </div>
                 </Link>
 
