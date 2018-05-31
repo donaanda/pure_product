@@ -1,7 +1,7 @@
 .header-container {
-    position: block;
+    display: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 25vw;
+    height: 20vw;
     width: 100vw;
     background-color: white;
     z-index: 1;
@@ -10,34 +10,26 @@
 .header-icon,
 .header-icon img {
     display: inline-block;
-    height: 10vh;
+    height: 6vh;
     border: 2px;
     vertical-align: top;
 }
 
 .login-icon,
 .search-bar {
-    width: 30vw;
+    width: 23vw;
     text-align: center;
 }
 
 .search-bar {
-    margin-top: 0.5vh;
+    margin-top: 1.7vh;
 }
 
 .site-title,
 .site-title img {
-    width: 40vw;
+    width: 60vw;
     height: 20vw;
     text-align: center;
-}
-
-.header-container-search {
-    display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 10vh;
-    background-color: white;
-    z-index: 1
 }
 
 .display-none {

@@ -192,7 +192,7 @@ class MenuTabs extends Component {
                 <TabPanel>
                     <div className="tab-review">
                         <h2>No Reviews Yet</h2>
-                        <h5>Be the first to write a review!</h5>
+                        <h5>Feature Set Coming Soon!</h5>
                         <button className="tab-review-button">Add Review</button>
                     </div>
                 </TabPanel>
