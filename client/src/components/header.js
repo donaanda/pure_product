@@ -126,12 +126,15 @@ class Header extends Component {
         console.log(event.keyCode);
         switch(event.keyCode){
             case 40:
-
+                console.log('down');
+                break
             case 38:
-
+                console.log('up');
+                break
             case 13:
                 event.preventDefault();
-
+                console.log('enter');
+                break
         }
     }
 
