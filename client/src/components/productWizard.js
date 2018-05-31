@@ -87,7 +87,7 @@ class ProductFinder extends React.Component {
     return (
       <div className="product-wizard-cont">
         <Header history={this.props.history} />
-        <div>
+        <div className="product-wizard-inner">
           <Step0 currentStep={currentStep} />
           <Step1 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step2 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />

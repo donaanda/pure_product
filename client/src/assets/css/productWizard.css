@@ -24,9 +24,12 @@
 /* product finder page */
 
 .product-wizard-cont {
-    text-align: center;
     height: 100vh;
     background-image: url(../images/displayImages/banana_leaf.jpg);
+}
+
+.product-wizard-inner{
+    text-align: center;
 }
 
 .product-wizard-cont #wizard-input {
