@@ -30,6 +30,8 @@ const Ingredient = (props) => {
                 return "green";
             case "1-4":
                 return "yellow";
+            case "2-3":
+                return "teal";
             default:
                 return
         }

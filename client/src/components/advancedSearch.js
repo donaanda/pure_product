@@ -35,6 +35,7 @@ class AdvancedSearch extends Component {
                 data: response.data
             }, () => console.log("axios", this.state.selection))
         });
+        console.log(this.state.data);
     }
 
     handleChange(event) {
