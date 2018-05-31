@@ -11,7 +11,7 @@ a {
 .product-page-gentle-rating {
     display: inline-block;
     width: 50%;
-    background-color: #fef6f6;
+    background-color: #edfcf6;
     text-align: center;
     position: relative;
     height: 7vh;
@@ -21,7 +21,7 @@ a {
 .product-page-safety-rating {
     display: inline-block;
     width: 50%;
-    background-color: #edfcf6;
+    background-color: #fef6f6;
     text-align: center;
     position: relative;
     height: 7vh;

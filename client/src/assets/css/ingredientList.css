@@ -12,11 +12,11 @@
 }
 
 .chemical-gentle-rating {
-    background-color: rgb(235, 241, 247);
+    background-color: #edfcf6;
 }
 
 .chemical-safety-rating {
-    background-color: rgb(254, 226, 251);
+    background-color: #fef6f6;
 }
 
 .icon-width {
