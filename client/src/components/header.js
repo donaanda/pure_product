@@ -170,7 +170,7 @@ class Header extends Component {
     }
 
     render() {
-        const { searchToggle, autoComplete } = this.state;
+        const { searchToggle, autoComplete, input } = this.state;
         return (
             <div className={this.state.headerContainer}>
                 <div className="side-nav">
@@ -198,7 +198,7 @@ class Header extends Component {
                         <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     </div>
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
-                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} />
+                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} currentInput={input} />
                 </form>
                 <AdvancedSearch className={this.state.advancedSearchButtonStyle} />
             </div>

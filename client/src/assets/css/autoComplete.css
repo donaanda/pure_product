@@ -12,6 +12,11 @@
 .suggest-item {
     border: 2px solid black;
 }
+
+.current-input {
+    font-weight: bold;
+    background-color: lightseagreen;
+}
 /*from w3*/
 
 .autocomplete {
