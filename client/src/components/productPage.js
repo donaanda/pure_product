@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import MenuTabs from './tabs';
 import DisplayImage from './displayImage';
 import '../assets/css/productPage.css';
-import GentleIcon from '../assets/images/displayImages/Compound Path_1.png';
-import SafetyIcon from '../assets/images/displayImages/Group_1.png';
+import GentleIcon from '../assets/images/landing_page_icons/icons/gentle.png';
+import SafetyIcon from '../assets/images/landing_page_icons/icons/cross.png';
 import Header from './header';
 import Footer from './footer';
 import axios from 'axios';
@@ -73,29 +73,33 @@ class ProductPage extends Component {
             return (
                 <section>
                     <Header history={this.props.history} />
-
                     {displayImageComponent}
                     <div className="product-page-gentle-safety-rating">
                         <Link to="/gentle_rating">
-                            <div className="product-page-gentle-rating">GENTLE RATING
-                    <span><img src={GentleIcon} />
-                                    {product.gentle_avg_rating}
-                                </span>
+                            <div className="product-page-gentle-rating">
+                                <div className="product-page-gentle-icon-div">
+                                    <img className="product-page-gentle-icon" src={GentleIcon} />
+                                </div>
+                                <div className="product-page-gentle-text-div">
+                                    <div className="product-page-gentle-text">GENTLE RATING</div>
+                                    <div className="product-page-gentle-result">{product.gentle_avg_rating}</div>
+                                </div>
                             </div>
                         </Link>
                         <Link to="/safety_rating">
-                            <div className="product-page-safety-rating">SAFETY RATING
-                    <span><img src={SafetyIcon} />
-                                    {product.safety_avg_rating}
-                                </span>
+                        <div className="product-page-safety-rating">
+                                <div className="product-page-safety-icon-div">
+                                    <img className="product-page-safety-icon" src={SafetyIcon} />
+                                </div>
+                                <div className="product-page-safety-text-div">
+                                    <div className="product-page-safety-text">SAFETY RATING</div>
+                                    <div className="product-page-safety-result">{product.safety_avg_rating}</div>
+                                </div>
                             </div>
                         </Link>
                     </div>
-
                     <div>
-
                         <MenuTabs ingredients={ingredients} product={product} />
-
                     </div>
                     <Footer />
                 </section>
