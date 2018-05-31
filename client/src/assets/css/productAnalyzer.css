@@ -18,8 +18,8 @@
 
 .check-product-description {
     text-align: center;
-    background-color: #e4f7ef;
     font-size: 6vmin;
+    color: lightslategray;
 }
 
 .check-product-input-container {
@@ -33,6 +33,12 @@
     border: none;
     width: 80vw;
     height: 60vw;
+}
+
+.check-product-input-field:focus {
+    outline: none;
+    border: 1px solid pink;
+    box-shadow: 0 0 10px #719ECE;
 }
 
 .check-product-button {

@@ -2,8 +2,9 @@
 
 .product_finder_landing_button {
     display: table;
-    font-family: 'Cedarville Cursive', cursive;
+    font-family: 'Oleo Script', cursive;
     background-color: rgba(184, 234, 251, 0.5);
+    color: #989799;
     width: 90vw;
     height: 13vh;
     margin: auto;
@@ -59,7 +60,8 @@
 }
 
 .wiz-intro-cont h3 {
-    font-family: 'Cedarville Cursive', cursive;
+    font-family: 'Oleo Script', cursive;
+    color: #989799;
 }
 
 #wiz-label {
@@ -95,8 +97,7 @@
     border-right: 2px solid rgba(5, 99, 122, 0.8);
 }
 
-#retinol-error{
+#retinol-error {
     text-decoration: line-through;
     font-size: 5vmin;
 }
-

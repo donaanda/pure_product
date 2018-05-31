@@ -40,7 +40,7 @@ class ProductAnalyzer extends Component {
                             <textarea autoFocus onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."></textarea>
                         </div>
                         <div className="check-product-button-container">
-                            <button className="check-product-button" onClick={this.handleSubmit.bind(this)}>Analyze</button>
+                            <button className="btn purple" onClick={this.handleSubmit.bind(this)}>Analyze</button>
                         </div>
                     </form>
                 </div>
