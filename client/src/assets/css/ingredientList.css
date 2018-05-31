@@ -1,5 +1,6 @@
 .ingredient-table td {
     text-align: center;
+    border-right: 1px solid rgb(196, 193, 193);
 }
 
 .ingredient-row td p {
@@ -16,4 +17,15 @@
 
 .chemical-safety-rating {
     background-color: rgb(254, 226, 251);
+}
+
+.icon-width {
+    height: 12vh;
+    width: 12vh;
+}
+
+.ingredients-title {
+    font-size: 7vmin;
+    font-weight: 600;
+    font-family: 'Cedarville Cursive', cursive;
 }
