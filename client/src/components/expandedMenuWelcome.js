@@ -17,33 +17,33 @@ function ExpandedMenuWelcome(props) {
     return (
         <section className={props.className}>
             <div className="menu-container">
-                <Link to="/myAccount" >
+                {/* <Link to="/myAccount" >
                     <div className="menu-item-cont">
                         <p><img className="menu-item-my-account" src={MyAccountPicture} align="middle"/>My Account</p>
                     </div>
-                </Link>
+                </Link> */}
 
-                <Link to="/create_account" >
+                {/* <Link to="/create_account" >
                     <div className="menu-item-cont">
                         <p><img className="menu-item-create-account" src={CreateAccountPicture} align="middle"/>Create Account</p>
                     </div>
-                </Link>
+                </Link> */}
 
                 <Link to="/check_products" >
                     <div className="menu-item-cont">
-                        <p><img className="menu-item-check-products" src={CheckProductSafety} align="middle"/>Check Product Safety</p>
+                        <p><img className="menu-item-check-products" src={CheckProductSafety} align="middle" />Check Product Safety</p>
                     </div>
                 </Link>
 
                 <Link to="/single_ingredient_search">
                     <div className="menu-item-cont">
-                        <p><img className="menu-item-single-ingredient-search" src={LookIngredients} width="10%" align="middle"/>Search Ingredient</p>
+                        <p><img className="menu-item-single-ingredient-search" src={LookIngredients} width="10%" align="middle" />Search Ingredient</p>
                     </div>
                 </Link>
 
                 <Link to="/check_products">
                     <div className="menu-item-cont">
-                        <p><img className="menu-item-discover-products" src={DiscoverProducts} align="middle"/>Discover Products</p>
+                        <p><img className="menu-item-discover-products" src={DiscoverProducts} align="middle" />Discover Products</p>
                     </div>
                 </Link>
             </div>

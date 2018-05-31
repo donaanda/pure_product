@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../assets/css/header.css';
 import SearchIcon from '../assets/images/header_images/search.png';
-import SiteTitle from '../assets/images/header_images/site-title.png';
+import SiteTitle from '../assets/images/landing_page_icons/icons/site-title.png';
 import LoginIcon from '../assets/images/header_images/user-login.png';
 import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
@@ -69,12 +69,12 @@ class Header extends Component {
         });
     }
 
-    checkForAutocomplete(){
+    checkForAutocomplete() {
         var curInput = this.state.input;
         var newArray = [];
         var tempHolder = [];
         var counter = 0;
-        if(this.state.input === ''){
+        if (this.state.input === '') {
             return
         }
         for (var item in this.state.productData['categories']) {
@@ -102,7 +102,7 @@ class Header extends Component {
                 }
             }
         }
-        
+
         this.setState({
             autoComplete: newArray
         })
@@ -122,9 +122,9 @@ class Header extends Component {
         this.props.history.push('/search_product_result/' + uriEncodedInput)
     }
 
-    handleKeyDown(event){
+    handleKeyDown(event) {
         console.log(event.keyCode);
-        switch(event.keyCode){
+        switch (event.keyCode) {
             case 40:
                 console.log('down');
                 break
@@ -146,7 +146,7 @@ class Header extends Component {
                 searchBarStyle: 'display-none',
                 buttonStyle: 'display-none',
                 advancedSearchButtonStyle: 'display-none',
-                headerContainer: 'header-container-search',
+                headerContainer: 'header-container',
                 autoComplete: [],
                 input: ""
             })
@@ -195,27 +195,27 @@ class Header extends Component {
                     <HamburgerMenu open={this.state.hamburgerClick} onClick={this.showExpandedMenu.bind(this)} />
                 </div>
 
-                <div className="header-icon login-icon">
+                {/* <div className="header-icon login-icon">
                     <Link to="/create_account">
                         <img className='headerIcon loginIcon' onClick={this.toggleSearchBar.bind(this)} src={LoginIcon} />
                     </Link>
+                </div> */}
+                <div className="header-icon search-bar">
+                    <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
-
                 <div className="header-icon site-title">
                     <Link to="/">
                         <img src={SiteTitle} />
                     </Link>
                 </div>
 
-                <div className="header-icon search-bar">
-                    <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
-                </div>
+
                 <form autoComplete="off">
                     <div className="autocomplete">
                         <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} onKeyDown={this.handleKeyDown.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     </div>
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
-                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} currentInput={input}/>
+                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} currentInput={input} />
                 </form>
                 <AdvancedSearch className={this.state.advancedSearchButtonStyle} />
             </div>

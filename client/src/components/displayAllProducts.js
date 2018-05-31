@@ -37,7 +37,7 @@ class DisplayAllProducts extends Component {
 
     render() {
         if (this.props.data.data === null) {
-            return <Loader />
+            return <Loader className="loader" />
         } else if (!this.props.data.success) {
             return (
                 <section>
@@ -71,7 +71,7 @@ class DisplayAllProducts extends Component {
 
             const renderPageNumbers = pageNumbers.map((number) => {
                 return (
-                    <li key={number} id={number} onClick={this.handlePageNumberClick} className="page-numbers-list" style={{fontSize: this.state.currentPage === number ? 'x-large': 'small'}}>{number}</li>
+                    <li key={number} id={number} onClick={this.handlePageNumberClick} className="page-numbers-list" style={{ fontSize: this.state.currentPage === number ? 'x-large' : 'small' }}>{number}</li>
                 )
             });
 
