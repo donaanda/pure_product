@@ -13,6 +13,7 @@ const styleClasses = {
     crossIcon: 'safety-icon',
     gentleRating: 'gentle-rating',
     safetyRating: 'safety-rating',
+    displayNone: ''
 }
 
 
