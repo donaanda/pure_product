@@ -29,11 +29,12 @@ class AdvancedSearch extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         var query = this.state;
-        await axios.post(`http://localhost:8888/advanced_search.php`, { query }).then(response => {
+        await axios.post(`http://localhost:8888/filterAndFinder.php`, { query }).then(response => {
             this.setState({
                 data: response.data
             }, () => console.log("axios", this.state))
         });
+        console.log(this.state.data);
     }
 
     handleChange(event) {
