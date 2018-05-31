@@ -1,14 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../assets/css/tabs.css';
+import '../assets/css/loader.css';
+import Loader from './loader';
 
 
-const YouTubeVideoReviews = (props) => {
-    return (
+class YouTubeVideoReviews extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            isLoading: true,
+            vidLoading: 'vid-loader'
+        }
+    }
+
+    componentWillMount(){
+        this.setState({
+            isLoading: true,
+            vidLoading: 'vid-loader'
+        })
+    }
+
+
+            render(){
+                return (
         <div className="youtube-reviews">
             <h4>Youtube Reviews:</h4>
-            {props.videoArray.items.map(video =>
+            {this.props.videoArray.items.map(video =>
                 <section key={video.id.videoId}>
                     <div className="video-container">
+                    <Loader className={this.state.vidLoading}/>
                         <iframe className="videoPlayer" id="videoPlayer" src={`https://www.youtube.com/embed/${video.id.videoId}`}
                             frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen="allowFullscreen">
                         </iframe>
@@ -22,6 +43,7 @@ const YouTubeVideoReviews = (props) => {
             )}
         </div>
     )
+}
 }
 
 
