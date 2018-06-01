@@ -46,7 +46,7 @@ class LandingPage extends Component {
                             <div className="landing_button products">
                                 <div className="wrap-landing-img">
                                     <img className="landing_img product" src={product} />
-                                    <span>Browse products </span>
+                                    <span>Browse Products </span>
                                 </div>
                             </div>
                         </Link>

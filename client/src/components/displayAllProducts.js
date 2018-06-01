@@ -28,6 +28,7 @@ class DisplayAllProducts extends Component {
     }
 
     handlePageNumberClick(event) {
+        window.scrollTo(0, 650);
         this.setState({
             currentPage: Number(event.target.id)
         });
@@ -85,20 +86,6 @@ class DisplayAllProducts extends Component {
                     <ul className="page-numbers">{renderPageNumbers}</ul>
                 </div>
             )
-
-            /*
-            let products = this.props.data.data.map((item, index) => {
-                return (
-                    <DisplayImage key={index} product={item} className={styleClasses} />
-                )
-            });
-
-            return (
-                <div className="display-all-products-content">
-                    {products}
-                </div>
-            )
-            */
         }
     }
 }
