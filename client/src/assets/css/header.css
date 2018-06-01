@@ -88,7 +88,7 @@
     width: 100vw;
     color: white;
     position: fixed;
-    z-index: 1001;
+    z-index: 1;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.2);
@@ -115,8 +115,6 @@
 }
 
 .menu-container a {
-    /*padding: 8px 8px 8px 16px;*/
-    /* padding-left: 16px; */
     text-decoration: none;
     font-size: 25px;
     color: black;
