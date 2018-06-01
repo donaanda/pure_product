@@ -19,10 +19,14 @@ h1 {
     text-align: center;
 }
 
-.scale-text {
+.scale-text-safety .scale-text-gentle {
     color: white;
     font-size: 1.6em;
     text-shadow: -0.5px -0.5px 0 darkgrey, 0.5px -0.5px 0 darkgrey, -0.5px 0.5px 0 darkgrey, 0.5px 0.5px 0 darkgrey;
+}
+
+.scale-text-gentle {
+    color: white;
 }
 
 .scale-text span {
