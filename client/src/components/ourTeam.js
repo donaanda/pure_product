@@ -3,13 +3,19 @@ import Header from './header';
 import Footer from './footer';
 import '../assets/css/aboutPP.css';
 import Hanh from '../assets/images/ourTeam/hanh.png';
+import hanhDerp from '../assets/images/ourTeam/derp_pics/hanh_derp.png';
 import Harrison from '../assets/images/ourTeam/harrison.png';
+import harrisonDerp from '../assets/images/ourTeam/derp_pics/harrison_derp.png';
 import Omer from '../assets/images/ourTeam/omer.png';
+import omerDerp from '../assets/images/ourTeam/derp_pics/omer_derp.png';
 import Dona from '../assets/images/ourTeam/dona.png';
+import donaDerp from '../assets/images/ourTeam/derp_pics/dona_da_g.png';
 import Alia from '../assets/images/ourTeam/alia.png';
+import aliaDerp from '../assets/images/ourTeam/derp_pics/alia_derp.png';
 import portfolio from '../assets/images/ourTeam/portfolio.png';
 import heart from '../assets/images/landing_page_icons/icons/heart.png';
 import github from '../assets/images/footer_icons/git_hub.png';
+
 import { Link } from 'react-router-dom';
 
 class OurTeam extends Component {
@@ -25,7 +31,10 @@ class OurTeam extends Component {
                     <div className="two-person-cont">
                         <div className="person-profile alia">
                             <a href="http://aliawilkinson.com" target="blank">
-                                <img className='ourTeamPic' src={Alia} align="middle" />
+                                <div className="pic-cont">
+                                    <img className='ourTeamPic' src={Alia} align="middle" />
+                                    <img className='ourTeamPic derp' src={aliaDerp} align="middle" />
+                                </div>
                                 <h5>Alia Wilkinson</h5>
                                 <h6>web developer</h6>
                                 <p>&amp; ideation expert</p>
@@ -43,7 +52,10 @@ class OurTeam extends Component {
                         </div>
                         <div className="person-profile harrison">
                             <a href="http://harrisonbchen.com" target="blank">
-                                <img className='ourTeamPic' src={Harrison} align="middle" />
+                                <div className="pic-cont">
+                                    <img className='ourTeamPic' src={Harrison} align="middle" />
+                                    <img className='ourTeamPic derp' src={harrisonDerp} align="middle" />
+                                </div>
                                 <h5>Harrison Chen</h5>
                                 <h6>web developer</h6>
                                 <p>&amp; jack of all trades</p>
@@ -62,7 +74,10 @@ class OurTeam extends Component {
                     </div>
                     <div className="person-profile hanh">
                         <a href="http://hanhpham.live" target="blank">
-                            <img className='ourTeamPic' src={Hanh} align="middle" />
+                            <div className="pic-cont">
+                                <img className='ourTeamPic' src={Hanh} align="middle" />
+                                <img className='ourTeamPic derp' src={hanhDerp} align="middle" />
+                            </div>
                             <h5>Hanh Pham</h5>
                             <h6>web developer</h6>
                             <p>&amp; SQL magician</p>
@@ -80,7 +95,10 @@ class OurTeam extends Component {
                     </div>
                     <div className="person-profile omer">
                         <a href="http://omerfuterman.com" target="blank">
-                            <img className='ourTeamPic' src={Omer} align="middle" />
+                            <div className="pic-cont">
+                                <img className='ourTeamPic' src={Omer} align="middle" />
+                                <img className='ourTeamPic derp' src={omerDerp} align="middle" />
+                            </div>
                             <h5>Omer Futerman</h5>
                             <h6>web developer</h6>
                             <p>&amp; endpoint extrordinaire</p>
@@ -98,7 +116,10 @@ class OurTeam extends Component {
                     </div>
                     <div className="person-profile dona">
                         <a href="http://donaanda.com" target="blank">
-                            <img className='ourTeamPic' src={Dona} align="middle" />
+                            <div className="pic-cont">
+                                <img className='ourTeamPic' src={Dona} align="middle" />
+                                <img className='derp' src={donaDerp} align="middle" />
+                            </div>
                             <h5>Dona Anda</h5>
                             <h6>web developer</h6>
                             <p>&amp; pagination expert</p>

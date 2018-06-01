@@ -158,3 +158,16 @@
         font-size: 18px;
     }
 }
+
+@media only screen and (min-width: 768px) {
+    .header-container {
+        height: 10vh;
+    }
+    .site-title img {
+        height: 10vh;
+        width: 30vw;
+    }
+    .header-container-show {
+        height: 40vh;
+    }
+}
