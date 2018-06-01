@@ -38,7 +38,8 @@ foreach($arrayOfIngredients as $ingredientName){
     $query = "SELECT 
     a.ingredient_name as ingredient, 
     a.safety_rating as safety_rating, 
-    `Rating` AS gentle_rating, 
+    CASE WHEN `Rating` = 'Average' THEN 3 WHEN `Rating` = 'Best' THEN 1 WHEN `Rating` = 'Good' THEN 2 WHEN `Rating` = 'Poor' THEN 4
+END AS `gentle_rating`,
     COALESCE(details,description) as details 
     FROM (SELECT 
         safety_rating, 
