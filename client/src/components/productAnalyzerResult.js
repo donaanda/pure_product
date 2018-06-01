@@ -59,7 +59,7 @@ class ProductAnalyzerResult extends Component {
             return (
                 <section>
                     <Header />
-                    <Loader className="loader" />
+                    <Loader className="loader prod-pg-loader" />
                 </section>
 
             )

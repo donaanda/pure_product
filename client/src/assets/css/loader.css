@@ -1,14 +1,17 @@
 .loader-container {
   height: 80vh;
-  width: 100vw;
   object-fit: contain;
 }
 
 .loader-container img {
-  width: 100vw;
+  width: 100%;
 }
 
-.loader {
+.prod-pg-loader {
+  margin: 25vh 0;
+}
+
+/* .loader {
   display: block;
   margin: 45% auto;
   border: 16px solid #f3f3f3;
@@ -17,11 +20,11 @@
   width: 120px;
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
-  /* Safari */
+   Safari 
   animation: spin 2s linear infinite;
-}
+} */
 
-.vid-loader {
+/* .vid-loader {
   position: relative;
   display: block;
   margin: 10% auto;
@@ -31,9 +34,13 @@
   width: 120px;
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
-  /* Safari */
+   Safari 
   animation: spin 2s linear infinite;
-}
+} */
+
+.beaker-loader {}
+
+.vid-beaker-loader {}
 
 /* Safari */
 

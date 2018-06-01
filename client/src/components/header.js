@@ -217,7 +217,7 @@ class Header extends Component {
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
                     <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} currentInput={input} />
                 </form>
-                <AdvancedSearch className={this.state.advancedSearchButtonStyle} />
+                {/* <AdvancedSearch className={this.state.advancedSearchButtonStyle} /> */}
             </div>
         )
     }

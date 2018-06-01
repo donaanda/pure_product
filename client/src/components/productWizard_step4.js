@@ -10,10 +10,6 @@ class Step4 extends React.Component {
     };
   }
 
-  componentDidUpdate() {
-    console.log("this is the new state from our setState", this.state);
-  }
-
   componentWillReceiveProps(nextProps) {
     if (this.props.retinolVal === 'exclude') {
       this.setState({
