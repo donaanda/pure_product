@@ -18,6 +18,11 @@
     background-size: contain;
 }
 
+.product-image:hover {
+    border: 2px solid #edfcf6;
+    ;
+}
+
 .product-display-container-product-page {
     display: block;
     margin: 5vh auto;

@@ -88,7 +88,7 @@
 }
 
 .ourTeamPic {
-    height: 150px;
+    height: 25%;
 }
 
 .ourTeamPic:hover {
@@ -131,9 +131,54 @@
 }
 
 .port-but,
-.git-but {}
+.git-but {
+    border: 0;
+    background-color: transparent;
+}
 
 .but-icon {
     height: 5vh;
     width: 5vh;
+}
+
+@media only screen and (min-width: 768px) {
+    .person-profile {
+        height: 70vh;
+        width: 15vw;
+    }
+    .two-person-cont,
+    .person-profile.dona {
+        display: inline-block;
+    }
+    .honorable-mention {
+        text-align: center;
+    }
+    .honorable-mention img {
+        display: inline-block;
+    }
+    .honorable-mention-p {
+        display: inline-block;
+        line-height: 100%;
+    }
+    .ourTeamPic,
+    .derp {
+        position: absolute;
+        height: 120px;
+        border-radius: 90%;
+    }
+    .derp {
+        display: none;
+    }
+    .pic-cont:hover .ourTeamPic {
+        display: none;
+    }
+    .pic-cont:hover .derp {
+        display: block;
+    }
+    .pic-cont {
+        position: relative;
+        height: 30%;
+        width: 0%;
+        padding: 0 10%;
+    }
 }

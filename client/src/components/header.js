@@ -205,7 +205,7 @@ class Header extends Component {
                 </div>
                 <div className="header-icon site-title">
                     <Link to="/">
-                        <img src={SiteTitle} />
+                        <img className="site-title-size" src={SiteTitle} />
                     </Link>
                 </div>
 
