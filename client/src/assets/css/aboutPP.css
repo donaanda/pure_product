@@ -2,11 +2,14 @@
     margin: 2vh;
     color: #555555;
     text-align: center;
+    font-size: 1.3em;
 }
 
 .gentle_icon_gentle_page {
     display: block;
     margin: auto;
+    height: 20vh;
+    object-fit: contain;
 }
 
 .temp-logo {
