@@ -67,19 +67,19 @@
 }
 
 .products {
-    background-color: rgba(184, 234, 251, 0.5);
+    background-color: #edfcf6;
 }
 
 .safety {
-    background-color: rgba(253, 207, 246, 0.5);
+    background-color: #fef6f6;
 }
 
 .safety_rating {
-    background-color: rgba(253, 207, 246, 0.5);
+    background-color: #fef6f6;
 }
 
 .gentle_rating {
-    background-color: rgba(37, 203, 109, 0.5);
+    background-color: #edfcf6;
 }
 
 section.landing_page {
