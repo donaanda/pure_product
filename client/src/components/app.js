@@ -19,6 +19,7 @@ import AboutTheSite from './aboutTheSite';
 import ExpandedMenu from './expandedMenuWelcome';
 import SearchProductResult from './searchProductResult';
 import IngredientDetailsPage from './ingredientDetailsPage';
+import Recommendations from './recommendations';
 
 const App = () => {
     return (
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/expanded_menu" component={ExpandedMenu} />
             <Route path="/search_product_result/:search?" component={SearchProductResult} />
             <Route path="/ingredient_details_page/:search?" component={IngredientDetailsPage} />
+            <Route path="/product_recommendations" component={Recommendations}/>
         </section>
     )
 };

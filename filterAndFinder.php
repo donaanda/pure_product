@@ -317,5 +317,5 @@ foreach($holder as $value){
     $response[]=$value['product_id'];
 }
 
-print_r(json_encode($response));
+print(json_encode($response));
 ?>

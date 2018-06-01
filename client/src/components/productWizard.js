@@ -16,6 +16,7 @@ class ProductFinder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: null,
       currentStep: 0,
       selection: {
         retinol: null
@@ -77,9 +78,12 @@ class ProductFinder extends React.Component {
     await axios.post(`http://localhost:8888/filterAndFinder.php`, { query }).then(response => {
       this.setState({
         data: response.data
-      })
+      }, () => console.log("axios", this.state))
     });
-    console.log(this.state.data);
+    this.props.history.push({
+      pathname:'/product_recommendations',
+      state: {selection: this.state.selection, data: this.state.data}
+    });
   }
 
 
