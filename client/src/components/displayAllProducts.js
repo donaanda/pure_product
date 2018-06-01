@@ -35,19 +35,25 @@ class DisplayAllProducts extends Component {
 
     render() {
         if (this.props.data.data === null) {
-            return <Loader className="loader" />
+            return <Loader className="loader beaker-loader prod-pg-loader" />
         } else if (!this.props.data.success) {
             return (
-                <section>
-                    <h1>Oops! No results found...</h1>
-                    <Link to="/">
-                        <div className="return-home-cont">
+                <div className="no-results-cont">
+                    <h1>Can't find what you're looking for?</h1>
+                    <h5>Try our Product Analyzer to find out what's in a product.</h5>
+                    <div className="no-results-button">
+                        <Link to="/">
                             <button className="btn return-home-btn">
                                 Return Home
                             </button>
-                        </div>
-                    </Link>
-                </section>
+                        </Link>
+                        <Link to="/product_analyzer">
+                            <button className="btn purple">
+                                Product Analyzer
+                            </button>
+                        </Link>
+                    </div>
+                </div>
             )
         } else {
             const { currentPage, productsPerPage } = this.state;

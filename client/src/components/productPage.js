@@ -68,7 +68,7 @@ class ProductPage extends Component {
     render() {
         const { ingredients, product } = this.state.data;
         if (this.state.data.success === false) {
-            return <Loader className="loader" />;
+            return <Loader className="loader prod-pg-loader" />;
         } else {
             const displayImageComponent = product !== undefined ? <DisplayImage product={product} className={styleClasses} /> : <div>no product specified}</div>;
             return (

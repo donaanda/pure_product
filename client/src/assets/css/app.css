@@ -12,11 +12,22 @@ body {
     padding: 0;
     margin: 0;
     font-family: Avenir, Helvetica, sans-serif;
-    color: lightslategray;
+    color: darkgrey;
 }
 
 h1 {
     text-align: center;
+}
+
+.scale-text {
+    color: white;
+    font-size: 1.6em;
+    text-shadow: -0.5px -0.5px 0 darkgrey, 0.5px -0.5px 0 darkgrey, -0.5px 0.5px 0 darkgrey, 0.5px 0.5px 0 darkgrey;
+}
+
+.scale-text span {
+    display: inline-block;
+    width: 9vw;
 }
 
 @media only screen and (min-width: 768px) {

@@ -31,7 +31,8 @@ class Recommendations extends Component {
         return (
             <section className="product-container">
                 <Header history={this.props.history} />
-                <h4>Recommendations</h4>
+                <h4 className="recommendations-title">Your Recommendations...</h4>
+                <h6 className="recommendations-title">Enjoy! :)</h6>
                 <DisplayAllProducts data={data} />
                 <Footer />
             </section>

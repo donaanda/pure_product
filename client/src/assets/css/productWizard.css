@@ -28,7 +28,7 @@
     background-image: url(../images/displayImages/banana_leaf.jpg);
 }
 
-.product-wizard-inner{
+.product-wizard-inner {
     text-align: center;
 }
 
@@ -103,4 +103,10 @@
 #retinol-error {
     text-decoration: line-through;
     font-size: 5vmin;
+}
+
+.recommendations-title {
+    width: 80vw;
+    text-align: center;
+    margin: 2vh auto;
 }

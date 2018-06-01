@@ -137,14 +137,25 @@
     font-size: 4vmin;
 }
 
-.return-home-cont {
-    height: 40vh;
-    width: 100vw;
+.return-home-btn {
+    margin: auto;
 }
 
-.return-home-btn {
-    display: block;
-    margin: auto;
+.no-results-button {
+    text-align: center;
+}
+
+.no-results-button button {
+    margin: 1vh;
+}
+
+.no-results-cont {
+    min-height: 80vh;
+    text-align: center;
+}
+
+.no-results-cont h5 {
+    margin: auto 2vh;
 }
 
 .page-numbers {
