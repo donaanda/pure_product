@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './header';
 import Footer from './footer';
-import gentle_rating from '../assets/images/landing_page_icons/gentle_heart.png';
+import gentle_rating from '../assets/images/landing_page_icons/icons/gentle.png';
 import { Link } from 'react-router-dom';
 
 class GentleRating extends Component {

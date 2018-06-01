@@ -37,36 +37,36 @@ class Header extends Component {
                 productData: res.data
             })
         })
-        this.setState({
-            productDataArray: this.state.productData.productName.concat(this.state.productData.categories, this.state.productData.brand)
-        });
-        var arrayHolder = this.state.productDataArray;
-        var prodIt = 0;
-        while (prodIt < arrayHolder.length) {
-            var insideIt = prodIt;
-            while (insideIt > 0 && arrayHolder[insideIt - 1] > arrayHolder[insideIt]) {
-                let suggestion = arrayHolder[insideIt - 1];
-                arrayHolder[insideIt - 1] = arrayHolder[insideIt];
-                arrayHolder[insideIt] = suggestion;
-                insideIt--;
-            }
-            prodIt++;
-        }
-        var suggestionIt = 0;
-        while (suggestionIt < arrayHolder.length) {
-            var position = suggestionIt + 1;
-            while (position < arrayHolder.length) {
-                if (arrayHolder[suggestionIt] === arrayHolder[position]) {
-                    arrayHolder.splice(position, 1);
-                    position--;
-                }
-                position++;
-            }
-            suggestionIt++;
-        }
-        this.setState({
-            productDataArray: arrayHolder
-        });
+        // this.setState({
+        //     productDataArray: this.state.productData.productName.concat(this.state.productData.categories, this.state.productData.brand)
+        // });
+        // var arrayHolder = this.state.productDataArray;
+        // var prodIt = 0;
+        // while (prodIt < arrayHolder.length) {
+        //     var insideIt = prodIt;
+        //     while (insideIt > 0 && arrayHolder[insideIt - 1] > arrayHolder[insideIt]) {
+        //         let suggestion = arrayHolder[insideIt - 1];
+        //         arrayHolder[insideIt - 1] = arrayHolder[insideIt];
+        //         arrayHolder[insideIt] = suggestion;
+        //         insideIt--;
+        //     }
+        //     prodIt++;
+        // }
+        // var suggestionIt = 0;
+        // while (suggestionIt < arrayHolder.length) {
+        //     var position = suggestionIt + 1;
+        //     while (position < arrayHolder.length) {
+        //         if (arrayHolder[suggestionIt] === arrayHolder[position]) {
+        //             arrayHolder.splice(position, 1);
+        //             position--;
+        //         }
+        //         position++;
+        //     }
+        //     suggestionIt++;
+        // }
+        // this.setState({
+        //     productDataArray: arrayHolder
+        // });
     }
 
     checkForAutocomplete() {
