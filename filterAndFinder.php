@@ -3,6 +3,7 @@ require_once('./header.php');
 $postdata = file_get_contents("php://input"); //to get axios call data
 $request = json_decode($postdata); // decode json
 require_once('./db_connect.php');
+$response='';
 $output=[
     'success'=>false
 ];
@@ -11,9 +12,9 @@ foreach($reqObject as $key=>$value){
     $output['keys'][]=$key;
     $output['values'][]=$value;
 }
-//make loop for this with conditional for or
-$ethics='cruelty_free = 1';//check if an or is needed, if theres both, use or for second for sure
-$counter=0;//check if i have to do this
+
+$ethics='cruelty_free = 1';
+$counter=0;
 $retinolTracker=0;
 foreach($output['keys'] as $values1){
     if($values1 === 'retinol'){
@@ -62,41 +63,57 @@ foreach($output['keys'] as $values1){
     $counter++;
 }
 
-// $query = "SELECT `product_id` FROM product_foundation_table WHERE ( dry=1 or oily =1) AND cruelty_free=1";
 $skinType='';
 $counter=0;
 $helpFullBoolian=false;
 foreach($output['keys'] as $values2) {
-    if($counter===0&&(($values2==='Dry'||$values2==='Normal')||($values2==='Combo'||$values2==='Oily')||($values2==='Sensitive' || $values2==='Cruelty_Free'||$values2==='Vegan'))){
-        $skinType="WHERE `$values2`=1 ";
-        if(($values2==='dry'||$values2==='Normal'||$values2==='combination'||$values2==='Oily'||$values2==='Sensitive')&&$output['keys'][$counter+1]==='Cruelty_Free'||$output['keys'][$counter+1]==='Vegan'){
-            $skinType="$skinType AND ";
-            $helpFullBoolian=true;
+    echo 'value: ';
+    echo $values2;
+    echo ' ';
+    if($counter===0){
+        if(($values2==='Dry'||$values2==='Normal')||($values2==='Combo'||$values2==='Oily')||($values2==='Sensitive' || $values2==='Cruelty_Free')||$values2==='vegan'){
+            $skinType="WHERE `$values2`=1 ";
+            if(array_key_exists($counter+1,$output['keys'])){
+                if(($values2==='dry'||$values2==='Normal'||$values2==='combo'||$values2==='Oily'||$values2==='Sensitive')&&$output['keys'][$counter+1]==='Cruelty_Free'||$output['keys'][$counter+1]==='vegan'){
+                    $skinType="$skinType AND ";
+                    $helpFullBoolian=true;
+                }
+            }
         }
-    }else if($values2==='dry'||$values2==='Normal'||$values2==='Combination'||$values2==='Oily'||$values2==='Sensitive'||$values2==='Cruelty_Free'||$values2==='Vegan'){
+        $counter++;
+    }else if($values2==='dry'||$values2==='Normal'||$values2==='Combo'||$values2==='Oily'||$values2==='Sensitive'||$values2==='Cruelty_Free'||$values2==='vegan'){
         if($helpFullBoolian){
             $skinType="$skinType `$values2`=1 ";
             $helpFullBoolian=false;
         }else{
-            $skinType=$skinType." or `$values2`=1 ";
+            $skinType=$skinType." AND `$values2`=1 ";
         }
-        if(($values2==='dry'||$values2==='Normal'||$values2==='Combination'||$values2==='Oily'||$values2==='Sensitive')&&$output['keys'][$counter+1]==='Cruelty_Free'||$output['keys'][$counter+1]==='Vegan'){
-            $skinType="$skinType AND ";
-            $helpFullBoolian=true;
+        if(array_key_exists($counter+1,$output['keys'])){
+            if(($values2==='dry'||$values2==='Normal'||$values2==='Combo'||$values2==='Oily'||$values2==='Sensitive')&&$output['keys'][$counter+1]==='Cruelty_Free'||$output['keys'][$counter+1]==='vegan'){
+                $skinType="$skinType AND ";
+                $helpFullBoolian=true;
+            }
         }
     }
     $counter++;
 }
 
+if($response==='no data'){
+    $counter=0;
+}
+
 if($counter>0){
     $query = "SELECT `product_id` FROM product_foundation_table $skinType";
+    echo "1 $query";
     $result=mysqli_query($db,$query);
     $holder=[];
-    if(mysqli_num_rows($result)>0){
+    if(mysqli_num_rows($result)){
         $output['success']=true;
         while($row=mysqli_fetch_array($result)){
             $holder[]=$row;
-        };
+        }
+    }else{
+        $response='no data';
     }
     $productIDsString='( ';
     $counter=0;
@@ -122,14 +139,21 @@ if($counter>0){
 }
 $query="SELECT `product_id` from product_name where product_id not in ((SELECT `product_id` from (SELECT * FROM `ingredient_rating` $notContain)paula join `product_ingredient_association_table` on `product_ingredient_association_table`.`ingredient_id`=`paula`.`ingredient_id` group by 1)) and product_id in $productIDsString";
 
+if($response==='no data'){
+    $counter=0;
+}
+
 if($counter>0){
+    echo " 2 $query";
     $result=mysqli_query($db,$query);
     $holder=[];
-    if(mysqli_num_rows($result)>0){
+    if(mysqli_num_rows($result)){
         $output['success']=true;
         while($row=mysqli_fetch_array($result)){
             $holder[]=$row;
-        };
+        }
+    }else{
+        $response='no data';
     }
     $productIDsString='( ';
     $counter=0;
@@ -168,15 +192,23 @@ foreach($output['keys'] as $value){
         $query=$query."`cosing_banned`.Chemical_name_inn ORDER BY `banned` DESC) a join `product_ingredient_association_table` on `product_ingredient_association_table`.`ingredient_id`=a.`ingredient_id` group by 1) ";
     }
 }
+
+if($response==='no data'){
+    $counter=0;
+}
+
 if($counter>0){
     $query=$query."and product_id in $productIDsString";
+    echo " 3 $query";
     $result=mysqli_query($db,$query);
     $holder=[];
-    if(mysqli_num_rows($result)>0){
+    if(mysqli_num_rows($result)){
         $output['success']=true;
         while($row=mysqli_fetch_array($result)){
             $holder[]=$row;
-        };
+        }
+    }else{
+        $response='no data';
     }
     $productIDsString='( ';
     $counter=0;
@@ -207,14 +239,21 @@ foreach($output['keys'] as $value){
 
 $query=$query."and `product_id` in $productIDsString group by 1";
 
+if($response==='no data'){
+    $counter=0;
+}
+
 if($counter>0){
+    echo " 4 $query";
     $result=mysqli_query($db,$query);
     $holder=[];
-    if(mysqli_num_rows($result)>0){
+    if(mysqli_num_rows($result)){
         $output['success']=true;
         while($row=mysqli_fetch_array($result)){
             $holder[]=$row;
-        };
+        }
+    }else{
+        $response='no data';
     }
     $productIDsString='( ';
     $counter=0;
@@ -252,16 +291,43 @@ foreach($output['keys'] as $value){
     }
     $counter++;
 }
+
+if($safetyLow===$safetyHigh){
+    $safetyLow=1;
+}
+if($gentleLow===$gentleHigh){
+    $gentleLow=1;
+}
+
+if($safetyLow<1||$safetyLow>10){
+    $safetyLow=1;
+}
+if($safetyHigh<1||$safetyHigh>10){
+    $safetyHigh=10;
+}
+if($gentleLow<1||$gentleLow>4){
+    $gentleLow=1;
+}
+if($gentleHigh<1||$gentleHigh>4){
+    $gentleHigh=4;
+}
+
 $query=$query."$safetyLow and $safetyHigh and `gentle_avg_rating` between $gentleLow and $gentleHigh and `product_id` in $productIDsString";
+
+if($response==='no data'){
+    $counter=0;
+}
 
 if($counter>0){
     $result=mysqli_query($db,$query);
     $holder=[];
-    if(mysqli_num_rows($result)>0){
+    if(mysqli_num_rows($result)){
         $output['success']=true;
         while($row=mysqli_fetch_array($result)){
             $holder[]=$row;
-        };
+        }
+    }else{
+        $response='no data';
     }
     $productIDsString='( ';
     $counter=0;
@@ -288,16 +354,26 @@ foreach($output['keys'] as $value){
     $counter++;
 }
 
+if($lowPrice===$highPrice){
+    $lowPrice=$lowPrice-1;
+}
+
 $query="SELECT `product_id` FROM `product_foundation_table` where `price` between $lowPrice and $highPrice and product_id in $productIDsString";
+
+if($response==='no data'){
+    $counter=0;
+}
 
 if($counter>0){
     $result=mysqli_query($db,$query);
     $holder=[];
-    if(mysqli_num_rows($result)>0){
+    if(mysqli_num_rows($result)){
         $output['success']=true;
         while($row=mysqli_fetch_array($result)){
             $holder[]=$row;
-        };
+        }
+    }else{
+        $response='no data';
     }
     $productIDsString='( ';
     $counter=0;
@@ -312,9 +388,11 @@ if($counter>0){
     $productIDsString=$productIDsString.')';
 }
 
-$response=[];
-foreach($holder as $value){
-    $response[]=$value['product_id'];
+if($response!=='no data'){
+    $response=[];
+    foreach($holder as $value){
+        $response[]=$value['product_id'];
+    }
 }
 
 print_r($response);
