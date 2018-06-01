@@ -107,7 +107,7 @@ class OurTeam extends Component {
                                 <img className="but-icon" src={portfolio} />
                             </button>
                         </a>
-                        <a href="https://github.com/donaanda"><button className="git-but">
+                        <a href="https://github.com/donaanda" target="blank"><button className="git-but">
                             <h6>github</h6>
                             <img className="but-icon" src={github} />
                         </button>

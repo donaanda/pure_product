@@ -21,7 +21,7 @@ class AutoComplete extends Component {
         if (suggestions.length > 0) {
             productSuggestions = suggestions.map((item, index) => {
                 let productName = item.slice(input.length);
-                let currentInput = input.toUpperCase();
+                let currentInput = input //.toUpperCase();
                 return (
                     <li className="suggest-item" key={index} onClick={this.props.fillOutAutoComplete} ><strong className="current-input">{currentInput}</strong>{productName}</li>
 
