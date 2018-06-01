@@ -2,14 +2,15 @@
 .burger-menu.open {
   display: inline-block;
   cursor: pointer;
-  position: fixed;
-  right: 20px;
-  bottom: 40px;
-  z-index: 1;
+  position: absolute;
+  right: 0;
+  /*bottom: 40px; */
+  z-index: 1002;
   padding: 10px;
-  border-radius: 25px;
-  background-color: aliceblue;
+  /* border-radius: 25px; */
+  background-color: #e4f7ef;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  margin: 2vh;
 }
 
 .burger-menu .bar1,

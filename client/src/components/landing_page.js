@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './footer';
 import DisplayAllProducts from './displayAllProducts';
-import gentle_rating from '../assets/images/landing_page_icons/gentle_heart.png';
+import gentle_rating from '../assets/images/landing_page_icons/gentle_feather.png';
 import foundation from '../assets/images/landing_page_icons/foundation.png';
-import lipstick from '../assets/images/landing_page_icons/lipstick.png';
-import safety_icon from '../assets/images/landing_page_icons/safety.png';
-import product from '../assets/images/landing_page_icons/product.png';
+import lipstick from '../assets/images/landing_page_icons/icons/cross2.png';
+import safety_icon from '../assets/images/landing_page_icons/icons/cross.png';
+import product from '../assets/images/landing_page_icons/icons/gentle2.png';
 import Header from './header.js';
 import '../assets/css/landing_page.css';
 import ExpandedMenuWelcome from './expandedMenuWelcome';
@@ -45,7 +45,7 @@ class LandingPage extends Component {
                         <Link to="/gentle_products">
                             <div className="landing_button products">
                                 <div className="wrap-landing-img">
-                                    <img className="landing_img" src={product} />
+                                    <img className="landing_img product" src={product} />
                                     <span>Browse products </span>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@ class LandingPage extends Component {
                         <Link to="/product_analyzer">
                             <div className="landing_button safety">
                                 <div className="wrap-landing-img">
-                                    <img className="landing_img_lipstick" src={lipstick} />
+                                    <img className="landing_img lipstick" src={lipstick} />
                                     <span>Analyze Product Ingredients</span>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ class LandingPage extends Component {
                         <Link to="/safety_rating">
                             <div className="landing_button safety_rating">
                                 <div className="wrap-landing-img">
-                                    <img className="landing_img" src={safety_icon} />
+                                    <img className="landing_img safety_icon" src={safety_icon} />
                                     <span>Safety Rating</span>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ class LandingPage extends Component {
                         <Link to="/gentle_rating">
                             <div className="landing_button gentle_rating">
                                 <div className="wrap-landing-img">
-                                    <img className="landing_img" src={gentle_rating} />
+                                    <img className="landing_img gentle" src={gentle_rating} />
                                     <span>Gentle Rating</span>
                                 </div>
                             </div>

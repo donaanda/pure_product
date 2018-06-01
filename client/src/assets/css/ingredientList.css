@@ -1,5 +1,10 @@
 .ingredient-table td {
     text-align: center;
+    border-right: 1px solid rgb(196, 193, 193);
+}
+
+.ingredient-column {
+    word-break: break-all;
 }
 
 .ingredient-row td p {
@@ -11,9 +16,20 @@
 }
 
 .chemical-gentle-rating {
-    background-color: rgb(235, 241, 247);
+    background-color: #edfcf6;
 }
 
 .chemical-safety-rating {
-    background-color: rgb(254, 226, 251);
+    background-color: #fef6f6;
+}
+
+.icon-width {
+    height: 12vh;
+    width: 12vh;
+}
+
+.ingredients-title {
+    font-size: 7vmin;
+    font-weight: 600;
+    font-family: 'Cedarville Cursive', cursive;
 }

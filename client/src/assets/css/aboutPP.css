@@ -1,6 +1,7 @@
 .site-about-container {
     margin: 2vh;
     color: #555555;
+    text-align: center;
 }
 
 .gentle_icon_gentle_page {
@@ -63,4 +64,14 @@
 .faq_title {
     margin-top: 1vh;
     border-bottom: #555555 solid 2px;
+}
+
+.person-profile {
+    height: 10vh;
+    object-fit: contain;
+}
+
+.ourTeamPic {
+    height: 100%;
+    margin-right: 5%;
 }

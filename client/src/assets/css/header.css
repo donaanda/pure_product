@@ -1,7 +1,8 @@
-.headerContainer {
-    position: fixed;
+.header-container {
+    display: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 12vh;
+    height: 20vw;
+    width: 100vw;
     background-color: white;
     z-index: 1;
 }
@@ -9,46 +10,30 @@
 .header-icon,
 .header-icon img {
     display: inline-block;
-    height: 10vh;
+    height: 6vh;
     border: 2px;
     vertical-align: top;
 }
 
 .login-icon,
 .search-bar {
-    width: 30vw;
+    width: 23vw;
     text-align: center;
 }
 
 .search-bar {
-    margin-top: 0.5vh;
+    margin-top: 1.7vh;
 }
 
 .site-title,
 .site-title img {
-    width: 40vw;
-    height: 10vh;
+    width: 60vw;
+    height: 20vw;
     text-align: center;
-}
-
-.header-container-search {
-    display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 10vh;
-    background-color: white;
-    z-index: 1
 }
 
 .display-none {
     display: none;
-}
-
-.header-container {
-    display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 10vh;
-    background-color: white;
-    z-index: 1;
 }
 
 .search-bar-style-show {
@@ -98,34 +83,40 @@
 
 /* expanded menu*/
 
-.expanded-menu-hide,
-.expanded-menu-show {
+.expanded-menu {
+    height: 100vh;
+    width: 100vw;
     color: white;
-    height: 100%;
-    /* width: 75vw; */
-    width: 90%;
     position: fixed;
-    z-index: 1;
+    z-index: 1001;
     top: 0;
     left: 0;
-    /*background-color: rgb(143, 159, 168);*/
-    background-color: #e4f7ef;
+    background-color: rgba(0, 0, 0, 0.2);
     overflow-x: hidden;
     overflow: hidden;
-    transition: 0.5s;
+    text-align: center;
+    transition: transform 0.5s;
 }
 
 .expanded-menu-hide {
     transform: translate(-100%);
 }
 
+.expanded-menu-show {
+    transform: translate(0);
+}
+
 .menu-container {
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    background-color: #e4f7ef;
 }
 
 .menu-container a {
     /*padding: 8px 8px 8px 16px;*/
-    padding-left: 16px;
+    /* padding-left: 16px; */
     text-decoration: none;
     font-size: 25px;
     color: black;
@@ -138,7 +129,27 @@
 }
 
 .menu-item-cont {
+    margin: 3vh auto 0 auto;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.menu-item-cont img {
+    height: 15vh;
+    width: 15vh;
+    vertical-align: top;
     overflow: hidden;
+}
+
+.product-finder-exp-menu-title {
+    font-family: 'Oleo Script', cursive;
+    color: lightslategray;
+}
+
+.exp-menu-titles {
+    color: lightslategray;
+    display: inline-block;
+    width: 15vh;
 }
 
 @media screen and (max-height: 450px) {

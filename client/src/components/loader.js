@@ -1,10 +1,10 @@
 import React from 'react';
 import '../assets/css/loader.css';
 
-export default () => {
-    return(
+export default (props) => {
+    return (
         <div className="loader-container">
-    <div className="loader"></div>
+            <div className={props.className}></div>
         </div>
-)
+    )
 }

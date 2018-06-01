@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../assets/css/header.css';
 import SearchIcon from '../assets/images/header_images/search.png';
-import SiteTitle from '../assets/images/header_images/site-title.png';
+import SiteTitle from '../assets/images/landing_page_icons/icons/site-title.png';
 import LoginIcon from '../assets/images/header_images/user-login.png';
 import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
@@ -16,6 +16,7 @@ class Header extends Component {
 
         this.state = {
             autoComplete: [],
+            autoCompleteFocus: -1,
             input: "",
             searchToggle: false,
             searchBarStyle: 'display-none',
@@ -37,26 +38,26 @@ class Header extends Component {
             })
         })
         this.setState({
-            productDataAlpha: this.state.productData.productName.concat(this.state.productData.categories, this.state.productData.brand)
+            productDataArray: this.state.productData.productName.concat(this.state.productData.categories, this.state.productData.brand)
         });
-        var arrHolder = this.state.productDataAlpha;
+        var arrayHolder = this.state.productDataArray;
         var prodIt = 0;
-        while (prodIt < arrHolder.length) {
+        while (prodIt < arrayHolder.length) {
             var insideIt = prodIt;
-            while (insideIt > 0 && arrHolder[insideIt - 1] > arrHolder[insideIt]) {
-                let suggestion = arrHolder[insideIt - 1];
-                arrHolder[insideIt - 1] = arrHolder[insideIt];
-                arrHolder[insideIt] = suggestion;
+            while (insideIt > 0 && arrayHolder[insideIt - 1] > arrayHolder[insideIt]) {
+                let suggestion = arrayHolder[insideIt - 1];
+                arrayHolder[insideIt - 1] = arrayHolder[insideIt];
+                arrayHolder[insideIt] = suggestion;
                 insideIt--;
             }
             prodIt++;
         }
         var suggestionIt = 0;
-        while (suggestionIt < arrHolder.length) {
+        while (suggestionIt < arrayHolder.length) {
             var position = suggestionIt + 1;
-            while (position < arrHolder.length) {
-                if (arrHolder[suggestionIt] === arrHolder[position]) {
-                    arrHolder.splice(position, 1);
+            while (position < arrayHolder.length) {
+                if (arrayHolder[suggestionIt] === arrayHolder[position]) {
+                    arrayHolder.splice(position, 1);
                     position--;
                 }
                 position++;
@@ -64,8 +65,47 @@ class Header extends Component {
             suggestionIt++;
         }
         this.setState({
-            productDataAlpha: arrHolder
+            productDataArray: arrayHolder
         });
+    }
+
+    checkForAutocomplete() {
+        var curInput = this.state.input;
+        var newArray = [];
+        var tempHolder = [];
+        var counter = 0;
+        if (this.state.input === '') {
+            return
+        }
+        for (var item in this.state.productData['categories']) {
+            if (this.state.productData['categories'][item].substr(0, curInput.length).toUpperCase() == curInput.toUpperCase()) {
+                if (counter < 1) {
+                    newArray.push(this.state.productData['categories'][item]);
+                }
+            }
+            counter++;
+        }
+        counter = 0;
+        for (var item in this.state.productData['brand']) {
+            if (this.state.productData['brand'][item].substr(0, curInput.length).toUpperCase() == curInput.toUpperCase()) {
+                if (counter < 1) {
+                    newArray.push(this.state.productData['brand'][item]);
+                }
+            }
+            counter++;
+        }
+        for (var item in this.state.productData['productName']) {
+            if (this.state.productData['productName'][item].substr(0, curInput.length).toUpperCase() == curInput.toUpperCase()) {
+                newArray.push(this.state.productData['productName'][item])
+                while (newArray.length > 10) {
+                    newArray.pop();
+                }
+            }
+        }
+
+        this.setState({
+            autoComplete: newArray
+        })
     }
 
     handleInput(event) {
@@ -73,76 +113,29 @@ class Header extends Component {
         this.setState({
             input: event.target.value,
             autoComplete: []
-        });
-        var curInput = this.state.input;
-        var newArr = [];
-        var tempHolder = [];
-        var counter = 0;
-        for (var item in this.state.productData['categories']) {
-            if (this.state.productData['categories'][item].toUpperCase().includes(curInput.toUpperCase())) {
-                if (counter < 1) {
-                    newArr.push(this.state.productData['categories'][item]);
-                }
-            }
-            counter++;
-        }
-        counter = 0;
-        for (var item in this.state.productData['brand']) {
-            if (this.state.productData['brand'][item].toUpperCase().includes(curInput.toUpperCase())) {
-                if (counter < 1) {
-                    newArr.push(this.state.productData['brand'][item]);
-                }
-            }
-            counter++;
-        }
-        for (var item in this.state.productDataAlpha) {
-            if (this.state.productDataAlpha[item].toUpperCase().includes(curInput.toUpperCase())) {
-                newArr.push(this.state.productDataAlpha[item]);
-                for (var l = 1; l <= 10; l++) {
-                    tempHolder.push(this.state.productDataAlpha[item + l]);
-                }
-                if (tempHolder.length <= 10) {
-                    for (var l = 1; l <= 10; l++) {
-                        tempHolder.push(this.state.productDataAlpha[item + l]);
-                    }
-                }
-            }
-        }
-        var p = 0;
-        while (newArr.length <= 10) {
-            if (tempHolder[p] && newArr.length < 9) {
-                newArr.push(tempHolder[p]);
-                p++;
-            } else {
-                newArr.push('no suggestions');
-                break;
-            }
-        }
-        while (newArr.length > 10) {
-            newArr.pop();
-        }
-        for (var item in this.state.productDataAlpha) {
-            if (this.state.productDataAlpha[item].toUpperCase() === curInput.toUpperCase()) {
-                for (var k = 0; k < newArr.length; k++) {
-                    if (this.state.productDataAlpha[item].toUpperCase() === newArr[k]) {
-                    } else {
-                        newArr[0] = this.state.productDataAlpha[item];
-                    }
-                }
-            }
-        }
-        this.setState({
-            autoComplete: newArr
-        });
-        return (
-            <div>AutoComplete in omer function</div>
-        )
+        }, this.checkForAutocomplete)
     }
 
     handleSubmit(event) {
         event.preventDefault();
         let uriEncodedInput = encodeURIComponent(this.state.input);
         this.props.history.push('/search_product_result/' + uriEncodedInput)
+    }
+
+    handleKeyDown(event) {
+        console.log(event.keyCode);
+        switch (event.keyCode) {
+            case 40:
+                console.log('down');
+                break
+            case 38:
+                console.log('up');
+                break
+            case 13:
+                event.preventDefault();
+                console.log('enter');
+                break
+        }
     }
 
     toggleSearchBar(event) {
@@ -153,7 +146,7 @@ class Header extends Component {
                 searchBarStyle: 'display-none',
                 buttonStyle: 'display-none',
                 advancedSearchButtonStyle: 'display-none',
-                headerContainer: 'header-container-search',
+                headerContainer: 'header-container',
                 autoComplete: [],
                 input: ""
             })
@@ -186,6 +179,7 @@ class Header extends Component {
     }
 
     fillOutAutoComplete(event) {
+        console.log(event);
         this.setState({
             input: event.target.innerText,
             autoComplete: []
@@ -193,7 +187,7 @@ class Header extends Component {
     }
 
     render() {
-        const { searchToggle, autoComplete } = this.state;
+        const { searchToggle, autoComplete, input } = this.state;
         return (
             <div className={this.state.headerContainer}>
                 <div className="side-nav">
@@ -201,27 +195,27 @@ class Header extends Component {
                     <HamburgerMenu open={this.state.hamburgerClick} onClick={this.showExpandedMenu.bind(this)} />
                 </div>
 
-                <div className="header-icon login-icon">
+                {/* <div className="header-icon login-icon">
                     <Link to="/create_account">
                         <img className='headerIcon loginIcon' onClick={this.toggleSearchBar.bind(this)} src={LoginIcon} />
                     </Link>
+                </div> */}
+                <div className="header-icon search-bar">
+                    <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
-
                 <div className="header-icon site-title">
                     <Link to="/">
                         <img src={SiteTitle} />
                     </Link>
                 </div>
 
-                <div className="header-icon search-bar">
-                    <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
-                </div>
+
                 <form autoComplete="off">
                     <div className="autocomplete">
-                        <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
+                        <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} onKeyDown={this.handleKeyDown.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     </div>
                     <button onClick={this.handleSubmit.bind(this)} className={this.state.buttonStyle}>Search</button>
-                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} />
+                    <AutoComplete fillOutAutoComplete={this.fillOutAutoComplete} suggestions={autoComplete} currentInput={input} />
                 </form>
                 <AdvancedSearch className={this.state.advancedSearchButtonStyle} />
             </div>

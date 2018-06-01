@@ -1,24 +1,26 @@
-.check-product-image-container {
-
-}
+.check-product-image-container {}
 
 .logo-background-color {
-    width: 60%;
+    width: 30vh;
     margin: auto;
     border-radius: 50%;
-    background-color: #B8D4E3;
+    background-color: rgba(253, 207, 246, 0.5);
 }
 
 .check-product-logo {
-    margin: auto;
+    margin: 2vh auto;
     display: block;
+    height: 30vh;
+    width: 30vh;
+    position: relative;
+    transform: translate(-1vh);
 }
 
 .check-product-description {
     text-align: center;
-    background-color: #e4f7ef;
+    font-size: 6vmin;
+    color: lightslategray;
 }
-
 
 .check-product-input-container {
     text-align: center;
@@ -26,9 +28,17 @@
 }
 
 .check-product-input-field {
-    padding-bottom: 20%;
+    padding-bottom: 2vh;
     background-color: #E6E6FA;
-    width: 80%;
+    border: none;
+    width: 80vw;
+    height: 60vw;
+}
+
+.check-product-input-field:focus {
+    outline: none;
+    border: 1px solid pink;
+    box-shadow: 0 0 10px #719ECE;
 }
 
 .check-product-button {

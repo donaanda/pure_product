@@ -395,5 +395,5 @@ if($response!=='no data'){
     }
 }
 
-print_r($response);
+print(json_encode($response));
 ?>
