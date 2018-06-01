@@ -33,7 +33,7 @@ class AdvancedSearch extends Component {
         await axios.post(`http://localhost:8888/advanced_search.php`, { query }).then(response => {
             this.setState({
                 data: response.data
-            }, () => console.log("axios", this.state.selection))
+            }, () => console.log("axios", this.state))
         });
         console.log(this.state.data);
     }
@@ -53,7 +53,7 @@ class AdvancedSearch extends Component {
         }
         this.setState({
             selection: newSelection
-        });
+        }, ()=>console.log('selection', this.state.selection));
     }
 
     render() {
