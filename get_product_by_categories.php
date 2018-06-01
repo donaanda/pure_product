@@ -14,7 +14,8 @@ $query = "SELECT
     FROM
     `product_name`
     JOIN `product_foundation_table` ON product_name.product_id = product_foundation_table.product_id
-    WHERE `categories` = '$category' LIMIT 10";
+    WHERE `categories` = '$category'"; 
+    // LIMIT 10";
 $result=mysqli_query($db,$query);
 
 $output=[

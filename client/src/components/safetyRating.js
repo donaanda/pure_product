@@ -48,7 +48,7 @@ class SafetyRating extends Component {
     render() {
         return (
             <section>
-                <Header history={this.props.history} />
+                <Header history={this.props.history} />s
                 <div className="site-about-container">
                     <img className="gentle_icon_gentle_page" src={safety_icon} />
                     <h3>Safety Rating</h3>
