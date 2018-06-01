@@ -57,7 +57,7 @@
 .our_team,
 .about-the-site-container {
     min-height: 80vh;
-    margin: 2vh;
+    background: linear-gradient(#edfcf6, #fef6f6)
 }
 
 .faq_icon {
@@ -70,11 +70,70 @@
 }
 
 .person-profile {
-    height: 10vh;
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+    height: 46vh;
+    width: 44vw;
     object-fit: contain;
+    padding: 0.5vh;
+    margin: 1vh 2.8vw;
+    vertical-align: top;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.person-profile.dona {
+    display: block;
+    margin: auto;
 }
 
 .ourTeamPic {
-    height: 100%;
-    margin-right: 5%;
+    height: 150px;
+}
+
+.ourTeamPic:hover {
+    border-radius: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.our-team-title {
+    font-family: 'Oleo Script', cursive;
+    border-bottom: 1px lightslategray;
+    margin: 0;
+}
+
+.two-person-cont {
+    margin: auto;
+}
+
+.honorable-mention {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    padding: 2vh;
+}
+
+.honorable-mention img {
+    display: block;
+    margin: auto;
+}
+
+.honorable-mention-p {
+    margin: auto;
+    width: 60vw;
+}
+
+.port-but {
+    border: 0;
+    background-color: transparent;
+}
+
+.port-but:visited {
+    background-color: pink;
+}
+
+.port-but,
+.git-but {}
+
+.but-icon {
+    height: 5vh;
+    width: 5vh;
 }

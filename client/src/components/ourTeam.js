@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './header';
 import Footer from './footer';
 import '../assets/css/aboutPP.css';
@@ -7,24 +7,122 @@ import Harrison from '../assets/images/ourTeam/harrison.png';
 import Omer from '../assets/images/ourTeam/omer.png';
 import Dona from '../assets/images/ourTeam/dona.png';
 import Alia from '../assets/images/ourTeam/alia.png';
+import portfolio from '../assets/images/ourTeam/portfolio.png';
+import heart from '../assets/images/landing_page_icons/icons/heart.png';
+import github from '../assets/images/footer_icons/git_hub.png';
 import { Link } from 'react-router-dom';
 
 class OurTeam extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
-    render(){
+    render() {
         return (
             <section>
                 <Header history={this.props.history} />
                 <div className="our_team">
-                    <h1>Our Team</h1>
-                    <div className="person-profile"><img className='ourTeamPic' src={Hanh} align="middle"/>Hanh Pham</div>
-                    <div className="person-profile"><img className='ourTeamPic' src={Harrison} align="middle"/>Harrison Chen</div>
-                    <div className="person-profile"><img className='ourTeamPic' src={Omer} align="middle"/>Omer Futerman</div>
-                    <div className="person-profile"><img className='ourTeamPic' src={Dona} align="middle"/>Dona Anda</div>
-                    <div className="person-profile"><img className='ourTeamPic' src={Alia} align="middle"/>Alia Wilkinson</div>
-                    <p> came together to create this application.</p>
+                    <h1 className="our-team-title">Our Team</h1>
+                    <div className="two-person-cont">
+                        <div className="person-profile alia">
+                            <a href="http://aliawilkinson.com" target="blank">
+                                <img className='ourTeamPic' src={Alia} align="middle" />
+                                <h5>Alia Wilkinson</h5>
+                                <h6>web developer</h6>
+                                <p>&amp; ideation expert</p>
+                                <button className="port-but">
+                                    <h6>portfolio</h6>
+                                    <img className="but-icon" src={portfolio} />
+                                </button>
+                            </a>
+                            <a href="https://github.com/aliawilkinson" target="blank">
+                                <button className="git-but">
+                                    <h6>github</h6>
+                                    <img className="but-icon" src={github} />
+                                </button>
+                            </a>
+                        </div>
+                        <div className="person-profile harrison">
+                            <a href="http://harrisonbchen.com" target="blank">
+                                <img className='ourTeamPic' src={Harrison} align="middle" />
+                                <h5>Harrison Chen</h5>
+                                <h6>web developer</h6>
+                                <p>&amp; jack of all trades</p>
+                                <button className="port-but">
+                                    <h6>portfolio</h6>
+                                    <img className="but-icon" src={portfolio} />
+                                </button>
+                            </a>
+                            <a href="https://github.com/harrison8024" target="blank">
+                                <button className="git-but">
+                                    <h6>github</h6>
+                                    <img className="but-icon" src={github} />
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="person-profile hanh">
+                        <a href="http://hanhpham.live" target="blank">
+                            <img className='ourTeamPic' src={Hanh} align="middle" />
+                            <h5>Hanh Pham</h5>
+                            <h6>web developer</h6>
+                            <p>&amp; SQL magician</p>
+                            <button className="port-but">
+                                <h6>portfolio</h6>
+                                <img className="but-icon" src={portfolio} />
+                            </button>
+                        </a>
+                        <a href="https://github.com/hanhpham327" target="blank">
+                            <button className="git-but">
+                                <h6>github</h6>
+                                <img className="but-icon" src={github} />
+                            </button>
+                        </a>
+                    </div>
+                    <div className="person-profile omer">
+                        <a href="http://omerfuterman.com" target="blank">
+                            <img className='ourTeamPic' src={Omer} align="middle" />
+                            <h5>Omer Futerman</h5>
+                            <h6>web developer</h6>
+                            <p>&amp; endpoint extrordinaire</p>
+                            <button className="port-but">
+                                <h6>portfolio</h6>
+                                <img className="but-icon" src={portfolio} />
+                            </button>
+                        </a>
+                        <a href="https://github.com/oFuterman" target="blank">
+                            <button className="git-but">
+                                <h6>github</h6>
+                                <img className="but-icon" src={github} />
+                            </button>
+                        </a>
+                    </div>
+                    <div className="person-profile dona">
+                        <a href="http://donaanda.com" target="blank">
+                            <img className='ourTeamPic' src={Dona} align="middle" />
+                            <h5>Dona Anda</h5>
+                            <h6>web developer</h6>
+                            <p>&amp; pagination expert</p>
+                            <button className="port-but">
+                                <h6>portfolio</h6>
+                                <img className="but-icon" src={portfolio} />
+                            </button>
+                        </a>
+                        <a href="https://github.com/donaanda"><button className="git-but">
+                            <h6>github</h6>
+                            <img className="but-icon" src={github} />
+                        </button>
+                        </a>
+                    </div>
+                    <div className="honorable-mention">
+                        <img src={heart} /><p className="honorable-mention-p" align="middle">
+                            Honorable mention: Yu-Chen Chen, a graphic designer who designed our landing page icons.
+                        </p>
+                    </div>
+                    <div className="honorable-mention">
+                        <img src={heart} /><p className="honorable-mention-p" align="middle">
+                            Special thanks to Christian Brown, who taught us how to webscrape.
+                        </p>
+                    </div>
                 </div>
                 <Footer />
             </section>
