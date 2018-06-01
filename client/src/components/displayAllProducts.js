@@ -16,8 +16,6 @@ const styleClasses = {
     displayNone: ''
 }
 
-
-
 class DisplayAllProducts extends Component {
 
     constructor(props) {
@@ -26,7 +24,6 @@ class DisplayAllProducts extends Component {
             currentPage: 1,
             productsPerPage: 20
         };
-
         this.handlePageNumberClick = this.handlePageNumberClick.bind(this);
     }
 

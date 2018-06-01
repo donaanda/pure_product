@@ -25,6 +25,7 @@ export default class DisplayImage extends Component {
                     safety_avg_rating: "N/A"
                 },
         }
+        console.log(props);
     }
     colorizeSafetyNum(rating) {
         switch (rating) {

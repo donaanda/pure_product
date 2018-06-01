@@ -77,7 +77,7 @@ class ProductFinder extends React.Component {
     await axios.post(`http://localhost:8888/filterAndFinder.php`, { query }).then(response => {
       this.setState({
         data: response.data
-      }, () => console.log("axios", this.state.selection))
+      })
     });
     console.log(this.state.data);
   }
