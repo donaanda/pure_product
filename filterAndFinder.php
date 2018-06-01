@@ -65,22 +65,20 @@ foreach($output['keys'] as $values1){
 
 $skinType='';
 $counter=0;
+$counter2=0;
 $helpFullBoolian=false;
 foreach($output['keys'] as $values2) {
-    echo 'value: ';
-    echo $values2;
-    echo ' ';
-    if($counter===0){
+    if($counter2===0){
         if(($values2==='Dry'||$values2==='Normal')||($values2==='Combo'||$values2==='Oily')||($values2==='Sensitive' || $values2==='Cruelty_Free')||$values2==='vegan'){
             $skinType="WHERE `$values2`=1 ";
             if(array_key_exists($counter+1,$output['keys'])){
-                if(($values2==='dry'||$values2==='Normal'||$values2==='combo'||$values2==='Oily'||$values2==='Sensitive')&&$output['keys'][$counter+1]==='Cruelty_Free'||$output['keys'][$counter+1]==='vegan'){
+                if(($values2==='dry'||$values2==='Normal'||$values2==='Combo'||$values2==='Oily'||$values2==='Sensitive')&&$output['keys'][$counter+1]==='Cruelty_Free'||$output['keys'][$counter+1]==='vegan'){
                     $skinType="$skinType AND ";
                     $helpFullBoolian=true;
                 }
             }
+            $counter2++;
         }
-        $counter++;
     }else if($values2==='dry'||$values2==='Normal'||$values2==='Combo'||$values2==='Oily'||$values2==='Sensitive'||$values2==='Cruelty_Free'||$values2==='vegan'){
         if($helpFullBoolian){
             $skinType="$skinType `$values2`=1 ";
@@ -104,7 +102,6 @@ if($response==='no data'){
 
 if($counter>0){
     $query = "SELECT `product_id` FROM product_foundation_table $skinType";
-    echo "1 $query";
     $result=mysqli_query($db,$query);
     $holder=[];
     if(mysqli_num_rows($result)){
@@ -144,7 +141,6 @@ if($response==='no data'){
 }
 
 if($counter>0){
-    echo " 2 $query";
     $result=mysqli_query($db,$query);
     $holder=[];
     if(mysqli_num_rows($result)){
@@ -199,7 +195,6 @@ if($response==='no data'){
 
 if($counter>0){
     $query=$query."and product_id in $productIDsString";
-    echo " 3 $query";
     $result=mysqli_query($db,$query);
     $holder=[];
     if(mysqli_num_rows($result)){
@@ -244,7 +239,6 @@ if($response==='no data'){
 }
 
 if($counter>0){
-    echo " 4 $query";
     $result=mysqli_query($db,$query);
     $holder=[];
     if(mysqli_num_rows($result)){
@@ -395,5 +389,5 @@ if($response!=='no data'){
     }
 }
 
-print(json_encode($response));
+print_r(json_encode($response));
 ?>
