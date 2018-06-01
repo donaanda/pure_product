@@ -3,6 +3,10 @@
     border-right: 1px solid rgb(196, 193, 193);
 }
 
+.ingredient-column {
+    word-break: break-all;
+}
+
 .ingredient-row td p {
     margin: auto;
     border-radius: 50%;

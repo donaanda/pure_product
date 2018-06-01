@@ -69,7 +69,7 @@ const Ingredient = (props) => {
 
     return (
         <tr className="ingredient-row">
-            <td className={`ingredient-column`}><div>{props.ingredientInfo.ingredient ? props.ingredientInfo.ingredient : props.ingredientInfo.search}</div></td>
+            <td className="ingredient-column"><div>{props.ingredientInfo.ingredient ? props.ingredientInfo.ingredient : props.ingredientInfo.search}</div></td>
             <td className="chemical-gentle-rating">
                 <p className={`${colorizeGentleNum(props.ingredientInfo.gentle_rating)}`}>
                     {props.ingredientInfo.gentle_rating ? wordifyGentleNum(props.ingredientInfo.gentle_rating) : "N/A"}
