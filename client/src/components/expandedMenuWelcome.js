@@ -16,7 +16,7 @@ import '../assets/css/expandedMenuStyle.css';
 function ExpandedMenuWelcome(props) {
 
     return (
-        <section className={props.className}>
+        <div className={`expanded-menu ${props.className}`}>
             <div className="menu-container">
                 {/* <Link to="/myAccount" >
                     <div className="menu-item-cont">
@@ -53,7 +53,7 @@ function ExpandedMenuWelcome(props) {
                     </div>
                 </Link> */}
             </div>
-        </section>
+        </div>
     )
 };
 
