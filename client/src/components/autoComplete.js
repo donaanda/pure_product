@@ -10,7 +10,6 @@ class AutoComplete extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps) {
-            console.log(nextProps);
             return this.list = nextProps;
         } else {
             return
@@ -24,9 +23,10 @@ class AutoComplete extends Component {
                 let productName = item.slice(input.length);
                 let currentInput = input.toUpperCase();
                 return (
-                <li className="suggest-item" key={index} onClick={this.props.fillOutAutoComplete} ><strong className="current-input">{currentInput}</strong>{productName}</li>
-                
-            )});
+                    <li className="suggest-item" key={index} onClick={this.props.fillOutAutoComplete} ><strong className="current-input">{currentInput}</strong>{productName}</li>
+
+                )
+            });
             return (
                 <div><ul>{productSuggestions}</ul></div>
             )

@@ -30,12 +30,25 @@ class AdvancedSearch extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         var query = this.state.selection;
-        await axios.post(`http://localhost:8888/advanced_search.php`, { query }).then(response => {
+        await axios.post(`http://localhost:8888/filterAndFinder.php`, { query }).then(response => {
             this.setState({
                 data: response.data
+<<<<<<< HEAD
             }, () => console.log("axios", this.state))
+=======
+            })
         });
-        console.log(this.state.data);
+        console.log('from advanced search', this.state.data);
+    }
+
+    async handleDataFromSubmit(advSearchData) {
+        await axios.post(`http://localhost:8888/search_product.php`).then(response => {
+            this.setState({
+                data: response.data
+            })
+>>>>>>> 5ff1f3fc55707a13cdb82aad370e6dec895b45d7
+        });
+        console.log('from advanced search', this.state.data);
     }
 
     handleChange(event) {
