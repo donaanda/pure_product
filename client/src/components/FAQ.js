@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Header from './header';
+import Header from './header/header';
 import Footer from './footer';
 import faq_icon from '../assets/images/faq_icon.png';
 import { Link } from 'react-router-dom';

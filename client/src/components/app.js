@@ -16,7 +16,7 @@ import CreateAccount from './create_account';
 import OurTeam from './ourTeam';
 import FAQ from './FAQ';
 import AboutTheSite from './aboutTheSite';
-import ExpandedMenu from './expandedMenuWelcome';
+import ExpandedMenu from './header/expandedMenuWelcome';
 import SearchProductResult from './searchProductResult';
 import IngredientDetailsPage from './ingredientDetailsPage';
 import Recommendations from './recommendations';

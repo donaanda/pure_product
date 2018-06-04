@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DisplayImage from './displayImage';
 import ImageData from './imageData';
-import Header from './header';
+import Header from './header/header';
 import Footer from './footer';
 import { Link } from 'react-router-dom';
 import DisplayAllProducts from './displayAllProducts';

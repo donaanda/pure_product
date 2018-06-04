@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header from "./header";
+import Header from "./header/header";
 import Footer from "./footer";
 import DisplayAllProducts from "./displayAllProducts";
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './header';
+import Header from './header/header';
 import { Link } from 'react-router-dom';
 import '../assets/css/productAnalyzer.css';
 import IngredientList from './ingredientList';

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import Footer from './footer';
-import Header from './header';
+import Header from './header/header';
 
 class SignIn extends Component {
     render() {

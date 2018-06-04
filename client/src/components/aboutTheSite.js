@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './header';
+import Header from './header/header';
 import Footer from './footer';
 import '../assets/css/aboutPP.css';
 import github from '..//assets/images/footer_icons/git_hub.png';

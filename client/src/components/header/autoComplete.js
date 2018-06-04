@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/css/autoComplete.css';
-import Header from './header';
+import '../../assets/css/autoComplete.css';
 
 class AutoComplete extends Component {
     constructor(props) {

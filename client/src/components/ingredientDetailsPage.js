@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './header';
+import Header from './header/header';
 import Footer from "./footer";
 import axios from 'axios';
 import '../assets/css/ingredientDetails.css';

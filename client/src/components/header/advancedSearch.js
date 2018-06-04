@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/css/advancedSearch.css';
+import '../../assets/css/advancedSearch.css';
 import axios from 'axios';
 
 class AdvancedSearch extends Component {

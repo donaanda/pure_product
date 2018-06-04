@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './header';
+import Header from './header/header';
 import Lipstick from '../assets/images/landing_page_icons/icons/cross2.png';
 import { Link } from 'react-router-dom';
 import '../assets/css/productAnalyzer.css';

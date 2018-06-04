@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../assets/css/header.css';
-import SearchIcon from '../assets/images/header_images/search.png';
-import SiteTitle from '../assets/images/landing_page_icons/icons/site-title.png';
-import LoginIcon from '../assets/images/header_images/user-login.png';
+import '../../assets/css/header.css';
+import SearchIcon from '../../assets/images/header_images/search.png';
+import SiteTitle from '../../assets/images/landing_page_icons/icons/site-title.png';
+import LoginIcon from '../../assets/images/header_images/user-login.png';
 import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
 import ExpandedMenu from './expandedMenuWelcome';

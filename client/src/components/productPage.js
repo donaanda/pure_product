@@ -5,7 +5,7 @@ import DisplayImage from './displayImage';
 import '../assets/css/productPage.css';
 import GentleIcon from '../assets/images/landing_page_icons/icons/gentle.png';
 import SafetyIcon from '../assets/images/landing_page_icons/icons/cross.png';
-import Header from './header';
+import Header from './header/header';
 import Footer from './footer';
 import axios from 'axios';
 import ingredient from './ingredient';
