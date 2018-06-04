@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/css/app.css';
 import LandingPage from './landing_page';
 import SignIn from './sign_in';
-import ProductWizard from './productWizard';
+import ProductWizard from './productWizard/productWizard';
 import { Route } from 'react-router-dom';
 import MyAccountPage from './myAccount';
 import SingleIngredientSearch from './singleIngredientSearch';

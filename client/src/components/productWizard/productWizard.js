@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header from './header';
-import Footer from './footer';
-import '../assets/css/productWizard.css';
+import Header from '../header';
+import Footer from '../footer';
+import '../../assets/css/productWizard.css';
 import Step0 from './productWizard_step0';
 import Step1 from './productWizard_step1';
 import Step2 from './productWizard_step2';
