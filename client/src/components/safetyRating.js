@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header/header';
-import Footer from './footer';
+import Footer from './footer/footer';
 import safety_icon from '../assets/images/landing_page_icons/icons/cross.png';
 import '../assets/css/app.css';
 import { Link } from 'react-router-dom';

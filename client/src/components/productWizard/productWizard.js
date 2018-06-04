@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../header/header';
-import Footer from '../footer';
+import Footer from '../footer/footer';
 import '../../assets/css/productWizard.css';
 import Step0 from './productWizard_step0';
 import Step1 from './productWizard_step1';

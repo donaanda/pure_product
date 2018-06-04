@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './header/header';
+import Header from '../header/header';
 import Footer from './footer';
-import '../assets/css/aboutPP.css';
-import github from '..//assets/images/footer_icons/git_hub.png';
-import temp_logo from '../assets/images/footer_icons/temp_logo.png';
+import '../../assets/css/aboutPP.css';
+import github from '../../assets/images/footer_icons/git_hub.png';
+import temp_logo from '../../assets/images/footer_icons/temp_logo.png';
 import { Link } from 'react-router-dom';
 
 class AboutTheSite extends Component {

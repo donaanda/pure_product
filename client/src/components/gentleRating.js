@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header/header';
-import Footer from './footer';
+import Footer from './footer/footer';
 import gentle_rating from '../assets/images/landing_page_icons/icons/gentle.png';
 import { Link } from 'react-router-dom';
 import '../assets/css/app.css';

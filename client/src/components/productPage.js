@@ -6,7 +6,7 @@ import '../assets/css/productPage.css';
 import GentleIcon from '../assets/images/landing_page_icons/icons/gentle.png';
 import SafetyIcon from '../assets/images/landing_page_icons/icons/cross.png';
 import Header from './header/header';
-import Footer from './footer';
+import Footer from './footer/footer';
 import axios from 'axios';
 import ingredient from './ingredient';
 import { Link } from 'react-router-dom';

@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import Header from './header/header';
+import Header from '../header/header';
 import Footer from './footer';
-import '../assets/css/aboutPP.css';
-import Hanh from '../assets/images/ourTeam/hanh.png';
-import hanhDerp from '../assets/images/ourTeam/derp_pics/hanh_derp.png';
-import Harrison from '../assets/images/ourTeam/harrison.png';
-import harrisonDerp from '../assets/images/ourTeam/derp_pics/harrison_derp.png';
-import Omer from '../assets/images/ourTeam/omer.png';
-import omerDerp from '../assets/images/ourTeam/derp_pics/omer_derp.png';
-import Dona from '../assets/images/ourTeam/dona.png';
-import donaDerp from '../assets/images/ourTeam/derp_pics/dona_da_g.png';
-import Alia from '../assets/images/ourTeam/alia.png';
-import aliaDerp from '../assets/images/ourTeam/derp_pics/alia_derp.png';
-import portfolio from '../assets/images/ourTeam/portfolio.png';
-import heart from '../assets/images/landing_page_icons/icons/heart.png';
-import github from '../assets/images/footer_icons/git_hub.png';
+import '../../assets/css/aboutPP.css';
+import Hanh from '../../assets/images/ourTeam/hanh.png';
+import hanhDerp from '../../assets/images/ourTeam/derp_pics/hanh_derp.png';
+import Harrison from '../../assets/images/ourTeam/harrison.png';
+import harrisonDerp from '../../assets/images/ourTeam/derp_pics/harrison_derp.png';
+import Omer from '../../assets/images/ourTeam/omer.png';
+import omerDerp from '../../assets/images/ourTeam/derp_pics/omer_derp.png';
+import Dona from '../../assets/images/ourTeam/dona.png';
+import donaDerp from '../../assets/images/ourTeam/derp_pics/dona_da_g.png';
+import Alia from '../../assets/images/ourTeam/alia.png';
+import aliaDerp from '../../assets/images/ourTeam/derp_pics/alia_derp.png';
+import portfolio from '../../assets/images/ourTeam/portfolio.png';
+import heart from '../../assets/images/landing_page_icons/icons/heart.png';
+import github from '../../assets/images/footer_icons/git_hub.png';
 
 import { Link } from 'react-router-dom';
 

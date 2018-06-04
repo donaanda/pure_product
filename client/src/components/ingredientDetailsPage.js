@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header/header';
-import Footer from "./footer";
+import Footer from "./footer/footer";
 import axios from 'axios';
 import '../assets/css/ingredientDetails.css';
 import Group_1 from '../assets/images/displayImages/Group_1.png';
