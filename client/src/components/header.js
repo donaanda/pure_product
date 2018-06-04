@@ -32,7 +32,7 @@ class Header extends Component {
     }
 
     async componentDidMount() {
-        await axios.post(`http://localhost:8888/autocomplete.php`).then(res => {
+        await axios.post(`/api_autocomplete.php`).then(res => {
             this.setState({
                 productData: res.data
             })
