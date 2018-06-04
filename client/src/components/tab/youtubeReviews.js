@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../assets/css/tabs.css';
-import '../assets/css/loader.css';
-import Loader from './loader';
+import '../../assets/css/tabs.css';
+import '../../assets/css/loader.css';
+import Loader from '../loader';
 
 
 class YouTubeVideoReviews extends Component {

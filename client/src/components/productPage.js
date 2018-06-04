@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import MenuTabs from './tabs';
+import MenuTabs from './tab/tabs';
 import DisplayImage from './displayProduct/displayImage';
 import '../assets/css/productPage.css';
 import GentleIcon from '../assets/images/landing_page_icons/icons/gentle.png';

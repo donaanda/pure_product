@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import IngredientList from './displayIngredient/ingredientList';
+import IngredientList from '../displayIngredient/ingredientList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import '../assets/css/tabs.css';
+import '../../assets/css/tabs.css';
 import axios from 'axios';
-import dry_icon from '../assets/images/skintype_icons/dry.png';
-import sensitive_icon from '../assets/images/skintype_icons/sensitive.png';
-import oily_icon from '../assets/images/skintype_icons/oily.png';
-import combo_icon from '../assets/images/skintype_icons/combo.png';
-import normal_icon from '../assets/images/skintype_icons/normal.png';
-import vegan_icon from '../assets/images/ethical_icons/vegan.png';
-import cruelty_free_icon from '../assets/images/ethical_icons/cruelty_free.png';
+import dry_icon from '../../assets/images/skintype_icons/dry.png';
+import sensitive_icon from '../../assets/images/skintype_icons/sensitive.png';
+import oily_icon from '../../assets/images/skintype_icons/oily.png';
+import combo_icon from '../../assets/images/skintype_icons/combo.png';
+import normal_icon from '../../assets/images/skintype_icons/normal.png';
+import vegan_icon from '../../assets/images/ethical_icons/vegan.png';
+import cruelty_free_icon from '../../assets/images/ethical_icons/cruelty_free.png';
 import YoutubeVideoReviews from './youtubeReviews';
 
 
