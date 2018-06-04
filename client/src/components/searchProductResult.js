@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header from "./header";
-import Footer from "./footer";
-import DisplayAllProducts from "./displayAllProducts";
+import Header from "./header/header";
+import Footer from "./footer/footer";
+import DisplayAllProducts from "./displayProduct/displayAllProducts";
 
 class SearchProductResult extends Component {
 

@@ -1,0 +1,6 @@
+.DS_Store
+.idea
+.vscode
+.atom
+db_connect.php
+migration_file/migration_connect.php
