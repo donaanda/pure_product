@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import DisplayImage from './displayImage';
 import { Link } from 'react-router-dom';
-import Loader from './loader';
-import '../assets/css/displayImage.css';
+import Loader from '../loader';
+import '../../assets/css/displayImage.css';
 
 const styleClasses = {
     displayCont: 'product-display-container',

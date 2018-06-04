@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../assets/css/displayImage.css';
-import Image_1 from '../assets/images/displayImages/Image_1.png';
-import safety_img from '../assets/images/landing_page_icons/icons/cross.png';
-import gentle_img from '../assets/images/landing_page_icons/gentle_feather.png';
-import foundation_alt_img from '../assets/images/landing_page_icons/foundation_alt_image.jpg';
+import '../../assets/css/displayImage.css';
+import Image_1 from '../../assets/images/displayImages/Image_1.png';
+import safety_img from '../../assets/images/landing_page_icons/icons/cross.png';
+import gentle_img from '../../assets/images/landing_page_icons/gentle_feather.png';
+import foundation_alt_img from '../../assets/images/landing_page_icons/foundation_alt_image.jpg';
 import { Link } from 'react-router-dom';
 
 export default class DisplayImage extends Component {

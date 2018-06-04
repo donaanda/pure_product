@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './footer/footer';
-import DisplayAllProducts from './displayAllProducts';
+import DisplayAllProducts from './displayProduct/displayAllProducts';
 import gentle_rating from '../assets/images/landing_page_icons/gentle_feather.png';
 import foundation from '../assets/images/landing_page_icons/foundation.png';
 import lipstick from '../assets/images/landing_page_icons/icons/cross2.png';

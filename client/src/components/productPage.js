@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import MenuTabs from './tabs';
-import DisplayImage from './displayImage';
+import DisplayImage from './displayProduct/displayImage';
 import '../assets/css/productPage.css';
 import GentleIcon from '../assets/images/landing_page_icons/icons/gentle.png';
 import SafetyIcon from '../assets/images/landing_page_icons/icons/cross.png';
