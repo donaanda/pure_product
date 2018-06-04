@@ -9,7 +9,6 @@ import safety_icon from '../assets/images/landing_page_icons/icons/cross.png';
 import product from '../assets/images/landing_page_icons/icons/gentle2.png';
 import Header from './header/header';
 import '../assets/css/landing_page.css';
-// import ExpandedMenuWelcome from './expandedMenuWelcome';
 import axios from 'axios';
 
 class LandingPage extends Component {

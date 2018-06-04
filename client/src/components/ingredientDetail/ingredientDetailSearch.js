@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import SearchIngredient from '../assets/images/search_ingredient/flask.png';
-import Header from './header/header';
-import Footer from "./footer/footer";
+import SearchIngredient from '../../assets/images/search_ingredient/flask.png';
+import Header from '../header/header';
+import Footer from "../footer/footer";
 import { Link } from 'react-router-dom';
-import '../assets/css/singleIngredientSearch.css';
+import '../../assets/css/singleIngredientSearch.css';
 
-class SingleIngredientSearch extends Component {
+class ingredientDetailSearch extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -16,7 +16,7 @@ class SingleIngredientSearch extends Component {
     handleSubmit(event){
         event.preventDefault();
         let uriEncodedInput = encodeURIComponent(this.state.input);
-        this.props.history.push('/ingredient_details_page/' + uriEncodedInput);
+        this.props.history.push('/ingredient_detail_page/' + uriEncodedInput);
     }
 
     handleInput(event){
@@ -50,4 +50,4 @@ class SingleIngredientSearch extends Component {
         )
     }   
 }
-export default SingleIngredientSearch;
+export default ingredientDetailSearch;

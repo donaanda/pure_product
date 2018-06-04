@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Header from './header/header';
-import Footer from "./footer/footer";
+import Header from '../header/header';
+import Footer from "../footer/footer";
 import axios from 'axios';
-import '../assets/css/ingredientDetails.css';
-import Group_1 from '../assets/images/displayImages/Group_1.png';
-import CompoundPath_1 from '../assets/images/displayImages/Compound Path_1.png';
-import Loader from './loader';
+import '../../assets/css/ingredientDetails.css';
+import Group_1 from '../../assets/images/displayImages/Group_1.png';
+import CompoundPath_1 from '../../assets/images/displayImages/Compound Path_1.png';
+import Loader from '../loader';
 
 
-class IngredientDetails extends Component {
+class IngredientDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -48,7 +48,7 @@ class IngredientDetails extends Component {
             }
         })
         let uriEncodedInput = encodeURIComponent(this.state.input);
-        this.props.history.push('/ingredient_details_page/' + uriEncodedInput);
+        this.props.history.push('/ingredient_detail_page/' + uriEncodedInput);
     }
 
     handleInput(event) {
@@ -99,5 +99,5 @@ class IngredientDetails extends Component {
     }
 }
 
-export default IngredientDetails;
+export default IngredientDetail;
 
