@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './header/header';
 import { Link } from 'react-router-dom';
 import '../assets/css/productAnalyzer.css';
-import IngredientList from './ingredientList';
+import IngredientList from './displayIngredient/ingredientList';
 import Loader from './loader';
 import axios from 'axios';
 

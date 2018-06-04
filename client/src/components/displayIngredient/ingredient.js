@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/ingredientList.css';
+import '../../assets/css/ingredientList.css';
 
 const Ingredient = (props) => {
     console.log(props);

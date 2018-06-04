@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IngredientList from './ingredientList';
+import IngredientList from './displayIngredient/ingredientList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../assets/css/tabs.css';
 import axios from 'axios';

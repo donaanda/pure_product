@@ -8,7 +8,7 @@ import SafetyIcon from '../assets/images/landing_page_icons/icons/cross.png';
 import Header from './header/header';
 import Footer from './footer/footer';
 import axios from 'axios';
-import ingredient from './ingredient';
+import ingredient from './displayIngredient/ingredient';
 import { Link } from 'react-router-dom';
 import Loader from './loader';
 

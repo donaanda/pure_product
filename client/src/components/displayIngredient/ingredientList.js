@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import heart from '../assets/images/landing_page_icons/icons/gentle.png';
-import gentle from '../assets/images/landing_page_icons/icons/cross.png';
-import '../assets/css/ingredientList.css';
+import heart from '../../assets/images/landing_page_icons/icons/gentle.png';
+import gentle from '../../assets/images/landing_page_icons/icons/cross.png';
+import '../../assets/css/ingredientList.css';
 import Ingredient from './ingredient';
-import Loader from './loader';
+import Loader from '../loader';
 
 class IngredientList extends Component {
     constructor(props) {
