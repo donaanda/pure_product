@@ -30,7 +30,7 @@ class AdvancedSearch extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         var query = this.state.selection;
-        await axios.post(`http://localhost:8888/filterAndFinder.php`, { query }).then(response => {
+        await axios.post(`/api_filterAndFinder.php`, { query }).then(response => {
             this.setState({
                 data: response.data
             })
@@ -39,7 +39,7 @@ class AdvancedSearch extends Component {
     }
 
     async handleDataFromSubmit(advSearchData) {
-        await axios.post(`http://localhost:8888/search_product.php`).then(response => {
+        await axios.post(`/api_search_product.php`).then(response => {
             this.setState({
                 data: response.data
             })
@@ -62,7 +62,7 @@ class AdvancedSearch extends Component {
         }
         this.setState({
             selection: newSelection
-        }, ()=>console.log('selection', this.state.selection));
+        }, () => console.log('selection', this.state.selection));
     }
 
     render() {

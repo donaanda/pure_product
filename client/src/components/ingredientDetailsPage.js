@@ -21,7 +21,7 @@ class IngredientDetails extends Component {
 
     async componentDidMount() {
         let query = decodeURIComponent(this.props.match.params.search);
-        await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, { query }).then(response => {
+        await axios.post(`/api_get_ingredient_by_name.php`, { query }).then(response => {
             this.setState({
                 data: response.data
             }, () => console.log(this.state));
@@ -31,7 +31,7 @@ class IngredientDetails extends Component {
     async componentWillReceiveProps(nextProps) {
         if (this.props.match.params.search !== nextProps.match.params.search) {
             let query = decodeURIComponent(nextProps.match.params.search);
-            await axios.post(`http://localhost:8888/get_ingredient_by_name.php`, { query }).then(response => {
+            await axios.post(`/api_get_ingredient_by_name.php`, { query }).then(response => {
                 this.setState({
                     data: response.data
                 }, () => console.log(this.state));

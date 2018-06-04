@@ -88,7 +88,7 @@
 }
 
 .ourTeamPic {
-    height: 25%;
+    height: 150px;
 }
 
 .ourTeamPic:hover {
@@ -141,6 +141,10 @@
     width: 5vh;
 }
 
+.derp {
+    display: none;
+}
+
 @media only screen and (min-width: 768px) {
     .person-profile {
         height: 70vh;
@@ -162,8 +166,8 @@
     }
     .ourTeamPic,
     .derp {
-        position: absolute;
-        height: 120px;
+        /* position: absolute; */
+        height: 125px;
         border-radius: 90%;
     }
     .derp {
