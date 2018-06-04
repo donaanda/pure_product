@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DisplayImage from './displayImage';
-import ImageData from './imageData';
 import Header from './header/header';
 import Footer from './footer/footer';
 import { Link } from 'react-router-dom';

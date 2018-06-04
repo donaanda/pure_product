@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DisplayImage from './displayImage';
-import ImageData from './imageData';
 import { Link } from 'react-router-dom';
 import Loader from './loader';
 import '../assets/css/displayImage.css';
