@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header from "./header/header";
-import Footer from "./footer/footer";
-import DisplayAllProducts from "./displayAllProducts";
+import Header from "../header/header";
+import Footer from "../footer/footer";
+import DisplayAllProducts from "../displayAllProducts";
 
 class Recommendations extends Component {
 

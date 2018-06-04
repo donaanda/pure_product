@@ -19,7 +19,7 @@ import AboutTheSite from './footer/aboutTheSite';
 import ExpandedMenu from './header/expandedMenuWelcome';
 import SearchProductResult from './searchProductResult';
 import IngredientDetailsPage from './ingredientDetailsPage';
-import Recommendations from './recommendations';
+import Recommendations from './productWizard/recommendations';
 
 const App = () => {
     return (
