@@ -19,7 +19,7 @@ class GentleProducts extends Component {
 
     async componentDidMount() {
         var id = this.props.match.params.id;
-        await axios.post(`/api_get_product_by_categories.php`)
+        await axios.post(`/server/api_get_product_by_categories.php`)
             .then(res => {
                 this.setState({
                     data: res.data

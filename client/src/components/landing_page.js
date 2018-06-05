@@ -24,7 +24,7 @@ class LandingPage extends Component {
     async componentDidMount() {
 
         var id = this.props.match.params.id;
-        await axios.post(`/api_get_product_by_categories.php`)// can add another parameter to send to backend for queries, object
+        await axios.post(`/server/api_get_product_by_categories.php`)// can add another parameter to send to backend for queries, object
 
             .then(res => {
                 this.setState({

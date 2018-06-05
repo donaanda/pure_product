@@ -7,7 +7,7 @@ import Loader from '../loader';
 class YouTubeVideoReviews extends Component {
     constructor(props) {
         super(props);
-
+        console.log(props);
         this.state = {
             isLoading: true,
             vidLoading: 'vid-loader vid-beaker-loader'
