@@ -103,7 +103,7 @@ export default class DisplayImage extends Component {
                 productImg,
                 displayNone } = this.props.className;
 
-            const image = "/product_images/" + categories + "/" + product_id + "/" + img_src;
+            const image = "/client/dist/product_images/" + categories + "/" + product_id + "/" + img_src;
             return (
                 <Link to={"/product/" + product_id}>
                     <div className={displayCont}>

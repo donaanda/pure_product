@@ -75,7 +75,7 @@ class ProductFinder extends React.Component {
   async handleFormSubmit(event) {
     event.preventDefault();
     var query = this.state.selection;
-    await axios.post(`/api_filterAndFinder.php`, { query }).then(response => {
+    await axios.post(`/server/api_filterAndFinder.php`, { query }).then(response => {
       this.setState({
         data: response.data
       })
