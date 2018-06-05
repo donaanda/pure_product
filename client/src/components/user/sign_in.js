@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Footer from './footer';
-import Header from './header';
+import Footer from '../footer/footer';
+import Header from '../header/header';
 import axios from 'axios';
 
 class SignIn extends Component {
