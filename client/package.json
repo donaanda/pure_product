@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Personal care product ingredient safety app",
   "main": "index.js",
+  "proxy": {
+    "/server/api_*": {
+      "target": "http://localhost:8888"
+    }
+  },
   "scripts": {
     "start": "node dev_server.js",
     "bundle": "webpack --config webpack.prod.js --progress",
