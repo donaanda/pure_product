@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DisplayImage from './displayImage';
 import { Link } from 'react-router-dom';
 import Loader from '../loader';
+import SortProduct from '../sortProduct';
 import '../../assets/css/displayImage.css';
 
 const styleClasses = {
@@ -21,9 +22,11 @@ class DisplayAllProducts extends Component {
         super(props);
         this.state = {
             currentPage: 1,
-            productsPerPage: 20
+            productsPerPage: 20,
+            sortCategoryClicked: true
         };
         this.handlePageNumberClick = this.handlePageNumberClick.bind(this);
+        this.selectedCategory = this.selectedCategory.bind(this);
     }
 
     handlePageNumberClick(event) {
@@ -31,6 +34,75 @@ class DisplayAllProducts extends Component {
         this.setState({
             currentPage: Number(event.target.id)
         });
+    }
+
+    selectedCategory(event) {
+        this.setState({
+            sortCategoryClicked: true
+        });
+
+        if (this.state.sortCategoryClicked) {
+            if (event.target.innerText === 'Price') {
+                this.props.data.data.sort(this.comparePrice);
+                //console.log(this.props.data.data);
+            } else if (event.target.innerText === 'Gentle Rating') {
+                this.props.data.data.sort(this.compareGentleRating);
+            } else if (event.target.innerText === 'Safety Rating') {
+                this.props.data.data.sort(this.compareSafetyRating);
+            }
+        }
+    }
+
+    comparePrice(currentProduct, nextProduct) {
+        if (currentProduct.price < nextProduct.price)
+            return -1;
+        else if (currentProduct.price > nextProduct.price)
+            return 1;
+        return 0;
+    }
+
+    compareGentleRating(currentProduct, nextProduct) {
+
+        if ((currentProduct.gentle_avg_rating === '0' || currentProduct.gentle_avg_rating === '1') && nextProduct.gentle_avg_rating !== '0') {
+            return 1;
+        } else if (currentProduct.gentle_avg_rating !== '0' && (nextProduct.gentle_avg_rating === '0' || nextProduct.gentle_avg_rating === '1')) {
+            return -1;
+        }
+
+        if (currentProduct.gentle_avg_rating === 'Best')
+            return -1;
+        else if (currentProduct.gentle_avg_rating === 'Good') {
+            if (nextProduct.gentle_avg_rating === 'Best') {
+                return 1;
+            }
+            return -1;
+        }
+        else if (currentProduct.gentle_avg_rating === 'Average'){
+            if (nextProduct.gentle_avg_rating === 'Best' || nextProduct.gentle_avg_rating === 'Good') {
+                return 1;
+            }
+            return -1;
+        } else if (currentProduct.gentle_avg_rating === 'Poor') {
+            if (nextProduct.gentle_avg_rating === 'Best' || nextProduct.gentle_avg_rating === 'Good' || nextProduct.gentle_avg_rating === 'Average') {
+                return 1;
+            }
+            return -1;
+        }
+        return 0;
+    }
+
+    compareSafetyRating(currentProduct, nextProduct) {
+        if (currentProduct.safety_avg_rating === '0' && nextProduct.safety_avg_rating !== '0') {
+            return 1;
+        } else if (currentProduct.safety_avg_rating !== '0' && nextProduct.safety_avg_rating === '0') {
+            return -1;
+        }
+
+        if (currentProduct.safety_avg_rating > nextProduct.safety_avg_rating)
+            return 1;
+        else if (currentProduct.safety_avg_rating < nextProduct.safety_avg_rating)
+            return -1;
+        return 0;
     }
 
     render() {
@@ -81,6 +153,7 @@ class DisplayAllProducts extends Component {
 
             return (
                 <div className="display-all-products-content">
+                    <SortProduct selectedCategory={this.selectedCategory}/>
                     {products}
                     <ul className="page-numbers">{renderPageNumbers}</ul>
                 </div>
