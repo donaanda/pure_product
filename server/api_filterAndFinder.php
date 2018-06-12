@@ -134,7 +134,18 @@ if($counter>0){
     }
     $productIDsString=$productIDsString.')';
 }
-$query="SELECT `product_id` from product_name where product_id not in ((SELECT `product_id` from (SELECT * FROM `ingredient_rating` $notContain)paula join `product_ingredient_association_table` on `product_ingredient_association_table`.`ingredient_id`=`paula`.`ingredient_id` group by 1)) and product_id in $productIDsString";
+$query="SELECT 
+    `product_id` 
+    from 
+    product_name 
+    where 
+    product_id 
+    not in ((SELECT `product_id` from (SELECT * FROM `ingredient_rating` $notContain)paula join 
+    `product_ingredient_association_table` on 
+    `product_ingredient_association_table`.`ingredient_id`=`paula`.`ingredient_id` group by 1)) 
+    and 
+    product_id 
+    in $productIDsString";
 
 if($response==='no data'){
     $counter=0;
