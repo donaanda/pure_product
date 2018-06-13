@@ -3,7 +3,6 @@
     margin: 0;
     text-align: center;
     margin-top: 5vh;
-    border: 2px 2px 0 2px solid black;
 }
 
 .tab-header-ingredient,
@@ -17,7 +16,6 @@
     border-top-left-radius: 5px;
     border-top: 2px solid #555555;
     border-left: 2px solid #555555;
-
     padding: 1%;
 }
 

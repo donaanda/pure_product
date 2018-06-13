@@ -27,7 +27,7 @@
     display: block;
     margin: 5vh auto;
     width: 77vw;
-    height: 50vh;
+    height: 65vh;
     font-size: 3vmin;
 }
 
@@ -36,7 +36,7 @@
     flex-direction: row;
     position: relative;
     width: 45vw;
-    height: 40vh;
+    height: 50vh;
     margin: 8vw 2.5vw;
     vertical-align: 0;
     justify-content: space-around;
@@ -173,6 +173,6 @@
 .page-numbers-list {
     display: inline-block;
     margin-left: 3%;
-    margin-right: 3%;
+    margin-right: 1%;
     margin-bottom: 5%;
 }
