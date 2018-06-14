@@ -73,7 +73,6 @@
     box-sizing: border-box;
     text-align: center;
     display: inline-block;
-    height: 46vh;
     width: 44vw;
     object-fit: contain;
     padding: 0.5vh;
@@ -88,7 +87,7 @@
 }
 
 .ourTeamPic {
-    height: 150px;
+    height: 30vw;
 }
 
 .ourTeamPic:hover {
