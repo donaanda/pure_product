@@ -5,7 +5,7 @@
     font-family: 'Oleo Script', cursive;
     background-color: rgba(184, 234, 251, 0.5);
     color: #989799;
-    width: 90vw;
+    width: 95vw;
     height: 13vh;
     margin: auto;
     text-align: center;
@@ -18,7 +18,8 @@
 
 .product_finder_landing_button>span {
     display: table-cell;
-    vertical-align: center;
+    vertical-align: middle;
+    font-size: 8vmin;
 }
 
 /* product finder page */
