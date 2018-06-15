@@ -18,21 +18,21 @@ class Footer extends Component {
                     </Link> */}
                     <Link to="./our_team" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
-                            <img src={our_team} /><span>Our Team</span>
+                            <img className="desktop-footer-img" src={our_team} /><span>Our Team</span>
                         </div>
                     </Link>
                     <Link to="./FAQ" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
-                            <img src={q_a} /><span>FAQ</span>
+                            <img className="desktop-footer-img" src={q_a} /><span>FAQ</span>
                         </div>
                     </Link>
                     <Link to="/about_the_site" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
-                            <img src={temp_logo} /><span>About The Site</span>
+                            <img className="desktop-footer-img" src={temp_logo} /><span>About The Site</span>
                         </div>
                     </Link>
-                    <div className="footer-content copyright_span">
-                        <span className="copyright_span">Copyright © 2018  Pure Product . All rights reserved.</span>
+                    <div className="footer-content-copyright copyright_span">
+                        <span className="copyright_span">Copyright © 2018  Pure Product. All rights reserved.</span>
                     </div>
                 </footer>
             </section>
