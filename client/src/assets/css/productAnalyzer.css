@@ -50,3 +50,21 @@
     text-align: center;
     margin-top: 5%;
 }
+
+/*for desktop*/
+
+@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+    .check-product-description {
+        margin: auto;
+        text-align: center;
+        font-size: 3vmin;
+        width: 50vw;
+    }
+    .check-product-input-field {
+        width: 50vw;
+        height: 20vh;
+    }
+    .check-product-image-container {
+        height: 100vh;
+    }
+}

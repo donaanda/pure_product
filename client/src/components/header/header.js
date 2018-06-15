@@ -208,8 +208,17 @@ class Header extends Component {
                         <img className="site-title-size" src={SiteTitle} />
                     </Link>
                 </div>
-
-
+                <div className="header-links-desk-cont">
+                    <Link to="/product_analyzer">
+                        <h5 className="desktop-link">Product Analyzer</h5>
+                    </Link>
+                    <Link to="/gentle_products">
+                        <h5 className="desktop-link">Gentle Products</h5>
+                    </Link>
+                    <Link to="/product_wizard">
+                        <h5 className="desktop-link">Product Finder</h5>
+                    </Link>
+                </div>
                 <form autoComplete="off">
                     <div className="autocomplete">
                         <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} onKeyDown={this.handleKeyDown.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />

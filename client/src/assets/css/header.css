@@ -151,6 +151,12 @@
     font-size: 6vmin;
 }
 
+.desktop-link {
+    display: none;
+}
+
+/* small mobile */
+
 @media screen and (max-height: 450px) {
     .expanded-menu-show {
         padding-top: 15px;
@@ -159,6 +165,8 @@
         font-size: 18px;
     }
 }
+
+/*larger mobile */
 
 @media only screen and (min-width: 768px) {
     .header-container {
@@ -170,5 +178,35 @@
     }
     .header-container-show {
         height: 40vh;
+    }
+}
+
+/*desktop*/
+
+@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+    .expanded-menu-hide {
+        display: initial;
+    }
+    .desktop-link {
+        display: inline-block;
+        padding: 2%;
+        vertical-align: top;
+    }
+    .site-title {
+        width: 0;
+    }
+    .search-bar {
+        display: none;
+    }
+    .header-links-desk-cont {
+        display: inline-block;
+        position: relative;
+        left: 50vw;
+        line-height: 10vh;
+        width: 60vw;
+        vertical-align: top;
+    }
+    .desktop-link:hover {
+        background-color: #e4f7ef;
     }
 }

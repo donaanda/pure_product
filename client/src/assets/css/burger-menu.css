@@ -36,3 +36,11 @@
   -webkit-transform: rotate(45deg) translate(-6px, -6px);
   transform: rotate(45deg) translate(-6px, -6px);
 }
+
+/*for desktop*/
+
+@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+  .burger-menu {
+    display: none;
+  }
+}
