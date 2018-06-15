@@ -100,7 +100,7 @@ section.landing_page {
 
 /*for mobile */
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 700px) and (max-width: 1000px) {
     .safety_rating,
     .gentle_rating,
     .safety_rating>.wrap-landing-img,
