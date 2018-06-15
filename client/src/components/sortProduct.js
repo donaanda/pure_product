@@ -29,7 +29,7 @@ class SortProduct extends Component {
     render() {
         return (
             <div>
-                <button className="drop-down" onClick={this.dropDownMenu}>Sort</button>
+                <button className="drop-down" onClick={this.dropDownMenu}>Sort by</button>
                 <div className={this.state.dropContent}>
                     <div className="drop-down-category" onClick={this.props.selectedCategory}>Price</div>
                     <div className="drop-down-category" onClick={this.props.selectedCategory}>Gentle Rating</div>
