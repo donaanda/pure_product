@@ -2,7 +2,7 @@
     background-color: black;
     color: white;
     height: 5vh;
-    width: 15vw;
+    width: 20vw;
 }
 
 .hide-drop-content {
@@ -26,4 +26,15 @@
 
 .drop-down-category:hover {
     background-color: #9df39f;
+}
+
+@media only screen and (min-width: 768px) {
+    .drop-down {
+        width: 8vw;
+    }
+
+    .drop-down-category {
+        width: 10vw;
+        height: 5vh;
+    }
 }
