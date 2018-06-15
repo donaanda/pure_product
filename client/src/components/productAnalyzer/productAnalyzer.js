@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../header/header';
+import Footer from '../footer/footer';
 import Lipstick from '../../assets/images/landing_page_icons/icons/cross2.png';
 import { Link } from 'react-router-dom';
 import '../../assets/css/productAnalyzer.css';
@@ -44,6 +45,7 @@ class ProductAnalyzer extends Component {
                         </div>
                     </form>
                 </div>
+                <Footer />
             </section>
         )
     }

@@ -34,8 +34,18 @@ h1 {
     width: 9vw;
 }
 
+/*for mobile*/
+
 @media only screen and (min-width: 768px) {
     body {
         height: 130vh;
+    }
+}
+
+/* for desktop */
+
+@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+    body {
+        padding: 0, 20%;
     }
 }

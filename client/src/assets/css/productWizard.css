@@ -111,3 +111,15 @@
     text-align: center;
     margin: 2vh auto;
 }
+
+/*for desktop*/
+
+@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+    .product_finder_landing_button {
+        width: 50vw;
+        margin-top: 5vh;
+    }
+    .product-name-text {
+        padding: 0;
+    }
+}

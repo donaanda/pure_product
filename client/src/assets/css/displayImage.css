@@ -107,14 +107,6 @@
     vertical-align: top;
 }
 
-/*icons and ratings, product display page*/
-
-.gentle-icon-product-page,
-.safety-icon-product-page {}
-
-.gentle-rating-product-page,
-.safety-rating-product-page {}
-
 /*end of icons*/
 
 .product-name {
@@ -181,9 +173,35 @@
     margin-bottom: 5%;
 }
 
+/*for mobile*/
+
 @media only screen and (min-height: 700px) and (max-height: 900px) {
     .product-display-container,
     .product-display-container-product-page {
         height: 50vh;
+    }
+}
+
+/*for desktop*/
+
+@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+    .product-display-container {
+        width: 25vw;
+        margin: 2vh 0;
+    }
+    .image-container,
+    .product-image {
+        height: 15vw;
+        width: 15vw;
+    }
+    .product-name-text,
+    .price-text,
+    .brand-text,
+    .gentle-rating,
+    .safety-rating {
+        font-size: 2vmin;
+    }
+    .page-numbers {
+        font-size: 2vmin;
     }
 }
