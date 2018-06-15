@@ -114,12 +114,32 @@
 
 /*for desktop*/
 
-@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+@media only screen and (min-width: 1100px) {
     .product_finder_landing_button {
         width: 50vw;
         margin-top: 5vh;
     }
     .product-name-text {
         padding: 0;
+    }
+
+    .product-wizard-inner {
+        height: 50%;
+        margin-bottom: 20%;
+    }
+
+    .product-wizard-cont {
+        height: 130vh;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1100px){
+    .product-wizard-cont {
+        height: 120vh;
+    }
+
+    .product-wizard-inner {
+        margin-bottom: 20%;
     }
 }
