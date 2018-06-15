@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../assets/css/header.css';
 import SearchIcon from '../../assets/images/header_images/search.png';
-import SiteTitle from '../../assets/images/landing_page_icons/icons/site-title.png';
+// import SiteTitle from '../../assets/images/landing_page_icons/icons/site-title.png';
 import LoginIcon from '../../assets/images/header_images/user-login.png';
 import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
@@ -203,9 +203,10 @@ class Header extends Component {
                 <div className="header-icon search-bar">
                     <img className='headerIcon' onClick={this.toggleSearchBar.bind(this)} src={SearchIcon} />
                 </div>
-                <div className="header-icon site-title">
+                <div className="site-title">
                     <Link to="/">
-                        <img className="site-title-size" src={SiteTitle} />
+                        {/* <img className="site-title-size" src={SiteTitle} /> */}
+                        <h1>Pure Product</h1>
                     </Link>
                 </div>
                 <div className="header-links-desk-cont">

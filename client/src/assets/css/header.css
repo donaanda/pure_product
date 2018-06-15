@@ -30,6 +30,14 @@
     width: 60vw;
     height: 20vw;
     text-align: center;
+    display: inline-block;
+}
+
+.site-title h1 {
+    font-size: 9vmin;
+    line-height: 100%;
+    font-size: 9vmin;
+    margin: 10% 5%;
 }
 
 .display-none {
@@ -193,7 +201,9 @@
         vertical-align: top;
     }
     .site-title {
-        width: 0;
+        width: 20vw;
+        margin: 0;
+        padding: 0;
     }
     .search-bar {
         display: none;
