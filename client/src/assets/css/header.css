@@ -199,11 +199,17 @@
         display: inline-block;
         padding: 2%;
         vertical-align: top;
+        font-size: 1.2rem;
+        align-self: right;
     }
     .site-title {
-        width: 20vw;
+        display: inline-block;
+        width: 40vw;
         margin: 0;
         padding: 0;
+    }
+    .site-title h1 {
+        margin: 0;
     }
     .search-bar {
         display: none;
@@ -211,12 +217,22 @@
     .header-links-desk-cont {
         display: inline-block;
         position: relative;
-        left: 50vw;
         line-height: 10vh;
-        width: 60vw;
+        width: 50vw;
         vertical-align: top;
+        margin: 1% 0 0 10%;
+    }
+    .header-links-desk-cont h5 {
+        margin: 0 5% 0 3%;
+        padding: 0;
     }
     .desktop-link:hover {
         background-color: #e4f7ef;
+    }
+}
+
+@media only screen and (max-width: 1235px) {
+    .header-links-desk-cont {
+        margin: 1% 0 0 10%;
     }
 }
