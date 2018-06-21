@@ -22,6 +22,7 @@ class AboutTheSite extends Component {
                         </div>
                     </a>
                     <div className="site-about-container">
+                        <img className="about-site-icon" src={temp_logo} />
                         <h1>About The Site</h1>
                         <p className="text-content-desktop">Pure Product is designed to help people find personal care products as quickly as possible while making it easier to analyze safety, efficiency, and gentleness of products in one spot. It was born out of a student project at a web development bootcamp by passionate developers who care for consumer safety.</p>
                         <p className="text-content-desktop">We hope that you are able to find what you need by using our site by finding the intersection between safety and efficiency in products being produced every day.</p><br/>
