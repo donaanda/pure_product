@@ -144,6 +144,13 @@
     display: none;
 }
 
+.about-site-icon {
+    display: block;
+    margin: auto;
+    height: 7vh;
+    object-fit: contain;
+}
+
 @media only screen and (min-width: 768px) {
     .person-profile {
         height: 70vh;
@@ -191,5 +198,17 @@
 
     .site-about-container {
         margin: 0 5%;
+    }
+
+    .about-the-site-container {
+        padding-bottom: 80%;
+    }
+
+    .gentle-rating-container {
+        padding-bottom: 50%;
+    }
+
+    .safety-rating-container {
+        padding-bottom: 60%;
     }
 }

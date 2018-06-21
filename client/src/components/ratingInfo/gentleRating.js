@@ -13,7 +13,7 @@ class GentleRating extends Component {
         return (
             <section>
                 <Header history={this.props.history} />
-                <div className="site-about-container">
+                <div className="site-about-container gentle-rating-container">
                     <img className="gentle_icon_gentle_page" src={gentle_rating} />
                     <h3>Gentle Rating</h3>
                     <p>The Gentle Rating scale:</p>
