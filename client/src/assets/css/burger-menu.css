@@ -39,7 +39,7 @@
 
 /*for desktop*/
 
-@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+@media only screen and (min-height: 1000px) and (min-width: 1000px) {
   .burger-menu {
     display: none;
   }

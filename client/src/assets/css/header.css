@@ -34,10 +34,9 @@
 }
 
 .site-title h1 {
+    line-height: 10vh;
     font-size: 9vmin;
-    line-height: 100%;
-    font-size: 9vmin;
-    margin: 10% 5%;
+    margin: 0;
 }
 
 .display-none {
