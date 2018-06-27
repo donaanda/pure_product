@@ -33,6 +33,7 @@
     color: white;
     line-height: 100%;
     padding: 1.5vh;
+    font-size: 2.5vmin;
 }
 
 .footer-content>img {
@@ -46,9 +47,9 @@
     padding: 0;
 }
 
-
 /* Desktop */
-@media only screen and (min-width: 1100px) {
+
+@media only screen and (min-width: 1000px) {
     .site-footer {
         height: 22vh;
     }
@@ -59,38 +60,28 @@
         display: block;
         width: 100vw;
     }
-
     .footer-content {
         padding-top: 3vh;
         width: 15vw;
         margin-right: 8%;
         margin-left: 8%;
     }
-
     .footer-content-copyright {
         padding-top: 5%;
-    }
-
-    .desktop-footer-img {
-        align: middle;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1100px) {
-
     .site-footer {
         height: 18vw;
     }
-
     .footer-content {
         padding-top: 3vh;
         width: 22vw;
         margin-right: 5%;
         margin-left: 5%;
     }
-
     .footer-content-copyright {
         padding-top: 5%;
     }
-
 }

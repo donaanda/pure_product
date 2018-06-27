@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../assets/css/header.css';
 import SearchIcon from '../../assets/images/header_images/search.png';
-// import SiteTitle from '../../assets/images/landing_page_icons/icons/site-title.png';
+import logo from '../../assets/images/landing_page_icons/icons/vegan.png'
 import LoginIcon from '../../assets/images/header_images/user-login.png';
 import HamburgerMenu from './burger-menu.js';
 import { Link } from 'react-router-dom';
@@ -206,7 +206,7 @@ class Header extends Component {
                 <div className="site-title">
                     <Link to="/">
                         {/* <img className="site-title-size" src={SiteTitle} /> */}
-                        <h1>Pure Product</h1>
+                        <h1>Pure Product<img src={logo} /></h1>
                     </Link>
                 </div>
                 <div className="header-links-desk-cont">

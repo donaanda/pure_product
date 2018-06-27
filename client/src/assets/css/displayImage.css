@@ -110,7 +110,7 @@
 /*end of icons*/
 
 .product-name {
-    font-size: 1rem;
+    font-size: 4vmin;
     padding: 0;
     margin: 0;
 }
@@ -184,7 +184,7 @@
 
 /*for desktop*/
 
-@media only screen and (max-height: 1000px) and (min-width: 1000px) {
+@media only screen and (min-width: 1000px) {
     .product-display-container {
         width: 25vw;
         margin: 2vh 0;
@@ -194,6 +194,7 @@
         height: 15vw;
         width: 15vw;
     }
+    .product-name,
     .product-name-text,
     .price-text,
     .brand-text,

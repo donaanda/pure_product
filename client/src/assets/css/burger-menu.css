@@ -4,10 +4,8 @@
   cursor: pointer;
   position: absolute;
   right: 0;
-  /*bottom: 40px; */
   z-index: 1;
   padding: 10px;
-  /* border-radius: 25px; */
   background-color: #e4f7ef;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   margin: 2vh;
@@ -39,7 +37,7 @@
 
 /*for desktop*/
 
-@media only screen and (min-height: 1000px) and (min-width: 1000px) {
+@media only screen and (min-width: 1000px) {
   .burger-menu {
     display: none;
   }
