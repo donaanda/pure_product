@@ -173,7 +173,7 @@
     margin-bottom: 5%;
 }
 
-/*for mobile*/
+/*for mid-sized mobile*/
 
 @media only screen and (min-height: 700px) and (max-height: 900px) {
     .product-display-container,
@@ -204,5 +204,24 @@
     }
     .page-numbers {
         font-size: 2vmin;
+    }
+    .product-image-product-page,
+    .image-container-product-page {
+        height: 30vw;
+        width: 30vw;
+    }
+    .product-display-container-product-page {
+        height: 40vw;
+        width: 80vw;
+        margin: 5vh 0;
+        display: inline-block;
+    }
+    .product-page-gentle-safety-rating {
+        margin: 5vh 0;
+    }
+    .product-page-gentle-safety-rating div,
+    .product-page-gentle-safety-rating {
+        width: 10vw;
+        margin-right: 10vw;
     }
 }

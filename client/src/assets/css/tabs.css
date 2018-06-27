@@ -130,3 +130,19 @@
     height: 20vh;
     width: 80vw;
 }
+
+.tab-header-ingredient:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (min-width: 1000px) {
+    .tab-ingredient,
+    .tab-detail {
+        width: 80vw;
+        margin: auto;
+    }
+    iframe {
+        margin: 5vh;
+        height: 20vh;
+    }
+}

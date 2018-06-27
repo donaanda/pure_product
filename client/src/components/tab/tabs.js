@@ -111,9 +111,9 @@ class MenuTabs extends Component {
                     <Tab className="tab-header-video" style={this.state.tabIndex === 2 ? this.activatedTabColor : this.defaultTabColor} >
                         Videos
                     </Tab>
-                    <Tab className="tab-header-review" style={this.state.tabIndex === 3 ? this.activatedTabColor : this.defaultTabColor} >
+                    {/* <Tab className="tab-header-review" style={this.state.tabIndex === 3 ? this.activatedTabColor : this.defaultTabColor} >
                         Reviews
-                    </Tab>
+                    </Tab> */}
                 </TabList>
                 <TabPanel>
                     <div className="tab-ingredient">
@@ -153,13 +153,13 @@ class MenuTabs extends Component {
                 <TabPanel>
                     <YoutubeVideoReviews videoArray={this.state.data} />
                 </TabPanel>
-                <TabPanel>
+                {/* <TabPanel>
                     <div className="tab-review">
                         <h2>No Reviews Yet</h2>
                         <h5>Feature Set Coming Soon!</h5>
                         <button className="tab-review-button">Add Review</button>
                     </div>
-                </TabPanel>
+                </TabPanel> */}
             </Tabs >
         )
     }
