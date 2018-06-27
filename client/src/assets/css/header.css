@@ -17,8 +17,13 @@
 
 .login-icon,
 .search-bar {
-    width: 23vw;
+    width: 20vw;
     text-align: center;
+}
+
+.logo {
+    height: 10px;
+    width: 10px;
 }
 
 .search-bar {
@@ -27,16 +32,18 @@
 
 .site-title,
 .site-title img {
-    width: 60vw;
-    height: 20vw;
+    height: 10vh;
+    width: 10vh;
+    vertical-align: top;
     text-align: center;
     display: inline-block;
 }
 
 .site-title h1 {
     line-height: 10vh;
-    font-size: 9vmin;
+    font-size: 8vmin;
     margin: 0;
+    width: 70vw;
 }
 
 .display-none {
@@ -103,6 +110,10 @@
     overflow: hidden;
     text-align: center;
     transition: transform 0.5s;
+}
+
+form {
+    height: 10vh;
 }
 
 .expanded-menu-hide {
@@ -173,33 +184,21 @@
     }
 }
 
-/*larger mobile */
+/*desktop*/
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1000px) {
     .header-container {
         height: 10vh;
     }
-    .site-title img {
-        height: 10vh;
-        width: 30vw;
-    }
-    .header-container-show {
-        height: 40vh;
-    }
-}
-
-/*desktop*/
-
-@media only screen and (max-height: 1000px) and (min-width: 1000px) {
     .expanded-menu-hide {
         display: initial;
     }
     .desktop-link {
         display: inline-block;
-        padding: 2%;
         vertical-align: top;
-        font-size: 1.2rem;
-        align-self: right;
+        font-size: 2vmin;
+        margin: 0 1vh;
+        line-height: 10vh;
     }
     .site-title {
         display: inline-block;
@@ -208,7 +207,9 @@
         padding: 0;
     }
     .site-title h1 {
-        margin: 0;
+        font-size: 4vmin;
+        margin: 0 2vh;
+        text-align: left;
     }
     .search-bar {
         display: none;
@@ -217,21 +218,19 @@
         display: inline-block;
         position: relative;
         line-height: 10vh;
-        width: 50vw;
         vertical-align: top;
-        margin: 1% 0 0 10%;
-    }
-    .header-links-desk-cont h5 {
-        margin: 0 5% 0 3%;
-        padding: 0;
+        text-align: right;
     }
     .desktop-link:hover {
         background-color: #e4f7ef;
     }
 }
 
-@media only screen and (max-width: 1235px) {
-    .header-links-desk-cont {
-        margin: 1% 0 0 10%;
+/*super wide screens*/
+
+@media only screen and (min-width: 1500px) {
+    .desktop-link {
+        font-size: 3vmin;
+        margin: 0 1vw;
     }
 }
