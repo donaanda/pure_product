@@ -69,4 +69,7 @@
     .footer-content-copyright {
         padding-top: 5%;
     }
+    .site-footer {
+        position: absolute;
+    }
 }

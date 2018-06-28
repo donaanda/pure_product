@@ -39,11 +39,11 @@ class SearchProductResult extends Component {
     render() {
         const { data } = this.state;
         return (
-            <section className="product-container">
+            <div className="product-container">
                 <Header history={this.props.history} />
                 <DisplayAllProducts data={data} />
                 <Footer />
-            </section>
+            </div>
         )
     }
 }

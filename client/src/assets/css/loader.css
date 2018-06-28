@@ -15,8 +15,6 @@
   .loader-container img {
     width: initial;
     margin: 1vh;
-  }
-  .loader-container {
-    text-align: center;
+    height: 10vw;
   }
 }

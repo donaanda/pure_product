@@ -16,12 +16,12 @@ class Footer extends Component {
                             <img src={new_user} /><span>Create Account</span>
                         </div>
                     </Link> */}
-                    <Link to="./our_team" onClick={window.scrollTo(0, 0)}>
+                    <Link to="/our_team" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
                             <img className="desktop-footer-img" src={our_team} /><span>Our Team</span>
                         </div>
                     </Link>
-                    <Link to="./FAQ" onClick={window.scrollTo(0, 0)}>
+                    <Link to="/FAQ" onClick={window.scrollTo(0, 0)}>
                         <div className="footer-content">
                             <img className="desktop-footer-img" src={q_a} /><span>FAQ</span>
                         </div>

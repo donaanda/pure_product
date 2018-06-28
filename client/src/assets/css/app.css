@@ -7,7 +7,7 @@
 body {
     position: relative;
     box-sizing: border-box;
-    height: 100%;
+    min-height: 100%;
     width: 100vw;
     margin: 0;
     font-family: Avenir, Helvetica, sans-serif;
@@ -31,4 +31,14 @@ h1 {
 .scale-text span {
     display: inline-block;
     width: 9vw;
+}
+
+a {
+    cursor: pointer;
+}
+
+.app-wrap,
+.product-container {
+    min-height: 80vh;
+    padding-bottom: 22vh;
 }
