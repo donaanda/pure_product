@@ -185,29 +185,19 @@
     .pic-cont:hover .derp {
         display: block;
     }
-    .pic-cont {
-        position: relative;
-        height: 30%;
-        width: 0%;
-        padding: 0 10%;
-    }
     .text-content-desktop {
         text-align: left;
         line-height: 1.5;
     }
-
     .site-about-container {
         margin: 0 5%;
     }
-
     .about-the-site-container {
         padding-bottom: 80%;
     }
-
     .gentle-rating-container {
         padding-bottom: 50%;
     }
-
     .safety-rating-container {
         padding-bottom: 60%;
     }

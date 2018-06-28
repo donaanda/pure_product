@@ -109,41 +109,41 @@ export default class DisplayImage extends Component {
                     <div className={displayCont}>
                         <div className={imgProductPage}>
                             <img className={productImg} src={image} />
-                            <div className="display-cont">
-                                <div className={`icon-cont-gentle ${displayNone} ${this.colorizeGentleNum(gentle_avg_rating)}`}>
-                                    <img className={heartIcon} src={gentle_img} />
-                                    <span className={gentleRating}>{this.truncateAverage(gentle_avg_rating)}</span>
-                                </div>
-                                <div className={`icon-cont-safety ${displayNone} ${this.colorizeSafetyNum(safety_avg_rating)}`}>
-                                    <img className={crossIcon} src={safety_img} />
-                                    <span className={safetyRating}>{safety_avg_rating}</span>
-                                </div>
+                        </div>
+                        <div className="display-cont">
+                            <div className={`icon-cont-gentle ${displayNone} ${this.colorizeGentleNum(gentle_avg_rating)}`}>
+                                <img className={heartIcon} src={gentle_img} />
+                                <span className={gentleRating}>{this.truncateAverage(gentle_avg_rating)}</span>
                             </div>
-                            <div className="info-container">
-                                <h4 className='product-name'>
-                                    sephora user rating: {rating}
-                                </h4>
-                                <h4 className='product-name'>
-                                    <span className="brand-text">
-                                        {brand}
-                                    </span>
-                                </h4>
-                                <h3 className='product-name'>
-                                    <span className="product-name-text">
-                                        {product_name}
-                                    </span>
-                                </h3>
-                                <h4 className='product-name'>
-                                    <span className="price-text">
-                                        MSRP: ${price}
-                                    </span>
-                                </h4>
-                                <h4 className='product-name hidden'>
-                                    {categories}
-                                </h4>
+                            <div className={`icon-cont-safety ${displayNone} ${this.colorizeSafetyNum(safety_avg_rating)}`}>
+                                <img className={crossIcon} src={safety_img} />
+                                <span className={safetyRating}>{safety_avg_rating}</span>
                             </div>
                         </div>
-                    </div >
+                        <div className="info-container">
+                            <h4 className='product-name'>
+                                sephora user rating: {rating}
+                            </h4>
+                            <h4 className='product-name'>
+                                <span className="brand-text">
+                                    {brand}
+                                </span>
+                            </h4>
+                            <h3 className='product-name'>
+                                <span className="product-name-text">
+                                    {product_name}
+                                </span>
+                            </h3>
+                            <h4 className='product-name'>
+                                <span className="price-text">
+                                    MSRP: ${price}
+                                </span>
+                            </h4>
+                            <h4 className='product-name hidden'>
+                                {categories}
+                            </h4>
+                        </div>
+                    </div>
                 </Link>
             )
         };
