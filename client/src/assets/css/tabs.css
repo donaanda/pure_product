@@ -117,6 +117,10 @@
     font-family: 'Cedarville Cursive', cursive;
 }
 
+.video-container {
+    margin: auto;
+}
+
 .youtube-title {
     width: 80vw;
     margin: auto;
@@ -126,7 +130,7 @@
 }
 
 .video-container {
-    margin: 5vh;
+    margin: 5vh auto;
     height: 20vh;
     width: 80vw;
 }
@@ -143,8 +147,39 @@
         width: 60vw;
         margin: auto;
     }
-    iframe {
+    #videoPlayer,
+        {
         margin: 5vh;
-        height: 20vh;
+        height: initial;
+        width: initial;
+    }
+    .video-container,
+    .loader-container {
+        height: 25vh;
+        padding-bottom: initial;
+    }
+    .youtube-title {
+        width: initial;
+    }
+    .youtube-title h6 {
+        margin: auto;
+        font-size: 3vmin;
+    }
+    .content-container {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .content-container,
+    .loader-container {
+        width: 25vw;
+        margin: 2.5vw auto;
+    }
+    .video-container,
+    .youtube-title h6,
+    .loader-container {
+        width: 20vw;
+    }
+    .loader-container {
+        height: initial;
     }
 }

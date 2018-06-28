@@ -37,7 +37,6 @@
     display: block;
     margin: 5vh auto;
     width: 77vw;
-    height: 65vh;
     font-size: 3vmin;
 }
 
@@ -200,6 +199,7 @@
     .product-display-container-product-page {
         display: inline-block;
         width: initial;
+        height: initial;
         margin-left: 35vw;
     }
     .product-page-gentle-safety-rating {

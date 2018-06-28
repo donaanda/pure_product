@@ -27,7 +27,7 @@ class YouTubeVideoReviews extends Component {
             <div className="youtube-reviews">
                 <h4>Youtube Reviews:</h4>
                 {this.props.videoArray.items.map(video =>
-                    <section key={video.id.videoId}>
+                    <div className="content-container" key={video.id.videoId}>
                         <div className="video-container">
                             <Loader className={this.state.vidLoading} />
                             <iframe className="videoPlayer" id="videoPlayer" src={`https://www.youtube.com/embed/${video.id.videoId}`}
@@ -39,7 +39,7 @@ class YouTubeVideoReviews extends Component {
                                 {video.snippet.title}
                             </h6>
                         </div>
-                    </section>
+                    </div>
                 )}
             </div>
         )
