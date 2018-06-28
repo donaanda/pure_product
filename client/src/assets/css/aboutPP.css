@@ -43,7 +43,6 @@
 .button-git:hover {
     background-color: white;
     color: black;
-    border: 2px solid #555555;
 }
 
 .git-logo {
@@ -57,7 +56,8 @@
 .our_team,
 .about-the-site-container {
     min-height: 80vh;
-    background: linear-gradient(#edfcf6, #fef6f6)
+    background: linear-gradient(#edfcf6, #fef6f6);
+    padding: 5vh 0;
 }
 
 .faq_icon {
@@ -151,9 +151,9 @@
     object-fit: contain;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1000px) {
     .person-profile {
-        height: 70vh;
+        height: 50vh;
         width: 15vw;
     }
     .two-person-cont,
@@ -172,7 +172,6 @@
     }
     .ourTeamPic,
     .derp {
-        /* position: absolute; */
         height: 125px;
         border-radius: 90%;
     }
@@ -193,12 +192,20 @@
         margin: 0 5%;
     }
     .about-the-site-container {
-        padding-bottom: 80%;
+        padding-bottom: 20vh;
     }
     .gentle-rating-container {
         padding-bottom: 50%;
     }
     .safety-rating-container {
         padding-bottom: 60%;
+    }
+    .site-about-container {
+        width: 60vw;
+        margin: auto;
+    }
+    .github-info-about-site {
+        width: 50vw;
+        margin: auto;
     }
 }

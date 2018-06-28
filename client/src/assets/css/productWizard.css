@@ -131,13 +131,12 @@
     }
 }
 
-/*medium sized screens*/
-
-@media only screen and (min-width: 768px) and (max-width: 1100px) {
-    .product-wizard-cont {
-        height: 1%;
+@media only screen and (min-width: 1000px) {
+    .wizard-div {
+        width: 70vw;
+        margin: 5vh auto;
     }
-    .product-wizard-inner {
-        /* padding-bottom: 50%; */
+    .wiz-safe-gen-cont {
+        font-size: 4vmin;
     }
 }

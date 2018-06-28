@@ -232,5 +232,8 @@ form {
     .desktop-link {
         font-size: 3vmin;
         margin: 0 1vw;
+        border-right: 2px solid grey;
+        border-left: 2px solid grey;
+        padding: 0 1vh;
     }
 }

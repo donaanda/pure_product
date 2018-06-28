@@ -137,8 +137,10 @@
 
 @media only screen and (min-width: 1000px) {
     .tab-ingredient,
-    .tab-detail {
-        width: 80vw;
+    .tab-detail,
+    .icon-container-const,
+    .icon-container {
+        width: 60vw;
         margin: auto;
     }
     iframe {

@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from '../header/header';
 import Footer from './footer';
 import faq_icon from '../../assets/images/faq_icon.png';
 import { Link } from 'react-router-dom';
 
 class FAQ extends Component {
-    render(){
+    render() {
         return (
-            <section className="FAQ">
+            <section>
                 <Header history={this.props.history} />
                 <div className="site-about-container text-content-desktop">
                     <h1 className="faq_title"><img className="faq_icon" src={faq_icon} />   FAQ</h1>

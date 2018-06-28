@@ -43,14 +43,16 @@
 
 .image-container,
 .product-image {
-    height: 40vw;
-    width: 40vw;
+    height: 60vw;
+    width: 60vw;
     margin: auto;
 }
 
 .product-display-container {
     text-align: center;
     vertical-align: top;
+    width: 60vw;
+    margin: auto;
 }
 
 .product-image {
@@ -73,12 +75,12 @@
     display: inline-block;
     width: 50%;
     text-align: center;
-    line-height: 100%;
     border-radius: 100%;
 }
 
 .info-container {
     margin: 4% 0;
+    text-align: center;
 }
 
 /*icons and ratings, display all products, landing page*/
@@ -98,8 +100,6 @@
 .gentle-rating-product-page,
 .safety-rating-product-page {
     font-size: 4.4vmin;
-    line-height: 100%;
-    vertical-align: top;
 }
 
 /*end of icons*/
