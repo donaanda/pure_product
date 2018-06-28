@@ -194,14 +194,13 @@
     }
     .product-image-product-page,
     .image-container-product-page {
-        height: 30vw;
-        width: 30vw;
+        height: 20vw;
+        width: 20vw;
     }
     .product-display-container-product-page {
-        height: 40vw;
-        width: 80vw;
-        margin: 5vh 0;
         display: inline-block;
+        width: initial;
+        margin-left: 35vw;
     }
     .product-page-gentle-safety-rating {
         margin: 5vh 0;
@@ -209,6 +208,5 @@
     .product-page-gentle-safety-rating div,
     .product-page-gentle-safety-rating {
         width: 10vw;
-        margin-right: 10vw;
     }
 }
