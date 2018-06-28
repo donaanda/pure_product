@@ -51,7 +51,6 @@
 }
 
 .search-bar-style-show {
-    /* display: inline-block; */
     color: #555555;
     height: 10vw;
     margin: 1.5% 0 1.5% 5%;
@@ -219,7 +218,6 @@ form {
         position: relative;
         line-height: 10vh;
         vertical-align: top;
-        text-align: right;
     }
     .desktop-link:hover {
         background-color: #e4f7ef;
@@ -235,5 +233,8 @@ form {
         border-right: 2px solid grey;
         border-left: 2px solid grey;
         padding: 0 1vh;
+    }
+    .header-links-desk-cont {
+        left: 15%;
     }
 }
