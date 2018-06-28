@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../assets/css/sortProduct.css';
 
 class SortProduct extends Component {
@@ -31,9 +31,11 @@ class SortProduct extends Component {
             <div>
                 <button className="drop-down" onClick={this.dropDownMenu}>Sort by</button>
                 <div className={this.state.dropContent}>
-                    <div className="drop-down-category" onClick={this.props.selectedCategory}>Price</div>
-                    <div className="drop-down-category" onClick={this.props.selectedCategory}>Gentle Rating</div>
-                    <div className="drop-down-category" onClick={this.props.selectedCategory}>Safety Rating</div>
+                    <div className="drop-down-cont">
+                        <div className="drop-down-category" onClick={this.props.selectedCategory}>Price</div>
+                        <div className="drop-down-category" onClick={this.props.selectedCategory}>Gentle Rating</div>
+                        <div className="drop-down-category" onClick={this.props.selectedCategory}>Safety Rating</div>
+                    </div>
                 </div>
             </div>
         )
