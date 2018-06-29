@@ -1,4 +1,6 @@
-.check-product-image-container {}
+.check-product-image-container {
+    min-height: 90vh;
+}
 
 .logo-background-color {
     width: 30vh;
