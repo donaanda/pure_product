@@ -1,5 +1,5 @@
 .site-footer {
-    position: relative;
+    position: absolute;
     background-color: #555555;
     width: 100vw;
     bottom: 0;
@@ -68,8 +68,5 @@
     }
     .footer-content-copyright {
         padding-top: 5%;
-    }
-    .site-footer {
-        position: absolute;
     }
 }
