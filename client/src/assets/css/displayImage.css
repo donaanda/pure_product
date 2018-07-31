@@ -88,9 +88,10 @@
 .safety-icon,
 .gentle-icon-product-page,
 .safety-icon-product-page {
-    width: 20%;
-    height: 30%;
-    margin: 0 2%;
+    height: 30px;
+    left: 0;
+    top: 5px;
+    position: relative;
     box-shadow: 0 4px 8px 0 rgba(250, 250, 250, 0.2), 0 6px 20px 0 rgba(250, 250, 250, 0.19);
 }
 
@@ -168,6 +169,18 @@
     cursor: pointer;
 }
 
+.pag-button-cont {
+    text-align: center;
+}
+
+.pag-button-cont>div {
+    margin: 0 1vh;
+}
+
+ul.page-numbers {
+    height: 2vmin;
+}
+
 /*for desktop*/
 
 @media only screen and (min-width: 1000px) {
@@ -209,5 +222,11 @@
     .product-page-gentle-safety-rating div,
     .product-page-gentle-safety-rating {
         width: 10vw;
+    }
+    .gentle-icon,
+    .safety-icon,
+    .gentle-icon-product-page,
+    .safety-icon-product-page {
+        top: 10px;
     }
 }

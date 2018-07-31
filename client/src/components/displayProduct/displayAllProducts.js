@@ -77,7 +77,7 @@ class DisplayAllProducts extends Component {
             }
             return -1;
         }
-        else if (currentProduct.gentle_avg_rating === 'Average'){
+        else if (currentProduct.gentle_avg_rating === 'Average') {
             if (nextProduct.gentle_avg_rating === 'Best' || nextProduct.gentle_avg_rating === 'Good') {
                 return 1;
             }
@@ -103,6 +103,20 @@ class DisplayAllProducts extends Component {
         else if (currentProduct.safety_avg_rating < nextProduct.safety_avg_rating)
             return -1;
         return 0;
+    }
+
+    handleFirstClick() {
+        window.scrollTo(0, 650);
+        this.setState({
+            currentPage: 1
+        })
+    }
+
+    handleLastClick() {
+        window.scrollTo(0, 650);
+        this.setState({
+            currentPage: Math.ceil(this.props.data.data.length / this.state.productsPerPage)
+        })
     }
 
     render() {
@@ -153,9 +167,17 @@ class DisplayAllProducts extends Component {
 
             return (
                 <div className="display-all-products-content">
-                    <SortProduct selectedCategory={this.selectedCategory}/>
+                    <SortProduct selectedCategory={this.selectedCategory} />
                     {products}
                     <ul className="page-numbers">{renderPageNumbers}</ul>
+                    <div className="pag-button-cont">
+                        <div onClick={this.handleFirstClick.bind(this)} className="btn wiz-button pink lighten-2">
+                            First Page
+                        </div>
+                        <div onClick={this.handleLastClick.bind(this)} className="btn wiz-button">
+                            Last Page
+                        </div>
+                    </div>
                 </div>
             )
         }
