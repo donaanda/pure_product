@@ -123,7 +123,6 @@ section.landing_page {
     .safety-span,
     .gentle-span {
         display: inline-block;
-        width: 30vh;
         position: relative;
         left: 10vh;
         line-height: 10vh;

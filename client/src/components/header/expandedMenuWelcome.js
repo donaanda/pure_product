@@ -10,9 +10,6 @@ import DiscoverProducts from '../../assets/images/menu_icons/search.png';
 import leaf from '../../assets/images/landing_page_icons/icons/vegan.png';
 import '../../assets/css/expandedMenuStyle.css';
 
-
-
-
 function ExpandedMenuWelcome(props) {
 
     return (
