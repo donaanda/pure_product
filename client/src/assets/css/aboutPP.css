@@ -20,6 +20,7 @@
 .github-info-about-site {
     text-align: center;
     margin: 2vh;
+    cursor: pointer;
 }
 
 .button {
@@ -138,6 +139,7 @@
 .but-icon {
     height: 5vh;
     width: 5vh;
+    cursor: pointer;
 }
 
 .derp {
