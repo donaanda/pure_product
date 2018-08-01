@@ -31,9 +31,19 @@
 }
 
 .ingredients-title {
-    font-size: 7vmin;
     font-weight: 600;
     font-family: 'Cedarville Cursive', cursive;
+    width: 30vw;
+}
+
+.gentle-td,
+.safety-td {
+    width: 23vw;
+}
+
+.ingredient-table {
+    width: initial;
+    margin: auto;
 }
 
 @media only screen and (min-width: 1000px) {

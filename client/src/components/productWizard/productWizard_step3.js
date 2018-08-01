@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Step3 extends React.Component {
+class Step3 extends Component {
     constructor(props) {
         super(props);
     }

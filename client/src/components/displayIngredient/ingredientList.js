@@ -58,8 +58,8 @@ class IngredientList extends Component {
                     <tbody>
                         <tr>
                             <td className="ingredients-title">Ingredients</td>
-                            <td><img className="icon-width" src={heart} alt="heart" /></td>
-                            <td><img className="icon-width" src={gentle} alt="heart" /></td>
+                            <td className="gentle-td"><img className="icon-width" src={heart} alt="heart" /></td>
+                            <td className="safety-td"><img className="icon-width" src={gentle} alt="heart" /></td>
                         </tr>
                         {this.state.ingredients}
                     </tbody>
