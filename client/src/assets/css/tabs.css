@@ -14,8 +14,7 @@
     width: 23vw;
     cursor: pointer;
     border-top-left-radius: 5px;
-    border-top: 2px solid #555555;
-    border-left: 2px solid #555555;
+    border: 2px solid #9ea09e;
     padding: 1%;
 }
 
@@ -144,7 +143,6 @@
     .tab-detail,
     .icon-container-const,
     .icon-container {
-        width: 60vw;
         margin: auto;
     }
     #videoPlayer,

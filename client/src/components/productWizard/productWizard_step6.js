@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Step6 extends React.Component {
+class Step6 extends Component {
     render() {
         if (this.props.currentStep !== 6) {
             return null;

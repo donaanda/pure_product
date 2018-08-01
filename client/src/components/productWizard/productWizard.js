@@ -12,7 +12,7 @@ import Step4 from './productWizard_step4';
 import Step5 from './productWizard_step5';
 import Step6 from './productWizard_step6';
 
-class ProductFinder extends React.Component {
+class ProductFinder extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ class ProductFinder extends React.Component {
     }
 
     this.setState({
-      currentStep: currentStep
+      currentStep
     });
   }
 
@@ -51,22 +51,26 @@ class ProductFinder extends React.Component {
     }
 
     this.setState({
-      currentStep: currentStep
+      currentStep
     });
   }
 
   handleChildSubmit(event) {
-    var name = event.target.name;
-    var value = event.target.value;
-    const newSelection = {};
-    for (let key in this.state.selection) {
-      newSelection[key] = this.state.selection[key];
+    var { name, value, checked } = event.target;
+    console.log('from handle child submit', name, value);
+    var { selection } = this.state;
+    var newSelection = {};
+    for (let key in selection) {
+      newSelection[key] = selection[key];
     }
-    if (event.target.checked) {
+    if (checked) {
+      newSelection[name] = value;
+    } else if (value !== isNaN) {
       newSelection[name] = value;
     } else {
       delete newSelection[name];
     }
+
     this.setState({
       selection: newSelection
     })
@@ -88,7 +92,8 @@ class ProductFinder extends React.Component {
 
 
   render() {
-    const { currentStep } = this.state
+    const { currentStep, selection } = this.state;
+    console.log('from product wiz parent:', selection);
     return (
       <div className="product-wizard-cont">
         <Header history={this.props.history} />
@@ -96,8 +101,8 @@ class ProductFinder extends React.Component {
           <Step0 currentStep={currentStep} />
           <Step1 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step2 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
-          <Step3 selectionCallBack={this.handleChildSubmit} retinolVal={this.state.selection.retinol} currentStep={currentStep} />
-          <Step4 selectionCallBack={this.handleChildSubmit} retinolVal={this.state.selection.retinol} currentStep={currentStep} />
+          <Step3 selectionCallBack={this.handleChildSubmit} retinolVal={selection.retinol} currentStep={currentStep} />
+          <Step4 selectionCallBack={this.handleChildSubmit} retinolVal={selection.retinol} currentStep={currentStep} />
           <Step5 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step6 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <button onClick={this.prevStep}
@@ -105,8 +110,13 @@ class ProductFinder extends React.Component {
             Prev
             </button>
           <button onClick={this.nextStep}
-            className={currentStep === 6 ? "display-none" : "btn wiz-button"}>Next</button>
-          <button onClick={this.handleFormSubmit} className={currentStep === 6 ? "btn wiz-button" : "display-none"}>Submit</button>
+            className={currentStep === 6 ? "display-none" : "btn wiz-button"}>
+            Next
+            </button>
+          <button onClick={this.handleFormSubmit}
+            className={currentStep === 6 ? "btn wiz-button" : "display-none"}>
+            Submit
+          </button>
         </div>
         <Footer />
       </div>

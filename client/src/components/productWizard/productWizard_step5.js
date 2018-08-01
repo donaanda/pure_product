@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Step5 extends React.Component {
+class Step5 extends Component {
     render() {
         if (this.props.currentStep !== 5) {
             return null;
