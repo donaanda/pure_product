@@ -53,6 +53,11 @@
     margin-top: 5%;
 }
 
+.ingredients-error {
+    text-align: center;
+    color: red;
+}
+
 /*for desktop*/
 
 @media only screen and (max-height: 1000px) and (min-width: 1000px) {

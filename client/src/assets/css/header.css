@@ -211,17 +211,48 @@ form {
         text-align: left;
     }
     .search-bar {
-        display: none;
+        width: 10vh;
     }
-    .header-links-desk-cont {
+    .button-style-show {
         display: inline-block;
-        position: relative;
-        line-height: 10vh;
-        vertical-align: top;
+        position: absolute;
+        height: initial;
+        width: initial;
+        background-color: #edfcf6;
+        color: #555;
+        border-radius: 100%;
+        border: none;
+        z-index: 1;
+        padding: 0;
+        margin: 0;
+        height: 50px;
+        width: 60px;
+        margin: 0 10px;
     }
-    .desktop-link:hover {
-        background-color: #e4f7ef;
+    .header-container-show {
+        height: initial;
     }
+    .search-form {
+        height: initial;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+    }
+    .initial-display {
+        height: 0;
+    }
+}
+
+.header-links-desk-cont {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 10vh;
+    vertical-align: top;
+}
+
+.desktop-link:hover {
+    background-color: #e4f7ef;
 }
 
 /*super wide screens*/
@@ -234,7 +265,7 @@ form {
         border-left: 2px solid grey;
         padding: 0 1vh;
     }
-    .header-links-desk-cont {
-        left: 15%;
+    .header-icon .search-bar {
+        width: 10vh;
     }
 }

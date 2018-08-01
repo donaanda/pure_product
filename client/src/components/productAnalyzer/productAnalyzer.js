@@ -9,14 +9,19 @@ class ProductAnalyzer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            input: ''
+            input: '',
+            error: false
         }
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        let uriEncodedInput = encodeURIComponent(this.state.input);
-        this.props.history.push('/product_analyzer_result/' + uriEncodedInput)
+        if (this.state.input !== "") {
+            let uriEncodedInput = encodeURIComponent(this.state.input);
+            this.props.history.push('/product_analyzer_result/' + uriEncodedInput)
+        } else {
+            this.setState({ error: true })
+        }
     }
 
     handleInput(event) {
@@ -34,12 +39,13 @@ class ProductAnalyzer extends Component {
                         <img className="check-product-logo" src={Lipstick} />
                     </div>
                     <div className="check-product-description">
-                        Copy and paste comma seperated ingredient lists here for a safety/gentle breakdown of a product.
+                        Copy and paste comma separated ingredient lists here for a safety/gentle breakdown of a product.
                     </div>
                     <form className="check-product-form-field">
                         <div className="check-product-input-container">
                             <textarea autoFocus onChange={this.handleInput.bind(this)} className="check-product-input-field" type="text" placeholder="copy and paste ingredients here..."></textarea>
                         </div>
+                        {this.state.error ? <div className="ingredients-error">Please enter ingredients to query.</div> : null}
                         <div className="check-product-button-container">
                             <button className="btn purple" onClick={this.handleSubmit.bind(this)}>Analyze</button>
                         </div>

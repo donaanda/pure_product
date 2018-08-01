@@ -25,7 +25,8 @@ class Header extends Component {
             headerContainer: 'header-container',
             hamburgerClick: false,
             ExpandedMenuSize: 'expanded-menu-hide',
-            advancedSearchClicked: false
+            advancedSearchClicked: false,
+            formClass: 'initial-display'
         };
 
         this.fillOutAutoComplete = this.fillOutAutoComplete.bind(this);
@@ -147,6 +148,7 @@ class Header extends Component {
                 buttonStyle: 'display-none',
                 advancedSearchButtonStyle: 'display-none',
                 headerContainer: 'header-container',
+                formClass: 'initial-display',
                 autoComplete: [],
                 input: ""
             })
@@ -157,6 +159,7 @@ class Header extends Component {
                 buttonStyle: 'button-style-show',
                 advancedSearchButtonStyle: 'advanced-search-button-show',
                 headerContainer: 'header-container-show',
+                formClass: 'search-form',
                 autoComplete: [],
                 input: ""
             });
@@ -187,7 +190,7 @@ class Header extends Component {
     }
 
     render() {
-        const { searchToggle, autoComplete, input } = this.state;
+        const { searchToggle, autoComplete, input, formClass } = this.state;
         return (
             <div className={this.state.headerContainer}>
                 <div className="side-nav">
@@ -220,7 +223,7 @@ class Header extends Component {
                         <h5 className="desktop-link">Product Finder</h5>
                     </Link>
                 </div>
-                <form autoComplete="off">
+                <form className={formClass} autoComplete="off">
                     <div className="autocomplete">
                         <input value={this.state.input} autoFocus={searchToggle} onChange={this.handleInput.bind(this)} onKeyDown={this.handleKeyDown.bind(this)} type="text" placeholder="Search for products or ingredients..." id="search-bar-style-show" className={this.state.searchBarStyle} />
                     </div>
