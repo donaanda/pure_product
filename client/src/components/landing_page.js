@@ -40,7 +40,7 @@ class LandingPage extends Component {
                 <Header history={this.props.history} />
                 <div className="landing-page-button-container">
                     <div className="landing-two-container">
-                        <Link to="/gentle_products">
+                        <Link to="/browse_products">
                             <div className="landing_button products">
                                 <div className="wrap-landing-img">
                                     <img className="landing_img product" src={product} />
