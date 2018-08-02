@@ -34,7 +34,7 @@ const App = () => {
             <Route path="/product/:id?" component={ProductPage} />
             <Route path="/safety_rating" component={SafetyRating} />
             <Route path="/gentle_rating" component={GentleRating} />
-            <Route path="/gentle_products" component={GentleProducts} />
+            <Route path="/browse_products" component={GentleProducts} />
             <Route path="/create_account" component={CreateAccount} />
             <Route path="/our_team" component={OurTeam} />
             <Route path="/product/our_team" component={OurTeam} />

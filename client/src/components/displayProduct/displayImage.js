@@ -81,6 +81,10 @@ export default class DisplayImage extends Component {
         }
     }
 
+    preventHistoryObjectExpansion(e) {
+        e.preventDefault();
+    }
+
     render() {
         if (!this.props || this.state.product === false) {
             return (<div>no product specified</div>)
@@ -105,8 +109,9 @@ export default class DisplayImage extends Component {
 
             const image = "/client/dist/product_images/" + categories + "/" + product_id + "/" + img_src;
             return (
-                <Link to={"/product/" + product_id}>
-                    <div className={displayCont}>
+
+                <div className={displayCont}>
+                    <a onClick={displayNone === 'display-none' ? (e) => this.preventHistoryObjectExpansion(e) : null} href={`/product/ ${product_id}`}>
                         <div className={imgProductPage}>
                             <img className={productImg} src={image} />
                         </div>
@@ -143,8 +148,8 @@ export default class DisplayImage extends Component {
                                 {categories}
                             </h4>
                         </div>
-                    </div>
-                </Link>
+                    </a>
+                </div>
             )
         };
     };

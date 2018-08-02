@@ -44,7 +44,6 @@ class DisplayAllProducts extends Component {
         if (this.state.sortCategoryClicked) {
             if (event.target.innerText === 'Price') {
                 this.props.data.data.sort(this.comparePrice);
-                //console.log(this.props.data.data);
             } else if (event.target.innerText === 'Gentle Rating') {
                 this.props.data.data.sort(this.compareGentleRating);
             } else if (event.target.innerText === 'Safety Rating') {
