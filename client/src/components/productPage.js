@@ -66,17 +66,21 @@ class ProductPage extends Component {
     }
 
     render() {
+        console.log(this.props.history);
         const { ingredients, product } = this.state.data;
         if (this.state.data.success === false) {
             return <Loader className="loader prod-pg-loader" />;
         } else {
-            const displayImageComponent = product !== undefined ? <DisplayImage product={product} className={styleClasses} /> : <div>no product specified}</div>;
+            const displayImageComponent = product !==
+                undefined ?
+                <DisplayImage product={product} className={styleClasses} /> :
+                <div>no product specified</div>;
             return (
                 <section>
                     <Header history={this.props.history} />
                     {displayImageComponent}
                     <div className="product-page-gentle-safety-rating">
-                        <Link to="/gentle_rating">
+                        <Link target="blank" to="/gentle_rating">
                             <div className="product-page-gentle-rating">
                                 <div className="product-page-gentle-icon-div">
                                     <img className="product-page-gentle-icon" src={GentleIcon} />
@@ -87,7 +91,7 @@ class ProductPage extends Component {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/safety_rating">
+                        <Link target="blank" to="/safety_rating">
                             <div className="product-page-safety-rating">
                                 <div className="product-page-safety-icon-div">
                                     <img className="product-page-safety-icon" src={SafetyIcon} />

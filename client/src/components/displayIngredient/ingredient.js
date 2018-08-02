@@ -2,7 +2,6 @@ import React from 'react';
 import '../../assets/css/ingredientList.css';
 
 const Ingredient = (props) => {
-    console.log(props);
     function colorizeSafetyNum(rating) {
         switch (rating) {
             case "1":

@@ -216,8 +216,8 @@ class Header extends Component {
                     <Link to="/product_analyzer">
                         <h5 className="desktop-link">Product Analyzer</h5>
                     </Link>
-                    <Link to="/gentle_products">
-                        <h5 className="desktop-link">Gentle Products</h5>
+                    <Link to="/browse_products">
+                        <h5 className="desktop-link">Browse Products</h5>
                     </Link>
                     <Link to="/product_wizard">
                         <h5 className="desktop-link">Product Finder</h5>

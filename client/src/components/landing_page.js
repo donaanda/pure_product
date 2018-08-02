@@ -38,7 +38,6 @@ class LandingPage extends Component {
         return (
             <section className="landing_page">
                 <Header history={this.props.history} />
-
                 <div className="landing-page-button-container">
                     <div className="landing-two-container">
                         <Link to="/gentle_products">
