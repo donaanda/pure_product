@@ -17,7 +17,7 @@ class Recommendations extends Component {
     }
     async componentDidMount() {
         const query = this.props.history.location.state.data;
-        console.log(query);
+        console.log('query from rec component', query);
         await axios.post(`/server/api_find_product_by_multiple_id.php`, { query }).then(response => {
             this.setState({
                 selection: this.props.history.location.state.selection,

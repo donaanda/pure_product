@@ -45,7 +45,8 @@ class LandingPage extends Component {
                             <div className="landing_button products">
                                 <div className="wrap-landing-img">
                                     <img className="landing_img product" src={product} />
-                                    <span className="top-span">Browse Products </span>
+                                    <span className="top-span">Browse</span>
+                                    <span className="top-span">Products</span>
                                 </div>
                             </div>
                         </Link>
@@ -53,7 +54,8 @@ class LandingPage extends Component {
                             <div className="landing_button safety">
                                 <div className="wrap-landing-img">
                                     <img className="landing_img lipstick" src={lipstick} />
-                                    <span className="top-span">Analyze Ingredients</span>
+                                    <span className="top-span">Analyze</span>
+                                    <span className="top-span">Ingredients</span>
                                 </div>
                             </div>
                         </Link>
@@ -63,7 +65,8 @@ class LandingPage extends Component {
                             <div className="landing_button safety_rating">
                                 <div className="wrap-landing-img">
                                     <img className="landing_img safety_icon" src={safety_icon} />
-                                    <span className="safety-span">Safety Rating</span>
+                                    <span className="safety-span">Safety</span>
+                                    <span className="safety-span">Rating</span>
                                 </div>
                             </div>
                         </Link>
@@ -71,7 +74,8 @@ class LandingPage extends Component {
                             <div className="landing_button gentle_rating">
                                 <div className="wrap-landing-img">
                                     <img className="landing_img gentle" src={gentle_rating} />
-                                    <span className="gentle-span">Gentle Rating</span>
+                                    <span className="gentle-span">Gentle</span>
+                                    <span className="gentle-span">Rating</span>
                                 </div>
                             </div>
                         </Link>

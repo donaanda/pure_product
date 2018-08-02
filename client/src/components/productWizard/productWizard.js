@@ -79,7 +79,7 @@ class ProductFinder extends Component {
   async handleFormSubmit(event) {
     event.preventDefault();
     var query = this.state.selection;
-    await axios.post(`/server/api_filterAndFinder.php`, { query }).then(response => {
+    await axios.post(`/server/api_filter_and_finder.php`, { query }).then(response => {
       this.setState({
         data: response.data
       })
@@ -105,10 +105,10 @@ class ProductFinder extends Component {
           <Step4 selectionCallBack={this.handleChildSubmit} retinolVal={selection.retinol} currentStep={currentStep} />
           <Step5 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step6 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
-          <button onClick={this.prevStep}
+          {/* <button onClick={this.prevStep}
             className={currentStep === 0 || currentStep === 6 ? "display-none" : "btn wiz-button pink lighten-2"}>
             Prev
-            </button>
+            </button> */}
           <button onClick={this.nextStep}
             className={currentStep === 6 ? "display-none" : "btn wiz-button"}>
             Next

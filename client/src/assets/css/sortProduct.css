@@ -3,6 +3,7 @@
     color: white;
     height: 5vh;
     width: 20vw;
+    cursor: pointer;
 }
 
 .hide-drop-content {
@@ -11,23 +12,37 @@
     background-color: #f9f9f9;
 }
 
+.shadow-div-show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
 .show-drop-content {
     display: block;
     position: absolute;
+    cursor: pointer;
 }
 
 .drop-down-category {
     display: block;
-    text-align: left;
+    text-align: center;
     background-color: black;
     color: white;
     width: 25vw;
     height: 5vh;
+    padding-top: 12px;
+    position: relative;
+    z-index: 1;
 }
 
 .drop-down-category:hover {
     background-color: #e4f7ef;
     color: black;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 1000px) {

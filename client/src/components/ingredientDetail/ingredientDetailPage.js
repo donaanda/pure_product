@@ -24,7 +24,8 @@ class IngredientDetail extends Component {
         await axios.post(`/server/api_get_ingredient_by_name.php`, { query }).then(response => {
             this.setState({
                 data: response.data
-            }, () => console.log(this.state));
+            }//, () => console.log(this.state)
+            );
         });
     }
 
@@ -34,7 +35,8 @@ class IngredientDetail extends Component {
             await axios.post(`/server/api_get_ingredient_by_name.php`, { query }).then(response => {
                 this.setState({
                     data: response.data
-                }, () => console.log(this.state));
+                }//, () => console.log(this.state)
+                );
             });
         }
     }
@@ -55,7 +57,7 @@ class IngredientDetail extends Component {
         event.preventDefault();
         this.setState({
             input: event.target.value
-        }, () => console.log('input:', this.state)
+        }//, () => console.log('input:', this.state)
         );
     }
 
