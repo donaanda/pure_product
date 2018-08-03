@@ -115,6 +115,7 @@
 .prod-wiz-error {
     position: absolute;
     color: red;
+    font-size: 3vmin;
 }
 
 /*for desktop*/
