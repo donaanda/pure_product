@@ -1,5 +1,6 @@
 .check-product-image-container {
     min-height: 90vh;
+    padding-bottom: 50vh;
 }
 
 .logo-background-color {
@@ -75,5 +76,13 @@
     }
     .check-product-image-container {
         height: 100vh;
+    }
+}
+
+/*for sideways mobile*/
+
+@media only screen and (max-height: 375px) {
+    .check-product-image-container {
+        padding-bottom: 90vw;
     }
 }

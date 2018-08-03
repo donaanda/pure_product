@@ -42,3 +42,14 @@ a {
     min-height: 80vh;
     padding-bottom: 22vh;
 }
+
+.header-spacing-div {
+    width: 100%;
+    padding-top: 20vw;
+}
+
+@media only screen and (min-width: 1000px) {
+    .header-spacing-div {
+        display: none;
+    }
+}
