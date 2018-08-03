@@ -197,7 +197,6 @@ class Header extends Component {
                     <ExpandedMenu className={this.state.ExpandedMenuSize} />
                     <HamburgerMenu open={this.state.hamburgerClick} onClick={this.showExpandedMenu.bind(this)} />
                 </div>
-
                 {/* <div className="header-icon login-icon">
                     <Link to="/create_account">
                         <img className='headerIcon loginIcon' onClick={this.toggleSearchBar.bind(this)} src={LoginIcon} />

@@ -2,6 +2,7 @@
     text-align: center;
     border-right: 1px solid rgb(196, 193, 193);
     font-size: 4vmin;
+    cursor: default;
 }
 
 .ingredient-column {

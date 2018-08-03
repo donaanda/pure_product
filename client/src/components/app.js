@@ -24,6 +24,7 @@ import Recommendations from './productWizard/recommendations';
 const App = () => {
     return (
         <div className="app-wrap">
+            <div className="header-spacing-div"></div>
             <Route exact path="/" component={LandingPage} />
             <Route path="/sign_in" component={SignIn} />
             <Route path="/product_wizard" component={ProductWizard} />

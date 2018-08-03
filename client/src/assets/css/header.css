@@ -5,7 +5,7 @@
     width: 100vw;
     background-color: white;
     z-index: 1;
-    top: -100px;
+    top: 0;
     position: absolute;
 }
 
@@ -94,7 +94,7 @@
     background-color: white;
     z-index: 1;
     width: 100vw;
-    top: -100px;
+    top: 0;
     position: absolute;
 }
 
@@ -133,6 +133,7 @@ form {
     height: 100%;
     width: 80%;
     background-color: #e4f7ef;
+    overflow: scroll;
 }
 
 .menu-container a {
@@ -148,14 +149,16 @@ form {
 }
 
 .menu-item-cont {
+    display: flex;
+    align-items: center;
     margin: 3vh auto 0 auto;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .menu-item-cont img {
-    height: 15vh;
-    width: 15vh;
+    height: 10vh;
+    width: 10vh;
     vertical-align: top;
     overflow: hidden;
 }
@@ -280,5 +283,23 @@ form {
     }
     .header-icon .search-bar {
         width: 10vh;
+    }
+}
+
+/*for sideways mobile*/
+
+@media only screen and (max-height: 375px) {
+    .header-container {
+        height: 20vh;
+    }
+    .site-title h1 {
+        line-height: 20vh;
+    }
+    .site-title,
+    .site-title img {
+        vertical-align: initial;
+    }
+    .search-bar {
+        margin-top: 6vh;
     }
 }
