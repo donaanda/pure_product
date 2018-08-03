@@ -8,6 +8,7 @@ import LookIngredients from '../../assets/images/landing_page_icons/icons/gentle
 import MethodologyPicutre from '../../assets/images/menu_icons/home.png';
 import DiscoverProducts from '../../assets/images/menu_icons/search.png';
 import leaf from '../../assets/images/landing_page_icons/icons/vegan.png';
+import home from '../../assets/images/home.png';
 import '../../assets/css/expandedMenuStyle.css';
 
 function ExpandedMenuWelcome(props) {
@@ -33,7 +34,7 @@ function ExpandedMenuWelcome(props) {
                     </div>
                 </Link>
 
-                <Link to="/gentle_products">
+                <Link to="/browse_products">
                     <div className="menu-item-cont">
                         <img className="menu-item-single-ingredient-search" src={LookIngredients} width="10%" align="middle" /><p className="exp-menu-titles">Browse Products</p>
                     </div>
@@ -41,6 +42,11 @@ function ExpandedMenuWelcome(props) {
                 <Link to="/product_wizard">
                     <div className="menu-item-cont">
                         <img src={leaf} /><p className="product-finder-exp-menu-title exp-menu-titles">Personal Product Finder</p>
+                    </div>
+                </Link>
+                <Link to="/" onClick={location.reload}>
+                    <div className="menu-item-cont">
+                        <img className="home" src={home} /><p className="product-finder-exp-menu-title exp-menu-titles">Home</p>
                     </div>
                 </Link>
 

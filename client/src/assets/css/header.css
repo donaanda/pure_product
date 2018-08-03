@@ -5,6 +5,8 @@
     width: 100vw;
     background-color: white;
     z-index: 1;
+    top: -100px;
+    position: absolute;
 }
 
 .header-icon,
@@ -89,9 +91,11 @@
 .header-container-show {
     display: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 25vh;
     background-color: white;
     z-index: 1;
+    width: 100vw;
+    top: -100px;
+    position: absolute;
 }
 
 /* expanded menu*/
@@ -156,8 +160,12 @@ form {
     overflow: hidden;
 }
 
+.menu-item-cont img.home {
+    height: 10vh;
+    width: 10vh;
+}
+
 .product-finder-exp-menu-title {
-    font-family: 'Oleo Script', cursive;
     color: lightslategray;
 }
 
@@ -186,8 +194,16 @@ form {
 /*desktop*/
 
 @media only screen and (min-width: 1000px) {
-    .header-container {
+    .header-container,
+    .header-container-show {
         height: 10vh;
+        position: relative;
+        top: 0;
+    }
+    .header-container-show {
+        z-index: 1;
+        position: relative;
+        top: 0;
     }
     .expanded-menu-hide {
         display: initial;
@@ -228,9 +244,6 @@ form {
         height: 50px;
         width: 60px;
         margin: 0 10px;
-    }
-    .header-container-show {
-        height: initial;
     }
     .search-form {
         height: initial;
