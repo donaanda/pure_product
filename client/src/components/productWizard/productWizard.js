@@ -18,6 +18,7 @@ class ProductFinder extends Component {
     this.state = {
       data: null,
       currentStep: 0,
+      nextValid: true,
       selection: {
         retinol: null
       }
@@ -30,6 +31,9 @@ class ProductFinder extends Component {
 
   nextStep() {
     let currentStep = this.state.currentStep;
+    if (currentStep === 4) {
+      this.setState({ nextValid: false })
+    }
     if (currentStep >= 5) {
       currentStep = 6;
     } else {
@@ -43,7 +47,7 @@ class ProductFinder extends Component {
 
   handleChildSubmit(event) {
     var { name, value, checked } = event.target;
-    var { selection } = this.state;
+    var { selection, currentStep } = this.state;
     var newSelection = {};
     for (let key in selection) {
       newSelection[key] = selection[key];
@@ -60,6 +64,23 @@ class ProductFinder extends Component {
     this.setState({
       selection: newSelection
     })
+    if (currentStep === 5) { //validation for safety and gentle numbers
+      var values = [
+        selection['safety-low'],
+        selection['safety-high'],
+        selection['gentle-low'],
+        selection['gentle-high']
+      ];
+      var validCount = null
+      for (let i = 0; i < values.length; i++) {
+        if (values[i] !== undefined) {
+          validCount++;
+        }
+      }
+      if (validCount === 3) {
+        this.setState({ nextValid: true })
+      }
+    }
   }
 
   async handleFormSubmit(event) {
@@ -80,7 +101,7 @@ class ProductFinder extends Component {
 
   render() {
     console.log('from render: ', this.state.selection);
-    const { currentStep, selection } = this.state;
+    const { currentStep, selection, nextValid } = this.state;
     return (
       <div className="product-wizard-cont">
         <Header history={this.props.history} />
@@ -92,7 +113,7 @@ class ProductFinder extends Component {
           <Step4 selectionCallBack={this.handleChildSubmit} retinolVal={selection.retinol} currentStep={currentStep} />
           <Step5 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step6 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
-          <button onClick={this.nextStep}
+          <button onClick={nextValid ? this.nextStep : null}
             className={currentStep === 6 ? "display-none" : "btn wiz-button"}>
             Next
             </button>

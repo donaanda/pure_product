@@ -3,6 +3,7 @@ require_once('./header.php');
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 require_once('./db_connect.php');
+echo $request;
 $search_input = implode(',',$request->query);
 $query = "SELECT 
     product_name.*, 

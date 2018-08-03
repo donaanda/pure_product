@@ -8,13 +8,31 @@ class Step5 extends Component {
             safetyLowError: 'display-none',
             safetyHighError: 'display-none',
             gentleLowError: 'display-none',
-            gentleHighError: 'display-none'
+            gentleHighError: 'display-none',
+            incorrectRangeErrorSafety: 'display-none',
+            incorrectRangeErrorGentle: 'display-none'
         }
 
     }
 
     numberValidation(event) {
         var { value, name } = event.target;
+        var safetyLow = document.getElementById('safety-low').value;
+        var safetyHigh = document.getElementById('safety-high').value;
+        var gentleLow = document.getElementById('gentle-low').value;
+        var gentleHigh = document.getElementById('gentle-high').value;
+        if (safetyLow > safetyHigh &&
+            safetyLow !== "" && safetyHigh !== "") {
+            this.setState({ incorrectRangeErrorSafety: 'prod-wiz-error' });
+        } else {
+            this.setState({ incorrectRangeErrorSafety: 'display-none' });
+        }
+        if (gentleLow > gentleHigh &&
+            gentleLow !== "" && gentleHigh !== "") {
+            this.setState({ incorrectRangeErrorGentle: 'prod-wiz-error' });
+        } else {
+            this.setState({ incorrectRangeErrorGentle: 'display-none' });
+        }
         switch (name) {
             case 'safety-low':
                 if (value < 1 || value > 10) {
@@ -68,14 +86,13 @@ class Step5 extends Component {
                     return true;
                 }
                 break;
-            default: 
+            default:
                 return true;
         }
     }
 
     render() {
-        var {safetyLowError, safetyHighError, gentleLowError, gentleHighError} = this.state;
-        console.log(safetyLowError);
+        var { safetyLowError, safetyHighError, gentleLowError, gentleHighError, incorrectRangeErrorSafety, incorrectRangeErrorGentle } = this.state;
         if (this.props.currentStep !== 5) {
             return null;
         }
@@ -86,20 +103,24 @@ class Step5 extends Component {
                     <div className="wiz-safe-gen-cont wiz-right">
                         <h5>Safety:</h5>
                         <p>Between</p>
-                        <input id="num-input" onChange={(e) => this.numberValidation(e) ? this.props.selectionCallBack(e) : null} type="number" placeholder="safest is 1" name="safety-low" min="1" max="10" />
-                        <div className={safetyLowError}>Please choose a number between 1 and 10.</div>
+                        <input id="safety-low" onChange={(e) => this.numberValidation(e) ? this.props.selectionCallBack(e) : null} type="number" placeholder="safest is 1" name="safety-low" min="1" max="10" />
+                        <div className={safetyLowError}>low: choose 1 - 10.</div>
+                        <div className={incorrectRangeErrorSafety}>must be less than high</div>
                         <p>And</p>
-                        <input id="num-input" onChange={(e) => this.numberValidation(e) ? this.props.selectionCallBack(e) : null} type="number" placeholder="worst is 10" name="safety-high" min="1" max="10" />
-                        <div className={safetyHighError}>Please choose a number between 1 and 10.</div>
+                        <input id="safety-high" onChange={(e) => this.numberValidation(e) ? this.props.selectionCallBack(e) : null} type="number" placeholder="worst is 10" name="safety-high" min="1" max="10" />
+                        <div className={safetyHighError}>high: choose 1 - 10.</div>
+                        <div className={incorrectRangeErrorSafety}>must more than low</div>
                     </div>
                     <div className="wiz-safe-gen-cont">
                         <h5>Gentle:</h5>
                         <p>Between</p>
-                        <input id="num-input" onChange={(e) => this.numberValidation(e) ? this.props.selectionCallBack(e) : null} type="number" placeholder="safest is 1" name="gentle-low" min="1" max="10" />
-                        <div className={gentleLowError}>Please choose a number between 1 and 4.</div>
+                        <input id="gentle-low" onChange={(e) => this.numberValidation(e) ? this.props.selectionCallBack(e) : null} type="number" placeholder="safest is 1" name="gentle-low" min="1" max="10" />
+                        <div className={gentleLowError}>low: choose 1 - 4.</div>
+                        <div className={incorrectRangeErrorGentle}>must be less than high</div>
                         <p>And</p>
-                        <input id="num-input" onChange={(e) => this.numberValidation(e) ? this.props.selectionCallBack(e) : null} type="number" placeholder="worst is 4" name="gentle-high" min="1" max="10" />
-                        <div className={gentleHighError}>Please choose a number between 1 and 4.</div>
+                        <input id="gentle-high" onChange={(e) => this.numberValidation(e) ? this.props.selectionCallBack(e) : null} type="number" placeholder="worst is 4" name="gentle-high" min="1" max="10" />
+                        <div className={gentleHighError}>high: choose 1 - 4.</div>
+                        <div className={incorrectRangeErrorGentle}>must be more than low</div>
                     </div>
                 </form>
             </div>
