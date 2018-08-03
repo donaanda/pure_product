@@ -90,7 +90,7 @@
 .safety-icon-product-page {
     height: 30px;
     left: 0;
-    top: 5px;
+    top: 8px;
     position: relative;
     box-shadow: 0 4px 8px 0 rgba(250, 250, 250, 0.2), 0 6px 20px 0 rgba(250, 250, 250, 0.19);
 }
@@ -227,6 +227,7 @@ ul.page-numbers {
     .safety-icon,
     .gentle-icon-product-page,
     .safety-icon-product-page {
-        top: 10px;
+        top: 5px;
+        height: 20px;
     }
 }

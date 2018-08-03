@@ -1,5 +1,5 @@
 .landing-page-button-container {
-    margin-top: 1vh;
+    margin-top: 100px;
     margin-bottom: 1vh;
     /* background-image: url("../images/landing_page_icons/foundation_transparent.png"); */
     background-size: contain;
@@ -161,7 +161,7 @@ section.landing_page {
     }
     .landing-page-button-container {
         display: block;
-        margin: auto;
+        margin: 1vh auto;
         background-image: url('../images/beauty_counter_bckgrnd.png');
     }
     .landing_button,
