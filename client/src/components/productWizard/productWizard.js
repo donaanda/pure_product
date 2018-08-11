@@ -90,7 +90,7 @@ class ProductFinder extends Component {
     await axios.post(`/server/api_filter_and_finder.php`, { query }).then(response => {
       this.setState({
         data: response.data
-      })
+      }), console.log('from prod wiz, filter and find: ', response.data);
     });
     this.props.history.push({
       pathname: '/product_recommendations',

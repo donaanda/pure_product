@@ -7,7 +7,7 @@ print_r($request);
 $search_input = implode(',',$request->query);
 $query = "SELECT 
     product_name.*, 
-    `rating`, 
+    `rating`,
     `price`, 
     `Cruelty_Free`, 
     `Vegan` 

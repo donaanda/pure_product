@@ -26,7 +26,8 @@
 
 .product-wizard-cont {
     height: 100vh;
-    background-image: url(../images/displayImages/banana_leaf.jpg);
+    background-image: url(../images/displayImages/banana_leaf.png);
+    background-size: cover;
 }
 
 .product-wizard-inner {
