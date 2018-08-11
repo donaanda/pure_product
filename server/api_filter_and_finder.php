@@ -8,7 +8,6 @@ $output=[
     'success'=>false
 ];
 $reqObject=$request->query;
-print_r($reqObject);
 foreach($reqObject as $key=>$value){
     $output['keys'][]=$key;
     $output['values'][]=$value;

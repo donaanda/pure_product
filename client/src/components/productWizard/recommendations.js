@@ -8,7 +8,6 @@ class Recommendations extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             data: {
                 data: null
@@ -22,7 +21,7 @@ class Recommendations extends Component {
             this.setState({
                 selection: this.props.history.location.state.selection,
                 data: response.data
-            }, () => console.log(this.state));
+            }, () => console.log('rec data: ', this.state.data));
         });
     }
 
