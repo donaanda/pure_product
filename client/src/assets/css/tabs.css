@@ -115,6 +115,8 @@
 .youtube-reviews {
     text-align: center;
     font-family: 'Cedarville Cursive', cursive;
+    width: 80vw;
+    margin: auto;
 }
 
 .video-container {
@@ -145,6 +147,7 @@
     .icon-container-const,
     .icon-container {
         margin: auto;
+        width: 75vw;
     }
     #videoPlayer,
         {

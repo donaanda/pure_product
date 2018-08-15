@@ -30,16 +30,28 @@ class ProductFinder extends Component {
   }
 
   nextStep() {
-    let currentStep = this.state.currentStep;
+    let { currentStep, selection } = this.state;
     if (currentStep === 4) {
       this.setState({ nextValid: false })
+    }
+    if (currentStep === 5 &&
+      selection['safety-high'] >= selection['safety-low'] &&
+      selection['gentle-high'] >= selection['gentle-low'] &&
+      selection['safety-high'] <= 10 && selection['safety-high'] >= 1 &&
+      selection['safety-low'] <= 10 && selection['safety-low'] >= 1 &&
+      selection['gentle-high'] <= 10 && selection['gentle-high'] >= 1 &&
+      selection['gentle-low'] <= 10 && selection['gentle-low'] >= 1) {
+      this.setState({
+        nextValid: true,
+        currentStep: currentStep + 1
+      });
+      return;
     }
     if (currentStep >= 5) {
       currentStep = 6;
     } else {
       currentStep = currentStep + 1;
     }
-
     this.setState({
       currentStep
     });
@@ -86,11 +98,11 @@ class ProductFinder extends Component {
   async handleFormSubmit(event) {
     event.preventDefault();
     var query = this.state.selection;
-    console.log('from submit: ', query);
+    // console.log('from submit: ', query);
     await axios.post(`/server/api_filter_and_finder.php`, { query }).then(response => {
       this.setState({
         data: response.data
-      }), console.log('from prod wiz, filter and find: ', response.data);
+      })//, console.log('from prod wiz, filter and find: ', response.data);
     });
     this.props.history.push({
       pathname: '/product_recommendations',
@@ -100,7 +112,7 @@ class ProductFinder extends Component {
 
 
   render() {
-    console.log('from render: ', this.state.selection);
+    // console.log('from render: ', this.state.selection);
     const { currentStep, selection, nextValid } = this.state;
     return (
       <div className="product-wizard-cont">

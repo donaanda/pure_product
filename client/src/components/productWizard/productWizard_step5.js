@@ -10,39 +10,46 @@ class Step5 extends Component {
             gentleLowError: 'display-none',
             gentleHighError: 'display-none',
             incorrectRangeErrorSafety: 'display-none',
-            incorrectRangeErrorGentle: 'display-none'
+            incorrectRangeErrorGentle: 'display-none',
+            nextValid: false
         }
 
     }
 
     numberValidation(event) {
         var { value, name } = event.target;
+        var { incorrectRangeErrorGentle, incorrectRangeErrorSafety } = this.state;
         var safetyLow = document.getElementById('safety-low').value;
         var safetyHigh = document.getElementById('safety-high').value;
         var gentleLow = document.getElementById('gentle-low').value;
         var gentleHigh = document.getElementById('gentle-high').value;
-        if (safetyLow > safetyHigh &&
-            safetyLow !== "" && safetyHigh !== "") {
-            this.setState({ incorrectRangeErrorSafety: 'prod-wiz-error' });
-        } else {
-            this.setState({ incorrectRangeErrorSafety: 'display-none' });
+        if (name === 'safety-low' || name === 'safety-high') {
+            if (safetyLow > safetyHigh &&
+                safetyLow !== "" &&
+                safetyHigh !== "" &&
+                incorrectRangeErrorSafety === 'display-none') {
+                this.setState({ incorrectRangeErrorSafety: 'prod-wiz-error' });
+            }
         }
-        if (gentleLow > gentleHigh &&
-            gentleLow !== "" && gentleHigh !== "") {
-            this.setState({ incorrectRangeErrorGentle: 'prod-wiz-error' });
-        } else {
-            this.setState({ incorrectRangeErrorGentle: 'display-none' });
+        if (name === 'gentle-low' || name === 'gentle-high') {
+            if (gentleLow > gentleHigh &&
+                gentleLow !== "" &&
+                gentleHigh !== "" &&
+                incorrectRangeErrorGentle === 'display-none') {
+                this.setState({ incorrectRangeErrorGentle: 'prod-wiz-error' });
+            }
         }
         switch (name) {
             case 'safety-low':
                 if (value < 1 || value > 10) {
                     this.setState({
-                        safetyLowError: 'prod-wiz-error'
+                        safetyLowError: 'prod-wiz-error',
+                        incorrectRangeErrorSafety: 'display-none'
                     })
                     return false;
                 } else {
                     this.setState({
-                        safetyLowError: 'display-none'
+                        safetyLowError: 'display-none',
                     })
                     return true;
                 }
@@ -50,7 +57,8 @@ class Step5 extends Component {
             case 'safety-high':
                 if (value < 1 || value > 10) {
                     this.setState({
-                        safetyHighError: 'prod-wiz-error'
+                        safetyHighError: 'prod-wiz-error',
+                        incorrectRangeErrorSafety: 'display-none'
                     })
                     return false;
                 } else {
@@ -63,7 +71,8 @@ class Step5 extends Component {
             case 'gentle-low':
                 if (value < 1 || value > 4) {
                     this.setState({
-                        gentleLowError: 'prod-wiz-error'
+                        gentleLowError: 'prod-wiz-error',
+                        incorrectRangeErrorGentle: 'display-none'
                     })
                     return false;
                 } else {
@@ -76,7 +85,8 @@ class Step5 extends Component {
             case 'gentle-high':
                 if (value < 1 || value > 4) {
                     this.setState({
-                        gentleHighError: 'prod-wiz-error'
+                        gentleHighError: 'prod-wiz-error',
+                        incorrectRangeErrorGentle: 'display-none'
                     })
                     return false;
                 } else {

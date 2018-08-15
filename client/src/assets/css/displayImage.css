@@ -52,6 +52,7 @@
     vertical-align: top;
     width: 60vw;
     margin: auto;
+    cursor: pointer;
 }
 
 .product-image {

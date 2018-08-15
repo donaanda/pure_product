@@ -111,6 +111,34 @@ class DisplayAllProducts extends Component {
         })
     }
 
+    handlePreviousClick() {
+        window.scrollTo(0, 650);
+        var { currentPage } = this.state;
+        if (currentPage === 1) {
+            this.setState({
+                currentPage: Math.ceil(this.props.data.data.length / this.state.productsPerPage)
+            })
+        } else {
+            this.setState({
+                currentPage: currentPage - 1
+            })
+        }
+    }
+
+    handleNextClick() {
+        window.scrollTo(0, 650);
+        var { currentPage } = this.state;
+        if (currentPage === Math.ceil(this.props.data.data.length / this.state.productsPerPage)) {
+            this.setState({
+                currentPage: 1
+            })
+        } else {
+            this.setState({
+                currentPage: currentPage + 1
+            })
+        }
+    }
+
     handleLastClick() {
         window.scrollTo(0, 650);
         this.setState({
@@ -170,10 +198,16 @@ class DisplayAllProducts extends Component {
                     {products}
                     <ul className="page-numbers">{renderPageNumbers}</ul>
                     <div className="pag-button-cont">
-                        <div onClick={this.handleFirstClick.bind(this)} className="btn wiz-button pink lighten-2">
+                        <div onClick={this.handleFirstClick.bind(this)} className="btn pink lighten-2 wiz-button">
                             First Page
                         </div>
-                        <div onClick={this.handleLastClick.bind(this)} className="btn wiz-button">
+                        <div onClick={this.handlePreviousClick.bind(this)} className="btn pink wiz-button">
+                            Previous Page
+                        </div>
+                        <div onClick={this.handleNextClick.bind(this)} className="btn green wiz-button">
+                            Next Page
+                        </div>
+                        <div onClick={this.handleLastClick.bind(this)} className="btn green lighten-2 wiz-button">
                             Last Page
                         </div>
                     </div>

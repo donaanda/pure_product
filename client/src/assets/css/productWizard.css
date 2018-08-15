@@ -38,6 +38,8 @@
     position: relative;
     opacity: initial;
     pointer-events: initial;
+    height: 1.15em;
+    width: 1.15em;
 }
 
 .wiz-button {
@@ -87,6 +89,11 @@
     padding: 1vh;
 }
 
+.wiz-ingredient-cont div,
+.products-want div {
+    margin: 1em;
+}
+
 #wiz-label-ingredients {
     font-size: 4vmin;
 }
@@ -96,6 +103,13 @@
     width: 45%;
     height: 100%;
     margin: 2vh 0;
+}
+
+#safety-low,
+#safety-high,
+#gentle-low,
+#gentle-high{
+    width: 50%;
 }
 
 .wiz-right {
