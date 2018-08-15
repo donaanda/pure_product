@@ -197,6 +197,9 @@ form {
 /*desktop*/
 
 @media only screen and (min-width: 1000px) {
+    .header-icon{
+        cursor: pointer;
+    }
     .header-container,
     .header-container-show {
         height: 10vh;
@@ -215,7 +218,8 @@ form {
         display: inline-block;
         vertical-align: top;
         font-size: 2vmin;
-        margin: 0 1vh;
+        margin: 0;
+        padding: 0 1vh;
         line-height: 10vh;
     }
     .site-title {
@@ -237,6 +241,7 @@ form {
         position: absolute;
         height: initial;
         width: initial;
+        cursor: pointer;
         background-color: #edfcf6;
         color: #555;
         border-radius: 100%;

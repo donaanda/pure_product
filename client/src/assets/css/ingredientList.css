@@ -1,7 +1,7 @@
 .ingredient-table td {
     text-align: center;
     border-right: 1px solid rgb(196, 193, 193);
-    font-size: 4vmin;
+    font-size: 3vmin;
     cursor: default;
 }
 
@@ -12,9 +12,9 @@
 .ingredient-row td p {
     margin: auto;
     border-radius: 50%;
-    width: 7vh;
-    height: 7vh;
-    line-height: 7vh;
+    width: 8vh;
+    height: 8vh;
+    line-height: 8vh;
     cursor: default;
 }
 
