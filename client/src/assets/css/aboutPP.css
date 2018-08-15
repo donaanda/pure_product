@@ -82,9 +82,9 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.person-profile.dona {
+.dona {
     display: block;
-    margin: auto;
+    margin: 1vh auto 0 auto;
 }
 
 .ourTeamPic {
@@ -148,7 +148,7 @@
 
 .about-site-icon {
     display: block;
-    margin: auto;
+    margin: 2vh auto;
     height: 7vh;
     object-fit: contain;
 }
@@ -200,6 +200,7 @@
     .site-about-container {
         width: 60vw;
         margin: auto;
+        padding-bottom: 2vh;
     }
     .github-info-about-site {
         width: 50vw;

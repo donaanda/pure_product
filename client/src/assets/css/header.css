@@ -108,15 +108,11 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(63, 32, 32, 0.2);
     overflow-x: hidden;
     overflow: hidden;
     text-align: center;
     transition: transform 0.5s;
-}
-
-form {
-    height: 10vh;
 }
 
 .expanded-menu-hide {
