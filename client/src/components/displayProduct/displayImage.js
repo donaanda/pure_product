@@ -28,6 +28,8 @@ export default class DisplayImage extends Component {
     }
     colorizeSafetyNum(rating) {
         switch (rating) {
+            case "0":
+                return "N/A";
             case "1":
                 return "green-text lighten-3 shadow";
             case "2":
@@ -52,6 +54,8 @@ export default class DisplayImage extends Component {
                 return "green-text shadow";
             case "1-3":
                 return "green-text shadow";
+            case "N/A":
+                return "grey-text";
             default:
                 return
         }
@@ -59,6 +63,8 @@ export default class DisplayImage extends Component {
 
     colorizeGentleNum(rating) {
         switch (rating) {
+            case "0":
+                return "N/A";
             case "Best":
                 return "green-text lighten-3";
             case "Good":
@@ -67,6 +73,8 @@ export default class DisplayImage extends Component {
                 return "orange-text";
             case "Poor":
                 return "red-text";
+            case "N/A":
+                return "grey-text";
             default:
                 return
         }
@@ -108,6 +116,15 @@ export default class DisplayImage extends Component {
                 displayNone } = this.props.className;
 
             const image = "/client/dist/product_images/" + categories + "/" + product_id + "/" + img_src;
+            var gent_rating = gentle_avg_rating;
+            var safe_rating = safety_avg_rating;
+            if (gent_rating === "0") {
+                gent_rating = "N/A";
+            };
+            if (safe_rating === "0") {
+                safe_rating = "N/A";
+            };
+            console.log(gent_rating, safe_rating);
             return (
 
                 <div className={displayCont}>
@@ -116,13 +133,13 @@ export default class DisplayImage extends Component {
                             <img className={productImg} src={image} />
                         </div>
                         <div className="display-cont">
-                            <div className={`icon-cont-gentle ${displayNone} ${this.colorizeGentleNum(gentle_avg_rating)}`}>
+                            <div className={`icon-cont-gentle ${displayNone} ${this.colorizeGentleNum(gent_rating)}`}>
                                 <img className={heartIcon} src={gentle_img} />
-                                <span className={gentleRating}>{this.truncateAverage(gentle_avg_rating)}</span>
+                                <span className={gentleRating}>{this.truncateAverage(gent_rating)}</span>
                             </div>
-                            <div className={`icon-cont-safety ${displayNone} ${this.colorizeSafetyNum(safety_avg_rating)}`}>
+                            <div className={`icon-cont-safety ${displayNone} ${this.colorizeSafetyNum(safe_rating)}`}>
                                 <img className={crossIcon} src={safety_img} />
-                                <span className={safetyRating}>{safety_avg_rating}</span>
+                                <span className={safetyRating}>{safe_rating}</span>
                             </div>
                         </div>
                         <div className="info-container">
