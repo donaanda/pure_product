@@ -89,6 +89,14 @@
     padding: 1vh;
 }
 
+.options{
+    color: red;
+    background-color: white;
+    width: 20vw;
+    margin: auto;
+    padding: 1vh;
+}
+
 .wiz-ingredient-cont div,
 .products-want div {
     margin: 1em;
