@@ -125,6 +125,7 @@ class ProductFinder extends Component {
           <Step4 selectionCallBack={this.handleChildSubmit} retinolVal={selection.retinol} currentStep={currentStep} />
           <Step5 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
           <Step6 selectionCallBack={this.handleChildSubmit} currentStep={currentStep} />
+          {nextValid ? null : <div className="options">Please choose options.</div>}
           <button onClick={nextValid ? this.nextStep : null}
             className={currentStep === 6 ? "display-none" : "btn wiz-button"}>
             Next
