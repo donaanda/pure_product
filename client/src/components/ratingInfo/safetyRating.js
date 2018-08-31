@@ -50,6 +50,9 @@ class SafetyRating extends Component {
             <section>
                 <Header history={this.props.history} />
                 <div className="site-about-container safety-rating-container">
+                    <Link to="/gentle_rating">
+                        <button className="btn rate-button">See Gentle Rating</button>
+                    </Link>
                     <img className="gentle_icon_gentle_page" src={safety_icon} />
                     <h3>Safety Rating</h3>
                     <p className="scale-text-safety"><span className={this.colorizeSafetyNum("1")}>1</span><span className={this.colorizeSafetyNum("2")}>2</span><span className={this.colorizeSafetyNum("3")}>3</span><span className={this.colorizeSafetyNum("4")}>4</span><span className={this.colorizeSafetyNum("5")}>5</span><span className={this.colorizeSafetyNum("6")}>6</span><span className={this.colorizeSafetyNum("7")}>7</span><span className={this.colorizeSafetyNum("8")}>8</span><span className={this.colorizeSafetyNum("9")}>9</span><span className={this.colorizeSafetyNum("10")}>10</span></p>

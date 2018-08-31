@@ -10,6 +10,7 @@
     margin: auto;
     height: 20vh;
     object-fit: contain;
+    width: 100%;
 }
 
 .temp-logo {

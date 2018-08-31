@@ -202,7 +202,7 @@ class DisplayAllProducts extends Component {
                             First Page
                         </div>
                         <div onClick={this.handlePreviousClick.bind(this)} className="btn pink wiz-button">
-                            Previous Page
+                            Prev. Page
                         </div>
                         <div onClick={this.handleNextClick.bind(this)} className="btn green wiz-button">
                             Next Page

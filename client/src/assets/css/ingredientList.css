@@ -6,7 +6,7 @@
 }
 
 .ingredient-column {
-    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .ingredient-row td p {

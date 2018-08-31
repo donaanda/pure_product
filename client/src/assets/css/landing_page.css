@@ -145,6 +145,7 @@ section.landing_page {
     .wrap-landing-img {
         display: block;
         margin: auto;
+        padding-bottom: 10px;
     }
     .gentle,
     .product,

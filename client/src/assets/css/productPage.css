@@ -87,6 +87,12 @@ a {
     padding: 3%;
 }
 
+.rate-button {
+    margin: 1vh;
+    float: left;
+    display: block;
+}
+
 @media only screen and (min-width: 1000px) {
     .product-page-gentle-rating:hover,
     .product-page-safety-rating:hover {
@@ -96,6 +102,6 @@ a {
     }
     .product-page-safety-rating,
     .product-page-gentle-rating {
-        height: 10vw;
+        height: 14vw;
     }
 }

@@ -46,6 +46,9 @@
     box-sizing: initial;
     margin: 3vh;
     border: solid 15px white;
+    width: 10%;
+    overflow: hidden;
+    padding: 5px;
 }
 
 .wizard-div button {
@@ -167,5 +170,8 @@
     }
     .wiz-safe-gen-cont {
         font-size: 4vmin;
+    }
+    .wiz-button {
+        width: initial;
     }
 }

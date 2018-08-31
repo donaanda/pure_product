@@ -26,6 +26,12 @@ h1 {
 
 .scale-text-gentle {
     color: white;
+    padding: 1vh;
+}
+
+.scale-text-gentle span,
+.scale-text-safety span {
+    padding: 1vh;
 }
 
 .scale-text span {
